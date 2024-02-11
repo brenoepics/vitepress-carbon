@@ -4,3 +4,6 @@ dist
 TODOs.md
 .DS_Store
 demo/.vitepress/cache
+.vscode/
+.idea/
+demo/.vitepress/dist/
