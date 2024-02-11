@@ -39,13 +39,6 @@ jobs:
           npm run demo-build
           mkdir staging
           cp ./demo/.vitepress/dist/* staging -r
-      - uses: actions/setup-java@v3
-        with:
-          java-version: '11'
-          distribution: 'temurin'
-          java-package: 'jdk'
-          cache: 'maven'
-          server-id: ossrh
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
