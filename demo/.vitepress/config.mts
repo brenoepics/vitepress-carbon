@@ -21,6 +21,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   title: 'VitePress Mono',
   description: 'Your VitePress Theme',
   srcDir: 'src',
+  base: '/vitepress-mono/',
 
   themeConfig: {
     search: {
