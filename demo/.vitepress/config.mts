@@ -6,17 +6,6 @@ import type { Config as ThemeConfig } from '../../src/theme/config'
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
-  vite: {
-    build: {
-      minify: false
-    },
-    resolve: {
-      alias: {
-        'vitepress-mono': path.join(__dirname, '../../src')
-      }
-    }
-  },
-
   lang: 'en-US',
   title: 'VitePress Mono',
   description: 'Your VitePress Theme',
@@ -46,5 +35,15 @@ export default defineConfigWithTheme<ThemeConfig>({
         ]
       }
     ],
-  }
+  },
+  vite: {
+    build: {
+      minify: false
+    },
+    resolve: {
+      alias: {
+        'vitepress-mono': path.join(__dirname, '../../src')
+      }
+    }
+  },
 })
