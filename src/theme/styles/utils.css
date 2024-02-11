@@ -1,0 +1,28 @@
+/* webfont-marker-begin */
+@import url('https://fonts.googleapis.com/css?family=JetBrains%20Mono:wght@100..900&display=swap');
+
+@import url('https://fonts.cdnfonts.com/css/mona-sans');
+@import url('https://fonts.cdnfonts.com/css/hubot-sans');
+
+html body {
+    font-synthesis: style;
+}
+/* webfont-marker-end */
+
+/* Chinese quotes rendering fix. 中英文弯引号共享 Unicode 码位，确保引号使用中文字体渲染 */
+@font-face {
+    font-family: 'Chinese Quotes';
+    src: local('PingFang SC Regular'), local('PingFang SC'), local('SimHei'),
+    local('Source Han Sans SC');
+    unicode-range: U+2018, U+2019, U+201C, U+201D; /* 分别是 ‘’“” */
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+}

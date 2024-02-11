@@ -1,0 +1,60 @@
+{
+  "name": "vitepress-mono",
+  "version": "1.0.0",
+  "description": "The Monochromatic theme for VitePress",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./config": {
+      "types": "./src/theme/config/baseConfig.d.ts",
+      "default": "./src/theme/config/baseConfig.js"
+    }
+  },
+  "files": [
+    "src",
+    "types"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenoepics/vitepress-mono.git"
+  },
+  "keywords": [
+    "vue",
+    "design-system"
+  ],
+  "author": "Breno A.",
+  "license": "MIT",
+  "homepage": "https://github.com/brenoepics/vitepress-mono#readme",
+  "bugs": {
+    "url": "https://github.com/brenoepics/vitepress-mono/issues"
+  },
+  "scripts": {
+    "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+    "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+    "type": "tsc --noEmit",
+    "test": "npm run lint && npm run type",
+    "dev": "vitepress dev demo",
+    "demo-build": "vitepress build demo",
+    "serve": "npm run demo-build && vitepress serve demo"
+  },
+  "dependencies": {
+    "@docsearch/css": "^3.2.1",
+    "@docsearch/js": "^3.2.1",
+    "@vueuse/core": "^9.1.1",
+    "body-scroll-lock": "^3.1.5",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "@mdit-vue/types": "^0.11.0",
+    "@types/body-scroll-lock": "^3.1.0",
+    "@types/estree": "^1.0.0",
+    "@types/node": "^18.15.3",
+    "prettier": "^2.7.1",
+    "typescript": "^4.9.5",
+    "vitepress": "^1.0.0-alpha.60",
+    "vue": "^3.2.47"
+  },
+  "peerDependencies": {
+    "vitepress": "^1.0.0-alpha.60"
+  }
+}

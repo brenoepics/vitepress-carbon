@@ -1,0 +1,98 @@
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+.dark {
+  --color-note: #2f81f7;
+  --color-tip: #3fb950;
+  --color-warning: #d29922;
+  --color-severe: #db6d28;
+  --color-caution: #f85149;
+  --color-important: #a371f7;
+}
+
+.custom-block {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.custom-block>:first-child {
+  margin-top: 0
+}
+
+.custom-block>:last-child {
+  margin-bottom: 0
+}
+
+.custom-block .custom-block-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.custom-block .custom-block-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.custom-block.note {
+  border-left-color: var(--color-note);
+}
+
+.custom-block.note .custom-block-title {
+  color: var(--color-note);
+}
+
+.custom-block.important {
+  border-left-color: var(--color-important);
+}
+
+.custom-block.important .custom-block-title {
+  color: var(--color-important);
+}
+
+.custom-block.warning {
+  border-left-color: var(--color-warning);
+}
+
+.custom-block.warning .custom-block-title {
+  color: var(--color-warning);
+}
+
+.custom-block.tip {
+  border-left-color: var(--color-tip);
+}
+
+.custom-block.tip .custom-block-title {
+  color: var(--color-tip);
+}
+
+.custom-block.caution {
+  border-left-color: var(--color-caution);
+}
+
+.custom-block.caution .custom-block-title {
+  color: var(--color-caution);
+}
