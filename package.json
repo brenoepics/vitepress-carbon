@@ -40,7 +40,6 @@
   "dependencies": {
     "@docsearch/css": "^3.2.1",
     "@docsearch/js": "^3.2.1",
-    "@vueuse/core": "^9.1.1",
     "body-scroll-lock": "^3.1.5",
     "normalize.css": "^8.0.1"
   },
