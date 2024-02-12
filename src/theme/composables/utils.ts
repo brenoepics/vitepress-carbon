@@ -1,9 +1,7 @@
-
-
-import { EXTERNAL_URL_RE, sanitizeFileName } from '../../shared';
+import { EXTERNAL_URL_RE, sanitizeFileName } from '../../shared'
 import { inBrowser, Awaitable, SiteData } from 'vitepress'
 import {
-    Ref,
+  Ref,
   h,
   onMounted,
   onUnmounted,
@@ -14,8 +12,8 @@ import {
 import siteData from '@siteData'
 
 export const siteDataRef: Ref<SiteData> = shallowRef(
-    (import.meta.env.PROD ? siteData : readonly(siteData)) as SiteData
-  )
+  (import.meta.env.PROD ? siteData : readonly(siteData)) as SiteData
+)
 /**
  * Join two paths by resolving the slash collision.
  */
