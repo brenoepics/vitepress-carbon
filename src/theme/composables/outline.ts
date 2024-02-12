@@ -18,7 +18,6 @@ export function resolveTitle(theme: DefaultTheme.Config) {
     (typeof theme.outline === 'object' &&
       !Array.isArray(theme.outline) &&
       theme.outline.label) ||
-    theme.outlineTitle ||
     'On this page'
   )
 }
@@ -30,7 +29,9 @@ export function getHeaders(range: DefaultTheme.Config['outline']) {
     title: string
     element: HTMLHeadElement
   }[]
-  headers = [...document.querySelectorAll('.VPDoc :where(h1,h2,h3,h4,h5,h6)')]
+  headers = [
+    ...Array.from(document.querySelectorAll('.VPDoc :where(h1,h2,h3,h4,h5,h6)'))
+  ]
     .filter((el) => el.id && el.hasChildNodes())
     .map((el) => {
       const level = Number(el.tagName[1])
@@ -47,7 +48,7 @@ export function getHeaders(range: DefaultTheme.Config['outline']) {
 
 function serializeHeader(h: Element): string {
   let ret = ''
-  for (const node of h.childNodes) {
+  for (const node of Array.from(h.childNodes)) {
     if (node.nodeType === 1) {
       if (
         (node as Element).classList.contains('VPBadge') ||
