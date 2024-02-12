@@ -13,6 +13,9 @@ export default defineConfigWithTheme<ThemeConfig>({
   base: '/vitepress-mono/',
 
   themeConfig: {
+    logo: {
+      src: "https://imgur.com/76Ls3no.png"
+    },
     search: {
       provider: "local"
     },
@@ -31,7 +34,47 @@ export default defineConfigWithTheme<ThemeConfig>({
         text: 'Examples',
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Runtime API Examples', link: '/api-examples' },
+          {
+            text: "Lorem ipsum dolor",
+            link: "/api-examples1"
+          },
+          {
+            text: "Sit amet consectetur",
+            link: "/another-route"
+          },
+          {
+            text: "Adipiscing elit sed",
+            link: "/yet-another-route"
+          },
+          {
+            text: "Non risus suspendisse",
+            link: "/one-more-route"
+          },
+          {
+            text: "Tortor dignissim sit",
+            link: "/some-route"
+          },
+          {
+            text: "Amet adipiscing nec",
+            link: "/another-one"
+          },
+          {
+            text: "Ultricies sed dolor",
+            link: "/last-one"
+          },
+          {
+            text: "Lorem ipsum dolor",
+            link: "/api-examples1"
+          },
+          {
+            text: "Sit amet consectetur",
+            link: "/another-route"
+          },
+          {
+            text: "Adipiscing elit sed",
+            link: "/yet-another-route"
+          }
         ]
       }
     ],

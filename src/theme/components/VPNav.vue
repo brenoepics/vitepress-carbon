@@ -46,6 +46,7 @@ watchEffect(() => {
   z-index: var(--vp-z-index-nav);
   width: 100%;
   pointer-events: none;
+  background-color: var(--vp-c-bg-alt);
   transition: background-color 0.5s;
 }
 

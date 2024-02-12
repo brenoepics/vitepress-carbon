@@ -35,8 +35,6 @@ watch(
     ref="navEl"
     @click.stop
   >
-    <div class="curtain" />
-
     <nav class="nav" id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1">
       <span class="visually-hidden" id="sidebar-aria-label">
         Sidebar Navigation
@@ -61,8 +59,8 @@ watch(
   left: 0;
   z-index: var(--vp-z-index-sidebar);
   width: calc(100vw - 64px);
-  max-width: 320px;
-  background-color: var(--vp-sidebar-bg-color);
+  max-width: 336px;
+  background-color: transparent;
   opacity: 0;
   box-shadow: var(--vp-c-shadow-3);
   overflow-x: hidden;
@@ -89,7 +87,7 @@ watch(
     padding-top: var(--vp-nav-height);
     width: var(--vp-sidebar-width);
     max-width: 100%;
-    background-color: var(--vp-sidebar-bg-color);
+    background-color: transparent;
     opacity: 1;
     visibility: visible;
     box-shadow: none;
@@ -97,31 +95,10 @@ watch(
   }
 }
 
-@media (min-width: 1440px) {
-  .VPSidebar {
-    width: calc((100% - (var(--vp-layout-max-width) - 64px)) / 2 + var(--vp-sidebar-width) - 32px);
-  }
-}
-
-@media (min-width: 960px) {
-  .curtain {
-    position: sticky;
-    top: -64px;
-    left: 0;
-    z-index: 1;
-    margin-top: calc(var(--vp-nav-height) * -1);
-    margin-right: -32px;
-    margin-left: -32px;
-    height: var(--vp-nav-height);
-    background-color: var(--vp-sidebar-bg-color);
-  }
-}
-
 .nav {
   outline: 0;
   height: 100%;
   background: var(--vp-c-bg);
-  width: min-content;
   padding: 20px;
   border-right: 1px solid var(--vp-c-border);
 }

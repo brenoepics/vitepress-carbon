@@ -155,6 +155,7 @@ const pageName = computed(() =>
 
 .content {
   position: relative;
+  padding: 15px;
   margin: 0 auto;
   width: 100%;
   border: 1px solid var(--vp-c-border);
