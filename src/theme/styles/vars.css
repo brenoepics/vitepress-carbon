@@ -93,10 +93,10 @@
   --vp-c-purple-3: #8e5cd9;
   --vp-c-purple-soft: rgba(159, 122, 234, 0.16);
 
-  --vp-c-green-1: #3dd68c;
-  --vp-c-green-2: #30a46c;
-  --vp-c-green-3: #298459;
-  --vp-c-green-soft: rgba(16, 185, 129, 0.16);
+  --vp-c-green-1: #3fb950;
+  --vp-c-green-2: #2ea043;
+  --vp-c-green-3: #30a46c;
+  --vp-c-green-soft: rgba(16, 185, 129, 0.14);
 
   --vp-c-yellow-1: #f9b44e;
   --vp-c-yellow-2: #da8b17;
@@ -264,9 +264,11 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-font-family-base: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  --vp-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   --vp-font-family-mono: 'JetBrainsMono', 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco,
   Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --vp-font-family-custom: "Mona-Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
 }
 
 /**
@@ -322,7 +324,12 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-header-anchor-symbol: '#';
+  --vp-header-anchor-symbol: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTYgMTYiIHZlcnNpb249IjEuMSI+CjxnIGlkPSJzdXJmYWNlMSI+CjxwYXRoIHN0eWxlPSIgc3Ryb2tlOm5vbmU7ZmlsbC1ydWxlOm5vbnplcm87ZmlsbDpyZ2IoOTAuMTk2MDc4JSw5Mi45NDExNzYlLDk1LjI5NDExOCUpO2ZpbGwtb3BhY2l0eToxOyIgZD0iTSA5Ljg1MTU2MiAyLjQzMzU5NCBDIDEwLjg3ODkwNiAxLjQxMDE1NiAxMi41MzkwNjIgMS40MTAxNTYgMTMuNTY2NDA2IDIuNDMzNTk0IEMgMTQuNTg5ODQ0IDMuNDYwOTM4IDE0LjU4OTg0NCA1LjEyMTA5NCAxMy41NjY0MDYgNi4xNDg0MzggTCAxMS4xNDg0MzggOC41NjY0MDYgQyAxMC42MTcxODggOS4wOTM3NSA5Ljg4MjgxMiA5LjM3NSA5LjEzMjgxMiA5LjMyODEyNSBDIDguMzgyODEyIDkuMjg1MTU2IDcuNjkxNDA2IDguOTIxODc1IDcuMjI2NTYyIDguMzI4MTI1IEMgNy4wNTQ2ODggOC4xMTMyODEgNi43NDIxODggOC4wNzQyMTkgNi41MjM0MzggOC4yNDYwOTQgQyA2LjMwODU5NCA4LjQxNzk2OSA2LjI2OTUzMSA4LjczMDQ2OSA2LjQ0MTQwNiA4Ljk0OTIxOSBDIDcuMDgyMDMxIDkuNzYxNzE5IDguMDM5MDYyIDEwLjI2NTYyNSA5LjA3NDIxOSAxMC4zMjgxMjUgQyAxMC4xMDkzNzUgMTAuMzkwNjI1IDExLjEyMTA5NCAxMC4wMDM5MDYgMTEuODUxNTYyIDkuMjczNDM4IEwgMTQuMjczNDM4IDYuODUxNTYyIEMgMTUuNjg3NSA1LjQzNzUgMTUuNjg3NSAzLjE0NDUzMSAxNC4yNzM0MzggMS43MjY1NjIgQyAxMi44NTU0NjkgMC4zMTI1IDEwLjU2MjUgMC4zMTI1IDkuMTQ4NDM4IDEuNzI2NTYyIEwgNy4xNDg0MzggMy43MjY1NjIgQyA2Ljk1NzAzMSAzLjkyNTc4MSA2Ljk2MDkzOCA0LjIzNDM3NSA3LjE1MjM0NCA0LjQyOTY4OCBDIDcuMzQzNzUgNC42MjEwOTQgNy42NTYyNSA0LjYyNSA3Ljg1MTU2MiA0LjQzMzU5NCBaIE0gOS44NTE1NjIgMi40MzM1OTQgIi8+CjxwYXRoIHN0eWxlPSIgc3Ryb2tlOm5vbmU7ZmlsbC1ydWxlOm5vbnplcm87ZmlsbDpyZ2IoOTAuMTk2MDc4JSw5Mi45NDExNzYlLDk1LjI5NDExOCUpO2ZpbGwtb3BhY2l0eToxOyIgZD0iTSA0Ljg1MTU2MiA3LjQzMzU5NCBDIDUuMzgyODEyIDYuOTA2MjUgNi4xMTcxODggNi42MjUgNi44NjcxODggNi42NzE4NzUgQyA3LjYxNzE4OCA2LjcxNDg0NCA4LjMwODU5NCA3LjA3ODEyNSA4Ljc3MzQzOCA3LjY3MTg3NSBDIDguOTQ1MzEyIDcuODg2NzE5IDkuMjU3ODEyIDcuOTI1NzgxIDkuNDc2NTYyIDcuNzUzOTA2IEMgOS42OTE0MDYgNy41ODIwMzEgOS43MzA0NjkgNy4yNjk1MzEgOS41NTg1OTQgNy4wNTA3ODEgQyA4LjkxNzk2OSA2LjIzODI4MSA3Ljk2MDkzOCA1LjczNDM3NSA2LjkyNTc4MSA1LjY3MTg3NSBDIDUuODkwNjI1IDUuNjA5Mzc1IDQuODc4OTA2IDUuOTk2MDk0IDQuMTQ4NDM4IDYuNzI2NTYyIEwgMS43MjY1NjIgOS4xNDg0MzggQyAwLjMxMjUgMTAuNTYyNSAwLjMxMjUgMTIuODU1NDY5IDEuNzI2NTYyIDE0LjI3MzQzOCBDIDMuMTQ0NTMxIDE1LjY4NzUgNS40Mzc1IDE1LjY4NzUgNi44NTE1NjIgMTQuMjczNDM4IEwgOC44NTE1NjIgMTIuMjczNDM4IEMgOC45ODgyODEgMTIuMTQ4NDM4IDkuMDQyOTY5IDExLjk2MDkzOCA4Ljk5NjA5NCAxMS43ODEyNSBDIDguOTUzMTI1IDExLjYwNTQ2OSA4LjgxMjUgMTEuNDY4NzUgOC42MzY3MTkgMTEuNDIxODc1IEMgOC40NjA5MzggMTEuMzc1IDguMjY5NTMxIDExLjQyOTY4OCA4LjE0ODQzOCAxMS41NjY0MDYgTCA2LjE0ODQzOCAxMy41NjY0MDYgQyA1LjEyMTA5NCAxNC41ODk4NDQgMy40NjA5MzggMTQuNTg5ODQ0IDIuNDMzNTk0IDEzLjU2NjQwNiBDIDEuNDEwMTU2IDEyLjUzOTA2MiAxLjQxMDE1NiAxMC44Nzg5MDYgMi40MzM1OTQgOS44NTE1NjIgWiBNIDQuODUxNTYyIDcuNDMzNTk0ICIvPgo8L2c+Cjwvc3ZnPgo=);
+  --vp-color-fg-default: #e6edf3;
+  --vp-color-fg-muted: #848d97;
+  --vp-color-fg-subtle: #6e7681;
+  --vp-color-fg-on-emphasis: #ffffff;
+
 }
 
 /**
@@ -358,7 +365,7 @@
   --vp-code-copy-code-border-color: var(--vp-c-divider);
   --vp-code-copy-code-bg: var(--vp-c-bg-soft);
   --vp-code-copy-code-hover-border-color: var(--vp-c-divider);
-  --vp-code-copy-code-hover-bg: var(--vp-c-bg);
+  --vp-code-copy-code-hover-bg: var(--vp-c-bg-soft-2);
   --vp-code-copy-code-active-text: var(--vp-c-text-2);
   --vp-code-copy-copied-text-content: 'Copied';
 
@@ -375,13 +382,13 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-button-brand-border: rgba(240,246,252,0.1);
+  --vp-button-brand-border: rgba(240, 246, 252, 0.1);
   --vp-button-brand-text: var(--vp-c-white);
-  --vp-button-brand-bg: #3fb950;
-  --vp-button-brand-hover-border: rgba(240,246,252,0.1);
+  --vp-button-brand-bg: var(--vp-c-green-1);
+  --vp-button-brand-hover-border: rgba(240, 246, 252, 0.1);
   --vp-button-brand-hover-text: var(--vp-c-white);
   --vp-button-brand-hover-bg: #41ad4f;
-  --vp-button-brand-active-border: rgba(240,246,252,0.1);
+  --vp-button-brand-active-border: rgba(240, 246, 252, 0.1);
   --vp-button-brand-active-text: var(--vp-c-white);
   --vp-button-brand-active-bg: #42c754;
 
@@ -404,6 +411,9 @@
   --vp-button-sponsor-active-border: var(--vp-c-sponsor);
   --vp-button-sponsor-active-text: var(--vp-c-sponsor);
   --vp-button-sponsor-active-bg: transparent;
+
+  --mktg-accent-primary: var(--vp-c-green-1);
+  --mktg-accent-secondary: var(--vp-c-green-1);
 }
 
 /**
@@ -498,7 +508,7 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-sidebar-width: 272px;
+  --vp-sidebar-width: 336px;
   --vp-sidebar-bg-color: var(--vp-c-bg-alt);
 }
 

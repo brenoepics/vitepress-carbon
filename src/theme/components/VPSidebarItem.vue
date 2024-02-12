@@ -153,7 +153,7 @@ function onCaretClick() {
 .text {
   flex-grow: 1;
   padding: 4px 0;
-  line-height: 24px;
+  line-height: 21px;
   font-size: 14px;
   transition: color 0.25s;
 }
