@@ -19,6 +19,8 @@ const { theme } = useData()
 <style scoped>
 .VPNavBarMenu {
   display: none;
+  gap: 5px;
+  margin-inline: 5px;
 }
 
 @media (min-width: 768px) {
