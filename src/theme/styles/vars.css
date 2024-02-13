@@ -485,6 +485,11 @@
   --vp-nav-bg-color: var(--vp-c-bg-alt);
   --vp-nav-screen-bg-color: var(--vp-c-bg-alt);
   --vp-nav-logo-height: 24px;
+  --color-action-list-item-default-hover-bg: rgba(177,186,196,0.12);
+  --color-action-list-item-default-hover-border: rgba(0,0,0,0);
+  --color-action-list-item-default-active-bg: rgba(177,186,196,0.2);
+  --color-action-list-item-default-active-border: rgba(0,0,0,0);
+  --color-action-list-item-default-selected-bg: rgba(177,186,196,0.08);
 }
 
 .hide-nav {

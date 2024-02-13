@@ -86,7 +86,6 @@ watch(
   .VPSidebar {
     padding-top: var(--vp-nav-height);
     width: var(--vp-sidebar-width);
-    max-width: 100%;
     background-color: transparent;
     opacity: 1;
     visibility: visible;
