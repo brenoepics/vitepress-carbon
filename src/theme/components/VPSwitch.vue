@@ -16,13 +16,14 @@
   width: 40px;
   height: 22px;
   flex-shrink: 0;
-  border: 1px solid var(--vp-input-border-color);
-  background-color: var(--vp-input-switch-bg-color);
-  transition: border-color 0.25s !important;
+  border: 1px solid var(--color-action-list-item-default-hover-border);
+  background-color: var(--color-action-list-item-default-hover-bg);
+  transition: border-color, background-color 0.25s !important;
 }
 
 .VPSwitch:hover {
-  border-color: var(--vp-c-brand-1);
+  border-color: var(--color-action-list-item-default-active-border);
+  background-color: var(--color-action-list-item-default-active-bg);
 }
 
 .check {

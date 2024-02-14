@@ -39,8 +39,8 @@ const target = computed(() =>
     >
       <slot name="nav-bar-title-before" />
       <VPImage v-if="theme.logo" class="logo" :image="theme.logo" />
-      <template v-if="theme.siteTitle"><span>{{ theme.siteTitle }}</span></template>
-      <template v-else-if="theme.siteTitle === undefined"><span>{{ site.title }}</span></template>
+      <template v-if="theme.siteTitle"><span class="nav-bar-title-text">{{ theme.siteTitle }}</span></template>
+      <template v-else-if="theme.siteTitle === undefined"><span class="nav-bar-title-text">{{ site.title }}</span></template>
       <slot name="nav-bar-title-after" />
     </a>
   </div>
@@ -50,13 +50,34 @@ const target = computed(() =>
 .title {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid transparent;
   width: 100%;
   height: var(--vp-nav-height);
-  font-size: 16px;
+  line-height: 1.4285714286;
+  transition: opacity 0.25s;
+}
+
+.nav-bar-title-text {
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding-inline: 8px;
+  padding-block: 6px;
+  line-height: 1.4285714286;
+  font-size: 14px;
   font-weight: 600;
   color: var(--vp-c-text-1);
   transition: opacity 0.25s;
+}
+
+.nav-bar-title-text:hover {
+  background-color: var(--color-action-list-item-default-hover-bg);
+  border-color: var(--color-action-list-item-default-hover-border);
+}
+
+.nav-bar-title-text:active {
+  background-color: var(--color-action-list-item-default-active-bg);
+  border-color: var(--color-action-list-item-default-active-border);
 }
 
 @media (min-width: 960px) {

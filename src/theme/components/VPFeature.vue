@@ -160,9 +160,9 @@ function onMouseLeave() {
 
 .details {
   flex-grow: 1;
-  line-height: 20px;
-  font-size: 15px;
-  font-weight: 600;
+  line-height: 15px;
+  font-size: 14px;
+  font-weight: 500;
   color: var(--vp-c-text-2);
 }
 

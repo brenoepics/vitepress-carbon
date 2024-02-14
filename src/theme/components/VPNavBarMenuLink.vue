@@ -31,22 +31,28 @@ const { page } = useData()
 </template>
 
 <style scoped>
+
 .VPNavBarMenuLink {
   display: flex;
   align-items: center;
-  padding: 0 12px;
-  line-height: var(--vp-nav-height);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding-inline: 8px;
+  padding-block: 6px;
+  line-height: 1.4285714286;
   font-size: 14px;
   font-weight: 500;
   color: var(--vp-c-text-1);
-  transition: color 0.25s;
+  transition: opacity 0.25s;
 }
 
-.VPNavBarMenuLink.active {
-  color: var(--vp-c-brand-1);
+.VPNavBarMenuLink:hover, .active {
+  background-color: var(--color-action-list-item-default-hover-bg);
+  border-color: var(--color-action-list-item-default-hover-border);
 }
 
-.VPNavBarMenuLink:hover {
-  color: var(--vp-c-brand-1);
+.VPNavBarMenuLink:active {
+  background-color: var(--color-action-list-item-default-active-bg);
+  border-color: var(--color-action-list-item-default-active-border);
 }
 </style>
