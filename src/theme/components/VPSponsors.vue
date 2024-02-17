@@ -13,14 +13,14 @@ interface Props {
   mode?: 'normal' | 'aside'
   tier?: string
   size?: GridSize
-  data: Sponsors[] | Sponsor[]
+  data?: Sponsors[] | Sponsor[]
 }
 const props = withDefaults(defineProps<Props>(), {
   mode: 'normal'
 })
 
 const sponsors = computed(() => {
-  const isSponsors = props.data.some((s) => {
+  const isSponsors = props.data?.some((s) => {
     return 'items' in s
   })
 

@@ -35,8 +35,8 @@ const translate = createSearchTranslate(defaultTranslations)
 
 <style>
 [class*='DocSearch'] {
-  --docsearch-primary-color: var(--vp-c-brand-1);
-  --docsearch-highlight-color: var(--docsearch-primary-color);
+  --docsearch-primary-color: var(--color-action-list-item-default-active-bg);
+  --docsearch-highlight-color: var(--color-action-list-item-default-active-border);
   --docsearch-text-color: var(--vp-c-text-2);
   --docsearch-muted-color: var(--vp-c-text-2);
   --docsearch-searchbox-shadow: none;
@@ -75,7 +75,6 @@ const translate = createSearchTranslate(defaultTranslations)
 }
 
 .DocSearch-Button:focus {
-  outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;
 }
 
@@ -89,16 +88,16 @@ const translate = createSearchTranslate(defaultTranslations)
     border: 1px solid var(--vp-c-border);
     border-radius: 6px;
     line-height: 20px;
-    padding: 0 10px 0 12px;
-    width: 350px;
+    width:100%;
+    max-width: 305px;
     height: 32px;
     background-color: var(--vp-c-bg-alt);
     padding: 5px 12px;
   }
 
   .DocSearch-Button:hover {
-    border-color: #6e7681;
-    background-color: rgba(177,186,196,0.12);
+    border-color: var(--vp-color-fg-subtle);
+    background-color: var(--color-action-list-item-default-hover-bg);
   }
 }
 
