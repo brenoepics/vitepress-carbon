@@ -13,9 +13,7 @@ const { theme } = useData()
     <slot name="aside-outline-before" />
     <VPDocAsideOutline />
     <slot name="aside-outline-after" />
-
-    <div class="spacer" />
-
+    <div class="VPDocAside-divider"></div>
     <slot name="aside-ads-before" />
     <VPDocAsideCarbonAds v-if="theme.carbonAds" :carbon-ads="theme.carbonAds" />
     <slot name="aside-ads-after" />
@@ -29,6 +27,14 @@ const { theme } = useData()
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+}
+
+.VPDocAside-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--vp-c-border);
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .spacer {

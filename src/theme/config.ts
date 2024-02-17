@@ -67,15 +67,6 @@ export interface Config {
    */
   editLink?: EditLink
 
-  /**
-   * @deprecated Use `lastUpdated.text` instead.
-   *
-   * Set custom last updated text.
-   *
-   * @default 'Last updated'
-   */
-  lastUpdatedText?: string
-
   lastUpdated?: LastUpdatedOptions
 
   /**
@@ -129,11 +120,6 @@ export interface Config {
   search?:
     | { provider: 'local'; options?: LocalSearchOptions }
     | { provider: 'algolia'; options: AlgoliaSearchOptions }
-
-  /**
-   * @deprecated Use `search` instead.
-   */
-  algolia?: AlgoliaSearchOptions
 
   /**
    * The carbon ads options. Leave it undefined to disable the ads feature.

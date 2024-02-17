@@ -11,7 +11,6 @@ export default defineConfigWithTheme<ThemeConfig>({
   description: 'Your VitePress Theme',
   srcDir: 'src',
   base: '/vitepress-mono/',
-
   themeConfig: {
     logo: {
       src: "https://imgur.com/76Ls3no.png"
@@ -20,6 +19,20 @@ export default defineConfigWithTheme<ThemeConfig>({
       provider: "local"
     },
 
+    carbonAds: {
+      code: 'CEBDT27Y',
+      placement: 'vuejsorg'
+    },
+
+    outline: [2, 3],
+    editLink: {
+      pattern: 'https://github.com/brenoepics/vitepress-mono/edit/main/demo/src/:path',
+      text: 'Edit this page on GitHub'
+    },
+
+    lastUpdated: {
+      formatOptions: { dateStyle: 'short', timeStyle: 'short' }
+    },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/brenoepics/vitepress-mono' },
     ],

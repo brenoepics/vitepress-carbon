@@ -50,22 +50,34 @@ if (carbonOptions) {
 </script>
 
 <template>
+  <div class="VPCarbonAdsContainer">
+    <div class="outline-title">Carbon Ads</div>
   <div class="VPCarbonAds" ref="container" />
+  </div>
 </template>
 
 <style scoped>
+.outline-title {
+  line-height: 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--vp-c-text-1)
+}
+
 .VPCarbonAds {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px;
+  padding: 16px;
+  margin-top: 8px;
   border-radius: 12px;
   min-height: 256px;
   text-align: center;
   line-height: 18px;
-  font-size: 12px;
   font-weight: 500;
   background-color: var(--vp-carbon-ads-bg-color);
+  border: 1px solid var(--vp-c-border);
+  font-size: 13px;
 }
 
 .VPCarbonAds :deep(img) {

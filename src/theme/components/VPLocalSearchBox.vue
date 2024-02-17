@@ -714,7 +714,7 @@ function formMarkRegex(terms: Set<string>) {
 }
 
 .search-bar:focus-within {
-  border-color: var(--vp-c-brand-1);
+  border-color: var(--color-action-list-item-default-active-border);
 }
 
 .search-icon {
@@ -762,7 +762,7 @@ function formMarkRegex(terms: Set<string>) {
 
 .search-actions button:not([disabled]):hover,
 .toggle-layout-button.detailed-list {
-  color: var(--vp-c-brand-1);
+  color: var(--vp-c-text-1);
 }
 
 .search-actions button.clear-button:disabled {
@@ -856,7 +856,7 @@ function formMarkRegex(terms: Set<string>) {
 .title-icon {
   opacity: 0.5;
   font-weight: 500;
-  color: var(--vp-c-brand-1);
+  color: var(--vp-c-text-1);
 }
 
 .title svg {
@@ -873,7 +873,6 @@ function formMarkRegex(terms: Set<string>) {
 }
 
 .excerpt {
-  opacity: 75%;
   pointer-events: none;
   max-height: 140px;
   overflow: hidden;
@@ -929,7 +928,7 @@ function formMarkRegex(terms: Set<string>) {
 
 .result.selected .titles,
 .result.selected .title-icon {
-  color: var(--vp-c-brand-1) !important;
+  color: var(--vp-c-text-1) !important;
 }
 
 .no-results {

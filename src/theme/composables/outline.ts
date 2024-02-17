@@ -202,10 +202,10 @@ export function useActiveAnchor(
 
     if (activeLink) {
       activeLink.classList.add('active')
-      marker.value.style.top = activeLink.offsetTop + 39 + 'px'
+      marker.value.style.top = activeLink.offsetTop + 5 + 'px'
       marker.value.style.opacity = '1'
     } else {
-      marker.value.style.top = '33px'
+      marker.value.style.top = '0'
       marker.value.style.opacity = '0'
     }
   }
