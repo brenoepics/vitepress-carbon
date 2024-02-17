@@ -577,7 +577,7 @@
 :root {
   --vp-carbon-ads-text-color: var(--vp-c-text-1);
   --vp-carbon-ads-poweredby-color: var(--vp-c-text-2);
-  --vp-carbon-ads-bg-color: var(--vp-c-bg);
+  --vp-carbon-ads-bg-color: var(--vp-c-bg-alt);
   --vp-carbon-ads-hover-text-color: var(--vp-c-brand-1);
   --vp-carbon-ads-hover-poweredby-color: var(--vp-c-text-1);
 }
@@ -589,7 +589,7 @@
 :root {
   --vp-local-search-bg: var(--vp-c-bg);
   --vp-local-search-result-bg: var(--vp-c-bg);
-  --vp-local-search-result-border: var(--vp-c-divider);
+  --vp-local-search-result-border: var(--vp-c-border);
   --vp-local-search-result-selected-bg: var(--color-action-list-item-default-selected-bg);
   --vp-local-search-result-selected-border: var(--color-action-list-item-default-active-border);
   --vp-local-search-highlight-bg: var(--color-action-list-item-default-active-bg);
