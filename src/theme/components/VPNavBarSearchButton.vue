@@ -88,7 +88,8 @@ const translate = createSearchTranslate(defaultTranslations)
     border: 1px solid var(--vp-c-border);
     border-radius: 6px;
     line-height: 20px;
-    width: 350px;
+    width:100%;
+    max-width: 305px;
     height: 32px;
     background-color: var(--vp-c-bg-alt);
     padding: 5px 12px;

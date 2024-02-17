@@ -12,11 +12,13 @@ export default defineConfigWithTheme<ThemeConfig>({
   srcDir: 'src',
   base: '/vitepress-mono/',
   themeConfig: {
+
     logo: {
-      src: "https://imgur.com/76Ls3no.png"
+      src: 'https://imgur.com/76Ls3no.png'
     },
+
     search: {
-      provider: "local"
+      provider: 'local'
     },
 
     carbonAds: {
@@ -33,64 +35,32 @@ export default defineConfigWithTheme<ThemeConfig>({
     lastUpdated: {
       formatOptions: { dateStyle: 'short', timeStyle: 'short' }
     },
+
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/brenoepics/vitepress-mono' },
+      { icon: 'github', link: 'https://github.com/brenoepics/vitepress-mono' }
     ],
 
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Introduction', link: `/introduction` },
       { text: 'Examples', link: '/markdown-examples' }
     ],
 
     sidebar: [
       {
+        text: `Introduction`,
+        items: [
+          { text: 'Introduction', link: `/introduction` }
+        ]
+      },
+      {
         text: 'Examples',
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
-          {
-            text: "Lorem ipsum dolor",
-            link: "/api-examples1"
-          },
-          {
-            text: "Sit amet consectetur",
-            link: "/another-route"
-          },
-          {
-            text: "Adipiscing elit sed",
-            link: "/yet-another-route"
-          },
-          {
-            text: "Non risus suspendisse",
-            link: "/one-more-route"
-          },
-          {
-            text: "Tortor dignissim sit",
-            link: "/some-route"
-          },
-          {
-            text: "Amet adipiscing nec",
-            link: "/another-one"
-          },
-          {
-            text: "Ultricies sed dolor",
-            link: "/last-one"
-          },
-          {
-            text: "Lorem ipsum dolor",
-            link: "/api-examples1"
-          },
-          {
-            text: "Sit amet consectetur",
-            link: "/another-route"
-          },
-          {
-            text: "Adipiscing elit sed",
-            link: "/yet-another-route"
-          }
+          { text: 'Runtime API Examples', link: '/api-examples' }
         ]
       }
-    ],
+    ]
   },
   vite: {
     build: {
@@ -101,5 +71,5 @@ export default defineConfigWithTheme<ThemeConfig>({
         'vitepress-mono': path.join(__dirname, '../../src')
       }
     }
-  },
+  }
 })

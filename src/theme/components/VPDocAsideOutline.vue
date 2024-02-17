@@ -19,9 +19,8 @@ onContentUpdated(() => {
 })
 
 const container = ref()
-const marker = ref()
 
-useActiveAnchor(container, marker)
+useActiveAnchor(container)
 </script>
 
 <template>
@@ -36,9 +35,11 @@ useActiveAnchor(container, marker)
       ref="container"
       role="navigation"
     >
-        <div class="outline-marker" ref="marker" />
       <div class="content">
-        <nav aria-labelledby="doc-outline-aria-label">
+        <nav
+          aria-labelledby="doc-outline-aria-label"
+          class="outline-nav"
+        >
         <span class="visually-hidden" id="doc-outline-aria-label">
           Table of Contents for current page
         </span>
@@ -53,31 +54,17 @@ useActiveAnchor(container, marker)
 .VPAsideContent {
   display: none;
 }
+
 .VPDocAsideOutline {
+  position: relative;
+}
+
+.outline-nav {
   position: relative;
 }
 
 .VPAsideContent.has-outline {
   display: block;
-}
-
-.outline-marker {
-  position: absolute;
-  top: 32px;
-  z-index: 0;
-  opacity: 0;
-  left: -1px;
-  width: 0.25rem;
-  height: 1.5rem;
-  background-color: var(--vp-c-brand-1);
-  border-radius: 6px;
-  transition: top 0.25s cubic-bezier(0, 1, 0.5, 1),
-  background-color 0.5s,
-  opacity 0.25s;
-}
-
-.content {
-  margin-left: 7px;
 }
 
 .outline-title {

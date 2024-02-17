@@ -82,8 +82,8 @@ export function resolveHeaders(
     typeof levelsRange === 'number'
       ? [levelsRange, levelsRange]
       : levelsRange === 'deep'
-      ? [2, 6]
-      : levelsRange
+        ? [2, 6]
+        : levelsRange
 
   headers = headers.filter((h) => h.level >= high && h.level <= low)
   // clear previous caches
@@ -114,8 +114,7 @@ export function resolveHeaders(
 }
 
 export function useActiveAnchor(
-  container: Ref<HTMLElement>,
-  marker: Ref<HTMLElement>
+  container: Ref<HTMLElement>
 ) {
   const { isAsideEnabled } = useAside()
 
@@ -202,11 +201,52 @@ export function useActiveAnchor(
 
     if (activeLink) {
       activeLink.classList.add('active')
-      marker.value.style.top = activeLink.offsetTop + 5 + 'px'
-      marker.value.style.opacity = '1'
-    } else {
-      marker.value.style.top = '0'
-      marker.value.style.opacity = '0'
+
+      // Check if activeLink is within the visible area of its parent
+      const parentFinal = activeLink.parentElement
+      let parentItem = parentFinal
+
+      let parentList = parentItem?.parentElement
+      if (parentItem && parentList && parentFinal) {
+        if (parentList.classList.contains('nested')) {
+          parentItem = parentList.parentElement
+          parentList = parentList.parentElement?.parentElement
+        }
+
+        if (!parentItem || !parentList || !parentList.classList.contains('root')) {
+          return
+        }
+
+        const parentTop = parentList.clientHeight
+        const nestedTop = parentFinal === parentItem ? 0 : (parentFinal.offsetTop)
+        const linkScrollTop = parentItem.offsetTop + nestedTop
+
+        // If activeLink is above the visible area, scroll up
+        if (parentTop + 64 > linkScrollTop) {
+          scrollUp(parentList, linkScrollTop)
+        }
+
+        // If activeLink is below the visible area, scroll down
+        if (linkScrollTop + activeLink.clientHeight + 64 > parentTop) {
+          scrollDown(parentList, linkScrollTop, parentTop, activeLink.clientHeight)
+        }
+      }
+    }
+  }
+
+  function scrollUp(parentList: HTMLElement, linkScrollTop: number) {
+    const scrollAmount = 64 // Adjust this value to change scroll speed
+    const currentScroll = parentList.scrollTop + 64
+    if (currentScroll > linkScrollTop) {
+      parentList.scrollTop -= scrollAmount
+    }
+  }
+
+  function scrollDown(parentList: HTMLElement, linkScrollTop: number, parentTop: number, linkHeight: number) {
+    const scrollAmount = 64 // Adjust this value to change scroll speed
+    const currentScroll = parentList.scrollTop
+    if (currentScroll < linkScrollTop - parentTop + linkHeight + 64) {
+      parentList.scrollTop += scrollAmount
     }
   }
 }
