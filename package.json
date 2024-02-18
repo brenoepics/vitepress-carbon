@@ -1,7 +1,7 @@
 {
-  "name": "vitepress-mono",
+  "name": "vitepress-carbon",
   "version": "1.0.0",
-  "description": "The Monochromatic theme for VitePress",
+  "description": "Carbon embraces GitHub's monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.",
   "main": "src/index.ts",
   "exports": {
     ".": "./src/index.ts",
@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brenoepics/vitepress-mono.git"
+    "url": "git+https://github.com/brenoepics/vitepress-carbon.git"
   },
   "keywords": [
     "vue",
@@ -24,9 +24,9 @@
   ],
   "author": "Breno A.",
   "license": "MIT",
-  "homepage": "https://github.com/brenoepics/vitepress-mono#readme",
+  "homepage": "https://github.com/brenoepics/vitepress-carbon#readme",
   "bugs": {
-    "url": "https://github.com/brenoepics/vitepress-mono/issues"
+    "url": "https://github.com/brenoepics/vitepress-carbon/issues"
   },
   "scripts": {
     "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",

@@ -82,8 +82,8 @@ export function resolveHeaders(
     typeof levelsRange === 'number'
       ? [levelsRange, levelsRange]
       : levelsRange === 'deep'
-        ? [2, 6]
-        : levelsRange
+      ? [2, 6]
+      : levelsRange
 
   headers = headers.filter((h) => h.level >= high && h.level <= low)
   // clear previous caches
@@ -113,9 +113,7 @@ export function resolveHeaders(
   return ret
 }
 
-export function useActiveAnchor(
-  container: Ref<HTMLElement>
-) {
+export function useActiveAnchor(container: Ref<HTMLElement>) {
   const { isAsideEnabled } = useAside()
 
   const onScroll = throttleAndDebounce(setActiveLink, 100)
@@ -218,14 +216,15 @@ export function useActiveAnchor(
     }
 
     if (parentFinal.parentElement?.style.display === 'none') {
-      prevActiveRoot = parentFinal.parentElement?.parentElement?.firstElementChild
+      prevActiveRoot =
+        parentFinal.parentElement?.parentElement?.firstElementChild
       prevActiveRoot?.classList.add('active')
     } else {
       activeLink.classList.add('active')
     }
 
     const parentTop = parentList.clientHeight
-    const nestedTop = parentFinal === parentItem ? 0 : (parentFinal.offsetTop)
+    const nestedTop = parentFinal === parentItem ? 0 : parentFinal.offsetTop
     const linkScrollTop = parentItem.offsetTop + nestedTop
 
     // If activeLink is above the visible area, scroll up
@@ -247,7 +246,12 @@ export function useActiveAnchor(
     }
   }
 
-  function scrollDown(parentList: HTMLElement, linkScrollTop: number, parentTop: number, linkHeight: number) {
+  function scrollDown(
+    parentList: HTMLElement,
+    linkScrollTop: number,
+    parentTop: number,
+    linkHeight: number
+  ) {
     const scrollAmount = 64 // Adjust this value to change scroll speed
     const currentScroll = parentList.scrollTop
     if (currentScroll < linkScrollTop - parentTop + linkHeight + 64) {

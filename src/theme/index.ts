@@ -4,10 +4,10 @@ import Layout from './Layout.vue'
 export { useSidebar } from './composables/sidebar'
 export { useLocalNav } from './composables/local-nav'
 
-const VPMono: Theme = {
+const VPCarbon: Theme = {
   Layout: Layout
 }
 
-export { VPMono }
+export { VPCarbon }
 
 export type { Config } from './config'

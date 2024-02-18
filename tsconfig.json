@@ -13,7 +13,7 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "paths": {
-      "vitepress-mono": ["./src/index.ts"]
+      "vitepress-carbon": ["./src/index.ts"]
     }
   },
   "include": ["src", "demo/.vitepress/theme"],
