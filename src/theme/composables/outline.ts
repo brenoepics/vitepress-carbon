@@ -121,6 +121,7 @@ export function useActiveAnchor(
   const onScroll = throttleAndDebounce(setActiveLink, 100)
 
   let prevActiveLink: HTMLAnchorElement | null = null
+  let prevActiveRoot: Element | null | undefined = null
 
   onMounted(() => {
     requestAnimationFrame(setActiveLink)
@@ -185,13 +186,12 @@ export function useActiveAnchor(
   }
 
   function activateLink(hash: string | null) {
-    if (prevActiveLink) {
-      prevActiveLink.classList.remove('active')
-    }
+    prevActiveLink?.classList.remove('active')
+    prevActiveRoot?.classList.remove('active')
 
-    if (hash == null) {
-      prevActiveLink = null
-    } else {
+    prevActiveLink = null
+
+    if (hash != null) {
       prevActiveLink = container.value.querySelector(
         `a[href="${decodeURIComponent(hash)}"]`
       )
@@ -199,38 +199,43 @@ export function useActiveAnchor(
 
     const activeLink = prevActiveLink
 
-    if (activeLink) {
+    if (!activeLink) return
+
+    // Check if activeLink is within the visible area of its parent
+    const parentFinal = activeLink.parentElement
+    let parentItem = parentFinal
+
+    let parentList = parentItem?.parentElement
+    if (!parentItem || !parentList || !parentFinal) return
+
+    if (parentList.classList.contains('nested')) {
+      parentItem = parentList.parentElement
+      parentList = parentList.parentElement?.parentElement
+    }
+
+    if (!parentItem || !parentList || !parentList.classList.contains('root')) {
+      return
+    }
+
+    if (parentFinal.parentElement?.style.display === 'none') {
+      prevActiveRoot = parentFinal.parentElement?.parentElement?.firstElementChild
+      prevActiveRoot?.classList.add('active')
+    } else {
       activeLink.classList.add('active')
+    }
 
-      // Check if activeLink is within the visible area of its parent
-      const parentFinal = activeLink.parentElement
-      let parentItem = parentFinal
+    const parentTop = parentList.clientHeight
+    const nestedTop = parentFinal === parentItem ? 0 : (parentFinal.offsetTop)
+    const linkScrollTop = parentItem.offsetTop + nestedTop
 
-      let parentList = parentItem?.parentElement
-      if (parentItem && parentList && parentFinal) {
-        if (parentList.classList.contains('nested')) {
-          parentItem = parentList.parentElement
-          parentList = parentList.parentElement?.parentElement
-        }
+    // If activeLink is above the visible area, scroll up
+    if (parentTop + 64 > linkScrollTop) {
+      scrollUp(parentList, linkScrollTop)
+    }
 
-        if (!parentItem || !parentList || !parentList.classList.contains('root')) {
-          return
-        }
-
-        const parentTop = parentList.clientHeight
-        const nestedTop = parentFinal === parentItem ? 0 : (parentFinal.offsetTop)
-        const linkScrollTop = parentItem.offsetTop + nestedTop
-
-        // If activeLink is above the visible area, scroll up
-        if (parentTop + 64 > linkScrollTop) {
-          scrollUp(parentList, linkScrollTop)
-        }
-
-        // If activeLink is below the visible area, scroll down
-        if (linkScrollTop + activeLink.clientHeight + 64 > parentTop) {
-          scrollDown(parentList, linkScrollTop, parentTop, activeLink.clientHeight)
-        }
-      }
+    // If activeLink is below the visible area, scroll down
+    if (linkScrollTop + activeLink.clientHeight + 64 > parentTop) {
+      scrollDown(parentList, linkScrollTop, parentTop, activeLink.clientHeight)
     }
   }
 

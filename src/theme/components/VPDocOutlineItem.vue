@@ -42,8 +42,8 @@ function handleClose(link: string, title: string) {
           </svg>
         </div>
       </a>
-      <template v-if="children?.length && !closedLinks.has(link)">
-        <VPDocOutlineItem :headers="children" />
+      <template v-if="children?.length">
+        <VPDocOutlineItem :headers="children" v-show="!closedLinks.has(link)" />
       </template>
     </li>
   </ul>
