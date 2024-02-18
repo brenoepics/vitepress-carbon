@@ -222,6 +222,7 @@ const pageName = computed(() =>
 
 .main {
   padding: 15px;
+  overflow: hidden;
 }
 
 .content-top {
@@ -328,7 +329,7 @@ const pageName = computed(() =>
   .main {
     order: 1;
     margin: 0;
-    max-width: 640px;
+    max-width: 780px;
   }
 }
 
