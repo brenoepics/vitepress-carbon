@@ -7,10 +7,10 @@ export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
   lang: 'en-US',
-  title: 'VitePress Mono',
-  description: 'Your VitePress Theme',
+  title: 'VitePress Carbon',
+  description: 'Carbon embraces GitHub\'s monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.',
   srcDir: 'src',
-  base: '/vitepress-mono/',
+  base: '/vitepress-carbon/',
   themeConfig: {
 
     logo: {
@@ -21,14 +21,9 @@ export default defineConfigWithTheme<ThemeConfig>({
       provider: 'local'
     },
 
-    carbonAds: {
-      code: 'CEBDT27Y',
-      placement: 'vuejsorg'
-    },
-
     outline: [2, 3],
     editLink: {
-      pattern: 'https://github.com/brenoepics/vitepress-mono/edit/main/demo/src/:path',
+      pattern: 'https://github.com/brenoepics/vitepress-carbon/edit/main/demo/src/:path',
       text: 'Edit this page on GitHub'
     },
 
@@ -37,7 +32,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/brenoepics/vitepress-mono' }
+      { icon: 'github', link: 'https://github.com/brenoepics/vitepress-carbon' }
     ],
 
     nav: [
@@ -68,7 +63,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     },
     resolve: {
       alias: {
-        'vitepress-mono': path.join(__dirname, '../../src')
+        'vitepress-carbon': path.join(__dirname, '../../src')
       }
     }
   }

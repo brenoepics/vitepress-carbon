@@ -29,12 +29,11 @@ const config = {
   ],
 
   markdown: {
-    theme: 'github-dark-dimmed',
     headers: {
       level: [2, 3]
     },
     config(md) {
-      
+
     }
   },
 

@@ -7,3 +7,4 @@ demo/.vitepress/cache
 .vscode/
 .idea/
 demo/.vitepress/dist/
+package-lock.json

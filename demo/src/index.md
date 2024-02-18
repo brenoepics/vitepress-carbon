@@ -2,31 +2,31 @@
 layout: home
 
 hero:
-  name: VitePress Mono
-  text: Your VP Theme
-  tagline: My great project tagline
+  name: VitePress Carbon
+  text: Streamlined Theme
+  tagline: Crafting with carbon's sleekness.
   image:
     src: https://imgur.com/76Ls3no.png
-    alt: VitePress Mono
+    alt: VitePress Carbon
   actions:
     - theme: brand
+      text: Introduction
+      link: /introduction
+    - theme: alt
       text: Markdown Examples
       link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
 
 features:
   - icon: 🛠️
-    title: Simple and minimal, always
-    details: Add a brief description of this feature.
+    title: Responsive Design
+    details: Ensure a consistent experience across devices.
     linkText: Explore
     link: https://github.com/brenoepics
-  - title: Another cool feature
-    details: Add a brief description of this feature.
+  - title: Seamless Integration
+    details: Integrate seamlessly with your VitePress projects.
     link: https://github.com/brenoepics
-  - title: Another cool feature
-    details: Add a brief description of this feature.
+  - title: Customizable Theming
+    details: Tailor the theme to suit your project's needs.
 
 ---
 
