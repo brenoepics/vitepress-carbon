@@ -327,7 +327,6 @@ const pageName = computed(() =>
   .main {
     order: 1;
     margin: 0;
-    max-width: 780px;
   }
 }
 
