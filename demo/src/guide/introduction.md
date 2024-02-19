@@ -4,11 +4,9 @@ VitePress Carbon is a sleek and minimalistic theme for VitePress, inspired by Gi
 
 ## Installation
 
-To create a project with VitePress Carbon theme, simply run this command:
+To create a project with VitePress Carbon theme, use this template:
 
-```bash
-TODO
-```
+[VitePress Carbon Template](https://github.com/brenoepics/vitepress-carbon-template)
 
 or add to an existing VitePress project:
 [Get Started](/guide/getting-started)
