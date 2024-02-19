@@ -20,7 +20,7 @@ defineProps<{
 <style scoped>
 .VPMenuGroup {
   margin: 12px -12px 0;
-  border-top: 1px solid var(--vp-c-divider);
+  border-top: 1px solid var(--vp-c-border);
   padding: 12px 12px 0;
 }
 

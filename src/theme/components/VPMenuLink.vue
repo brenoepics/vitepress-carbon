@@ -25,30 +25,36 @@ const { page } = useData()
 </template>
 
 <style scoped>
+.VPMenuLink {
+  margin-top: 3px;
+}
+
 .VPMenuGroup + .VPMenuLink {
   margin: 12px -12px 0;
-  border-top: 1px solid var(--vp-c-divider);
+  border-top: 1px solid var(--vp-c-border);
   padding: 12px 12px 0;
 }
 
 .link {
   display: block;
   border-radius: 6px;
-  padding: 0 12px;
-  line-height: 32px;
+  padding: 6px 8px;
+  line-height: 20px;
   font-size: 14px;
   font-weight: 500;
   color: var(--vp-c-text-1);
   white-space: nowrap;
-  transition: background-color 0.25s, color 0.25s;
 }
 
 .link:hover {
-  color: var(--vp-c-brand-1);
-  background-color: var(--vp-c-default-soft);
+  background-color: var(--color-action-list-item-default-hover-bg);
+}
+
+.link:active {
+  background-color: var(--color-action-list-item-default-active-bg);
 }
 
 .link.active {
-  color: var(--vp-c-brand-1);
+  background-color: var(--color-action-list-item-default-selected-bg);
 }
 </style>

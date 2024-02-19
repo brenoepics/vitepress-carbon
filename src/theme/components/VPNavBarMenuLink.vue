@@ -44,6 +44,7 @@ const { page } = useData()
   font-weight: 500;
   color: var(--vp-c-text-1);
   transition: opacity 0.25s;
+  height: 100%;
 }
 
 .VPNavBarMenuLink:hover, .active {

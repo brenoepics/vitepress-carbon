@@ -1,5 +1,3 @@
-// @ts-check
-
 /**
  * This file is intended to be required from VitePress
  * consuming project's config file.

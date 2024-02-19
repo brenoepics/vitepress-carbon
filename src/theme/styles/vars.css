@@ -135,7 +135,7 @@
 .dark {
   --vp-c-bg: #0d1117;
   --vp-c-bg-alt: #010409;
-  --vp-c-bg-elv: #202127;
+  --vp-c-bg-elv: var(--vp-c-bg-soft);
   --vp-c-bg-soft: #161b22;
   --vp-c-bg-soft-2: #1f252e;
   --vp-c-bg-code: #161b22;

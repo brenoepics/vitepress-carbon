@@ -12,8 +12,9 @@
     "downlevelIteration": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
+    "resolveJsonModule": true,
     "paths": {
-      "vitepress-carbon": ["./src/index.ts"]
+      "vitepress-carbon": ["src/index.ts"]
     }
   },
   "include": ["src", "demo/.vitepress/theme"],
