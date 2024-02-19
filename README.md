@@ -11,11 +11,9 @@ With its clean and elegant style, VitePress Carbon offers a seamless documentati
 
 ## Installation
 
-To create a project with VitePress Carbon theme, simply run this command:
+To create a project with VitePress Carbon theme, use this template:
 
-```bash
-TODO
-```
+[VitePress Carbon Template](https://github.com/brenoepics/vitepress-carbon-template)
 
 ## Usage
 
