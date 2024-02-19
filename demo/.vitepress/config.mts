@@ -1,7 +1,56 @@
 import { defineConfigWithTheme } from 'vitepress'
 import path from 'path'
-import baseConfig from '../../src/theme/config/baseConfig'
-import type { Config as ThemeConfig } from '../../src/theme/config'
+// @ts-ignore
+import baseConfig from 'vitepress-carbon/config'
+// @ts-ignore
+import type { ThemeConfig } from 'vitepress-carbon/config'
+import { DefaultTheme } from 'vitepress/theme'
+
+const guideGroupItems = [
+  { text: 'Introduction', link: '/guide/introduction' },
+  { text: 'Getting Started', link: '/guide/getting-started' },
+  { text: 'Configuration', link: '/guide/configuration' }
+]
+
+const themeGroupItems = [
+  { text: 'Extending', link: '/guide/extending-theme' }
+]
+
+const componentGroupItems = [
+  { text: 'Home', link: '/guide/home-component' }
+]
+
+const examplesItems = [
+  { text: 'Markdown Examples', link: '/examples/markdown-examples' },
+  { text: 'Runtime API Examples', link: '/examples/api-examples' }
+]
+
+const nav: DefaultTheme.NavItem[] = [
+  {
+    text: 'Guide',
+    activeMatch: `^/guide/`,
+    items: [
+      { text: 'Guide', items: guideGroupItems },
+      { text: 'Theme', items: themeGroupItems },
+      { text: 'Components', items: componentGroupItems }
+    ]
+  },
+  {
+    text: 'Examples',
+    activeMatch: `^/examples/`,
+    items: examplesItems
+  },  {
+    text: 'VitePress',
+    link: `https://vitepress.dev`
+  }
+]
+
+const sidebar = [
+  { text: 'Guide', items: guideGroupItems },
+  { text: 'Theme', items: themeGroupItems },
+  { text: 'Components', items: componentGroupItems },
+  { text: 'Examples', items: examplesItems }
+]
 
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
@@ -12,6 +61,9 @@ export default defineConfigWithTheme<ThemeConfig>({
   srcDir: 'src',
   base: '/vitepress-carbon/',
   themeConfig: {
+    nav,
+    sidebar,
+    outline: [2, 3],
 
     logo: {
       src: 'https://imgur.com/76Ls3no.png'
@@ -21,7 +73,6 @@ export default defineConfigWithTheme<ThemeConfig>({
       provider: 'local'
     },
 
-    outline: [2, 3],
     editLink: {
       pattern: 'https://github.com/brenoepics/vitepress-carbon/edit/main/demo/src/:path',
       text: 'Edit this page on GitHub'
@@ -33,28 +84,6 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/brenoepics/vitepress-carbon' }
-    ],
-
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Introduction', link: `/introduction` },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
-
-    sidebar: [
-      {
-        text: `Introduction`,
-        items: [
-          { text: 'Introduction', link: `/introduction` }
-        ]
-      },
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
     ]
   },
   vite: {
