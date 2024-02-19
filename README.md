@@ -1,4 +1,8 @@
 # VitePress Carbon
+![NPM Version](https://img.shields.io/npm/v/vitepress-carbon)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/brenoepics/vitepress-carbon/node.js.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=brenoepics_vitepress-carbon&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=brenoepics_vitepress-carbon)
+![GitHub Repo stars](https://img.shields.io/github/stars/brenoepics/vitepress-carbon)
 
 VitePress Carbon is a sleek and minimalistic theme for VitePress, inspired by GitHub's monochromatic design ethos.
 With its clean and elegant style, VitePress Carbon offers a seamless documentation experience, perfect for projects seeking simplicity and sophistication.
@@ -11,18 +15,17 @@ With its clean and elegant style, VitePress Carbon offers a seamless documentati
 
 ## Installation
 
-To create a project with VitePress Carbon theme, simply run this command:
+To create a project with VitePress Carbon theme, use this template:
 
-```bash
-TODO
-```
+[VitePress Carbon Template](https://github.com/brenoepics/vitepress-carbon-template)
 
 ## Usage
 
 To use this project, follow these docs:
-[VitePress Carbon Docs](https://brenoepics.github.io/vitepress-carbon/)
-[VitePress](https://vitepress.dev/)
-[Markdown](https://www.markdownguide.org/)
+
+- [VitePress Carbon Docs](https://brenoepics.github.io/vitepress-carbon/)
+- [VitePress](https://vitepress.dev/)
+- [Markdown](https://www.markdownguide.org/)
 
 ## Contributing
 
