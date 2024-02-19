@@ -18,9 +18,10 @@ To create a project with VitePress Carbon theme, use this template:
 ## Usage
 
 To use this project, follow these docs:
-[VitePress Carbon Docs](https://brenoepics.github.io/vitepress-carbon/)
-[VitePress](https://vitepress.dev/)
-[Markdown](https://www.markdownguide.org/)
+
+- [VitePress Carbon Docs](https://brenoepics.github.io/vitepress-carbon/)
+- [VitePress](https://vitepress.dev/)
+- [Markdown](https://www.markdownguide.org/)
 
 ## Contributing
 
