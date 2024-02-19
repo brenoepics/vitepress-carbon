@@ -6,7 +6,7 @@ VitePress Carbon is a sleek and minimalistic theme for VitePress, inspired by Gi
 
 ## Demo
 
-DEMO-LINK-HERE
+[GitHub-Page](https://brenoepics.github.io/vitepress-carbon/)
 
 ## Installation
 
