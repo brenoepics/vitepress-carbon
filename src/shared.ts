@@ -59,7 +59,8 @@ export function isExternal(path: string): boolean {
 }
 
 // https://github.com/rollup/rollup/blob/fec513270c6ac350072425cc045db367656c623b/src/utils/sanitizeFileName.ts
-
+// https://datatracker.ietf.org/doc/html/rfc2396
+// eslint-disable-next-line no-control-regex
 const INVALID_CHAR_REGEX = /[\u0000-\u001F"#$&*+,:;<=>?[\]^`{|}\u007F]/g
 const DRIVE_LETTER_REGEX = /^[a-z]:/i
 
