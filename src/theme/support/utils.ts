@@ -22,7 +22,7 @@ export function ensureStartingSlash(path: string): string {
 }
 
 export function normalizeLink(url: string): string {
-  const { pathname, search, hash, protocol } = new URL(url, 'http://a.com')
+  const { pathname, search, hash, protocol } = new URL(url, 'https://a.com')
 
   if (
     isExternal(url) ||
@@ -40,17 +40,17 @@ export function normalizeLink(url: string): string {
       pathname.endsWith('/') || pathname.endsWith('.html')
         ? url
         : url.replace(
-            /(?:(^\.+)\/)?.*$/,
-            `$1${pathname.replace(/(\.md)?$/, '')}${search}${hash}`
-          )
+          /(?:(^\.+)\/)?.*$/,
+          `$1${pathname.replace(/(\.md)?$/, '')}${search}${hash}`
+        )
   } else {
     normalizedPath =
       pathname.endsWith('/') || pathname.endsWith('.html')
         ? url
         : url.replace(
-            /(?:(^\.+)\/)?.*$/,
-            `$1${pathname.replace(/(\.md)?$/, '.html')}${search}${hash}`
-          )
+          /(?:(^\.+)\/)?.*$/,
+          `$1${pathname.replace(/(\.md)?$/, '.html')}${search}${hash}`
+        )
   }
 
   return withBase(normalizedPath)
