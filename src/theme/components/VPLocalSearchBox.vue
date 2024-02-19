@@ -33,9 +33,7 @@ import { createSearchTranslate } from '../support/translation'
 import { ModalTranslations } from 'vitepress/types/local-search'
 import { pathToFile } from '../composables/utils'
 
-const emit = defineEmits<{
-  (e: 'close'): void
-}>()
+const emit = defineEmits<(e: 'close') => void>()
 
 const el = shallowRef<HTMLElement>()
 const resultsEl = shallowRef<HTMLElement>()
@@ -117,8 +115,8 @@ const buttonText = computed(() => {
   const options = theme.value.search?.options ?? theme.value.algolia
 
   return (
-    options?.locales?.[localeIndex.value]?.translations?.button?.buttonText ||
-    options?.translations?.button?.buttonText ||
+    (options?.locales?.[localeIndex.value]?.translations?.button?.buttonText ??
+      options?.translations?.button?.buttonText) ??
     'Search'
   )
 })
@@ -202,7 +200,7 @@ debouncedWatch(
           const anchor = href?.startsWith('#') && href.slice(1)
           if (!anchor) return
           let html = ''
-          while ((el = el.nextElementSibling!) && !/^h[1-6]$/i.test(el.tagName))
+          while (!/^h[1-6]$/i.test(el.tagName) && (el = el.nextElementSibling!))
             html += el.outerHTML
           map!.set(anchor, html)
         })

@@ -11,13 +11,14 @@ export function throttleAndDebounce(fn: () => void, delay: number): () => void {
 
     if (!called) {
       fn()
-      ;(called = true) && setTimeout(() => (called = false), delay)
+      called = true
+      setTimeout(() => (called = false), delay)
     } else timeoutId = setTimeout(fn, delay)
   }
 }
 
 export function ensureStartingSlash(path: string): string {
-  return /^\//.test(path) ? path : `/${path}`
+  return path.startsWith('/') ? path : `/${path}`
 }
 
 export function normalizeLink(url: string): string {
@@ -33,16 +34,24 @@ export function normalizeLink(url: string): string {
 
   const { site } = useData()
 
-  const normalizedPath =
-    pathname.endsWith('/') || pathname.endsWith('.html')
-      ? url
-      : url.replace(
-          /(?:(^\.+)\/)?.*$/,
-          `$1${pathname.replace(
-            /(\.md)?$/,
-            site.value.cleanUrls ? '' : '.html'
-          )}${search}${hash}`
-        )
+  let normalizedPath: string
+  if (site.value.cleanUrls) {
+    normalizedPath =
+      pathname.endsWith('/') || pathname.endsWith('.html')
+        ? url
+        : url.replace(
+            /(?:(^\.+)\/)?.*$/,
+            `$1${pathname.replace(/(\.md)?$/, '')}${search}${hash}`
+          )
+  } else {
+    normalizedPath =
+      pathname.endsWith('/') || pathname.endsWith('.html')
+        ? url
+        : url.replace(
+            /(?:(^\.+)\/)?.*$/,
+            `$1${pathname.replace(/(\.md)?$/, '.html')}${search}${hash}`
+          )
+  }
 
   return withBase(normalizedPath)
 }

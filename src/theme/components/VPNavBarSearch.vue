@@ -126,7 +126,12 @@ if (__VP_LOCAL_SEARCH__) {
   })
 }
 
-const provider = __ALGOLIA__ ? 'algolia' : __VP_LOCAL_SEARCH__ ? 'local' : ''
+let provider: string
+if (__VP_LOCAL_SEARCH__) {
+  provider = __ALGOLIA__ ? 'algolia' : 'local'
+} else {
+  provider = __ALGOLIA__ ? 'algolia' : ''
+}
 </script>
 
 <template>

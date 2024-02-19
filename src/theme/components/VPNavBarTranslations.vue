@@ -3,10 +3,10 @@ import VPIconLanguages from './icons/VPIconLanguages.vue'
 import VPFlyout from './VPFlyout.vue'
 import VPMenuLink from './VPMenuLink.vue'
 import { useData } from '../composables/data'
-import { useLangs } from '../composables/langs'
+import { useLanguages } from '../composables/langs'
 
 const { theme } = useData()
-const { localeLinks, currentLang } = useLangs({ correspondingLink: true })
+const { localeLinks, currentLang } = useLanguages({ correspondingLink: true })
 </script>
 
 <template>

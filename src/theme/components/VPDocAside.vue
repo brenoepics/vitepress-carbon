@@ -13,7 +13,7 @@ const { theme } = useData()
     <slot name="aside-outline-before" />
     <VPDocAsideOutline />
     <slot name="aside-outline-after" />
-    <div class="VPDocAside-divider"></div>
+    <div v-if="theme.carbonAds" class="VPDocAside-divider"></div>
     <slot name="aside-ads-before" />
     <VPDocAsideCarbonAds v-if="theme.carbonAds" :carbon-ads="theme.carbonAds" />
     <slot name="aside-ads-after" />

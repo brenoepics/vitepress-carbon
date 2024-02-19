@@ -13,9 +13,7 @@ defineProps<{
   open: boolean
 }>()
 
-defineEmits<{
-  (e: 'open-menu'): void
-}>()
+defineEmits<(e: 'open-menu') => void>()
 
 const { theme, frontmatter } = useData()
 const { hasSidebar } = useSidebar()
