@@ -9,7 +9,7 @@ import { DocSearchProps } from 'vitepress/types/docsearch'
 import type MarkdownIt from 'markdown-it'
 import type { Options as MiniSearchOptions } from 'minisearch'
 
-export interface Config {
+export interface ThemeConfig {
   /**
    * The logo file of the site.
    *
@@ -495,7 +495,7 @@ export interface NotFoundOptions {
   /**
    * Set aria label for home link.
    *
-   * @default 'go to home'
+   * @default 'go home'
    */
   linkLabel?: string
 

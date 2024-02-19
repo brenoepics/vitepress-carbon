@@ -11,10 +11,10 @@ hero:
   actions:
     - theme: brand
       text: Introduction
-      link: /introduction
+      link: /guide/introduction
     - theme: alt
-      text: Markdown Examples
-      link: /markdown-examples
+      text: GitHub
+      link: https://github.com/brenoepics/vitepress-carbon
 
 features:
   - icon: 🛠️
