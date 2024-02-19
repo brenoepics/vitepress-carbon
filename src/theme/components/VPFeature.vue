@@ -171,10 +171,10 @@ function onMouseLeave() {
 }
 
 .details {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
   flex-grow: 1;
-  line-height: 15px;
-  font-size: 14px;
-  font-weight: 500;
   color: var(--vp-c-text-3);
 }
 
