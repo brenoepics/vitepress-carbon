@@ -2,7 +2,8 @@
 
 ## Overview
 
-To customize your site, you need first create a `.vitepress` directory inside your documentation directory. This is where all VitePress-specific files will be placed. Your project structure is probably like this:
+To customize your site, you need first create a `.vitepress` directory inside your documentation directory.
+This is where all VitePress-specific files will be placed. Your project structure is probably like this:
 
 ::: code-group
 
