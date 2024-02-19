@@ -1,6 +1,6 @@
 {
   "name": "vitepress-carbon",
-  "version": "0.0.14",
+  "version": "1.0.0",
   "description": "Carbon embraces GitHub's monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.",
   "main": "src/index.ts",
   "exports": {
@@ -59,10 +59,10 @@
     "picocolors": "^1.0.0",
     "prettier": "^2.7.1",
     "typescript": "^4.9.5",
-    "vitepress": "^1.0.0-alpha.60",
+    "vitepress": "^1.0.0-rc.44",
     "vue": "^3.2.47"
   },
   "peerDependencies": {
-    "vitepress": "^1.0.0-alpha.60"
+    "vitepress": "^1.0.0-rc.44"
   }
 }
