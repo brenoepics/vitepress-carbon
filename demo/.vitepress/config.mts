@@ -1,9 +1,7 @@
 import { defineConfigWithTheme } from 'vitepress'
 import path from 'path'
-// @ts-ignore
-import baseConfig from 'vitepress-carbon/config'
-// @ts-ignore
-import type { ThemeConfig } from 'vitepress-carbon/config'
+import baseConfig from '../../src/theme/config/baseConfig'
+import type { ThemeConfig } from '../../src'
 import { DefaultTheme } from 'vitepress/theme'
 
 const guideGroupItems = [
