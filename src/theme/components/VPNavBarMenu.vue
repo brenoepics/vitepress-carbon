@@ -26,6 +26,7 @@ const { theme } = useData()
 @media (min-width: 768px) {
   .VPNavBarMenu {
     display: flex;
+    align-items: center;
   }
 }
 </style>

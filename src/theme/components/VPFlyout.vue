@@ -57,27 +57,27 @@ function onBlur() {
 <style scoped>
 .VPFlyout {
   position: relative;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding-inline: 8px;
+  padding-block: 6px;
+  line-height: 1.4285714286;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  transition: opacity 0.25s;
+  height: 100%;
 }
 
-.VPFlyout:hover {
-  color: var(--vp-c-brand-1);
-  transition: color 0.25s;
+.VPFlyout:hover, .active {
+  background-color: var(--color-action-list-item-default-hover-bg);
+  border-color: var(--color-action-list-item-default-hover-border);
 }
 
-.VPFlyout:hover .text {
-  color: var(--vp-c-text-2);
-}
-
-.VPFlyout:hover .icon {
-  fill: var(--vp-c-text-2);
-}
-
-.VPFlyout.active .text {
-  color: var(--vp-c-brand-1);
-}
-
-.VPFlyout.active:hover .text {
-  color: var(--vp-c-brand-2);
+.VPFlyout:active {
+  background-color: var(--color-action-list-item-default-active-bg);
+  border-color: var(--color-action-list-item-default-active-border);
 }
 
 .VPFlyout:hover .menu,
@@ -96,16 +96,13 @@ function onBlur() {
 .button {
   display: flex;
   align-items: center;
-  padding: 0 12px;
-  height: var(--vp-nav-height);
   color: var(--vp-c-text-1);
-  transition: color 0.5s;
+  height: 100%;
 }
 
 .text {
   display: flex;
   align-items: center;
-  line-height: var(--vp-nav-height);
   font-size: 14px;
   font-weight: 500;
   color: var(--vp-c-text-1);
@@ -113,23 +110,23 @@ function onBlur() {
 }
 
 .option-icon {
-  margin-right: 0px;
+  margin-right: 0;
   width: 16px;
   height: 16px;
-  fill: currentColor;
+  fill: var(--vp-c-text-2)
 }
 
 .text-icon {
   margin-left: 4px;
   width: 14px;
   height: 14px;
-  fill: currentColor;
+  fill: var(--vp-c-text-2)
 }
 
 .icon {
   width: 20px;
   height: 20px;
-  fill: currentColor;
+  fill: var(--vp-c-text-2);
   transition: fill 0.25s;
 }
 

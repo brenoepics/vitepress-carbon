@@ -115,7 +115,6 @@ function handleClose(link: string, title: string) {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  transition: background-color 0.25s;
 }
 
 
