@@ -7,13 +7,11 @@ import VPDocAside from './VPDocAside.vue'
 import VPDocFooter from './VPDocFooter.vue'
 import VPDocFooterLastUpdated from './VPDocFooterLastUpdated.vue'
 import { useEditLink } from '../composables/edit-link'
-import { usePrevNext } from '../composables/prev-next'
 import VPLink from './VPLink.vue'
 
 const { theme, page, frontmatter } = useData()
 
 const editLink = useEditLink()
-const control = usePrevNext()
 
 const hasEditLink = computed(() => {
   return theme.value.editLink && frontmatter.value.editLink !== false

@@ -200,7 +200,7 @@ debouncedWatch(
           const anchor = href?.startsWith('#') && href.slice(1)
           if (!anchor) return
           let html = ''
-          while (!/^h[1-6]$/i.test(el.tagName) && (el = el.nextElementSibling!))
+          while ((el = el.nextElementSibling!) && !/^h[1-6]$/i.test(el.tagName))
             html += el.outerHTML
           map!.set(anchor, html)
         })
