@@ -101,17 +101,17 @@ export function hasActiveLink(
     return items.some((item) => hasActiveLink(path, item))
   }
 
+  if (items.items) {
+    return isActive(path, items.link) ? true : hasActiveLink(path, items.items)
+  }
+
   return isActive(path, items.link)
-    ? true
-    : items.items
-    ? hasActiveLink(path, items.items)
-    : false
 }
 
 function addBase(items: SidebarItem[], _base?: string): SidebarItem[] {
   return [...items].map((_item) => {
     const item = { ..._item }
-    const base = item.base || _base
+    const base = item.base ?? _base
     if (base && item.link) item.link = base + item.link
     if (item.items) item.items = addBase(item.items, base)
     return item

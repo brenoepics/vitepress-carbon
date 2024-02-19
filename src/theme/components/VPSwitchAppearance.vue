@@ -13,8 +13,8 @@ const toggleAppearance = inject('toggle-appearance', () => {
 
 const switchTitle = computed(() => {
   return isDark.value
-    ? theme.value.lightModeSwitchTitle || 'Switch to light theme'
-    : theme.value.darkModeSwitchTitle || 'Switch to dark theme'
+    ? theme.value.lightModeSwitchTitle ?? 'Switch to light theme'
+    : theme.value.darkModeSwitchTitle ?? 'Switch to dark theme'
 })
 </script>
 

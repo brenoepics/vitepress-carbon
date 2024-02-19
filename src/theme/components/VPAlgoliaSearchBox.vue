@@ -42,12 +42,8 @@ async function update() {
 }
 
 function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
-  const options = Object.assign<
-    {},
-    DefaultTheme.AlgoliaSearchOptions,
-    Partial<DocSearchProps>
-  >({}, userOptions, {
-    container: '#docsearch',
+  const options = ({
+    ...userOptions, container: '#docsearch',
 
     navigator: {
       navigate({ itemUrl }) {
@@ -65,11 +61,9 @@ function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
       }
     },
 
-    transformItems(items) {
+    transformItems(items: any[]) {
       return items.map((item) => {
-        return Object.assign({}, item, {
-          url: getRelativePath(item.url)
-        })
+        return { ...item, url: getRelativePath(item.url) }
       })
     },
 

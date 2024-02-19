@@ -5,10 +5,10 @@ import VPMenuLink from './VPMenuLink.vue'
 import VPSwitchAppearance from './VPSwitchAppearance.vue'
 import VPSocialLinks from './VPSocialLinks.vue'
 import { useData } from '../composables/data'
-import { useLangs } from '../composables/langs'
+import { useLanguages } from '../composables/langs'
 
 const { site, theme } = useData()
-const { localeLinks, currentLang } = useLangs({ correspondingLink: true })
+const { localeLinks, currentLang } = useLanguages({ correspondingLink: true })
 
 const hasExtraContent = computed(
   () =>

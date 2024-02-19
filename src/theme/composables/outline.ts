@@ -76,14 +76,15 @@ export function resolveHeaders(
   const levelsRange =
     (typeof range === 'object' && !Array.isArray(range)
       ? range.level
-      : range) || 2
+      : range) ?? 2
 
-  const [high, low]: [number, number] =
-    typeof levelsRange === 'number'
-      ? [levelsRange, levelsRange]
-      : levelsRange === 'deep'
-      ? [2, 6]
-      : levelsRange
+  let high: number, low: number
+  if (levelsRange === 'deep') {
+    ;[high, low] = [2, 6]
+  } else {
+    ;[high, low] =
+      typeof levelsRange === 'number' ? [levelsRange, levelsRange] : levelsRange
+  }
 
   headers = headers.filter((h) => h.level >= high && h.level <= low)
   // clear previous caches
@@ -102,7 +103,7 @@ export function resolveHeaders(
       for (let j = i - 1; j >= 0; j--) {
         const prev = headers[j]
         if (prev.level < cur.level) {
-          ;(prev.children || (prev.children = [])).push(cur)
+          ;(prev.children ?? (prev.children = [])).push(cur)
           continue outer
         }
       }

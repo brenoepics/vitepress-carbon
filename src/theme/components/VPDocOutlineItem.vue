@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { MenuItem } from '../composables/outline'
-import { reactive, ref } from 'vue'
+import { reactive } from 'vue'
 
 defineProps<{
   headers: MenuItem[]
@@ -10,7 +10,7 @@ defineProps<{
 const closedLinks = reactive(new Map([['', '']]))
 
 function onClick({ target: el }: Event) {
-  const id = (el as HTMLAnchorElement).href!?.split('#')[1]
+  const id = (el as HTMLAnchorElement).href?.split('#')[1]
   const heading = document.getElementById(decodeURIComponent(id))
   heading?.focus({ preventScroll: true })
 }

@@ -2,10 +2,10 @@
 import { onMounted, ref } from 'vue'
 import { withBase } from 'vitepress'
 import { useData } from './composables/data'
-import { useLangs } from './composables/langs'
+import { useLanguages } from './composables/langs'
 
 const { site, theme } = useData()
-const { localeLinks } = useLangs({ removeCurrent: false })
+const { localeLinks } = useLanguages({ removeCurrent: false })
 
 const root = ref('/')
 onMounted(() => {
@@ -14,7 +14,7 @@ onMounted(() => {
     .replace(/(^.*?\/).*$/, '/$1')
   if (localeLinks.value.length) {
     root.value =
-      localeLinks.value.find(({ link }) => link.startsWith(path))?.link ||
+      localeLinks.value.find(({ link }) => link.startsWith(path))?.link ??
       localeLinks.value[0].link
   }
 })

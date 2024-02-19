@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useData } from '../composables/data'
-import { useLangs } from '../composables/langs'
+import { useLanguages } from '../composables/langs'
 import { useSidebar } from '../composables/sidebar'
 import { normalizeLink } from '../support/utils'
 import VPImage from './VPImage.vue'
 
 const { site, theme } = useData()
 const { hasSidebar } = useSidebar()
-const { currentLang } = useLangs()
+const { currentLang } = useLanguages()
 
 const link = computed(() =>
   typeof theme.value.logoLink === 'string'

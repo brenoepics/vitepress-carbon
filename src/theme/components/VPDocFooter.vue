@@ -1,15 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useData } from '../composables/data'
-import { useEditLink } from '../composables/edit-link'
 import { usePrevNext } from '../composables/prev-next'
-import VPIconEdit from './icons/VPIconEdit.vue'
 import VPLink from './VPLink.vue'
-import VPDocFooterLastUpdated from './VPDocFooterLastUpdated.vue'
 
 const { theme, page, frontmatter } = useData()
 
-const editLink = useEditLink()
 const control = usePrevNext()
 
 const hasEditLink = computed(() => {
@@ -19,7 +15,7 @@ const hasLastUpdated = computed(() => {
   return page.value.lastUpdated && frontmatter.value.lastUpdated !== false
 })
 const showFooter = computed(() => {
-  return hasEditLink.value || hasLastUpdated.value || control.value.prev || control.value.next
+  return (hasEditLink.value ?? hasLastUpdated.value) ?? control.value.prev ?? control.value.next
 })
 </script>
 

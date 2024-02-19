@@ -192,14 +192,11 @@ function onMouseLeave() {
 }
 
 .link-text:hover {
+  text-decoration: underline;
   background: linear-gradient(currentColor 0 0)
   bottom left/
     100% 0.1em
   no-repeat;
-}
-
-.link-text:hover {
-  text-decoration: underline;
 }
 
 .link-arrow {
