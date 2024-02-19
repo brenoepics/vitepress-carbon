@@ -10,4 +10,4 @@ const VPCarbon: Theme = {
 
 export { VPCarbon }
 
-export type { Config } from './config'
+export type { ThemeConfig } from './config'

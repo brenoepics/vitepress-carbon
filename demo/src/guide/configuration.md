@@ -13,18 +13,18 @@ To customize your site, you need first create a `.vitepress` directory inside yo
 └─ config.js
 ```
 
-``` [Common JS]
-.vitepress
-├─ theme
-│  └─ index.js
-└─ config.cjs
-```
-
 ``` [TypeScript]
 .vitepress
 ├─ theme
 │  └─ index.ts
 └─ config.ts
+```
+
+``` [JS ES module]
+.vitepress
+├─ theme
+│  └─ index.js
+└─ config.mjs
 ```
 
 ``` [TS ES module]
@@ -47,10 +47,10 @@ export default VPCarbon
 
 ## Config Theme
 
-Configure the theme config in the `.vitepress/config.cjs` file.
+Configure the theme config in the `.vitepress/config.mjs` file.
 
 ```js{3,6}
-// .vitepress/config.cjs
+// .vitepress/config.mjs
 import { defineConfig } from 'vitepress'
 import baseConfig from 'vitepress-carbon/config'
 

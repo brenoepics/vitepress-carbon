@@ -8,3 +8,4 @@ demo/.vitepress/cache
 .idea/
 demo/.vitepress/dist/
 package-lock.json
+.vitepress/
