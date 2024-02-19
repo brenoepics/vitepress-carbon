@@ -40,17 +40,17 @@ export function normalizeLink(url: string): string {
       pathname.endsWith('/') || pathname.endsWith('.html')
         ? url
         : url.replace(
-          /(?:(^\.+)\/)?.*$/,
-          `$1${pathname.replace(/(\.md)?$/, '')}${search}${hash}`
-        )
+            /(?:(^\.+)\/)?.*$/,
+            `$1${pathname.replace(/(\.md)?$/, '')}${search}${hash}`
+          )
   } else {
     normalizedPath =
       pathname.endsWith('/') || pathname.endsWith('.html')
         ? url
         : url.replace(
-          /(?:(^\.+)\/)?.*$/,
-          `$1${pathname.replace(/(\.md)?$/, '.html')}${search}${hash}`
-        )
+            /(?:(^\.+)\/)?.*$/,
+            `$1${pathname.replace(/(\.md)?$/, '.html')}${search}${hash}`
+          )
   }
 
   return withBase(normalizedPath)

@@ -36,7 +36,7 @@
     "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
     "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
     "type": "tsc --noEmit",
-    "type:npx": "tsc npx . init",
+    "type:npx": "tsc && npx . init",
     "test": "npm run lint && npm run type",
     "dev": "vitepress dev demo",
     "demo-build": "vitepress build demo",
