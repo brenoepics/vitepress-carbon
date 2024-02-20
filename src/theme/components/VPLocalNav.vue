@@ -54,7 +54,9 @@ const classes = computed(() => {
 
 <template>
   <div
-    v-if="frontmatter.layout !== 'home' && (!emptyAndNoSidebar || y >= navHeight)"
+    v-if="
+      frontmatter.layout !== 'home' && (!emptyAndNoSidebar || y >= navHeight)
+    "
     :class="classes"
   >
     <div class="container">
@@ -107,7 +109,7 @@ const classes = computed(() => {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1460px) {
   .VPLocalNav {
     display: none;
   }
@@ -115,7 +117,9 @@ const classes = computed(() => {
 
 @media (min-width: 1440px) {
   .VPLocalNav.has-sidebar {
-    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
+    padding-left: calc(
+      (100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width)
+    );
   }
 }
 
