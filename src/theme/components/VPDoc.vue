@@ -209,7 +209,7 @@ const pageName = computed(() =>
   top: 0;
   padding-top: calc(
     var(--vp-nav-height) + var(--vp-layout-top-height, 0px) +
-      var(--vp-doc-top-height, 0px) + 10px
+      var(--vp-doc-top-height, 0px) + 40px
   );
   width: 224px;
   height: 100vh;
