@@ -36,6 +36,7 @@
     "test": "npm run lint && npm run type",
     "dev": "vitepress dev demo",
     "demo-build": "vitepress build demo",
+    "demo-preview": "vitepress preview demo",
     "serve": "npm run demo-build && vitepress serve demo"
   },
   "dependencies": {
