@@ -87,8 +87,14 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   head: [
     ['link', { rel: 'icon', href: 'https://brenoepics.github.io/vitepress-carbon/logo.svg' }],
+    ['meta', { name: 'description', content: 'Carbon embraces GitHub\'s monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.' }],
+    ['meta', { property: 'og:url', content: 'https://brenoepics.github.io/vitepress-carbon/' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: 'VitePress Carbon' }],
+    ['meta', { property: 'og:description', content: 'Carbon embraces GitHub\'s monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.' }],
     ['meta', { property: 'og:image', content: 'https://brenoepics.github.io/vitepress-carbon/site-card.jpg' }],
-    //<meta property="og:image" content="t" />
+    ['meta', { property:'theme-color', name: 'theme-color', content: '#41ad4f' }],
+    ['meta', { property:'twitter:card', name: 'twitter:card', content: 'summary_large_image' }],
   ],
 
   vite: {
