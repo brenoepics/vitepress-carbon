@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { type Ref, inject, ref } from 'vue'
+import { type Ref, inject } from 'vue'
 import type { DefaultTheme } from 'vitepress/theme'
 import VPButton from './VPButton.vue'
 import VPImage from './VPImage.vue'
-import VPFeaturePattern from './VPFeaturePattern.vue'
 
 export interface HeroAction {
   theme?: 'brand' | 'alt'
@@ -21,53 +20,12 @@ defineProps<{
   actions?: HeroAction[]
 }>()
 
-const mouseX = ref(0)
-const mouseY = ref(0)
-const x = ref(0)
-const y = ref(0)
-const verticalX = ref(0)
-const verticalY = ref(0)
-
-function onMouseMove(event: MouseEvent) {
-  const { clientX, clientY } = event
-  const { left, top } = (event.currentTarget as HTMLDivElement).getBoundingClientRect()
-  mouseX.value = clientX - left
-  mouseY.value = clientY - top
-
-  const middleX = window.innerWidth / 2
-  const middleY = window.innerHeight / 2
-
-  const offsetX = ((clientX - middleX) / middleX)
-  const offsetY = ((clientY - middleY) / middleY)
-
-  y.value = mouseX.value > mouseY.value ? -1 * offsetY : offsetY
-  x.value = mouseY.value > mouseX.value ? -1 * offsetX : offsetX
-
-  // Calculate vertical movement
-  const verticalOffsetX = ((clientX - middleX) / middleX)
-  const verticalOffsetY = ((clientY - middleY) / middleY)
-
-  verticalY.value = mouseX.value > mouseY.value ? -1 * verticalOffsetX : verticalOffsetX
-  verticalX.value = mouseY.value > mouseX.value ? -1 * verticalOffsetY : verticalOffsetY
-}
-
-function onMouseLeave() {
-  y.value = 0
-  x.value = 0
-  verticalY.value = 0
-  verticalX.value = 0
-}
-
 const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
 </script>
 
 <template>
   <div class="VPHero" :class="{ 'has-image': image || heroImageSlotExists }">
-    <div class="container"
-         @mousemove="onMouseMove"
-         @mouseout="onMouseLeave"
-         :style="{ transform: `perspective(700px) rotateX(${verticalX}deg) rotateY(${verticalY}deg)` }">
-      <VPFeaturePattern :mouse-x="mouseX" :mouse-y="mouseY" class="VPFeaturePN" />
+    <div class="container">
       <div class="main">
         <slot name="home-hero-info-before" />
         <slot name="home-hero-info">
@@ -130,26 +88,6 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
   flex-direction: column;
   margin: 0 auto;
   max-width: 1152px;
-  position: relative;
-  border: 1px solid var(--vp-c-border);
-  border-radius: 6px;
-  height: 100%;
-  background-color: var(--vp-c-bg-soft);
-  transition: border-color 0.25s, background-color 0.25s, transform 0.3s ease;
-  font-weight: 600;
-  padding: 64px 128px 64px 64px;
-}
-
-.container:hover .VPFeaturePN {
-  opacity: 1;
-}
-.VPFeaturePN {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.3s ease;
 }
 
 @media (min-width: 960px) {
@@ -164,7 +102,6 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
   order: 2;
   flex-grow: 1;
   flex-shrink: 0;
-  transition: transform 0.3s ease;
 }
 
 .VPHero.has-image .container {
@@ -194,9 +131,8 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
   letter-spacing: -0.4px;
   line-height: 40px;
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 700;
   white-space: pre-wrap;
-  font-family: var(--vp-font-family-custom);
 }
 
 .VPHero.has-image .name,
@@ -244,7 +180,7 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
   font-size: 18px;
   font-weight: 500;
   white-space: pre-wrap;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 
 .VPHero.has-image .tagline {

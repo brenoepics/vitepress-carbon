@@ -6,14 +6,14 @@ hero:
   text: Streamlined Theme
   tagline: Crafting with carbon's sleekness.
   image:
-    src: https://imgur.com/76Ls3no.png
+    src: ./bg.svg
     alt: VitePress Carbon
   actions:
     - theme: brand
-      text: Introduction
+      text: Get Started
       link: /guide/introduction
     - theme: alt
-      text: GitHub
+      text: View on GitHub
       link: https://github.com/brenoepics/vitepress-carbon
 
 features:

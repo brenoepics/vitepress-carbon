@@ -64,7 +64,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     outline: [2, 3],
 
     logo: {
-      src: 'https://imgur.com/76Ls3no.png'
+      src: './logo.svg'
     },
 
     search: {
@@ -84,6 +84,13 @@ export default defineConfigWithTheme<ThemeConfig>({
       { icon: 'github', link: 'https://github.com/brenoepics/vitepress-carbon' }
     ]
   },
+
+  head: [
+    ['link', { rel: 'icon', href: './logo.svg' }],
+    ['meta', { property: 'og:image', content: './site-card.jpg' }],
+    //<meta property="og:image" content="t" />
+  ],
+
   vite: {
     build: {
       minify: false
