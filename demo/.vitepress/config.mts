@@ -86,8 +86,8 @@ export default defineConfigWithTheme<ThemeConfig>({
   },
 
   head: [
-    ['link', { rel: 'icon', href: './logo.svg' }],
-    ['meta', { property: 'og:image', content: './site-card.jpg' }],
+    ['link', { rel: 'icon', href: 'https://brenoepics.github.io/vitepress-carbon/logo.svg' }],
+    ['meta', { property: 'og:image', content: 'https://brenoepics.github.io/vitepress-carbon/site-card.jpg' }],
     //<meta property="og:image" content="t" />
   ],
 
