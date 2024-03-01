@@ -13,10 +13,11 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "resolveJsonModule": true,
+    "declaration": true,
     "paths": {
       "vitepress-carbon": ["src/index.ts"]
     }
   },
-  "include": ["src", "demo/.vitepress/theme"],
-  "exclude": ["node_modules"]
+  "include": ["src"],
+  "exclude": ["node_modules", "demo"]
 }
