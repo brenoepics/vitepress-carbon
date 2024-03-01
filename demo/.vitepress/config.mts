@@ -57,7 +57,6 @@ export default defineConfigWithTheme<ThemeConfig>({
   title: 'VitePress Carbon',
   description: 'Carbon embraces GitHub\'s monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.',
   srcDir: 'src',
-  base: '/vitepress-carbon/',
   themeConfig: {
     nav,
     sidebar,
