@@ -1,6 +1,6 @@
 {
   "name": "vitepress-carbon",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Carbon embraces GitHub's monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.",
   "main": "dist/index.js",
   "exports": {
@@ -31,7 +31,7 @@
     "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
     "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
     "clean": "rimraf dist/",
-    "copy": "copyfiles -u 1 ./src/theme/**/*.vue ./src/theme/**/*.js ./src/theme/**/*.d.ts ./src/theme/**/*.css ./dist/",
+    "copy": "copyfiles -u 1 ./src/theme/*.vue ./src/theme/**/*.vue ./src/theme/**/*.js ./src/theme/**/*.d.ts ./src/theme/**/*.css ./dist/",
     "type": "tsc --noEmit",
     "build": "npm run clean && tsc && npm run copy",
     "pub": "npm run build && npm version patch --force && npm publish",
