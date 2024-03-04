@@ -31,7 +31,7 @@
     "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
     "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
     "clean": "rimraf dist/",
-    "copy": "copyfiles -u 1 src/**/*.vue src/**/*.js src/**/*.d.ts src/**/*.css dist/",
+    "copy": "copyfiles -u 1 ./src/theme/**/*.vue ./src/theme/**/*.js ./src/theme/**/*.d.ts ./src/theme/**/*.css ./dist/",
     "type": "tsc --noEmit",
     "build": "npm run clean && tsc && npm run copy",
     "pub": "npm run build && npm version patch --force && npm publish",
