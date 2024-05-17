@@ -163,7 +163,7 @@
 
 .vp-doc tr {
   background-color: var(--vp-c-bg);
-  border-top: 1px solid var(--vp-c-divider);
+  border-top: 1px solid var(--vp-c-border);
   transition: background-color 0.5s;
 }
 
@@ -173,7 +173,7 @@
 
 .vp-doc th,
 .vp-doc td {
-  border: 1px solid var(--vp-c-divider);
+  border: 1px solid var(--vp-c-border);
   padding: 8px 16px;
 }
 
@@ -196,7 +196,7 @@
 .vp-doc hr {
   margin: 16px 0;
   border: none;
-  border-top: 1px solid var(--vp-c-divider);
+  border-top: 1px solid var(--vp-c-border);
 }
 
 /**
