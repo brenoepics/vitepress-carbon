@@ -16,7 +16,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   metaChunk: true,
 
   sitemap: {
-    hostname: 'carbon.breno.tech',
+    hostname: 'https://carbon.breno.tech',
     transformItems(items) {
       return items.filter((item) => !item.url.includes('migration'))
     }
