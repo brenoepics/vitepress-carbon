@@ -4,6 +4,52 @@ import baseConfig from '../../src/theme/config/baseConfig'
 import type { ThemeConfig } from '../../src'
 import { DefaultTheme } from 'vitepress/theme'
 
+const guideGroupItems = [
+  { text: 'Introduction', link: '/guide/introduction' },
+  { text: 'Getting Started', link: '/guide/getting-started' },
+  { text: 'Configuration', link: '/guide/configuration' }
+]
+
+const themeGroupItems = [
+  { text: 'Extending', link: '/guide/extending-theme' }
+]
+
+const componentGroupItems = [
+  { text: 'Home', link: '/guide/home-component' }
+]
+
+const examplesItems = [
+  { text: 'Markdown Examples', link: '/examples/markdown-examples' },
+  { text: 'Runtime API Examples', link: '/examples/api-examples' }
+]
+
+const nav: DefaultTheme.NavItem[] = [
+  {
+    text: 'Guide',
+    activeMatch: `^/guide/`,
+    items: [
+      { text: 'Guide', items: guideGroupItems },
+      { text: 'Theme', items: themeGroupItems },
+      { text: 'Components', items: componentGroupItems }
+    ]
+  },
+  {
+    text: 'Examples',
+    activeMatch: `^/examples/`,
+    items: examplesItems
+  },  {
+    text: 'VitePress',
+    link: `https://vitepress.dev`
+  }
+]
+
+const sidebar = [
+  { text: 'Guide', items: guideGroupItems },
+  { text: 'Theme', items: themeGroupItems },
+  { text: 'Components', items: componentGroupItems },
+  { text: 'Examples', items: examplesItems }
+]
+
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
@@ -71,50 +117,4 @@ export default defineConfigWithTheme<ThemeConfig>({
     }
   }
 })
-
-const guideGroupItems = [
-  { text: 'Introduction', link: '/guide/introduction' },
-  { text: 'Getting Started', link: '/guide/getting-started' },
-  { text: 'Configuration', link: '/guide/configuration' }
-]
-
-const themeGroupItems = [
-  { text: 'Extending', link: '/guide/extending-theme' }
-]
-
-const componentGroupItems = [
-  { text: 'Home', link: '/guide/home-component' }
-]
-
-const examplesItems = [
-  { text: 'Markdown Examples', link: '/examples/markdown-examples' },
-  { text: 'Runtime API Examples', link: '/examples/api-examples' }
-]
-
-const nav: DefaultTheme.NavItem[] = [
-  {
-    text: 'Guide',
-    activeMatch: `^/guide/`,
-    items: [
-      { text: 'Guide', items: guideGroupItems },
-      { text: 'Theme', items: themeGroupItems },
-      { text: 'Components', items: componentGroupItems }
-    ]
-  },
-  {
-    text: 'Examples',
-    activeMatch: `^/examples/`,
-    items: examplesItems
-  },  {
-    text: 'VitePress',
-    link: `https://vitepress.dev`
-  }
-]
-
-const sidebar = [
-  { text: 'Guide', items: guideGroupItems },
-  { text: 'Theme', items: themeGroupItems },
-  { text: 'Components', items: componentGroupItems },
-  { text: 'Examples', items: examplesItems }
-]
 
