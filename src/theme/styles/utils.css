@@ -1,6 +1,5 @@
 /* webfont-marker-begin */
 @import url('https://fonts.googleapis.com/css?family=JetBrains%20Mono:wght@100..900&display=swap');
-@import url('https://fonts.cdnfonts.com/css/mona-sans');
 @import url('https://fonts.cdnfonts.com/css/hubot-sans');
 
 html body {
@@ -15,6 +14,16 @@ html body {
     local('Source Han Sans SC');
     unicode-range: U+2018, U+2019, U+201C, U+201D; /* 分别是 ‘’“” */
 }
+
+@font-face {
+  font-family: 'Mona Sans';
+  src:
+    url('../fonts/Mona-Sans.woff2') format('woff2 supports variations'),
+    url('../fonts/Mona-Sans.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
 
 .visually-hidden {
   position: absolute;
