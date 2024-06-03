@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PropType, ref } from 'vue'
+import { PropType } from 'vue'
 import VPImage from './VPImage.vue'
 import VPIconCode from './icons/VPIconCode.vue'
 
@@ -39,9 +39,10 @@ defineProps({
 </script>
 
 <template>
-  <div class="before-git">
-    <div class="string-highlight" :style="{background: `linear-gradient(${stringHighlightColors.join(', ')})`}" />
-    <div class="git-icon" :class="{ 'glowing-active': glowingActive }">
+  <div class="side-highlight">
+    <div class="string-highlight"
+         :style="{backgroundColor: `linear-gradient(${stringHighlightColors.join(', ')})`}" />
+    <div class="icon" :class="{ 'glowing-active': glowingActive }">
       <div v-if="typeof icon === 'object' && icon.wrap" class="icon">
         <VPImage
           :image="icon"
@@ -63,13 +64,13 @@ defineProps({
       ></span>
     </div>
     <div class="string-highlight"
-         :style="{background: `linear-gradient(${stringHighlightColors.reverse().join(', ')})`}" />
+         :style="{backgroundColor: `linear-gradient(${stringHighlightColors.reverse().join(', ')})`}" />
   </div>
 </template>
 
 <style scoped>
 
-.before-git {
+.side-highlight {
   display: flex;
   width: 8.3%;
   height: auto;
@@ -78,7 +79,7 @@ defineProps({
   align-items: center;
 }
 
-.git-icon {
+.icon {
   height: 25px;
   width: 25px;
   position: relative;
@@ -122,6 +123,7 @@ defineProps({
 .string-highlight {
   height: calc(100% / 2 - 10px);
   width: 3px;
+  border-radius: 3px;
 }
 
 .string-highlight:first-child {
