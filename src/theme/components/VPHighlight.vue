@@ -21,7 +21,7 @@ export type HighlightIcon =
   wrap?: boolean
 }
 
-const props = defineProps({
+defineProps({
   glowingActive: {
     type: Boolean,
     default: false
@@ -36,8 +36,6 @@ const props = defineProps({
   }
 })
 
-const glowingActive = ref(props.glowingActive)
-const stringHighlightColors = ref(props.stringHighlightColors)
 </script>
 
 <template>
