@@ -24,11 +24,13 @@ features:
     title: Responsive Design
     details: Ensure a consistent experience across devices.
     linkText: Explore
-    link: https://github.com/brenoepics
-  - title: Seamless Integration
+    link: https://github.com/brenoepics  
+  - icon: 🧩
+    title: Seamless Integration
     details: Integrate seamlessly with your VitePress projects.
     link: https://github.com/brenoepics
-  - title: Customizable Theming
+  - icon: 🎨
+    title: Customizable Theming
     details: Tailor the theme to suit your project's needs.
 
 ---
