@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { type Ref, inject } from 'vue'
+import { inject, type Ref } from 'vue'
 import type { DefaultTheme } from 'vitepress/theme'
 import VPButton from './VPButton.vue'
 import VPImage from './VPImage.vue'
+import VPHighlight, { HighlightIcon } from './VPHighlight.vue'
 
 export interface HeroAction {
   theme?: 'brand' | 'alt'
@@ -18,6 +19,7 @@ defineProps<{
   tagline?: string
   image?: DefaultTheme.ThemeableImage
   actions?: HeroAction[]
+  icon?: HighlightIcon
 }>()
 
 const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
@@ -27,30 +29,32 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
   <div class="VPHero" :class="{ 'has-image': image || heroImageSlotExists }">
     <div class="container">
       <div class="main">
-        <slot name="home-hero-info-before" />
-        <slot name="home-hero-info">
-          <h1 v-if="name" class="name">
-            <span v-html="name" class="clip"></span>
-          </h1>
-          <p v-if="text" v-html="text" class="text"></p>
-          <p v-if="tagline" v-html="tagline" class="tagline"></p>
-        </slot>
-        <slot name="home-hero-info-after" />
-
-        <div v-if="actions" class="actions">
-          <div v-for="action in actions" :key="action.link" class="action">
-            <VPButton
-              tag="a"
-              size="medium"
-              :theme="action.theme"
-              :text="action.text"
-              :href="action.link"
-              :target="action.target"
-              :rel="action.rel"
-            />
+        <VPHighlight v-if="icon" class="git-highlight" :icon="icon" />
+        <div class="home-hero">
+          <slot name="home-hero-info-before" />
+          <slot name="home-hero-info">
+            <h1 v-if="name" class="name">
+              <span v-html="name" class="clip"></span>
+            </h1>
+            <p v-if="text" v-html="text" class="text"></p>
+            <p v-if="tagline" v-html="tagline" class="tagline"></p>
+          </slot>
+          <slot name="home-hero-info-after" />
+          <div v-if="actions" class="actions">
+            <div v-for="action in actions" :key="action.link" class="action">
+              <VPButton
+                tag="a"
+                size="medium"
+                :theme="action.theme"
+                :text="action.text"
+                :href="action.link"
+                :target="action.target"
+                :rel="action.rel"
+              />
+            </div>
           </div>
+          <slot name="home-hero-actions-after" />
         </div>
-        <slot name="home-hero-actions-after" />
       </div>
 
       <div v-if="image || heroImageSlotExists" class="image">
@@ -83,11 +87,35 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
   }
 }
 
+.VPHero:hover .git-highlight ::v-deep(.glowing-icon-glow) {
+  animation: glowing 2s infinite;
+}
+
+@keyframes glowing {
+  0% {
+    filter: blur(18px);
+  }
+
+  50% {
+    filter: blur(12px);
+  }
+
+  100% {
+    filter: blur(18px);
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   max-width: 1152px;
+}
+
+@media (max-width: 959px) {
+  .git-highlight {
+    display: none;
+  }
 }
 
 @media (min-width: 960px) {
@@ -97,6 +125,7 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
 }
 
 .main {
+  display: flex;
   position: relative;
   z-index: 10;
   order: 2;

@@ -14,6 +14,7 @@ const { frontmatter: fm } = useData()
     :tagline="fm.hero.tagline"
     :image="fm.hero.image"
     :actions="fm.hero.actions"
+    :icon="fm.hero.icon"
   >
     <template #home-hero-info-before><slot name="home-hero-info-before" /></template>
     <template #home-hero-info><slot name="home-hero-info" /></template>

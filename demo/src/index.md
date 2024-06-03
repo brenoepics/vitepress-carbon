@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: View on GitHub
       link: https://github.com/brenoepics/vitepress-carbon
+  icon: 
+    src: ./logo.svg
+    alt: VitePress Carbon
 
 features:
   - icon: 🛠️
