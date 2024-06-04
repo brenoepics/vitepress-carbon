@@ -76,15 +76,16 @@ watchPostEffect(() => {
   white-space: nowrap;
   transition: background-color 0.5s;
   box-shadow: inset 0 calc( max(1px, 0.0625rem) * -1) var(--vp-c-border);
+  color: var(--vp-c-text-dark);
 }
 
 .VPNavBar.has-local-nav {
-  background-color: var(--vp-nav-bg-color);
+  background-color: var(--vp-c-bg-dark);
 }
 
 @media (min-width: 960px) {
   .VPNavBar:not(.has-sidebar):not(.top) {
-    background-color: var(--vp-nav-bg-color);
+    background-color: var(--vp-c-bg-dark);
   }
 }
 
@@ -194,7 +195,7 @@ watchPostEffect(() => {
   margin-left: 8px;
   width: 1px;
   height: 24px;
-  background-color: var(--vp-c-divider);
+  background-color: var(--vp-c-border);
   content: "";
 }
 

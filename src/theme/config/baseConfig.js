@@ -13,7 +13,9 @@ const deps = ['@vue/theme', '@vueuse/core', 'body-scroll-lock']
  */
 const config = {
   scrollOffset: ['header', '.VPLocalNav'],
-
+  appearance: {
+    initialValue: 'dark'
+  },
   vite: {
     ssr: {
       noExternal: deps

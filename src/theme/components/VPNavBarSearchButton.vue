@@ -91,7 +91,6 @@ const translate = createSearchTranslate(defaultTranslations)
     width:100%;
     max-width: 305px;
     height: 32px;
-    background-color: var(--vp-c-bg-alt);
     padding: 5px 12px;
   }
 
@@ -111,7 +110,7 @@ const translate = createSearchTranslate(defaultTranslations)
   position: relative;
   width: 16px;
   height: 16px;
-  color: var(--vp-c-text-2);
+  color: var(--vp-c-text-dark);
   fill: currentColor;
   transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
   transition-property: color,background-color,box-shadow,border-color;
@@ -123,7 +122,7 @@ const translate = createSearchTranslate(defaultTranslations)
     margin-right: 8px;
     width: 14px;
     height: 14px;
-    color: var(--vp-c-text-2);
+    color: var(--vp-c-text-dark);
   }
 }
 
@@ -133,7 +132,7 @@ const translate = createSearchTranslate(defaultTranslations)
   padding: 0 16px 0 0;
   font-size: 13px;
   font-weight: 500;
-  color: var(--vp-c-text-2);
+  color: var(--vp-c-text-dark);
   transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
   transition-property: color,background-color,box-shadow,border-color;
 }
@@ -162,6 +161,7 @@ const translate = createSearchTranslate(defaultTranslations)
   display: block;
   margin: 2px 0 0 0;
   border: 1px solid var(--vp-c-border);
+  color: var(--vp-c-text-dark);
   /*rtl:begin:ignore*/
   border-right: none;
   border-radius: 4px 0 0 4px;
@@ -201,7 +201,7 @@ const translate = createSearchTranslate(defaultTranslations)
 
 
 .DocSearch-Button:hover .DocSearch-Button-Keys > * {
-  border-color: #6e7681;
+  border-color: var(--vp-c-border);
 }
 
 .mac .DocSearch-Button .DocSearch-Button-Key:first-child:after {

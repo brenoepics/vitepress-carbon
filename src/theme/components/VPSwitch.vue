@@ -16,7 +16,7 @@
   width: 40px;
   height: 22px;
   flex-shrink: 0;
-  border: 1px solid var(--color-action-list-item-default-hover-border);
+  border: 1px solid var(--vp-c-border);
   background-color: var(--color-action-list-item-default-hover-bg);
   transition: border-color, background-color 0.25s !important;
 }

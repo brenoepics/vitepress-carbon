@@ -58,26 +58,24 @@ function onBlur() {
 .VPFlyout {
   position: relative;
   align-items: center;
-  border: 1px solid transparent;
+  border: 1px solid var(--vp-c-border);
   border-radius: 6px;
   padding-inline: 8px;
   padding-block: 6px;
   line-height: 1.4285714286;
   font-size: 14px;
   font-weight: 500;
-  color: var(--vp-c-text-1);
+  color: var(--vp-c-text-dark);
   transition: opacity 0.25s;
   height: 100%;
 }
 
 .VPFlyout:hover, .active {
   background-color: var(--color-action-list-item-default-hover-bg);
-  border-color: var(--color-action-list-item-default-hover-border);
 }
 
 .VPFlyout:active {
   background-color: var(--color-action-list-item-default-active-bg);
-  border-color: var(--color-action-list-item-default-active-border);
 }
 
 .VPFlyout:hover .menu,
@@ -96,7 +94,7 @@ function onBlur() {
 .button {
   display: flex;
   align-items: center;
-  color: var(--vp-c-text-1);
+  color: var(--vp-c-text-dark);
   height: 100%;
 }
 
@@ -105,7 +103,7 @@ function onBlur() {
   align-items: center;
   font-size: 14px;
   font-weight: 500;
-  color: var(--vp-c-text-1);
+  color: var(--vp-c-text-dark);
   transition: color 0.25s;
 }
 
@@ -113,20 +111,20 @@ function onBlur() {
   margin-right: 0;
   width: 16px;
   height: 16px;
-  fill: var(--vp-c-text-2)
+  fill: var(--vp-c-text-dark)
 }
 
 .text-icon {
   margin-left: 4px;
   width: 14px;
   height: 14px;
-  fill: var(--vp-c-text-2)
+  fill: var(--vp-c-text-dark)
 }
 
 .icon {
   width: 20px;
   height: 20px;
-  fill: var(--vp-c-text-2);
+  fill: var(--vp-c-text-dark);
   transition: fill 0.25s;
 }
 

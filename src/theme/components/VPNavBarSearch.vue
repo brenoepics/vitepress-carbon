@@ -179,11 +179,11 @@ if (__VP_LOCAL_SEARCH__) {
 
 .DocSearch-Form {
   border: 1px solid var(--color-action-list-item-default-active-border);
-  background-color: var(--vp-c-white);
+  background-color: transparent;
 }
 
 .dark .DocSearch-Form {
-  background-color: var(--vp-c-default-soft);
+  background-color: transparent;
 }
 
 .DocSearch-Screen-Icon > svg {

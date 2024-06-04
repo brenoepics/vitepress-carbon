@@ -34,7 +34,7 @@ const svg = computed(() => {
   align-items: center;
   width: 36px;
   height: 36px;
-  color: var(--vp-c-text-2);
+  color: var(--vp-c-text-dark);
   transition: color 0.5s;
 }
 

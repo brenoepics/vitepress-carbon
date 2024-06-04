@@ -28,7 +28,7 @@ import VPHomeFeatures from './VPHomeFeatures.vue'
   padding-bottom: 96px;
   font-family: var(--vp-font-family-custom);
   background-color: var(--vp-c-bg);
-  height: 100vh;
+  height: 100%;
 }
 
 .VPHome :deep(.VPHomeSponsors) {
