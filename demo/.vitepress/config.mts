@@ -104,6 +104,8 @@ export default defineConfigWithTheme<ThemeConfig>({
     ['meta', { property: 'og:image', content: 'https://carbon.breno.tech/site-card.jpg' }],
     ['meta', { property:'theme-color', name: 'theme-color', content: '#41ad4f' }],
     ['meta', { property:'twitter:card', name: 'twitter:card', content: 'summary_large_image' }],
+    ['script', {async: '', src: 'https://www.googletagmanager.com/gtag/js?id=AW-16586074464'}],
+    ['script', {}, `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'AW-16586074464');`]
   ],
 
   vite: {
