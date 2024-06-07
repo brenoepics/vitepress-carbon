@@ -1,4 +1,4 @@
-# <a href='https://carbon.breno.tech'><img src='https://github.com/brenoepics/vitepress-carbon/blob/main/demo/src/public/logo.svg' height='60' alt='Carbon Logo' aria-label='carbon.breno.tech' style="display: flex;align-items: center;"/>arbon</a> 
+# <a href='https://carbon.breno.tech'><img src='https://github.com/brenoepics/vitepress-carbon/blob/main/demo/src/public/logo.svg' height='60' alt='C' aria-label='carbon.breno.tech' style="display: flex;align-items: center;"/>arbon</a> 
 
 VitePress Carbon is a sleek and minimalistic theme for VitePress, inspired by GitHub's monochromatic design ethos.
 With its clean and elegant style, VitePress Carbon offers a seamless documentation experience, perfect for projects seeking simplicity and sophistication.
@@ -11,7 +11,7 @@ With its clean and elegant style, VitePress Carbon offers a seamless documentati
 
 ## Demo
 
-[GitHub-Page](https://brenoepics.github.io/vitepress-carbon/)
+Check out the demo on [GitHub Pages](https://carbon.breno.tech) to see VitePress Carbon in action.
 
 ## Installation
 
@@ -23,7 +23,7 @@ To create a project with VitePress Carbon theme, use this template:
 
 To use this project, follow these docs:
 
-- [VitePress Carbon Docs](https://brenoepics.github.io/vitepress-carbon/)
+- [VitePress Carbon Docs](https://carbon.breno.tech)
 - [VitePress](https://vitepress.dev/)
 - [Markdown](https://www.markdownguide.org/)
 
