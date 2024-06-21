@@ -73,7 +73,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     outline: [2, 3],
 
     logo: {
-      src: './logo.svg'
+      src: '/logo.svg'
     },
 
     search: {
