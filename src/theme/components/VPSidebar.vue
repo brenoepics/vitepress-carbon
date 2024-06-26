@@ -98,6 +98,7 @@ watch(
   outline: 0;
   background: var(--vp-c-bg);
   padding: 20px;
+  min-height: 100%;
   border-right: 1px solid var(--vp-c-border);
 }
 
