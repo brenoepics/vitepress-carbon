@@ -128,6 +128,7 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
   display: flex;
   position: relative;
   z-index: 10;
+  justify-content: center;
   order: 2;
   flex-grow: 1;
   flex-shrink: 0;
