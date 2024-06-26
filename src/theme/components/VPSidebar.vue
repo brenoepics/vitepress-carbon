@@ -96,7 +96,6 @@ watch(
 
 .nav {
   outline: 0;
-  height: 100%;
   background: var(--vp-c-bg);
   padding: 20px;
   border-right: 1px solid var(--vp-c-border);
