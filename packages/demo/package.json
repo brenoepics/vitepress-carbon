@@ -5,6 +5,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "vitepress dev",
+    "build": "pnpm run demo-build",
     "demo-build": "vitepress build",
     "demo-preview": "vitepress preview",
     "serve": "pnpm run demo-build && vitepress serve"
