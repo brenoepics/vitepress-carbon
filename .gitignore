@@ -8,4 +8,4 @@ packages/demo/.vitepress/cache
 .idea/
 packages/demo/.vitepress/dist/
 package-lock.json
-!/pnpm-lock.yaml
+!pnpm-lock.yaml
