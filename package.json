@@ -9,7 +9,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "pnpm --filter vitepress-carbon-demo run dev",
-    "demo-build": "pnpm --filter vitepress-carbon-demo run build",
+    "demo-build": "vitepress build ./packages/demo",
     "lint": "prettier --check --write --parser typescript \"{__tests__,docs,packages,types}/**/*.ts\"",
     "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,packages,types}/**/*.ts\""
   },
@@ -26,6 +26,7 @@
   "dependencies": {
     "@algolia/client-search": "^5.7.0",
     "@types/node": "^22.7.4",
+    "mark.js": "^8.11.1",
     "search-insights": "^2.17.2",
     "vite": "^5.4.8",
     "vitepress": "^1.3.4"
