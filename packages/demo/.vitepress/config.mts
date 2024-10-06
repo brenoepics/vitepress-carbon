@@ -3,6 +3,7 @@ import path from 'path'
 import baseConfig from '../../theme/src/theme/config/baseConfig'
 import type { ThemeConfig } from '../../theme'
 import { DefaultTheme } from 'vitepress/theme'
+import { searchForWorkspaceRoot } from 'vite'
 
 const guideGroupItems = [
   { text: 'Introduction', link: '/guide/introduction' },
@@ -115,6 +116,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     server: {
       fs: {
         allow: [
+          searchForWorkspaceRoot(process.cwd()),
           path.join(__dirname, '../../theme/src/theme/fonts/')
         ],
       },
