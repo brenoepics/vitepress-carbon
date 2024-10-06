@@ -1,6 +1,5 @@
 lockfileVersion: '9.0'
 
-
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
@@ -34,9 +33,6 @@ importers:
       '@types/node':
         specifier: ^22.7.4
         version: 22.7.4
-      vitepress-carbon:
-        specifier: file:../theme
-        version: link:../theme
 
   packages/theme:
     dependencies:
@@ -49,6 +45,9 @@ importers:
       '@docsearch/js':
         specifier: ^3.2.1
         version: 3.6.2(@algolia/client-search@5.7.0)(search-insights@2.17.2)
+      '@vueuse/core':
+        specifier: ^11.1.0
+        version: 11.1.0(vue@3.5.11(typescript@5.6.2))
       body-scroll-lock:
         specifier: ^3.1.5
         version: 3.1.5
@@ -62,7 +61,7 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1
       vue:
-        specifier: ^3.2.47
+        specifier: ^3.5.11
         version: 3.5.11(typescript@5.6.2)
     devDependencies:
       '@mdit-vue/types':
