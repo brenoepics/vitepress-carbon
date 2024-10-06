@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [ "main" ]
-      
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -24,28 +24,37 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Not needed if lastUpdated is not enabled
-      # - uses: pnpm/action-setup@v2 # Uncomment this if you're using pnpm
-      # - uses: oven-sh/setup-bun@v1 # Uncomment this if you're using Bun
+          fetch-depth: 0
+
+      - name: Install pnpm
+        id: setup-pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: '9.9.0'
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'pnpm'
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
+
       - name: Build with VitePress
         run: |
-          npm run demo-build
+          pnpm run demo-build
           mkdir staging
-          cp ./demo/.vitepress/dist/* staging -r
+          cp ./packages/demo/.vitepress/dist/* staging -r
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:     
+        uses: actions/upload-pages-artifact@v4
+        with:
           path: staging
-                
+
   # Deployment job
   deploy:
     environment:

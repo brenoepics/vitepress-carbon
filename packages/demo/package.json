@@ -1,0 +1,15 @@
+{
+  "name": "vitepress-carbon-demo",
+  "description": "Demo for VitePress Carbon theme.",
+  "packageManager": "pnpm@9.9.0",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "vitepress dev",
+    "demo-build": "vitepress build",
+    "demo-preview": "vitepress preview",
+    "serve": "pnpm run demo-build && vitepress serve"
+  },
+  "dependencies": {
+    "@types/node": "^22.7.4"
+  }
+}

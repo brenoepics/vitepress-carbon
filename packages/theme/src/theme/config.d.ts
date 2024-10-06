@@ -1,4 +1,4 @@
-import { Awaitable, MarkdownEnv, PageData } from 'vitepress'
+import { Awaitable, DefaultTheme, MarkdownEnv, PageData } from 'vitepress'
 import { ComputedRef, Ref, ShallowRef } from 'vue'
 import { MenuItem } from './composables/outline'
 import {
@@ -45,7 +45,7 @@ export interface ThemeConfig {
   /**
    * The nav items.
    */
-  nav?: NavItem[]
+  nav?: DefaultTheme.NavItem[]
 
   /**
    * The sidebar items.
@@ -145,10 +145,6 @@ export interface ThemeConfig {
    */
   notFound?: NotFoundOptions
 }
-
-// nav -----------------------------------------------------------------------
-
-export type NavItem = NavItemWithLink | NavItemWithChildren
 
 export interface NavItemWithLink {
   text: string

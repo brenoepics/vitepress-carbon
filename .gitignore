@@ -3,9 +3,8 @@
 dist
 TODOs.md
 .DS_Store
-demo/.vitepress/cache
+packages/demo/.vitepress/cache
 .vscode/
 .idea/
-demo/.vitepress/dist/
+packages/demo/.vitepress/dist/
 package-lock.json
-.vitepress/

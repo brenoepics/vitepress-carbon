@@ -15,9 +15,15 @@
     "resolveJsonModule": true,
     "declaration": true,
     "paths": {
-      "vitepress-carbon": ["src/index.ts"]
+      "@carbon": ["packages/theme/src/"],
+      "@carbon/*": ["packages/theme/src/*"],
     }
   },
-  "include": ["src/*"],
-  "exclude": ["node_modules", "demo"]
+  "include": ["packages/**/*"],
+  "exclude": [
+    "node_modules",
+    "packages/**/node_modules",
+    "packages/**/dist",
+    "packages/demo"
+  ]
 }
