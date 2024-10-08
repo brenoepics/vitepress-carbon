@@ -75,7 +75,7 @@ export const githubPagesTemplate = (packageManager: string) => ({
         getSetupManager(packageManager),
         {
           'name': 'Setup Pages',
-          'uses': 'actions/configure-pages@v4'
+          'uses': 'actions/configure-pages@v5'
         },
         {
           'name': 'Install dependencies',
