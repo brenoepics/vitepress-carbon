@@ -16,6 +16,7 @@ Check out the demo on [GitHub Pages](https://carbon.breno.tech) to see VitePress
 
 To create a GitHub project with VitePress Carbon
 theme, [click here](https://github.com/new?template_name=carbon-starter&template_owner=brenoepics).
+
 Alternatively, you can use the [`vpcar`](https://github.com/brenoepics/vitepress-carbon/tree/main/packages/cli) CLI tool
 to initialize a new VitePress Carbon project:
 

@@ -10,7 +10,7 @@ hero:
     alt: VitePress Carbon
   actions:
     - theme: brand
-      text: Get Started
+      text: Introduction
       link: /guide/introduction
     - theme: alt
       text: View on GitHub
@@ -24,11 +24,11 @@ features:
     title: Responsive Design
     details: Ensure a consistent experience across devices.
     linkText: Explore
-    link: https://github.com/brenoepics  
+    link: https://github.com/brenoepics/vitepress-carbon
   - icon: 🧩
     title: Seamless Integration
     details: Integrate seamlessly with your VitePress projects.
-    link: https://github.com/brenoepics
+    link: https://github.com/brenoepics/vitepress-carbon
   - icon: 🎨
     title: Customizable Theming
     details: Tailor the theme to suit your project's needs.
