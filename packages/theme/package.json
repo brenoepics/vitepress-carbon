@@ -30,7 +30,8 @@
   },
   "packageManager": "pnpm@9.9.0",
   "scripts": {
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "release": "npm publish"
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",

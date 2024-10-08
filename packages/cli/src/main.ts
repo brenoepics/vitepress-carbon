@@ -1,13 +1,13 @@
 import { defineCommand } from 'citty'
-import vpcliPkg from '../package.json' assert { type: 'json' }
+import vpcarPkg from '../package.json' assert { type: 'json' }
 import { commands } from './commands'
 import { checkEngines } from './utils/engines'
 
 export const main = defineCommand({
   meta: {
-    name: vpcliPkg.name,
-    version: vpcliPkg.version,
-    description: vpcliPkg.description
+    name: vpcarPkg.name,
+    version: vpcarPkg.version,
+    description: vpcarPkg.description
   },
   subCommands: commands,
   async setup(ctx) {

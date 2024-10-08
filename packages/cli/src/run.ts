@@ -10,8 +10,8 @@ globalThis.__vp_cli__ = globalThis.__vp_cli__ || {
   entry: fileURLToPath(
     new URL(
       import.meta.url.endsWith('.ts')
-        ? '../bin/vpcli.mjs'
-        : '../../bin/vpcli.mjs',
+        ? '../bin/vpcar.mjs'
+        : '../../bin/vpcar.mjs',
       import.meta.url,
     ),
   ),

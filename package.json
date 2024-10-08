@@ -11,7 +11,8 @@
     "dev": "pnpm --filter vitepress-carbon-demo run dev",
     "demo-build": "vitepress build ./packages/demo",
     "lint": "prettier --check --write --parser typescript \"{__tests__,docs,packages,types}/**/*.ts\"",
-    "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,packages,types}/**/*.ts\""
+    "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,packages,types}/**/*.ts\"",
+    "release": "changelogen --release && pnpm --filter vpcar run release && pnpm --filter vitepress-carbon release && git push --follow-tags"
   },
   "author": "Breno A.",
   "license": "MIT",
@@ -26,6 +27,7 @@
   "dependencies": {
     "@algolia/client-search": "^5.7.0",
     "@types/node": "^22.7.4",
+    "changelogen": "^0.5.7",
     "mark.js": "^8.11.1",
     "search-insights": "^2.17.2",
     "vite": "^5.4.8",

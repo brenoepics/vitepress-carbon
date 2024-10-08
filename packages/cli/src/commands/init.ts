@@ -102,7 +102,7 @@ export default defineCommand({
         force: Boolean(ctx.args.force),
         offline: Boolean(ctx.args.offline),
         preferOffline: Boolean(ctx.args.preferOffline),
-        registry: process.env.vpcli_INIT_REGISTRY ?? DEFAULT_REGISTRY
+        registry: process.env.vpcar_INIT_REGISTRY ?? DEFAULT_REGISTRY
       })
     } catch (err) {
       if (process.env.DEBUG) {

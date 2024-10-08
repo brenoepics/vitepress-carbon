@@ -1,5 +1,5 @@
 {
-  "name": "vpcli",
+  "name": "vpcar",
   "version": "0.0.1",
   "description": "VitePress Carbon CLI",
   "repository": {
@@ -11,12 +11,12 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.mjs",
-    "./cli": "./bin/vpcli.mjs"
+    "./cli": "./bin/vpcar.mjs"
   },
   "types": "./dist/index.d.ts",
   "bin": {
-    "vpcli": "./bin/vpcli.mjs",
-    "vp-cli": "./bin/vpcli.mjs"
+    "vpcar": "./bin/vpcar.mjs",
+    "vp-car": "./bin/vpcar.mjs"
   },
   "files": [
     "bin",
@@ -26,16 +26,15 @@
     "dev:prepare": "unbuild --stub",
     "build": "unbuild",
     "build:stub": "unbuild --stub",
-    "cli": "node ./bin/vpcli.mjs",
-    "vpcli": "node ./bin/vpcli.mjs",
-    "vpcli-bun": "bun --bun ./bin/vpcli.mjs",
+    "cli": "node ./bin/vpcar.mjs",
+    "vpcar": "node ./bin/vpcar.mjs",
+    "vpcar-bun": "bun --bun ./bin/vpcar.mjs",
     "prepack": "unbuild",
-    "release": "changelogen --release && npm publish && git push --follow-tags"
+    "release": "npm publish"
   },
   "devDependencies": {
     "@types/node": "^20.16.10",
     "@types/semver": "^7.5.8",
-    "changelogen": "^0.5.7",
     "citty": "^0.1.6",
     "consola": "^3.2.3",
     "execa": "^9.4.0",
