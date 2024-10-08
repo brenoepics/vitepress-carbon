@@ -10,19 +10,26 @@
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "downlevelIteration": true,
-    "lib": ["ESNext", "DOM"],
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "declaration": true,
     "paths": {
-      "@carbon": ["packages/theme/src/"],
-      "@carbon/*": ["packages/theme/src/*"],
+      "@carbon": [
+        "packages/theme/src/"
+      ],
+      "@carbon/*": [
+        "packages/theme/src/*"
+      ]
     }
   },
-  "include": ["packages/**/*"],
+  "include": [
+    "packages/**/*"
+  ],
   "exclude": [
-    "node_modules",
-    "packages/**/node_modules",
     "packages/**/dist",
     "packages/demo"
   ]

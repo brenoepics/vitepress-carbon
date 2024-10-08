@@ -1,0 +1,55 @@
+{
+  "name": "vpcli",
+  "version": "0.0.1",
+  "description": "VitePress Carbon CLI",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenoepics/vitepress-carbon.git",
+    "directory": "packages/cli"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./cli": "./bin/vpcli.mjs"
+  },
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "vpcli": "./bin/vpcli.mjs",
+    "vp-cli": "./bin/vpcli.mjs"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "dev:prepare": "unbuild --stub",
+    "build": "unbuild",
+    "build:stub": "unbuild --stub",
+    "cli": "node ./bin/vpcli.mjs",
+    "vpcli": "node ./bin/vpcli.mjs",
+    "vpcli-bun": "bun --bun ./bin/vpcli.mjs",
+    "prepack": "unbuild",
+    "release": "changelogen --release && npm publish && git push --follow-tags"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.10",
+    "@types/semver": "^7.5.8",
+    "changelogen": "^0.5.7",
+    "citty": "^0.1.6",
+    "consola": "^3.2.3",
+    "execa": "^9.4.0",
+    "giget": "^1.2.3",
+    "nypm": "^0.3.12",
+    "pathe": "^1.1.2",
+    "semver": "^7.6.3",
+    "unbuild": "^2.0.0",
+    "unplugin-purge-polyfills": "^0.0.7",
+    "yaml": "^2.5.1",
+    "rollup": "^4.24.0"
+  },
+  "packageManager": "pnpm@9.12.0",
+  "engines": {
+    "node": "^16.10.0 || >=18.0.0"
+  }
+}

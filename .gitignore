@@ -10,3 +10,4 @@ packages/demo/.vitepress/dist/
 package-lock.json
 !pnpm-lock.yaml
 /packages/**/node_modules
+/packages/cli/docs/
