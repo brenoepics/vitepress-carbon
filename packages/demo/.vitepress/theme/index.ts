@@ -7,10 +7,9 @@ import CreateRepoComponent from './components/CreateRepoComponent.vue'
 
 export default {
   ...VPCarbon,
-  Layout:  () => {
+  Layout: () => {
     return h(VPCarbon.Layout, null, {
       'nav-bar-content-menu-after': () => h(CreateRepoComponent)
     })
   }
 }
-

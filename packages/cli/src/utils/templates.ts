@@ -1,37 +1,37 @@
 export const dependabotTemplate = {
-  'version': 2,
-  'updates': [
+  version: 2,
+  updates: [
     {
       'package-ecosystem': 'npm',
-      'directory': '/',
-      'schedule': {
-        'interval': 'weekly'
+      directory: '/',
+      schedule: {
+        interval: 'weekly'
       }
     },
     {
       'package-ecosystem': 'github-actions',
-      'directory': '/',
-      'schedule': {
-        'interval': 'weekly'
+      directory: '/',
+      schedule: {
+        interval: 'weekly'
       }
     }
   ]
 }
 
 const setupBun = {
-  'name': 'Setup Bun',
-  'uses': 'oven-sh/setup-bun@v2',
-  'with': {
+  name: 'Setup Bun',
+  uses: 'oven-sh/setup-bun@v2',
+  with: {
     'bun-version': 'latest'
   }
 }
 
 const setupNode = (cache: string) => ({
-  'name': 'Setup Node',
-  'uses': 'actions/setup-node@v4',
-  'with': {
+  name: 'Setup Node',
+  uses: 'actions/setup-node@v4',
+  with: {
     'node-version': 20,
-    'cache': cache
+    cache: cache
   }
 })
 
@@ -44,69 +44,67 @@ function getSetupManager(packageManager: string) {
 }
 
 export const githubPagesTemplate = (packageManager: string) => ({
-  'name': 'Deploy GitHub Pages',
-  'on': {
-    'push': {
-      'branches': [
-        'main'
-      ]
+  name: 'Deploy GitHub Pages',
+  on: {
+    push: {
+      branches: ['main']
     }
   },
-  'permissions': {
-    'contents': 'read',
-    'pages': 'write',
+  permissions: {
+    contents: 'read',
+    pages: 'write',
     'id-token': 'write'
   },
-  'concurrency': {
-    'group': 'pages',
+  concurrency: {
+    group: 'pages',
     'cancel-in-progress': false
   },
-  'jobs': {
-    'build': {
+  jobs: {
+    build: {
       'runs-on': 'ubuntu-latest',
-      'steps': [
+      steps: [
         {
-          'name': 'Checkout',
-          'uses': 'actions/checkout@v4',
-          'with': {
+          name: 'Checkout',
+          uses: 'actions/checkout@v4',
+          with: {
             'fetch-depth': 0
           }
         },
         getSetupManager(packageManager),
         {
-          'name': 'Setup Pages',
-          'uses': 'actions/configure-pages@v5'
+          name: 'Setup Pages',
+          uses: 'actions/configure-pages@v5'
         },
         {
-          'name': 'Install dependencies',
-          'run': `${packageManager} install`
+          name: 'Install dependencies',
+          run: `${packageManager} install`
         },
         {
-          'name': 'Build with VitePress',
-          'run': `${packageManager} run docs:build`
+          name: 'Build with VitePress',
+          run: `${packageManager} run docs:build`
         },
         {
-          'name': 'Upload artifact',
-          'uses': 'actions/upload-pages-artifact@v3',
-          'with': {
-            'path': '.vitepress/dist/'
+          name: 'Upload artifact',
+          uses: 'actions/upload-pages-artifact@v3',
+          with: {
+            path: '.vitepress/dist/'
           }
         }
       ]
     },
-    'deploy': {
-      'environment': {
-        'name': 'github-pages',
-        'url': '${{ steps.deployment.outputs.page_url }}'
+    deploy: {
+      environment: {
+        name: 'github-pages',
+        url: '${{ steps.deployment.outputs.page_url }}'
       },
-      'needs': 'build',
+      needs: 'build',
       'runs-on': 'ubuntu-latest',
-      'name': 'Deploy',
-      'steps': [
+      name: 'Deploy',
+      steps: [
         {
-          'name': 'Deploy to GitHub Pages',
-          'id': 'deployment',
-          'uses': 'actions/deploy-pages@v4'
+          name: 'Deploy to GitHub Pages',
+          id: 'deployment',
+          uses: 'actions/deploy-pages@v4'
         }
       ]
     }

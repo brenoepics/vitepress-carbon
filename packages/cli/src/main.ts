@@ -18,8 +18,7 @@ export const main = defineCommand({
     backgroundTasks = Promise.all([
       checkEngines()
       // checkForUpdates(),
-    ]).catch(err => console.error(err))
-
+    ]).catch((err) => console.error(err))
 
     // Avoid background check to fix prompt issues
     if (command === 'init') {

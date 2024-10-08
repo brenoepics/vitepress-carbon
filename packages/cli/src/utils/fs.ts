@@ -6,15 +6,14 @@ export async function exists(path: string) {
   try {
     await fsp.access(path)
     return true
-  }
-  catch {
+  } catch {
     return false
   }
 }
 
 export function findup<T>(
   rootDir: string,
-  fn: (dir: string) => T | undefined,
+  fn: (dir: string) => T | undefined
 ): T | null {
   let dir = rootDir
   while (dir !== dirname(dir)) {

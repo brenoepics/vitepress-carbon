@@ -12,9 +12,12 @@ import { promises as fsp } from 'node:fs'
 import { dependabotTemplate, githubPagesTemplate } from '../utils/templates'
 import { Hyperlink } from '../utils/console'
 
-const DEFAULT_REGISTRY
-  = 'https://raw.githubusercontent.com/brenoepics/vitepress-carbon/main/packages/templates/'
-const repoLink = Hyperlink('VitePress Carbon', 'https://github.com/brenoepics/vitepress-carbon')
+const DEFAULT_REGISTRY =
+  'https://raw.githubusercontent.com/brenoepics/vitepress-carbon/main/packages/templates/'
+const repoLink = Hyperlink(
+  'VitePress Carbon',
+  'https://github.com/brenoepics/vitepress-carbon'
+)
 export default defineCommand({
   meta: {
     name: 'init',
@@ -70,10 +73,10 @@ export default defineCommand({
     const cwd = resolve(ctx.args.cwd || '.')
 
     type SelectOption = {
-      label: string;
-      value: string;
-      hint?: string;
-    };
+      label: string
+      value: string
+      hint?: string
+    }
     // Get template name
     const templateOptions: SelectOption[] = [
       {
@@ -84,13 +87,17 @@ export default defineCommand({
       {
         label: 'JavaScript',
         value: 'javascript'
-      }]
-    const templateName = ctx.args.language && templateOptions.some((value) => value.value === ctx.args.language)
-      ? templateOptions.find((value) => value.value === ctx.args.language)!.value
-      : (await consola.prompt('Which template would you like to use?', {
-        type: 'select',
-        options: templateOptions
-      })) as unknown as string
+      }
+    ]
+    const templateName =
+      ctx.args.language &&
+      templateOptions.some((value) => value.value === ctx.args.language)
+        ? templateOptions.find((value) => value.value === ctx.args.language)!
+            .value
+        : ((await consola.prompt('Which template would you like to use?', {
+            type: 'select',
+            options: templateOptions
+          })) as unknown as string)
 
     // Download template
     let template: DownloadTemplateResult
@@ -125,20 +132,26 @@ export default defineCommand({
     )
       ? packageManagerArg
       : await consola.prompt('Which package manager would you like to use?', {
-        type: 'select',
-        options: packageManagerOptions
-      })
+          type: 'select',
+          options: packageManagerOptions
+        })
 
     const ghActionsOptions = ['dependabot', 'github-pages', 'none']
     const selectedGHActions = ctx.args.addGHActions
       ? ctx.args.addGHActions.split(',')
-      : await consola.prompt('Which GitHub Actions workflows would you like to add?', {
-        type: 'multiselect',
-        options: ghActionsOptions,
-        required: false
-      })
+      : await consola.prompt(
+          'Which GitHub Actions workflows would you like to add?',
+          {
+            type: 'multiselect',
+            options: ghActionsOptions,
+            required: false
+          }
+        )
 
-    if (!selectedGHActions.includes('none') && selectedGHActions.includes('dependabot')) {
+    if (
+      !selectedGHActions.includes('none') &&
+      selectedGHActions.includes('dependabot')
+    ) {
       consola.info('Adding Dependabot configuration...')
       const dependabotConfig = stringify(dependabotTemplate)
       const dependabotPath = join(template.dir, '.github', 'dependabot.yml')
@@ -146,10 +159,20 @@ export default defineCommand({
       await fsp.writeFile(dependabotPath, dependabotConfig, 'utf8')
     }
 
-    if (!selectedGHActions.includes('none') && selectedGHActions.includes('github-pages')) {
+    if (
+      !selectedGHActions.includes('none') &&
+      selectedGHActions.includes('github-pages')
+    ) {
       consola.info('Adding GitHub Pages workflow...')
-      const githubPagesConfig = stringify(githubPagesTemplate(selectedPackageManager))
-      const githubPagesPath = join(template.dir, '.github', 'workflows', 'deploy-pages.yml')
+      const githubPagesConfig = stringify(
+        githubPagesTemplate(selectedPackageManager)
+      )
+      const githubPagesPath = join(
+        template.dir,
+        '.github',
+        'workflows',
+        'deploy-pages.yml'
+      )
       await fsp.mkdir(dirname(githubPagesPath), { recursive: true })
       await fsp.writeFile(githubPagesPath, githubPagesConfig, 'utf8')
     }
@@ -201,9 +224,9 @@ export default defineCommand({
     )
     const relativeTemplateDir = relative(process.cwd(), template.dir) || '.'
     const nextSteps = [
-      !ctx.args.shell
-      && relativeTemplateDir.length > 1
-      && `\`cd ${relativeTemplateDir}\``,
+      !ctx.args.shell &&
+        relativeTemplateDir.length > 1 &&
+        `\`cd ${relativeTemplateDir}\``,
       `Start development server with \`${selectedPackageManager} run docs:dev\``
     ].filter(Boolean)
 

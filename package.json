@@ -1,6 +1,6 @@
 {
-  "name": "vitepress-carbon",
-  "version": "1.3.3",
+  "name": "vitepress-carbon-monorepo",
+  "version": "1.3.4",
   "description": "Carbon embraces GitHub's monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.",
   "keywords": [
     "vue",
