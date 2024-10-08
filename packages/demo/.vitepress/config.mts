@@ -38,7 +38,7 @@ const nav: DefaultTheme.NavItem[] = [
     text: 'Examples',
     activeMatch: `^/examples/`,
     items: examplesItems
-  },  {
+  }, {
     text: 'VitePress',
     link: `https://vitepress.dev`
   }
@@ -91,21 +91,27 @@ export default defineConfigWithTheme<ThemeConfig>({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/brenoepics/vitepress-carbon' }
+      { icon: 'github', link: 'https://github.com/brenoepics/vitepress-carbon' },
     ]
   },
 
   head: [
     ['link', { rel: 'icon', href: 'https://carbon.breno.tech/logo.svg' }],
-    ['meta', { name: 'description', content: 'Carbon embraces GitHub\'s monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.' }],
+    ['meta', {
+      name: 'description',
+      content: 'Carbon embraces GitHub\'s monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.'
+    }],
     ['meta', { property: 'og:url', content: 'https://carbon.breno.tech/' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'VitePress Carbon' }],
-    ['meta', { property: 'og:description', content: 'Carbon embraces GitHub\'s monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.' }],
+    ['meta', {
+      property: 'og:description',
+      content: 'Carbon embraces GitHub\'s monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.'
+    }],
     ['meta', { property: 'og:image', content: 'https://carbon.breno.tech/site-card.jpg' }],
-    ['meta', { property:'theme-color', name: 'theme-color', content: '#41ad4f' }],
-    ['meta', { property:'twitter:card', name: 'twitter:card', content: 'summary_large_image' }],
-    ['script', {async: '', src: 'https://www.googletagmanager.com/gtag/js?id=AW-16586074464'}],
+    ['meta', { property: 'theme-color', name: 'theme-color', content: '#41ad4f' }],
+    ['meta', { property: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' }],
+    ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=AW-16586074464' }],
     ['script', {}, `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'AW-16586074464');`]
   ],
 
@@ -118,8 +124,8 @@ export default defineConfigWithTheme<ThemeConfig>({
         allow: [
           searchForWorkspaceRoot(process.cwd()),
           path.join(__dirname, '../../theme/src/theme/fonts/')
-        ],
-      },
+        ]
+      }
     },
     resolve: {
       alias: {

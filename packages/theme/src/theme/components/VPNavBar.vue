@@ -51,6 +51,7 @@ watchPostEffect(() => {
             <slot name="nav-bar-content-before" />
             <VPNavBarSearch class="search" />
             <VPNavBarMenu class="menu" />
+            <slot name="nav-bar-content-menu-after" />
             <VPNavBarTranslations class="translations" />
             <VPNavBarAppearance class="appearance" />
             <VPNavBarSocialLinks class="social-links" />
