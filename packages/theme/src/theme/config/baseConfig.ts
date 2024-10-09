@@ -20,7 +20,7 @@ export const baseConfig: UserConfig<ThemeConfig> = {
   },
   vite: {
     ssr: {
-      noExternal: [...deps, 'vitepress/theme']
+      noExternal: [...deps, /\.css$/]
     },
     optimizeDeps: {
       exclude: deps
