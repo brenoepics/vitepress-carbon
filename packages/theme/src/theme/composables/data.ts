@@ -1,4 +1,4 @@
-import { useData as useData$ } from 'vitepress'
+import { useData as vitepressUseData } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/theme'
 
-export const useData: typeof useData$<DefaultTheme.Config> = useData$
+export const useData: typeof vitepressUseData<DefaultTheme.Config> = vitepressUseData

@@ -1,9 +1,9 @@
-import { computed, Ref } from 'vue'
+import { computed, type Ref } from 'vue'
 import { useData } from './data'
 import { isActive } from '../../shared'
 import { getSidebar, getFlatSideBarLinks } from '../support/sidebar'
-import { PageData } from 'vitepress'
-import { DefaultTheme } from 'vitepress/theme'
+import { type PageData } from 'vitepress'
+import { type DefaultTheme } from 'vitepress/theme'
 
 export function usePrevNext() {
   const { page, theme, frontmatter } = useData()

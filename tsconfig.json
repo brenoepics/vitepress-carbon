@@ -29,8 +29,4 @@
   "include": [
     "packages/**/*"
   ],
-  "exclude": [
-    "packages/**/dist",
-    "packages/demo"
-  ]
 }

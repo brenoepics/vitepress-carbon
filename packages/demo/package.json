@@ -11,6 +11,7 @@
     "serve": "pnpm run demo-build && vitepress serve"
   },
   "dependencies": {
-    "@types/node": "^22.7.4"
+    "@types/node": "^22.7.4",
+    "vitepress-carbon": "link:..\\theme"
   }
 }

@@ -3,7 +3,7 @@ import { inject, type Ref } from 'vue'
 import type { DefaultTheme } from 'vitepress/theme'
 import VPButton from './VPButton.vue'
 import VPImage from './VPImage.vue'
-import VPHighlight, { HighlightIcon } from './VPHighlight.vue'
+import VPHighlight, { type HighlightIcon } from './VPHighlight.vue'
 
 export interface HeroAction {
   theme?: 'brand' | 'alt'

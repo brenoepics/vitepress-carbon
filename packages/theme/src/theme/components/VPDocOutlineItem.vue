@@ -33,7 +33,7 @@ function handleClose(link: string, title: string) {
       <a :href="link" @click="onClick" class="vp-outline-li">
         <div class="vp-outline-item">
           <div class="outline-link">{{ title }}</div>
-          <svg v-if="root && children?.length > 0" @click="handleClose(link, title)"
+          <svg v-if="root && children?.length! > 0" @click="handleClose(link, title)"
                aria-hidden="true"
                focusable="false"
                role="img" :class="['folder-icon', closedLinks.has(link) ? 'reversed' : '']" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">

@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import docsearch from '@docsearch/js'
-import { useRoute, useRouter } from 'vitepress'
+import { useRoute, useRouter,  } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/theme'
 import { nextTick, onMounted, watch } from 'vue'
 import { useData } from '../composables/data'
+import { type SitemapItem } from '../../vp-node'
 
 const props = defineProps<{
   algolia: DefaultTheme.AlgoliaSearchOptions
@@ -17,6 +18,7 @@ type DocSearchProps = Parameters<typeof docsearch>[0]
 
 onMounted(update)
 watch(localeIndex, update)
+
 
 async function update() {
   await nextTick()
@@ -42,16 +44,20 @@ async function update() {
 }
 
 function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
-  const options = ({
-    ...userOptions, container: '#docsearch',
+  const options = Object.assign<
+    {},
+    DefaultTheme.AlgoliaSearchOptions,
+    Partial<DocSearchProps>
+  >({}, userOptions, {
+    container: '#docsearch',
 
     navigator: {
-      navigate({ itemUrl }) {
+      navigate({ itemUrl }: { itemUrl: string }) {
         const { pathname: hitPathname } = new URL(
           window.location.origin + itemUrl
         )
 
-        // router doesn't handle same-page navigation so we use the native
+        // router doesn't handle same-page navigation, so we use the native
         // browser location API for anchor navigation
         if (route.path === hitPathname) {
           window.location.assign(window.location.origin + itemUrl)
@@ -61,13 +67,15 @@ function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
       }
     },
 
-    transformItems(items: any[]) {
+    transformItems(items: SitemapItem[]) {
       return items.map((item) => {
-        return { ...item, url: getRelativePath(item.url) }
+        return Object.assign({}, item, {
+          url: getRelativePath(item.url)
+        })
       })
     },
 
-    hitComponent({ hit, children }) {
+    hitComponent({ hit, children } : { hit: SitemapItem, children: string }) {
       return {
         __v: null,
         type: 'a',

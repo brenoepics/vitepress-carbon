@@ -8,10 +8,10 @@
 // for local-linked development
 const deps = ['@vue/theme', '@vueuse/core', 'body-scroll-lock']
 
-/**
- * @type {import('vitepress').UserConfig}
- */
-const config = {
+import { type UserConfig } from 'vitepress'
+import { type ThemeConfig } from '../config'
+
+const config: UserConfig<ThemeConfig> = {
   scrollOffset: ['header', '.VPLocalNav'],
   appearance: {
     initialValue: 'dark'
@@ -63,4 +63,4 @@ const config = {
   }
 }
 
-module.exports = config
+export default config

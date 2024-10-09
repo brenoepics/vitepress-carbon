@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PropType } from 'vue'
+import { type PropType } from 'vue'
 import VPImage from './VPImage.vue'
 import VPIconCode from './icons/VPIconCode.vue'
 

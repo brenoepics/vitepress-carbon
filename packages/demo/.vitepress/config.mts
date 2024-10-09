@@ -1,9 +1,9 @@
 import { defineConfigWithTheme } from 'vitepress'
 import path from 'path'
-import baseConfig from '../../theme/src/theme/config/baseConfig'
-import type { ThemeConfig } from '../../theme'
+import type { ThemeConfig } from 'vitepress-carbon'
+import baseConfig from 'vitepress-carbon/config'
 import { DefaultTheme } from 'vitepress/theme'
-import { searchForWorkspaceRoot } from 'vite'
+import { searchForWorkspaceRoot } from './theme/utils/SearchRoot'
 
 const guideGroupItems = [
   { text: 'Introduction', link: '/guide/introduction' },
@@ -127,11 +127,6 @@ export default defineConfigWithTheme<ThemeConfig>({
         ]
       }
     },
-    resolve: {
-      alias: {
-        'vitepress-carbon': path.join(__dirname, '../../theme/src')
-      }
-    }
   }
 })
 

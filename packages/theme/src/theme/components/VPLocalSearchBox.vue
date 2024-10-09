@@ -30,8 +30,8 @@ import { escapeRegExp } from '../../shared'
 import { useData } from '../composables/data'
 import { LRUCache } from '../support/lru'
 import { createSearchTranslate } from '../support/translation'
-import { ModalTranslations } from 'vitepress/types/local-search'
 import { pathToFile } from '../composables/utils'
+import type { ModalTranslations } from '../../vp-node'
 
 const emit = defineEmits<(e: 'close') => void>()
 
@@ -231,13 +231,12 @@ debouncedWatch(
         }
       })
     })
-
-    const excerpts = el.value?.querySelectorAll('.result .excerpt') ?? []
-    for (const excerpt of excerpts) {
+    const excerpts: NodeListOf<HTMLElementTagNameMap['div']> = el.value?.querySelectorAll('.result .excerpt')! ?? []!
+    excerpts.forEach((excerpt) => {
       excerpt
         .querySelector('mark[data-markjs="true"]')
         ?.scrollIntoView({ block: 'center' })
-    }
+    })
     // FIXME: without this whole page scrolls to the bottom
     resultsEl.value?.firstElementChild?.scrollIntoView({ block: 'start' })
   },

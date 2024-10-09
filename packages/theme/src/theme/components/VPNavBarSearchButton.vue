@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ButtonTranslations } from 'vitepress/types/local-search';
 import { createSearchTranslate } from '../support/translation'
+import type { ButtonTranslations } from '../../vp-node'
 
 // Button-Translations
 const defaultTranslations: { button: ButtonTranslations } = {
