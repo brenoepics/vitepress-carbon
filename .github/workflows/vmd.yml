@@ -34,3 +34,5 @@ jobs:
 
       - name: Vue Mess Detector Analysis
         uses: brenoepics/vmd-action@v0.0.6
+        with:
+          srcDir: './packages/theme/src/'
