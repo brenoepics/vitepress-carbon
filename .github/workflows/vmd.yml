@@ -1,0 +1,25 @@
+name: VMD Analysis
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  detect-mess:
+    runs-on: ubuntu-latest
+    name: Detect Vue Mess
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Vue Mess Detector Analysis
+        uses: brenoepics/vmd-action@v0.0.6
