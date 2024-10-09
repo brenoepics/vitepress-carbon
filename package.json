@@ -15,7 +15,7 @@
     "prettier:fail": "prettier --check --parser typescript \"{__tests__,docs,packages,types}/**/*.ts\"",
     "lint": "pnpm eslint --fix && pnpm prettier",
     "lint:fail": "pnpm eslint && pnpm prettier:fail",
-    "build": "pnpm --filter vitepress-carbon run build && pnpm --filter vpcar run build && pnpm --filter demo build",
+    "build": "pnpm --filter vitepress-carbon run build && pnpm --filter vpcar run build && pnpm --filter vitepress-carbon-demo build",
     "release": "changelogen --release && pnpm --filter vpcar run release && pnpm --filter vitepress-carbon release && git push --follow-tags"
   },
   "author": "Breno A.",
