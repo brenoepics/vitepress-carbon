@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { computed, ref } from 'vue'
 import VPIconPlus from './icons/VPIconPlus.vue'
 import VPNavScreenMenuGroupLink from './VPNavScreenMenuGroupLink.vue'

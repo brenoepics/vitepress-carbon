@@ -29,7 +29,7 @@ function handleClose(link: string, title: string) {
 
 <template>
   <ul class="VPDocOutlineItem" :class="root ? 'root' : 'nested'">
-    <li v-for="{ children, link, title } in headers">
+    <li v-for="{ children, link, title } in headers" v-bind:key="link">
       <a :href="link" @click="onClick" class="vp-outline-li">
         <div class="vp-outline-item">
           <div class="outline-link">{{ title }}</div>

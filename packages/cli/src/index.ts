@@ -1,2 +1,2 @@
-export { main } from './main'
-export { runCommand, runMain } from './run'
+export { main } from './main.js'
+export { runCommand, runMain } from './run.js'

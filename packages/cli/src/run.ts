@@ -1,9 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { fileURLToPath } from 'node:url'
 import { runCommand as _runCommand, runMain as _runMain } from 'citty'
 
 import { commands } from './commands'
 import { main } from './main'
-
 globalThis.__vp_cli__ = globalThis.__vp_cli__ || {
   // Programmatic usage fallback
   startTime: Date.now(),

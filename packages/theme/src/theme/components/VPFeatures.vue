@@ -21,7 +21,7 @@ const grid = computed(() => {
   const length = props.features.length
 
   if (!length) {
-    return
+    return ''
   } else if (length === 2) {
     return 'grid-2'
   } else if (length === 3) {
@@ -31,6 +31,8 @@ const grid = computed(() => {
   } else if (length > 3) {
     return 'grid-4'
   }
+
+  return ''
 })
 </script>
 

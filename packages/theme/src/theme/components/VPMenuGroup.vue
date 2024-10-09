@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import VPMenuLink from './VPMenuLink.vue'
+import type { DefaultTheme } from 'vitepress/theme'
 
 defineProps<{
   text?: string
-  items: any[]
+  items: DefaultTheme.NavItemWithLink[]
 }>()
 </script>
 
@@ -12,7 +13,7 @@ defineProps<{
     <p v-if="text" class="title">{{ text }}</p>
 
     <template v-for="item in items">
-      <VPMenuLink v-if="'link' in item" :item="item" />
+      <VPMenuLink v-if="'link' in item" :item="item" v-bind:key="item.link" />
     </template>
   </div>
 </template>

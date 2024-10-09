@@ -36,6 +36,9 @@ defineProps({
   }
 })
 
+const reverseColors = (colors: Array<string>) => {
+  return colors.reverse()
+}
 </script>
 
 <template>
@@ -64,7 +67,7 @@ defineProps({
       ></span>
     </div>
     <div class="string-highlight"
-         :style="{backgroundColor: `linear-gradient(${stringHighlightColors.reverse().join(', ')})`}" />
+         :style="{backgroundColor: `linear-gradient(${reverseColors(stringHighlightColors).join(', ')})`}" />
   </div>
 </template>
 

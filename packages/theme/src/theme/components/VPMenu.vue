@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import VPMenuLink from './VPMenuLink.vue'
 import VPMenuGroup from './VPMenuGroup.vue'
+import type { DefaultTheme } from 'vitepress/theme'
 
 defineProps<{
-  items?: any[]
+  items?: (DefaultTheme.NavItemChildren | DefaultTheme.NavItemWithLink)[]
 }>()
 </script>
 

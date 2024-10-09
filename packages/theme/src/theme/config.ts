@@ -1,13 +1,6 @@
-import { Awaitable, DefaultTheme, MarkdownEnv, PageData } from 'vitepress'
-import { ComputedRef, Ref, ShallowRef } from 'vue'
-import { MenuItem } from './composables/outline'
-import {
-  LocalSearchTranslations,
-  PageSplitSection
-} from 'vitepress/types/local-search'
-import { DocSearchProps } from 'vitepress/types/docsearch'
-import type MarkdownIt from 'markdown-it'
-import type { Options as MiniSearchOptions } from 'minisearch'
+import type { DefaultTheme, PageData } from 'vitepress'
+import type { ComputedRef, Ref, ShallowRef } from 'vue'
+import type { MenuItem } from './composables/outline.js'
 
 export interface ThemeConfig {
   /**
@@ -118,8 +111,8 @@ export interface ThemeConfig {
   langMenuLabel?: string
 
   search?:
-    | { provider: 'local'; options?: LocalSearchOptions }
-    | { provider: 'algolia'; options: AlgoliaSearchOptions }
+    | { provider: 'local'; options?: DefaultTheme.LocalSearchOptions }
+    | { provider: 'algolia'; options: DefaultTheme.AlgoliaSearchOptions }
 
   /**
    * The carbon ads options. Leave it undefined to disable the ads feature.
@@ -368,80 +361,6 @@ export interface DocLocalNav {
 export interface Outline {
   level?: number | [number, number] | 'deep'
   label?: string
-}
-
-// local search --------------------------------------------------------------
-
-export interface LocalSearchOptions {
-  /**
-   * @default false
-   * @deprecated Use `detailedView: false` instead.
-   */
-  disableDetailedView?: boolean
-
-  /**
-   * If `true`, the detailed view will be enabled by default.
-   * If `false`, the detailed view will be disabled.
-   * If `'auto'`, the detailed view will be disabled by default, but can be enabled by the user.
-   *
-   * @default 'auto'
-   */
-  detailedView?: boolean | 'auto'
-
-  /**
-   * @default false
-   */
-  disableQueryPersistence?: boolean
-
-  translations?: LocalSearchTranslations
-  locales?: Record<string, Partial<Omit<LocalSearchOptions, 'locales'>>>
-
-  miniSearch?: {
-    /**
-     * @see https://lucaong.github.io/minisearch/modules/_minisearch_.html#options
-     */
-    options?: Pick<
-      MiniSearchOptions,
-      'extractField' | 'tokenize' | 'processTerm'
-    >
-    /**
-     * @see https://lucaong.github.io/minisearch/modules/_minisearch_.html#searchoptions-1
-     */
-    searchOptions?: MiniSearchOptions['searchOptions']
-
-    /**
-     * Overrides the default regex based page splitter.
-     * Supports async generator, making it possible to run in true parallel
-     * (when used along with `node:child_process` or `worker_threads`)
-     * ---
-     * This should be especially useful for scalability reasons.
-     * ---
-     * @param {string} path - absolute path to the markdown source file
-     * @param {string} html - document page rendered as html
-     */
-    _splitIntoSections?: (
-      path: string,
-      html: string
-    ) =>
-      | AsyncGenerator<PageSplitSection>
-      | Generator<PageSplitSection>
-      | Awaitable<PageSplitSection[]>
-  }
-  /**
-   * Allows transformation of content before indexing (node only)
-   * Return empty string to skip indexing
-   */
-  _render?: (src: string, env: MarkdownEnv, md: MarkdownIt) => Awaitable<string>
-}
-
-// algolia -------------------------------------------------------------------
-
-/**
- * Algolia search options. Partially copied from
- * `@docsearch/react/dist/esm/DocSearch.d.ts`
- */
-export interface AlgoliaSearchOptions extends DocSearchProps {
-  locales?: Record<string, Partial<DocSearchProps>>
 }
 
 // carbon ads ----------------------------------------------------------------

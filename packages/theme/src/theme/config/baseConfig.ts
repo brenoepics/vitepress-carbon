@@ -1,46 +1,44 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+import type { UserConfig } from 'vitepress'
+import type { ThemeConfig } from '../config.js'
+
 /**
  * This file is intended to be required from VitePress
- * consuming project's config file.
+ * consuming project's baseConfig file.
  *
  * It runs in Node.js.
  */
 
 // for local-linked development
-const deps = ['@vue/theme', '@vueuse/core', 'body-scroll-lock']
+const deps = ['vitepress/theme','@vueuse/core', 'body-scroll-lock']
 
-import { type UserConfig } from 'vitepress'
-import { type ThemeConfig } from '../config'
-
-const config: UserConfig<ThemeConfig> = {
+export const baseConfig: UserConfig<ThemeConfig> = {
   scrollOffset: ['header', '.VPLocalNav'],
   appearance: {
     initialValue: 'dark'
   },
   vite: {
     ssr: {
-      noExternal: deps
+      noExternal: [...deps, 'vitepress/theme']
     },
     optimizeDeps: {
       exclude: deps
     }
   },
 
-  head: [
-  ],
+  head: [],
 
   markdown: {
     headers: {
       level: [2, 3]
     },
     config(md) {
-
     }
   },
 
   transformHead({ assets }) {
-    const font = assets.find((file) =>
-      /Mona-Sans\.\w+\.woff2/.test(file)
-    )
+    const font = assets.find((file) => /Mona-Sans\.\w+\.woff2/.test(file))
     if (font) {
       return [
         [
@@ -63,4 +61,5 @@ const config: UserConfig<ThemeConfig> = {
   }
 }
 
-export default config
+export type { ThemeConfig }
+export default baseConfig

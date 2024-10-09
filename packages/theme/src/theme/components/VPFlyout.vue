@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ref } from 'vue'
 import { useFlyout } from '../composables/flyout'
 import VPIconChevronDown from './icons/VPIconChevronDown.vue'

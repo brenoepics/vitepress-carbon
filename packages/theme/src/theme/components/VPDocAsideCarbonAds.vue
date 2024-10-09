@@ -5,7 +5,7 @@ import type { DefaultTheme } from 'vitepress/theme'
 defineProps<{
   carbonAds: DefaultTheme.CarbonAdsOptions
 }>()
-
+/* eslint-disable no-undef */
 const VPCarbonAds = __CARBON__
   ? defineAsyncComponent(() => import('./VPCarbonAds.vue'))
   : () => null

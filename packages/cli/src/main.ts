@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { defineCommand } from 'citty'
 import vpcarPkg from '../package.json' assert { type: 'json' }
-import { commands } from './commands'
-import { checkEngines } from './utils/engines'
+import { commands } from './commands/index.js'
+import { checkEngines } from './utils/engines.js'
 
 export const main = defineCommand({
   meta: {
@@ -14,8 +15,7 @@ export const main = defineCommand({
     const command = ctx.args._[0]
 
     // Check Node.js version and CLI updates in background
-    let backgroundTasks: Promise<any> | undefined
-    backgroundTasks = Promise.all([
+    const backgroundTasks: Promise<any> | undefined = Promise.all([
       checkEngines()
       // checkForUpdates(),
     ]).catch((err) => console.error(err))

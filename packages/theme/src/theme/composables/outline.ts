@@ -23,13 +23,12 @@ export function resolveTitle(theme: DefaultTheme.Config) {
 }
 
 export function getHeaders(range: DefaultTheme.Config['outline']) {
-  let headers: {
+  const headers: {
     level: number
     link: string
     title: string
     element: HTMLHeadElement
-  }[]
-  headers = [
+  }[] = [
     ...Array.from(document.querySelectorAll('.VPDoc :where(h1,h2,h3,h4,h5,h6)'))
   ]
     .filter((el) => el.id && el.hasChildNodes())

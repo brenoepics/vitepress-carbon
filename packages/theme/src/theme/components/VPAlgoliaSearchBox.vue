@@ -45,7 +45,7 @@ async function update() {
 
 function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
   const options = Object.assign<
-    {},
+    object,
     DefaultTheme.AlgoliaSearchOptions,
     Partial<DocSearchProps>
   >({}, userOptions, {

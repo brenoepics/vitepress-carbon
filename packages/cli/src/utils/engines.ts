@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export async function checkEngines() {
   const satisfies = await import('semver/functions/satisfies.js').then(
     (r) =>

@@ -231,7 +231,8 @@ debouncedWatch(
         }
       })
     })
-    const excerpts: NodeListOf<HTMLElementTagNameMap['div']> = el.value?.querySelectorAll('.result .excerpt')! ?? []!
+    /* eslint-disable no-undef */
+    const excerpts: NodeListOf<HTMLElementTagNameMap['div']> = el.value!.querySelectorAll('.result .excerpt')! ?? []
     excerpts.forEach((excerpt) => {
       excerpt
         .querySelector('mark[data-markjs="true"]')
@@ -262,7 +263,7 @@ const disableReset = computed(() => {
 })
 function focusSearchInput(select = true) {
   searchInput.value?.focus()
-  select && searchInput.value?.select()
+  if(select) searchInput.value?.select()
 }
 
 onMounted(() => {

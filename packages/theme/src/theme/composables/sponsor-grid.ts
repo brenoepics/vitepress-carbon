@@ -115,7 +115,11 @@ function neutralizeSlots(el: HTMLElement, count: number) {
     return
   }
 
-  count > 0 ? addSlots(el, count) : removeSlots(el, count * -1)
+  if (count > 0) {
+    addSlots(el, count)
+  } else {
+    removeSlots(el, count * -1)
+  }
 }
 
 function addSlots(el: HTMLElement, count: number) {

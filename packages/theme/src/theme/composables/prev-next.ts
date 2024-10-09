@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any  */
 import { computed, type Ref } from 'vue'
 import { useData } from './data'
 import { isActive } from '../../shared'

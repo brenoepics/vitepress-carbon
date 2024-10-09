@@ -1,7 +1,7 @@
 // adapted from https://stackoverflow.com/a/46432113/11613622
 
 export class LRUCache<K, V> {
-  private max: number
+  private readonly max: number
   private cache: Map<K, V>
 
   constructor(max: number = 10) {
@@ -10,7 +10,7 @@ export class LRUCache<K, V> {
   }
 
   get(key: K): V | undefined {
-    let item = this.cache.get(key)
+    const item = this.cache.get(key)
     if (item !== undefined) {
       // refresh key
       this.cache.delete(key)

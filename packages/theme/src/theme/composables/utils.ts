@@ -15,7 +15,7 @@ export function pathToFile(path: string) {
   }
 
   if (inBrowser) {
-    const base = ""//import.meta.env.BASE_URL
+    const base = '' //import.meta.env.BASE_URL
     pagePath =
       sanitizeFileName(
         pagePath.slice(base.length).replace(/\//g, '_') || 'index'

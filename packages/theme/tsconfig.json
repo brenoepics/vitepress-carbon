@@ -16,7 +16,8 @@
     "jsx": "preserve",
     "lib": ["esnext", "dom", "dom.iterable"],
     "declarationDir": "./dist",
-    "types": ["@types/node"],
+    "types": ["@types/node"]
   },
-  "include": ["src/**/*", "vite-env.d.ts"]
+  "include": ["src/**/*", "vite-env.d.ts"],
+  "exclude": ["node_modules", "dist"]
 }

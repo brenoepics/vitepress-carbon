@@ -1,4 +1,5 @@
 <script setup lang="ts">
+/* eslint-disable vue/no-v-text-v-html-on-component */
 import { computed } from 'vue'
 import type { DefaultTheme } from 'vitepress/theme'
 import { useSidebarControl } from '../composables/sidebar'
@@ -50,11 +51,11 @@ function onItemInteraction(e: MouseEvent | Event) {
   if ('key' in e && e.key !== 'Enter') {
     return
   }
-  !props.item.link && toggle()
+  if(!props.item.link) toggle()
 }
 
 function onCaretClick() {
-  props.item.link && toggle()
+  if(props.item.link) toggle()
 }
 </script>
 
@@ -86,7 +87,7 @@ function onCaretClick() {
       <component v-else :is="textTag" class="text" v-html="item.text" />
 
       <div
-        v-if="item.collapsed != null"
+        v-if="item.collapsed != undefined"
         class="caret"
         role="button"
         aria-label="toggle section"
