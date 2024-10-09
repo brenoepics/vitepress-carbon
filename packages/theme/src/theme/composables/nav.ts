@@ -26,7 +26,7 @@ export function useNav() {
    * Close screen when the user resizes the window wider than tablet size.
    */
   function closeScreenOnTabletWindow() {
-    if(window.outerWidth >= 768) closeScreen()
+    if (window.outerWidth >= 768) closeScreen()
   }
 
   const route = useRoute()

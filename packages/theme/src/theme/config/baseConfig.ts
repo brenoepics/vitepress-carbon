@@ -11,7 +11,7 @@ import type { ThemeConfig } from '../config.js'
  */
 
 // for local-linked development
-const deps = ['vitepress/theme','@vueuse/core', 'body-scroll-lock']
+const deps = ['vitepress/theme', '@vueuse/core', 'body-scroll-lock']
 
 export const baseConfig: UserConfig<ThemeConfig> = {
   scrollOffset: ['header', '.VPLocalNav'],
@@ -33,8 +33,7 @@ export const baseConfig: UserConfig<ThemeConfig> = {
     headers: {
       level: [2, 3]
     },
-    config(md) {
-    }
+    config(md) {}
   },
 
   transformHead({ assets }) {

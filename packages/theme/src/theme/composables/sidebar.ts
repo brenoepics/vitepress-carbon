@@ -181,7 +181,7 @@ export function useSidebarControl(
   })
 
   watchPostEffect(() => {
-    if (isActiveLink.value || hasActiveLink.value) (collapsed.value = false)
+    if (isActiveLink.value || hasActiveLink.value) collapsed.value = false
   })
 
   function toggle() {

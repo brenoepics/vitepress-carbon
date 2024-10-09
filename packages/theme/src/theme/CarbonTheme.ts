@@ -246,20 +246,20 @@ export namespace CarbonTheme {
   export type FeatureIcon =
     | string
     | {
-    src: string
-    alt?: string
-    width?: string
-    height?: string
-    wrap?: boolean
-  }
+        src: string
+        alt?: string
+        width?: string
+        height?: string
+        wrap?: boolean
+      }
     | {
-    light: string
-    dark: string
-    alt?: string
-    width?: string
-    height?: string
-    wrap?: boolean
-  }
+        light: string
+        dark: string
+        alt?: string
+        width?: string
+        height?: string
+        wrap?: boolean
+      }
 
   // sidebar -------------------------------------------------------------------
 
@@ -623,7 +623,7 @@ export interface SearchOptions {
     | 'ignorePlurals'
     | 'singleWordSynonym'
     | 'multiWordsSynonym'
-    )[]
+  )[]
   enableRules?: boolean
   ruleContexts?: string[]
   distinct?: boolean | number
