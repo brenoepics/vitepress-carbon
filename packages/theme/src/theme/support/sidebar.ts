@@ -1,6 +1,6 @@
 import type { CarbonTheme } from '../CarbonTheme.js'
-import { ensureStartingSlash } from './utils'
-import { isActive } from '../../shared'
+import { ensureStartingSlash } from './utils.js'
+import { isActive } from '../../shared.js'
 
 export interface SidebarLink {
   text: string

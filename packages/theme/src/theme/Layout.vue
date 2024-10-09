@@ -8,8 +8,8 @@ import VPLocalNav from './components/VPLocalNav.vue'
 import VPNav from './components/VPNav.vue'
 import VPSidebar from './components/VPSidebar.vue'
 import VPSkipLink from './components/VPSkipLink.vue'
-import { useData } from './composables/data'
-import { useCloseSidebarOnEscape, useSidebar } from './composables/sidebar'
+import { useData } from './composables/data.js'
+import { useCloseSidebarOnEscape, useSidebar } from './composables/sidebar.js'
 
 const {
   isOpen: isSidebarOpen,

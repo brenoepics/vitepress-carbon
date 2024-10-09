@@ -2,8 +2,8 @@ import { getScrollOffset } from 'vitepress'
 import type { CarbonTheme } from '../CarbonTheme.js'
 import { onMounted, onUnmounted, onUpdated, type Ref } from 'vue'
 import type { Header } from 'vitepress'
-import { throttleAndDebounce } from '../support/utils'
-import { useAside } from './aside'
+import { throttleAndDebounce } from '../support/utils.js'
+import { useAside } from './aside.js'
 
 // cached list of anchor elements from resolveHeaders
 const resolvedHeaders: { element: HTMLHeadElement; link: string }[] = []

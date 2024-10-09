@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-namespace */
 import type { Options as MiniSearchOptions } from 'minisearch'
 import type { ComputedRef, Ref, ShallowRef } from 'vue'
 

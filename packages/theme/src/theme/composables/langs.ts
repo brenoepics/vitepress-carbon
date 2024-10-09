@@ -1,7 +1,7 @@
 import { computed } from 'vue'
-import { ensureStartingSlash } from '../support/utils'
-import { useData } from './data'
-import { hashRef } from './hash'
+import { ensureStartingSlash } from '../support/utils.js'
+import { useData } from './data.js'
+import { hashRef } from './hash.js'
 
 export function useLanguages({
   removeCurrent = true,

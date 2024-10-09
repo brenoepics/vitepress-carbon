@@ -1,8 +1,8 @@
 import { onContentUpdated } from 'vitepress'
 import type { CarbonTheme } from '../CarbonTheme.js'
 import { computed, shallowRef } from 'vue'
-import { getHeaders, type MenuItem } from './outline'
-import { useData } from './data'
+import { getHeaders, type MenuItem } from './outline.js'
+import { useData } from './data.js'
 
 export function useLocalNav(): CarbonTheme.DocLocalNav {
   const { theme, frontmatter } = useData()

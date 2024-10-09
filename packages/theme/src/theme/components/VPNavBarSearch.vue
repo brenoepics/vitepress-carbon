@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+/* eslint-disable @typescript-eslint/no-explicit-any, no-undef */
 import '@docsearch/css'
 import { onKeyStroke } from '@vueuse/core'
 import {

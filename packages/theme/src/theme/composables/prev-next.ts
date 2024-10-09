@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any  */
 import { computed, type Ref } from 'vue'
-import { useData } from './data'
-import { isActive } from '../../shared'
-import { getSidebar, getFlatSideBarLinks } from '../support/sidebar'
+import { useData } from './data.js'
+import { isActive } from '../../shared.js'
+import { getSidebar, getFlatSideBarLinks } from '../support/sidebar.js'
 import { type PageData } from 'vitepress'
-import type { CarbonTheme } from '../CarbonTheme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 
 export function usePrevNext() {
   const { page, theme, frontmatter } = useData()

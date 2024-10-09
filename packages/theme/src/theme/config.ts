@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { PageData } from 'vitepress'
 import type { ComputedRef, Ref, ShallowRef } from 'vue'
 import type { MenuItem } from './composables/outline.js'

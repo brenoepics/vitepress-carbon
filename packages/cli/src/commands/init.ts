@@ -6,7 +6,7 @@ import type { PackageManagerName } from 'nypm'
 import { installDependencies } from 'nypm'
 import { defineCommand } from 'citty'
 
-import { sharedArgs } from './_shared'
+import { sharedArgs } from './_shared.js'
 import { stringify } from 'yaml'
 import { promises as fsp } from 'node:fs'
 import { dependabotTemplate, githubPagesTemplate } from '../utils/templates'

@@ -15,10 +15,10 @@ import {
   hasActiveLink as containsActiveLink,
   getSidebar,
   getSidebarGroups
-} from '../support/sidebar'
-import { useData } from './data'
-import { hashRef } from './hash'
-import { isActive } from '../../shared'
+} from '../support/sidebar.js'
+import { useData } from './data.js'
+import { hashRef } from './hash.js'
+import { isActive } from '../../shared.js'
 
 export interface SidebarControl {
   collapsed: Ref<boolean>

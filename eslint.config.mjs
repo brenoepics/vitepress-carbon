@@ -2,7 +2,7 @@ import globals from 'globals'
 import pluginJs from '@eslint/js'
 import tseslint from 'typescript-eslint'
 import pluginVue from 'eslint-plugin-vue'
-import customRules from './rules/eslint-plugin-custom-rules.js'
+import customRules from './rules/require-file-extension-plugin.js'
 
 export default [
   { files: ['**/*.{js,mjs,cjs,ts,vue}'] },
@@ -14,23 +14,18 @@ export default [
   { ignores: ['**/*.d.ts'] },
   {
     plugins: {
-      'custom-rules': customRules
+      'brenoepics': customRules
     },
     rules: {
       'no-restricted-imports': [
         'error',
         {
-          name: 'vitepress',
-          importNames: ['DefaultTheme']
+          name: 'vitepress/theme',
+          importNames: ['DefaultTheme'],
         }
       ],
-      //'no-restricted-imports': [
-      //  'error',
-      //  {
-      //    patterns: ['^(?!.*\\.[a-z]+$).*'],
-      //  }
-      //],
-      'custom-rules/require-file-extension-in-exports': 'error',
+      'brenoepics/require-file-extension-in-exports': 'error',
+      'brenoepics/require-file-extension-in-imports': 'error',
       'vue/multi-word-component-names': 'off'
     }
   }

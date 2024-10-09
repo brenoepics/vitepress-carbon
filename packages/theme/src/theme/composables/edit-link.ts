@@ -1,5 +1,5 @@
 import { computed } from 'vue'
-import { useData } from './data'
+import { useData } from './data.js'
 
 export function useEditLink() {
   const { theme, page } = useData()

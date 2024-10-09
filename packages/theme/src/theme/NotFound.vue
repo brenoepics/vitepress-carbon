@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { withBase } from 'vitepress'
-import { useData } from './composables/data'
-import { useLanguages } from './composables/langs'
+import { useData } from './composables/data.js'
+import { useLanguages } from './composables/langs.js'
 
 const { site, theme } = useData()
 const { localeLinks } = useLanguages({ removeCurrent: false })
