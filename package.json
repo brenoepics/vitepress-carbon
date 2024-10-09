@@ -1,6 +1,6 @@
 {
   "name": "vitepress-carbon-monorepo",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "Carbon embraces GitHub's monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.",
   "keywords": [
     "vue",
@@ -15,7 +15,6 @@
     "prettier:fail": "prettier --check --parser typescript \"{__tests__,docs,packages,types}/**/*.ts\"",
     "lint": "pnpm eslint --fix && pnpm prettier",
     "lint:fail": "pnpm eslint && pnpm prettier:fail",
-
     "release": "changelogen --release && pnpm --filter vpcar run release && pnpm --filter vitepress-carbon release && git push --follow-tags"
   },
   "author": "Breno A.",
