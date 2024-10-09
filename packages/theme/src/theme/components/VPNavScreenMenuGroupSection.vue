@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import VPNavScreenMenuGroupLink from './VPNavScreenMenuGroupLink.vue'
 
 defineProps<{
   text?: string
-  items: DefaultTheme.NavItemWithLink[]
+  items: CarbonTheme.NavItemWithLink[]
 }>()
 </script>
 

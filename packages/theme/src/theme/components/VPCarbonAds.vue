@@ -1,13 +1,13 @@
 <script setup lang="ts">
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import { ref, watch, onMounted } from 'vue'
 import { useAside } from '../composables/aside'
 import { useData } from '../composables/data'
 
 const { page } = useData()
 const props = defineProps<{
-  carbonAds: DefaultTheme.CarbonAdsOptions
+  carbonAds: CarbonTheme.CarbonAdsOptions
 }>()
 
 const carbonOptions = props.carbonAds

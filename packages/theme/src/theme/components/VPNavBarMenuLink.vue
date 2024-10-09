@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import { useData } from '../composables/data'
 import { isActive } from '../../shared'
 import VPLink from './VPLink.vue'
 
 defineProps<{
-  item: DefaultTheme.NavItemWithLink
+  item: CarbonTheme.NavItemWithLink
 }>()
 
 const { page } = useData()

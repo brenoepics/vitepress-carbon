@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import { computed } from 'vue'
 import VPTeamMembersItem from './VPTeamMembersItem.vue'
 
 interface Props {
   size?: 'small' | 'medium'
-  members: DefaultTheme.TeamMember[]
+  members: CarbonTheme.TeamMember[]
 }
 
 const props = withDefaults(defineProps<Props>(), {

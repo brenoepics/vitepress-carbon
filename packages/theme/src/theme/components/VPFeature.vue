@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import VPImage from './VPImage.vue'
 import VPLink from './VPLink.vue'
 import { ref } from 'vue'
 import VPFeaturePattern from './VPFeaturePattern.vue'
 
 defineProps<{
-  icon?: DefaultTheme.FeatureIcon
+  icon?: CarbonTheme.FeatureIcon
   title: string
   details?: string
   link?: string

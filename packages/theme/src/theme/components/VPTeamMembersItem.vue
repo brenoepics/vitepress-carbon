@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import VPIconHeart from './icons/VPIconHeart.vue'
 import VPLink from './VPLink.vue'
 import VPSocialLinks from './VPSocialLinks.vue'
 
 interface Props {
   size?: 'small' | 'medium'
-  member: DefaultTheme.TeamMember
+  member: CarbonTheme.TeamMember
 }
 
 withDefaults(defineProps<Props>(), {

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import { computed } from 'vue'
 import VPFeature from './VPFeature.vue'
 
 export interface Feature {
-  icon?: DefaultTheme.FeatureIcon
+  icon?: CarbonTheme.FeatureIcon
   title: string
   details: string
   link?: string

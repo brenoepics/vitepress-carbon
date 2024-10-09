@@ -7,7 +7,7 @@ import {
   onUnmounted,
   ref
 } from 'vue'
-import type { DefaultTheme } from '../../shared'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import { useData } from '../composables/data'
 import VPNavBarSearchButton from './VPNavBarSearchButton.vue'
 
@@ -36,7 +36,7 @@ const preconnect = () => {
     preconnect.id = id
     preconnect.rel = 'preconnect'
     preconnect.href = `https://${
-      ((theme.value.search?.options as DefaultTheme.AlgoliaSearchOptions) ??
+      ((theme.value.search?.options as CarbonTheme.AlgoliaSearchOptions) ??
         theme.value.algolia)!.appId
     }-dsn.algolia.net`
     preconnect.crossOrigin = ''

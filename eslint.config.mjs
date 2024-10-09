@@ -20,9 +20,16 @@ export default [
       'no-restricted-imports': [
         'error',
         {
-          patterns: ['^(?!.*\\.[a-z]+$).*']
+          name: 'vitepress',
+          importNames: ['DefaultTheme']
         }
       ],
+      //'no-restricted-imports': [
+      //  'error',
+      //  {
+      //    patterns: ['^(?!.*\\.[a-z]+$).*'],
+      //  }
+      //],
       'custom-rules/require-file-extension-in-exports': 'error',
       'vue/multi-word-component-names': 'off'
     }

@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import VPMenuLink from './VPMenuLink.vue'
 import VPMenuGroup from './VPMenuGroup.vue'
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 
 defineProps<{
-  items?: (DefaultTheme.NavItemChildren | DefaultTheme.NavItemWithLink)[]
+  items?: (CarbonTheme.NavItemChildren | CarbonTheme.NavItemWithLink)[]
 }>()
 </script>
 

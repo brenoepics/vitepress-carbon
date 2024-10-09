@@ -1,4 +1,4 @@
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import { ensureStartingSlash } from './utils'
 import { isActive } from '../../shared'
 
@@ -8,7 +8,7 @@ export interface SidebarLink {
   docFooterText?: string
 }
 
-type SidebarItem = DefaultTheme.SidebarItem
+type SidebarItem = CarbonTheme.SidebarItem
 
 /**
  * Get the `Sidebar` from sidebar option. This method will ensure to get correct
@@ -17,7 +17,7 @@ type SidebarItem = DefaultTheme.SidebarItem
  * return empty array.
  */
 export function getSidebar(
-  _sidebar: DefaultTheme.Sidebar | undefined,
+  _sidebar: CarbonTheme.Sidebar | undefined,
   path: string
 ): SidebarItem[] {
   if (Array.isArray(_sidebar)) return addBase(_sidebar)

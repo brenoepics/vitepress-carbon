@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import { inject } from 'vue'
 import VPLink from './VPLink.vue'
 
 defineProps<{
-  item: DefaultTheme.NavItemWithLink
+  item: CarbonTheme.NavItemWithLink
 }>()
 
 const closeScreen = inject('close-screen') as () => void

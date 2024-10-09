@@ -1,10 +1,10 @@
 import { onContentUpdated } from 'vitepress'
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import { computed, shallowRef } from 'vue'
 import { getHeaders, type MenuItem } from './outline'
 import { useData } from './data'
 
-export function useLocalNav(): DefaultTheme.DocLocalNav {
+export function useLocalNav(): CarbonTheme.DocLocalNav {
   const { theme, frontmatter } = useData()
 
   const headers = shallowRef<MenuItem[]>([])

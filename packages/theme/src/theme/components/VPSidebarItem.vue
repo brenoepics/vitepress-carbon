@@ -1,13 +1,13 @@
 <script setup lang="ts">
 /* eslint-disable vue/no-v-text-v-html-on-component */
 import { computed } from 'vue'
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import { useSidebarControl } from '../composables/sidebar'
 import VPIconChevronRight from './icons/VPIconChevronRight.vue'
 import VPLink from './VPLink.vue'
 
 const props = defineProps<{
-  item: DefaultTheme.SidebarItem
+  item: CarbonTheme.SidebarItem
   depth: number
 }>()
 

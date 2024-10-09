@@ -1,5 +1,5 @@
 import { getScrollOffset } from 'vitepress'
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import { onMounted, onUnmounted, onUpdated, type Ref } from 'vue'
 import type { Header } from 'vitepress'
 import { throttleAndDebounce } from '../support/utils'
@@ -13,7 +13,7 @@ export type MenuItem = Omit<Header, 'slug' | 'children'> & {
   children?: MenuItem[]
 }
 
-export function resolveTitle(theme: DefaultTheme.Config) {
+export function resolveTitle(theme: CarbonTheme.Config) {
   return (
     (typeof theme.outline === 'object' &&
       !Array.isArray(theme.outline) &&
@@ -22,7 +22,7 @@ export function resolveTitle(theme: DefaultTheme.Config) {
   )
 }
 
-export function getHeaders(range: DefaultTheme.Config['outline']) {
+export function getHeaders(range: CarbonTheme.Config['outline']) {
   const headers: {
     level: number
     link: string
@@ -66,7 +66,7 @@ function serializeHeader(h: Element): string {
 
 export function resolveHeaders(
   headers: MenuItem[],
-  range?: DefaultTheme.Config['outline']
+  range?: CarbonTheme.Config['outline']
 ): MenuItem[] {
   if (range === false) {
     return []

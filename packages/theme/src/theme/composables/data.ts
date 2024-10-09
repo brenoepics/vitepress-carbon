@@ -1,5 +1,5 @@
 import { useData as vitepressUseData } from 'vitepress'
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 
-export const useData: typeof vitepressUseData<DefaultTheme.Config> =
+export const useData: typeof vitepressUseData<CarbonTheme.Config> =
   vitepressUseData

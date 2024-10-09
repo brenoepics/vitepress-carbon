@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export type {
   Awaitable,
-  DefaultTheme,
   HeadConfig,
   Header,
   LocaleConfig,

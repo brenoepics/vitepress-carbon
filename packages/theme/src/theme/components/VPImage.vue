@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import { withBase } from 'vitepress'
 
 defineProps<{
-  image: DefaultTheme.ThemeableImage
+  image: CarbonTheme.ThemeableImage
   alt?: string
 }>()
 

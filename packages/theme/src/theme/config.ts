@@ -1,6 +1,7 @@
-import type { DefaultTheme, PageData } from 'vitepress'
+import type { PageData } from 'vitepress'
 import type { ComputedRef, Ref, ShallowRef } from 'vue'
 import type { MenuItem } from './composables/outline.js'
+import type { CarbonTheme } from './CarbonTheme.js'
 
 export interface ThemeConfig {
   /**
@@ -38,7 +39,7 @@ export interface ThemeConfig {
   /**
    * The nav items.
    */
-  nav?: DefaultTheme.NavItem[]
+  nav?: CarbonTheme.NavItem[]
 
   /**
    * The sidebar items.
@@ -111,8 +112,8 @@ export interface ThemeConfig {
   langMenuLabel?: string
 
   search?:
-    | { provider: 'local'; options?: DefaultTheme.LocalSearchOptions }
-    | { provider: 'algolia'; options: DefaultTheme.AlgoliaSearchOptions }
+    | { provider: 'local'; options?: CarbonTheme.LocalSearchOptions }
+    | { provider: 'algolia'; options: CarbonTheme.AlgoliaSearchOptions }
 
   /**
    * The carbon ads options. Leave it undefined to disable the ads feature.

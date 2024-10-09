@@ -4,7 +4,7 @@ import { useData } from './data'
 import { isActive } from '../../shared'
 import { getSidebar, getFlatSideBarLinks } from '../support/sidebar'
 import { type PageData } from 'vitepress'
-import { type DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme'
 
 export function usePrevNext() {
   const { page, theme, frontmatter } = useData()
@@ -13,7 +13,7 @@ export function usePrevNext() {
 
 function handlePrevNext(
   page: Ref<PageData>,
-  theme: Ref<DefaultTheme.Config>,
+  theme: Ref<CarbonTheme.Config>,
   frontmatter: Ref<Record<string, any>>
 ) {
   const sidebar = getSidebar(theme.value.sidebar, page.value.relativePath)

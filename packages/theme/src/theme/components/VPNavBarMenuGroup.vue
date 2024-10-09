@@ -1,17 +1,17 @@
 <script lang="ts" setup>
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import { computed } from 'vue'
 import { useData } from '../composables/data'
 import { isActive } from '../../shared'
 import VPFlyout from './VPFlyout.vue'
 
 const props = defineProps<{
-  item: DefaultTheme.NavItemWithChildren
+  item: CarbonTheme.NavItemWithChildren
 }>()
 
 const { page } = useData()
 
-const isChildActive = (navItem: DefaultTheme.NavItem) => {
+const isChildActive = (navItem: CarbonTheme.NavItem) => {
   if ('component' in navItem) return false
 
   if ('link' in navItem) {

@@ -1,5 +1,5 @@
 import { useMediaQuery } from '@vueuse/core'
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import {
   computed,
   onMounted,
@@ -140,7 +140,7 @@ export function useCloseSidebarOnEscape(
 }
 
 export function useSidebarControl(
-  item: ComputedRef<DefaultTheme.SidebarItem>
+  item: ComputedRef<CarbonTheme.SidebarItem>
 ): SidebarControl {
   const { page } = useData()
 

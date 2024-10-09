@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import VPSocialLink from './VPSocialLink.vue'
 
 defineProps<{
-  links: DefaultTheme.SocialLink[]
+  links: CarbonTheme.SocialLink[]
 }>()
 </script>
 

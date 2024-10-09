@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import docsearch from '@docsearch/js'
 import { useRoute, useRouter,  } from 'vitepress'
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import { nextTick, onMounted, watch } from 'vue'
 import { useData } from '../composables/data'
 import { type SitemapItem } from '../../vp-node'
 
 const props = defineProps<{
-  algolia: DefaultTheme.AlgoliaSearchOptions
+  algolia: CarbonTheme.AlgoliaSearchOptions
 }>()
 
 const router = useRouter()
@@ -43,10 +43,10 @@ async function update() {
   })
 }
 
-function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
+function initialize(userOptions: CarbonTheme.AlgoliaSearchOptions) {
   const options = Object.assign<
     object,
-    DefaultTheme.AlgoliaSearchOptions,
+    CarbonTheme.AlgoliaSearchOptions,
     Partial<DocSearchProps>
   >({}, userOptions, {
     container: '#docsearch',

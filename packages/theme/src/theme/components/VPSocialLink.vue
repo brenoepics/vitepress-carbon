@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import { computed } from 'vue'
 import { icons } from '../support/socialIcons'
 
 const props = defineProps<{
-  icon: DefaultTheme.SocialLinkIcon
+  icon: CarbonTheme.SocialLinkIcon
   link: string
   ariaLabel?: string
 }>()

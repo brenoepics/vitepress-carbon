@@ -1,7 +1,7 @@
 /// <reference types="node" />
 // noinspection JSUnusedGlobalSymbols
 /* eslint-disable */
-export type { DefaultTheme, HeadConfig, Header, SiteData } from './shared'
+export type { HeadConfig, Header, SiteData } from './shared'
 import { IncomingMessage, ServerResponse } from 'http'
 import { Server, type ListenOptions } from 'net'
 

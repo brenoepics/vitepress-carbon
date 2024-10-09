@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { inject, type Ref } from 'vue'
-import type { DefaultTheme } from 'vitepress/theme'
+import type { CarbonTheme } from '../CarbonTheme.js'
 import VPButton from './VPButton.vue'
 import VPImage from './VPImage.vue'
 import VPHighlight, { type HighlightIcon } from './VPHighlight.vue'
@@ -17,7 +17,7 @@ defineProps<{
   name?: string
   text?: string
   tagline?: string
-  image?: DefaultTheme.ThemeableImage
+  image?: CarbonTheme.ThemeableImage
   actions?: HeroAction[]
   icon?: HighlightIcon
 }>()
