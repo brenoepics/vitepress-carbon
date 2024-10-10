@@ -44,7 +44,7 @@ const reverseColors = (colors: Array<string>) => {
 <template>
   <div class="side-highlight">
     <div class="string-highlight"
-         :style="{backgroundColor: `linear-gradient(${stringHighlightColors.join(', ')})`}" />
+         :style="{background: `linear-gradient(${stringHighlightColors.join(', ')})`}" />
     <div class="icon" :class="{ 'glowing-active': glowingActive }">
       <div v-if="typeof icon === 'object' && icon.wrap" class="icon">
         <VPImage
@@ -67,7 +67,7 @@ const reverseColors = (colors: Array<string>) => {
       ></span>
     </div>
     <div class="string-highlight"
-         :style="{backgroundColor: `linear-gradient(${reverseColors(stringHighlightColors).join(', ')})`}" />
+         :style="{background: `linear-gradient(${reverseColors(stringHighlightColors).join(', ')})`}" />
   </div>
 </template>
 
