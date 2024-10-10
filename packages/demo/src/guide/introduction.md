@@ -4,6 +4,10 @@ VitePress Carbon is a sleek and minimalistic theme for VitePress, inspired by Gi
 its clean and elegant style, VitePress Carbon offers a seamless documentation experience, perfect for projects seeking
 simplicity and sophistication.
 
+## Try it online
+
+Check out the [StackBlitz](https://stackblitz.com/edit/vp-carbon?file=README.md) demo to see VitePress Carbon in action.
+
 ## Installation
 
 To create a project with VitePress Carbon theme, you have three options:
