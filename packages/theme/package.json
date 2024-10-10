@@ -1,6 +1,6 @@
 {
   "name": "vitepress-carbon",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Theme for VitePress documentation.",
   "main": "dist/index.js",
   "type": "module",
@@ -12,6 +12,10 @@
     "./config": {
       "types": "./dist/theme/config/baseConfig.d.ts",
       "default": "./dist/theme/config/baseConfig.js"
+    },
+    "./components": {
+      "types": "./dist/theme/components/index.d.ts",
+      "default": "./dist/theme/components/index.js"
     }
   },
   "types": "dist/index.d.ts",
@@ -37,7 +41,8 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "clean": "rm -rf dist",
-    "build": "pnpm clean && vue-tsc --noEmit -p ./ && tsc -p ./ && node scripts/copyTheme.js",
+    "addAssets": "node scripts/copyTheme.js && node scripts/generateComponentExports.js",
+    "build": "pnpm clean && vue-tsc --noEmit -p ./ && tsc -p ./ && pnpm addAssets",
     "release": "pnpm build && npm publish"
   },
   "dependencies": {
