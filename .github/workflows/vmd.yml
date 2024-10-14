@@ -33,6 +33,6 @@ jobs:
           cache: 'pnpm'
 
       - name: Vue Mess Detector Analysis
-        uses: brenoepics/vmd-action@v0.0.6
+        uses: brenoepics/vmd-action@v0.0.7
         with:
           srcDir: './packages/theme/src/'
