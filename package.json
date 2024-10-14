@@ -34,7 +34,7 @@
     "typescript-eslint": "^8.8.1"
   },
   "dependencies": {
-    "@algolia/client-search": "^5.7.0",
+    "@algolia/client-search": "^5.8.1",
     "@types/node": "^22.7.4",
     "changelogen": "^0.5.7",
     "mark.js": "^8.11.1",
