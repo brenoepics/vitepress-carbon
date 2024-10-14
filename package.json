@@ -39,11 +39,11 @@
     "changelogen": "^0.5.7",
     "mark.js": "^8.11.1",
     "search-insights": "^2.17.2",
-    "vitepress": "^1.4.0",
+    "vitepress": "^1.4.1",
     "vue": "^3.5.12"
   },
   "peerDependencies": {
-    "vitepress": "^1.4.0"
+    "vitepress": "^1.4.1"
   },
   "packageManager": "pnpm@9.9.0"
 }
