@@ -11,7 +11,7 @@ import type { ThemeConfig } from '../config.js'
  */
 
 // for local-linked development
-const deps = ['vitepress/theme', '@vueuse/core', 'body-scroll-lock']
+const deps = ['vitepress-carbon/components', '@vueuse/core', 'body-scroll-lock']
 
 export const baseConfig: UserConfig<ThemeConfig> = {
   scrollOffset: ['header', '.VPLocalNav'],
@@ -20,7 +20,7 @@ export const baseConfig: UserConfig<ThemeConfig> = {
   },
   vite: {
     ssr: {
-      noExternal: [...deps, /\.css$/, /^vitepress-carbon/]
+      noExternal: [...deps, /\.css$/, /\.vue$/, /^vitepress-carbon/]
     },
     optimizeDeps: {
       exclude: deps
