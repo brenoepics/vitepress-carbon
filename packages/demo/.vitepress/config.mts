@@ -1,9 +1,9 @@
 import { defineConfigWithTheme } from 'vitepress'
 import path from 'path'
 import type { ThemeConfig } from 'vitepress-carbon'
-import baseConfig from 'vitepress-carbon/config'
-import { DefaultTheme } from 'vitepress/theme'
-import { searchForWorkspaceRoot } from './theme/utils/SearchRoot'
+import { CarbonTheme } from 'vitepress-carbon/dist/theme/CarbonTheme'
+import baseConfig from 'vitepress-carbon/dist/theme/config/baseConfig'
+import { searchForWorkspaceRoot } from './theme/utils/SearchRoot.js'
 
 const guideGroupItems = [
   { text: 'Introduction', link: '/guide/introduction' },
@@ -11,20 +11,16 @@ const guideGroupItems = [
   { text: 'Configuration', link: '/guide/configuration' }
 ]
 
-const themeGroupItems = [
-  { text: 'Extending', link: '/guide/extending-theme' }
-]
+const themeGroupItems = [{ text: 'Extending', link: '/guide/extending-theme' }]
 
-const componentGroupItems = [
-  { text: 'Home', link: '/guide/home-component' }
-]
+const componentGroupItems = [{ text: 'Home', link: '/guide/home-component' }]
 
 const examplesItems = [
   { text: 'Markdown Examples', link: '/examples/markdown-examples' },
   { text: 'Runtime API Examples', link: '/examples/api-examples' }
 ]
 
-const nav: DefaultTheme.NavItem[] = [
+const nav: CarbonTheme.NavItem[] = [
   {
     text: 'Guide',
     activeMatch: `^/guide/`,
@@ -38,7 +34,8 @@ const nav: DefaultTheme.NavItem[] = [
     text: 'Examples',
     activeMatch: `^/examples/`,
     items: examplesItems
-  }, {
+  },
+  {
     text: 'VitePress',
     link: `https://vitepress.dev`
   }
@@ -56,12 +53,12 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   lang: 'en-US',
   title: 'VitePress Carbon',
-  description: 'Carbon embraces GitHub\'s monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.',
+  description:
+    "Carbon embraces GitHub's monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.",
   srcDir: 'src',
   lastUpdated: true,
   cleanUrls: true,
   metaChunk: true,
-
   sitemap: {
     hostname: 'https://carbon.breno.tech',
     transformItems(items) {
@@ -82,7 +79,8 @@ export default defineConfigWithTheme<ThemeConfig>({
     },
 
     editLink: {
-      pattern: 'https://github.com/brenoepics/vitepress-carbon/edit/main/demo/src/:path',
+      pattern:
+        'https://github.com/brenoepics/vitepress-carbon/edit/main/demo/src/:path',
       text: 'Edit this page on GitHub'
     },
 
@@ -91,28 +89,62 @@ export default defineConfigWithTheme<ThemeConfig>({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/brenoepics/vitepress-carbon' },
+      { icon: 'github', link: 'https://github.com/brenoepics/vitepress-carbon' }
     ]
   },
 
   head: [
     ['link', { rel: 'icon', href: 'https://carbon.breno.tech/logo.svg' }],
-    ['meta', {
-      name: 'description',
-      content: 'Carbon embraces GitHub\'s monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.'
-    }],
+    [
+      'meta',
+      {
+        name: 'description',
+        content:
+          "Carbon embraces GitHub's monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish."
+      }
+    ],
     ['meta', { property: 'og:url', content: 'https://carbon.breno.tech/' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'VitePress Carbon' }],
-    ['meta', {
-      property: 'og:description',
-      content: 'Carbon embraces GitHub\'s monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.'
-    }],
-    ['meta', { property: 'og:image', content: 'https://carbon.breno.tech/site-card.jpg' }],
-    ['meta', { property: 'theme-color', name: 'theme-color', content: '#41ad4f' }],
-    ['meta', { property: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' }],
-    ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=AW-16586074464' }],
-    ['script', {}, `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'AW-16586074464');`]
+    [
+      'meta',
+      {
+        property: 'og:description',
+        content:
+          "Carbon embraces GitHub's monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish."
+      }
+    ],
+    [
+      'meta',
+      {
+        property: 'og:image',
+        content: 'https://carbon.breno.tech/site-card.jpg'
+      }
+    ],
+    [
+      'meta',
+      { property: 'theme-color', name: 'theme-color', content: '#41ad4f' }
+    ],
+    [
+      'meta',
+      {
+        property: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      }
+    ],
+    [
+      'script',
+      {
+        async: '',
+        src: 'https://www.googletagmanager.com/gtag/js?id=AW-16586074464'
+      }
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'AW-16586074464');`
+    ]
   ],
 
   vite: {
@@ -126,7 +158,6 @@ export default defineConfigWithTheme<ThemeConfig>({
           path.join(__dirname, '../../theme/src/theme/fonts/')
         ]
       }
-    },
+    }
   }
 })
-
