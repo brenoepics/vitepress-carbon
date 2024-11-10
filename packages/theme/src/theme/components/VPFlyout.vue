@@ -131,7 +131,7 @@ function onBlur() {
 
 .menu {
   position: absolute;
-  top: calc(var(--vp-nav-height) / 2 + 20px);
+  top: calc(var(--vp-nav-height) / 2 + 5px);
   right: 0;
   opacity: 0;
   visibility: hidden;
