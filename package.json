@@ -15,9 +15,7 @@
     "prettier:fail": "prettier --check --parser typescript \"{__tests__,docs,packages,types}/**/*.ts\"",
     "lint": "pnpm eslint --fix && pnpm prettier",
     "lint:fail": "pnpm eslint && pnpm prettier:fail",
-    "build": "pnpm --filter vitepress-carbon run build && pnpm --filter vpcar run build && pnpm --filter vitepress-carbon-demo build",
-    "release": "changelogen --release && pnpm --filter vpcar run release && pnpm --filter vitepress-carbon release && git push --follow-tags",
-    "release:minor": "changelogen --release --minor && pnpm --filter vpcar run release && pnpm --filter vitepress-carbon release && git push --follow-tags"
+    "build": "pnpm --filter vitepress-carbon run build && pnpm --filter vpcar run build && pnpm --filter vitepress-carbon-demo build"
   },
   "author": "Breno A.",
   "license": "MIT",
@@ -26,6 +24,7 @@
     "url": "https://github.com/brenoepics/vitepress-carbon/issues"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.9",
     "@eslint/js": "^9.12.0",
     "@types/mark.js": "^8.11.12",
     "eslint": "^9.12.0",
@@ -38,7 +37,6 @@
   "dependencies": {
     "@algolia/client-search": "^5.8.1",
     "@types/node": "^22.7.4",
-    "changelogen": "^0.5.7",
     "mark.js": "^8.11.1",
     "search-insights": "^2.17.2",
     "vitepress": "^1.4.1",
