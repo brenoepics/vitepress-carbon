@@ -9,6 +9,8 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json",
     "./config": {
       "types": "./dist/theme/config/baseConfig.d.ts",
       "default": "./dist/theme/config/baseConfig.js"
@@ -40,7 +42,7 @@
   "packageManager": "pnpm@9.9.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "clean": "rm -rf dist",
+    "clean": "rimraf dist",
     "addAssets": "node scripts/copyTheme.js && node scripts/generateComponentExports.js",
     "build": "pnpm clean && vue-tsc --noEmit -p ./ && tsc -p ./ && pnpm addAssets",
     "release": "pnpm build && npm publish"
@@ -62,6 +64,7 @@
   },
   "devDependencies": {
     "@mdit-vue/types": "^2.1.0",
-    "@types/body-scroll-lock": "^3.1.0"
+    "@types/body-scroll-lock": "^3.1.0",
+    "rimraf": "^6.0.1"
   }
 }

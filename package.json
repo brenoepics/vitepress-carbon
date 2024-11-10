@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "pnpm --filter vitepress-carbon-demo run dev",
+    "dev": "pnpm --filter vitepress-carbon run build && pnpm --filter vitepress-carbon-demo run dev",
     "demo-build": "vitepress build ./packages/demo",
     "eslint": "eslint ./packages/**/src/**/*.{ts,js,vue}",
     "prettier": "prettier --check --write --parser typescript \"{__tests__,docs,packages,types}/**/*.ts\"",
