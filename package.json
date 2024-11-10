@@ -16,7 +16,8 @@
     "lint": "pnpm eslint --fix && pnpm prettier",
     "lint:fail": "pnpm eslint && pnpm prettier:fail",
     "build": "pnpm --filter vitepress-carbon run build && pnpm --filter vpcar run build && pnpm --filter vitepress-carbon-demo build",
-    "release": "changelogen --release && pnpm --filter vpcar run release && pnpm --filter vitepress-carbon release && git push --follow-tags"
+    "release": "changelogen --release && pnpm --filter vpcar run release && pnpm --filter vitepress-carbon release && git push --follow-tags",
+    "release:minor": "changelogen --release --minor && pnpm --filter vpcar run release && pnpm --filter vitepress-carbon release && git push --follow-tags"
   },
   "author": "Breno A.",
   "license": "MIT",
