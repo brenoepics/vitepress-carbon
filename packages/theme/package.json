@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
-    "@docsearch/css": "^3.2.1",
+    "@docsearch/css": "^3.7.0",
     "@docsearch/js": "^3.2.1",
     "@vueuse/core": "^11.1.0",
     "@vueuse/integrations": "^11.1.0",

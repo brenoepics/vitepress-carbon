@@ -112,8 +112,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       '@docsearch/css':
-        specifier: ^3.2.1
-        version: 3.6.2
+        specifier: ^3.7.0
+        version: 3.7.0
       '@docsearch/js':
         specifier: ^3.2.1
         version: 3.6.2(@algolia/client-search@5.8.1)(search-insights@2.17.2)
@@ -393,6 +393,9 @@ packages:
 
   '@docsearch/css@3.6.2':
     resolution: {integrity: sha512-vKNZepO2j7MrYBTZIGXvlUOIR+v9KRf70FApRgovWrj3GTs1EITz/Xb0AOlm1xsQBp16clVZj1SY/qaOJbQtZw==}
+
+  '@docsearch/css@3.7.0':
+    resolution: {integrity: sha512-1OorbTwi1eeDmr0v5t+ckSRlt1zM5GHjm92iIl3kUu7im3GHuP+csf6E0WBg8pdXQczTWP9J9+o9n+Vg6DH5cQ==}
 
   '@docsearch/js@3.6.2':
     resolution: {integrity: sha512-pS4YZF+VzUogYrkblCucQ0Oy2m8Wggk8Kk7lECmZM60hTbaydSIhJTTiCrmoxtBqV8wxORnOqcqqOfbmkkQEcA==}
@@ -858,10 +861,6 @@ packages:
 
   '@eslint/eslintrc@3.1.0':
     resolution: {integrity: sha512-4Bfj15dVJdoy3RfZmmo86RK1Fwzn6SstsvK9JS+BaVKqC6QQQQyXekNaC+g+LKNgkQ+2VhGAzm6hO40AhMR3zQ==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@eslint/js@9.12.0':
-    resolution: {integrity: sha512-eohesHH8WFRUprDNyEREgqP6beG6htMeUYeCpkEgBCieCMme5r9zFWjzAJp//9S+Kub4rqE+jXe9Cp1a7IYIIA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/js@9.14.0':
@@ -3502,6 +3501,8 @@ snapshots:
 
   '@docsearch/css@3.6.2': {}
 
+  '@docsearch/css@3.7.0': {}
+
   '@docsearch/js@3.6.2(@algolia/client-search@5.8.1)(search-insights@2.17.2)':
     dependencies:
       '@docsearch/react': 3.6.2(@algolia/client-search@5.8.1)(search-insights@2.17.2)
@@ -3766,8 +3767,6 @@ snapshots:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
-
-  '@eslint/js@9.12.0': {}
 
   '@eslint/js@9.14.0': {}
 
@@ -5817,7 +5816,7 @@ snapshots:
   terser@5.34.1:
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.12.1
+      acorn: 8.14.0
       commander: 2.20.3
       source-map-support: 0.5.21
     optional: true
@@ -5994,7 +5993,7 @@ snapshots:
 
   vitepress@1.4.1(@algolia/client-search@5.8.1)(@types/node@22.7.4)(fuse.js@7.0.0)(postcss@8.4.47)(search-insights@2.17.2)(terser@5.34.1)(typescript@5.6.3):
     dependencies:
-      '@docsearch/css': 3.6.2
+      '@docsearch/css': 3.7.0
       '@docsearch/js': 3.6.2(@algolia/client-search@5.8.1)(search-insights@2.17.2)
       '@shikijs/core': 1.22.0
       '@shikijs/transformers': 1.22.0
