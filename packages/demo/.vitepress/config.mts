@@ -80,7 +80,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     editLink: {
       pattern:
-        'https://github.com/brenoepics/vitepress-carbon/edit/main/demo/src/:path',
+        'https://github.com/brenoepics/vitepress-carbon/edit/main/packages/demo/src/:path',
       text: 'Edit this page on GitHub'
     },
 
