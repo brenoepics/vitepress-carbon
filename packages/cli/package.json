@@ -36,7 +36,7 @@
     "@types/node": "^20.16.10",
     "@types/semver": "^7.5.8",
     "citty": "^0.1.6",
-    "consola": "^3.2.3",
+    "consola": "^3.4.0",
     "execa": "^9.5.1",
     "giget": "^1.2.3",
     "nypm": "^0.3.12",
