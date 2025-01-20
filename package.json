@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@algolia/client-search": "^5.19.0",
-    "@types/node": "^22.7.4",
+    "@types/node": "^22.10.7",
     "mark.js": "^8.11.1",
     "search-insights": "^2.17.3",
     "vitepress": "^1.5.0",
