@@ -40,7 +40,7 @@
     "execa": "^9.5.1",
     "giget": "^1.2.3",
     "nypm": "^0.3.12",
-    "pathe": "^1.1.2",
+    "pathe": "^2.0.2",
     "semver": "^7.6.3",
     "unbuild": "^2.0.0",
     "unplugin-purge-polyfills": "^0.0.7",
