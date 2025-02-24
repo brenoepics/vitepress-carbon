@@ -33,7 +33,7 @@
     "release": "npm publish"
   },
   "devDependencies": {
-    "@types/node": "^20.16.10",
+    "@types/node": "^22.13.5",
     "@types/semver": "^7.5.8",
     "citty": "^0.1.6",
     "consola": "^3.4.0",
