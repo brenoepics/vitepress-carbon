@@ -48,7 +48,7 @@
     "release": "pnpm build && npm publish"
   },
   "dependencies": {
-    "@clack/prompts": "^0.9.1",
+    "@clack/prompts": "^0.10.1",
     "@docsearch/css": "^3.9.0",
     "@docsearch/js": "^3.9.0",
     "@vueuse/core": "^13.1.0",
