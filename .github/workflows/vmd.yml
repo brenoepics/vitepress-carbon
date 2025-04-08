@@ -18,21 +18,26 @@ jobs:
     runs-on: ubuntu-latest
     name: Detect Vue Mess
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@c6295a65d1254861815972266d5933fd6e532bdf # v2.11.1
+        with:
+          egress-policy: audit
 
-      - uses: pnpm/action-setup@v4
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
         name: Install pnpm
         with:
           run_install: false
 
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
         with:
           node-version: 20
           cache: 'pnpm'
 
       - name: Vue Mess Detector Analysis
-        uses: brenoepics/vmd-action@v0.0.7
+        uses: brenoepics/vmd-action@05ed0c6f0824f63816ee22aeea4460cd0ef1a25e # v0.0.7
         with:
           srcDir: './packages/theme/src/'

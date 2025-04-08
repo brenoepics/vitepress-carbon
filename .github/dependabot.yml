@@ -13,3 +13,18 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+
+  - package-ecosystem: npm
+    directory: /packages/cli
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /packages/demo
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /packages/theme
+    schedule:
+      interval: daily
