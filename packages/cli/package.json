@@ -44,7 +44,7 @@
     "semver": "^7.6.3",
     "unbuild": "^2.0.0",
     "unplugin-purge-polyfills": "^0.0.7",
-    "yaml": "^2.6.0",
+    "yaml": "^2.7.1",
     "rollup": "^4.28.0"
   },
   "packageManager": "pnpm@9.12.0",
