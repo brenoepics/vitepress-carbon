@@ -41,7 +41,7 @@
     "giget": "^2.0.0",
     "nypm": "^0.6.0",
     "pathe": "^2.0.3",
-    "semver": "^7.7.1",
+    "semver": "^7.7.2",
     "unbuild": "^3.5.0",
     "unplugin-purge-polyfills": "^0.0.7",
     "yaml": "^2.7.1",
