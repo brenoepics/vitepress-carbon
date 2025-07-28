@@ -40,7 +40,7 @@
     "mark.js": "^8.11.1",
     "search-insights": "^2.17.3",
     "vitepress": "^1.6.3",
-    "vue": "^3.5.13"
+    "vue": "^3.5.18"
   },
   "peerDependencies": {
     "vitepress": "^1.5.0"
