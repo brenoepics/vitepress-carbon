@@ -26,6 +26,10 @@ defineProps({
     type: Boolean,
     default: false
   },
+  glowingIcon: {
+    type: String,
+    default: 'var(--vp-c-brand-3)'
+  },
   stringHighlightColors: {
     type: Array<string>,
     default: () => ['transparent', 'var(--vp-c-brand-1)', 'var(--vp-c-brand-3)']
@@ -37,7 +41,7 @@ defineProps({
 })
 
 const reverseColors = (colors: Array<string>) => {
-  return colors.reverse()
+  return [...colors].reverse()
 }
 </script>
 
@@ -62,8 +66,10 @@ const reverseColors = (colors: Array<string>) => {
         :width="icon.width || 24"
       />
       <div v-else-if="icon" class="icon" v-html="icon"></div>
+      
       <span
         class="glowing-icon-glow"
+        :style="{ background: glowingIcon }"
       ></span>
     </div>
     <div class="string-highlight"
