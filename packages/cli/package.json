@@ -43,7 +43,7 @@
     "pathe": "^2.0.3",
     "semver": "^7.7.2",
     "unbuild": "^3.5.0",
-    "unplugin-purge-polyfills": "^0.0.7",
+    "unplugin-purge-polyfills": "^0.1.0",
     "yaml": "^2.8.0",
     "rollup": "^4.44.0"
   },
