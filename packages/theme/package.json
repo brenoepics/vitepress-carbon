@@ -51,7 +51,7 @@
     "@clack/prompts": "^0.10.1",
     "@docsearch/css": "^3.9.0",
     "@docsearch/js": "^3.9.0",
-    "@vueuse/core": "^13.5.0",
+    "@vueuse/core": "^14.0.0",
     "@vueuse/integrations": "^13.1.0",
     "body-scroll-lock": "^3.1.5",
     "fs-extra": "^11.3.0",
@@ -59,8 +59,8 @@
     "minisearch": "^7.1.2",
     "normalize.css": "^8.0.1",
     "tinyglobby": "^0.2.12",
-    "vue": "^3.5.13",
-    "vue-tsc": "^2.2.8"
+    "vue": "^3.5.22",
+    "vue-tsc": "^3.1.2"
   },
   "devDependencies": {
     "@mdit-vue/types": "^2.1.4",
