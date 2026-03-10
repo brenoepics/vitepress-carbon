@@ -29,7 +29,7 @@
     "@types/mark.js": "^8.11.12",
     "eslint": "^9.30.0",
     "eslint-plugin-vue": "^9.33.0",
-    "globals": "^16.2.0",
+    "globals": "^16.4.0",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.37.0"
@@ -40,7 +40,7 @@
     "mark.js": "^8.11.1",
     "search-insights": "^2.17.3",
     "vitepress": "^1.6.3",
-    "vue": "^3.5.13"
+    "vue": "^3.5.22"
   },
   "peerDependencies": {
     "vitepress": "^1.5.0"
