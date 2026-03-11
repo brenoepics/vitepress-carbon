@@ -21,8 +21,8 @@ importers:
         specifier: ^2.17.3
         version: 2.17.3
       vitepress:
-        specifier: ^1.6.3
-        version: 1.6.3(@algolia/client-search@5.23.3)(@types/node@22.14.1)(fuse.js@7.0.0)(postcss@8.5.8)(search-insights@2.17.3)(terser@5.34.1)(typescript@5.8.3)
+        specifier: ^1.6.4
+        version: 1.6.4(@algolia/client-search@5.23.3)(@types/node@22.14.1)(fuse.js@7.0.0)(postcss@8.5.8)(search-insights@2.17.3)(terser@5.34.1)(typescript@5.8.3)
       vue:
         specifier: ^3.5.22
         version: 3.5.30(typescript@5.8.3)
@@ -1152,20 +1152,11 @@ packages:
       vite: ^5.0.0 || ^6.0.0
       vue: ^3.2.25
 
-  '@volar/language-core@2.4.12':
-    resolution: {integrity: sha512-RLrFdXEaQBWfSnYGVxvR2WrO6Bub0unkdHYIdC31HzIEqATIuuhRRzYu76iGPZ6OtA4Au1SnW0ZwIqPP217YhA==}
-
   '@volar/language-core@2.4.28':
     resolution: {integrity: sha512-w4qhIJ8ZSitgLAkVay6AbcnC7gP3glYM3fYwKV3srj8m494E3xtrCv6E+bWviiK/8hs6e6t1ij1s2Endql7vzQ==}
 
-  '@volar/source-map@2.4.12':
-    resolution: {integrity: sha512-bUFIKvn2U0AWojOaqf63ER0N/iHIBYZPpNGogfLPQ68F5Eet6FnLlyho7BS0y2HJ1jFhSif7AcuTx1TqsCzRzw==}
-
   '@volar/source-map@2.4.28':
     resolution: {integrity: sha512-yX2BDBqJkRXfKw8my8VarTyjv48QwxdJtvRgUpNE5erCsgEUdI2DsLbpa+rOQVAJYshY99szEcRDmyHbF10ggQ==}
-
-  '@volar/typescript@2.4.12':
-    resolution: {integrity: sha512-HJB73OTJDgPc80K30wxi3if4fSsZZAOScbj2fcicMuOPoOkcf9NNAINb33o+DzhBdF9xTKC1gnPmIRDous5S0g==}
 
   '@volar/typescript@2.4.28':
     resolution: {integrity: sha512-Ja6yvWrbis2QtN4ClAKreeUZPVYMARDYZl9LMEv1iQ1QdepB6wn0jTRxA9MftYmYa4DQ4k/DaSZpFPUfxl8giw==}
@@ -2915,8 +2906,8 @@ packages:
       terser:
         optional: true
 
-  vitepress@1.6.3:
-    resolution: {integrity: sha512-fCkfdOk8yRZT8GD9BFqusW3+GggWYZ/rYncOfmgcDtP3ualNHCAg+Robxp2/6xfH1WwPHtGpPwv7mbA3qomtBw==}
+  vitepress@1.6.4:
+    resolution: {integrity: sha512-+2ym1/+0VVrbhNyRoFFesVvBvHAVMZMK0rw60E3X/5349M1GuVdKeazuksqopEdvkKwKGs21Q729jX81/bkBJg==}
     hasBin: true
     peerDependencies:
       markdown-it-mathjax3: ^4
@@ -3975,26 +3966,11 @@ snapshots:
       vite: 5.4.17(@types/node@22.14.1)(terser@5.34.1)
       vue: 3.5.30(typescript@5.8.3)
 
-  '@volar/language-core@2.4.12':
-    dependencies:
-      '@volar/source-map': 2.4.12
-    optional: true
-
   '@volar/language-core@2.4.28':
     dependencies:
       '@volar/source-map': 2.4.28
 
-  '@volar/source-map@2.4.12':
-    optional: true
-
   '@volar/source-map@2.4.28': {}
-
-  '@volar/typescript@2.4.12':
-    dependencies:
-      '@volar/language-core': 2.4.12
-      path-browserify: 1.0.1
-      vscode-uri: 3.1.0
-    optional: true
 
   '@volar/typescript@2.4.28':
     dependencies:
@@ -4071,10 +4047,10 @@ snapshots:
 
   '@vue/language-core@2.2.8(typescript@5.8.3)':
     dependencies:
-      '@volar/language-core': 2.4.12
-      '@vue/compiler-dom': 3.5.13
+      '@volar/language-core': 2.4.28
+      '@vue/compiler-dom': 3.5.30
       '@vue/compiler-vue2': 2.7.16
-      '@vue/shared': 3.5.13
+      '@vue/shared': 3.5.30
       alien-signals: 1.0.13
       minimatch: 9.0.5
       muggle-string: 0.4.1
@@ -5822,14 +5798,14 @@ snapshots:
   vite@5.4.17(@types/node@22.14.1)(terser@5.34.1):
     dependencies:
       esbuild: 0.21.5
-      postcss: 8.5.3
+      postcss: 8.5.8
       rollup: 4.59.0
     optionalDependencies:
       '@types/node': 22.14.1
       fsevents: 2.3.3
       terser: 5.34.1
 
-  vitepress@1.6.3(@algolia/client-search@5.23.3)(@types/node@22.14.1)(fuse.js@7.0.0)(postcss@8.5.8)(search-insights@2.17.3)(terser@5.34.1)(typescript@5.8.3):
+  vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@22.14.1)(fuse.js@7.0.0)(postcss@8.5.8)(search-insights@2.17.3)(terser@5.34.1)(typescript@5.8.3):
     dependencies:
       '@docsearch/css': 3.8.2
       '@docsearch/js': 3.8.2(@algolia/client-search@5.23.3)(search-insights@2.17.3)
@@ -5840,7 +5816,7 @@ snapshots:
       '@types/markdown-it': 14.1.2
       '@vitejs/plugin-vue': 5.2.3(vite@5.4.17(@types/node@22.14.1)(terser@5.34.1))(vue@3.5.30(typescript@5.8.3))
       '@vue/devtools-api': 7.7.2
-      '@vue/shared': 3.5.13
+      '@vue/shared': 3.5.30
       '@vueuse/core': 12.8.2(typescript@5.8.3)
       '@vueuse/integrations': 12.8.2(focus-trap@7.6.4)(fuse.js@7.0.0)(typescript@5.8.3)
       focus-trap: 7.6.4
@@ -5895,7 +5871,7 @@ snapshots:
 
   vue-tsc@2.2.8(typescript@5.8.3):
     dependencies:
-      '@volar/typescript': 2.4.12
+      '@volar/typescript': 2.4.28
       '@vue/language-core': 2.2.8(typescript@5.8.3)
       typescript: 5.8.3
     optional: true
