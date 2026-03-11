@@ -11,7 +11,8 @@ defineProps<{
   open: boolean
 }>()
 
-const screen = ref<HTMLElement | null>(null)
+// @ts-expect-error - Variable kept for compatibility/future
+const _screen = ref<HTMLElement | null>(null)
 const isLocked = useScrollLock(inBrowser ? document.body : null)
 </script>
 
