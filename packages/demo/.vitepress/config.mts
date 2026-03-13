@@ -94,7 +94,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   },
 
   head: [
-    ['link', { rel: 'icon', href: 'https://carbon.breno.tech/logo.svg' }],
+    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
     [
       'meta',
       {
@@ -148,6 +148,13 @@ export default defineConfigWithTheme<ThemeConfig>({
   ],
 
   vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler'
+        }
+      }
+    },
     build: {
       minify: false
     },
