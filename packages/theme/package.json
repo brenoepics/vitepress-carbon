@@ -66,5 +66,13 @@
     "@mdit-vue/types": "^2.1.4",
     "@types/body-scroll-lock": "^3.1.2",
     "rimraf": "^6.0.1"
+  },
+  "peerDependencies": {
+    "markdown-it-mathjax3": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "markdown-it-mathjax3": {
+      "optional": true
+    }
   }
 }
