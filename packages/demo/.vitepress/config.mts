@@ -93,6 +93,13 @@ export default defineConfigWithTheme<ThemeConfig>({
     ]
   },
 
+  markdown: {
+    math: {
+      output: 'svg'
+    },
+    config: (md) => { }
+  },
+
   head: [
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
     [

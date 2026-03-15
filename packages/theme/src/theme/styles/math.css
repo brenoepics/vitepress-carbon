@@ -1,0 +1,22 @@
+.vp-doc mjx-container {
+  display: block !important;
+  max-width: 100% !important;
+  overflow-x: auto !important; 
+  overflow-y: hidden !important;
+  padding: 1.2em 0 !important;
+  margin: 1em 0 !important;
+}
+
+.vp-doc mjx-container svg {
+  min-width: min-content;
+  margin: 0 auto;
+}
+
+.vp-doc mjx-container::-webkit-scrollbar {
+  height: 4px;
+}
+
+.vp-doc mjx-container::-webkit-scrollbar-thumb {
+  background: var(--vp-c-divider);
+  border-radius: 10px;
+}
