@@ -28,20 +28,12 @@ const showFooter = computed(() => {
           <span class="desc" v-html="theme.docFooter?.prev || 'Previous page'"></span>
           <span class="title" v-html="control.prev.text"></span>
         </VPLink>
-        <div v-else class="pager-link prev disabled-pager">
-          <span class="desc" v-html="theme.docFooter?.prev || 'Previous page'"></span>
-          <span class="title"></span>
-        </div>
       </div>
       <div class="pager">
         <VPLink v-if="control.next?.link" class="pager-link next" :href="control.next.link">
           <span class="desc" v-html="theme.docFooter?.next || 'Next page'"></span>
           <span class="title" v-html="control.next.text"></span>
         </VPLink>
-        <div v-else class="pager-link prev disabled-pager">
-          <span class="desc" v-html="theme.docFooter?.next || 'Previous page'"></span>
-          <span class="title"></span>
-        </div>
       </div>
     </nav>
   </footer>
