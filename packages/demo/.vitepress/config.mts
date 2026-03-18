@@ -97,7 +97,6 @@ export default defineConfigWithTheme<ThemeConfig>({
     math: {
       output: 'svg'
     },
-    config: (md) => { }
   },
 
   head: [
@@ -155,13 +154,6 @@ export default defineConfigWithTheme<ThemeConfig>({
   ],
 
   vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler'
-        }
-      }
-    },
     build: {
       minify: false
     },
