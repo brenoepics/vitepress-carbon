@@ -3,10 +3,9 @@
 VitePress Carbon is a minimalistic theme for VitePress, inspired by GitHub's monochromatic design. It offers a clean and
 elegant documentation experience, ideal for projects seeking simplicity.
 
-![NPM Version](https://img.shields.io/npm/v/vitepress-carbon)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/brenoepics/vitepress-carbon/node.js.yml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=brenoepics_vitepress-carbon&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=brenoepics_vitepress-carbon)
-![GitHub Repo stars](https://img.shields.io/github/stars/brenoepics/vitepress-carbon)
+[![Open on npmx.dev](https://npmx.dev/api/registry/badge/size/vitepress-carbon)](https://npmx.dev/package/vitepress-carbon)
+[![Open on npmx.dev](https://npmx.dev/api/registry/badge/downloads-month/vitepress-carbon)](https://npmx.dev/package/vitepress-carbon)
+[![Open on npmx.dev](https://npmx.dev/api/registry/badge/deprecated/vitepress-carbon)](https://npmx.dev/package/vitepress-carbon)
 
 ## Demo
 
