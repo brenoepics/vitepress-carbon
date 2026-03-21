@@ -88,16 +88,17 @@ const reverseColors = (colors: Array<string>) => {
 <style scoped>
 .side-highlight {
   display: flex;
-  width: 8.3%;
+  flex: 0 0 24px;
+  width: 24px;
   height: auto;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
   align-items: center;
 }
 
 .icon {
-  height: 25px;
-  width: 25px;
+  height: 22px;
+  width: 22px;
   position: relative;
 
   svg {
@@ -138,8 +139,9 @@ const reverseColors = (colors: Array<string>) => {
 }
 
 .string-highlight {
-  height: calc(100% / 2 - 10px);
-  width: 3px;
+  flex: 1 1 0;
+  min-height: 56px;
+  width: 2px;
   border-radius: 3px;
 }
 

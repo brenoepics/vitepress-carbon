@@ -19,9 +19,11 @@
 }
 
 html {
+  min-height: 100%;
   line-height: 1.4;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  background-color: var(--vp-c-bg);
 }
 
 html.dark {
@@ -43,6 +45,11 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  min-height: 100vh;
+  background-color: var(--vp-c-bg);
 }
 
 main {

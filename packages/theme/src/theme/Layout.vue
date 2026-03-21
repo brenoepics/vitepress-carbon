@@ -125,6 +125,6 @@ provide('hero-image-slot-exists', heroImageSlotExists)
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--vp-c-bg-alt);
+  background-color: var(--vp-c-bg);
 }
 </style>

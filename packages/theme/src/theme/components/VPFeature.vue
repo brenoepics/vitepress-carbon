@@ -136,38 +136,40 @@ function onMouseLeave() {
 .VPFeature {
   position: relative;
   display: block;
-  border: 1px solid var(--vp-c-border);
-  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--vp-home-card-border-color);
+  border-radius: 16px;
   height: 100%;
-  background-color: var(--vp-c-bg-soft);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent 38%),
+    var(--vp-home-card-bg);
   padding: 24px;
+  box-shadow: inset 0 1px 0 rgba(240, 246, 252, 0.03);
   transition:
     border-color 0.25s,
     background-color 0.25s,
+    box-shadow 0.25s,
     transform 50ms;
-  font-weight: 600;
 }
 
 .vp-link {
   display: flex;
   flex-direction: column;
   height: 100%;
+  gap: 18px;
 }
 
 .header-box {
   display: flex;
   flex-direction: row;
-  gap: 6px;
+  gap: 14px;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .box {
   display: flex;
   flex-direction: column;
-  padding-left: 5px;
-  padding-bottom: 10px;
-  padding-top: 5px;
+  flex: 1 1 auto;
 }
 
 .box > :deep(.VPImage) {
@@ -178,13 +180,21 @@ function onMouseLeave() {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--vp-c-border);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 22px;
-  transition: background-color 0.25s;
+  flex: 0 0 auto;
+  border: 1px solid rgba(240, 246, 252, 0.08);
+  background-color: var(--vp-home-card-icon-bg);
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  color: var(--vp-home-card-icon-color);
+  transition:
+    background-color 0.25s,
+    border-color 0.25s;
+}
+
+.icon :deep(svg) {
+  width: 20px;
+  height: 20px;
 }
 
 .vp-link:not(.icon) .box {
@@ -192,23 +202,25 @@ function onMouseLeave() {
 }
 
 .title {
-  line-height: 21px;
-  font-size: 16px;
+  line-height: 1.4;
+  font-size: 17px;
   font-weight: 600;
+  color: var(--vp-c-text-1);
 }
 
 .details {
   font-weight: 400;
   font-size: 15px;
-  line-height: 20px;
+  line-height: 1.7;
   flex-grow: 1;
-  color: var(--vp-c-text-3);
+  color: var(--vp-home-card-text-color);
 }
 
 .link-text {
   display: flex;
-  align-self: end;
+  align-self: flex-start;
   align-items: center;
+  gap: 6px;
   padding: 0 0.1em 0.1em;
   background: linear-gradient(currentColor 0 0) bottom left/ 0 0.1em no-repeat;
   transition: background-size 0.5s;
@@ -247,5 +259,16 @@ function onMouseLeave() {
 
 .VPFeature:hover .VPFeaturePN {
   opacity: 1;
+}
+
+.VPFeature:hover {
+  border-color: var(--vp-home-card-border-hover-color);
+  box-shadow: 0 16px 40px rgba(1, 4, 9, 0.2);
+}
+
+@media (max-width: 767px) {
+  .VPFeature {
+    padding: 20px;
+  }
 }
 </style>
