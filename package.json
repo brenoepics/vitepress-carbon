@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@algolia/client-search": "^5.49.2",
-    "@types/node": "^22.14.1",
+    "@types/node": "^25.5.0",
     "mark.js": "^8.11.1",
     "search-insights": "^2.17.3",
     "vitepress": "^1.6.4",
