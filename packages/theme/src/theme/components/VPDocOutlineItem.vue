@@ -61,10 +61,9 @@ function handleClose(link: string, title: string) {
   position: relative;
   z-index: 1;
   max-height: 36vh;
-  overflow: hidden;
-  background-color: var(--vp-c-bg);
-  border: 1px solid var(--vp-c-border);
-  border-radius: 6px;
+  overflow: auto;
+  border-left: 1px solid var(--vp-c-border);
+  padding-left: 12px;
 }
 
 @media (min-height: 900px) {
@@ -104,20 +103,20 @@ function handleClose(link: string, title: string) {
   min-height: 2rem;
   border-radius: 6px;
   height: 100%;
-  padding: 6px 8px;
+  padding: 6px 10px;
   gap: 8px;
 }
 
 .nested .vp-outline-item {
-  padding: 6px 8px 6px 16px;
+  padding: 6px 10px 6px 18px;
 }
 
 .outline-link {
   display: block;
-  line-height: 21px;
-  font-size: 14px;
+  line-height: 20px;
+  font-size: 13px;
   font-weight: 400;
-  color: var(--vp-c-text-1);
+  color: var(--vp-c-text-2);
   flex: 1 1 auto;
   overflow: hidden;
   white-space: nowrap;
@@ -140,7 +139,7 @@ function handleClose(link: string, title: string) {
 }
 
 .vp-outline-li.active .vp-outline-item {
-  background-color: var(--color-action-list-item-default-selected-bg);
+  background-color: rgba(177, 186, 196, 0.08);
 }
 
 li {
@@ -150,11 +149,15 @@ li {
 .vp-outline-li.active .vp-outline-item::after {
   content: '';
   position: absolute;
-  left: 0;
-  width: 0.25rem;
-  height: 1.5rem;
+  left: -13px;
+  width: 2px;
+  height: 20px;
   background-color: var(--vp-c-brand-1);
-  border-radius: 6px;
+  border-radius: 999px;
+}
+
+.vp-outline-li.active .outline-link {
+  color: var(--vp-c-brand-1);
 }
 
 .vp-outline-item.nested {

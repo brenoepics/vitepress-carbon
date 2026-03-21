@@ -84,7 +84,7 @@ const target = computed(() =>
   border-color: var(--color-action-list-item-default-active-border);
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .title {
     flex-shrink: 0;
   }

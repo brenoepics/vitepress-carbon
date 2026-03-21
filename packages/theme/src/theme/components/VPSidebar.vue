@@ -64,7 +64,7 @@ watch(
   left: 0;
   z-index: var(--vp-z-index-sidebar);
   width: calc(100vw - 64px);
-  max-width: 336px;
+  max-width: 230px;
   background-color: transparent;
   opacity: 0;
   box-shadow: var(--vp-c-shadow-3);
@@ -90,7 +90,7 @@ watch(
   box-shadow: var(--vp-shadow-1);
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .VPSidebar {
     padding-top: var(--vp-nav-height);
     width: var(--vp-sidebar-width);
@@ -105,7 +105,7 @@ watch(
 .nav {
   outline: 0;
   background: var(--vp-c-bg);
-  padding: 20px;
+  padding: 2px;
   min-height: 100%;
   border-right: 1px solid var(--vp-c-border);
 }
@@ -115,10 +115,10 @@ watch(
   padding-top: 10px;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .group {
     padding-top: 10px;
-    width: calc(var(--vp-sidebar-width) - 64px);
+    width: calc(var(--vp-sidebar-width) - 48px);
   }
 }
 </style>

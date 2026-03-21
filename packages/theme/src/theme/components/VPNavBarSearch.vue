@@ -161,7 +161,7 @@ if (__VP_LOCAL_SEARCH__) {
   flex-shrink: 0;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .VPNavBarSearch {
     padding-left: 32px;
   }

@@ -1,6 +1,7 @@
 /* oxlint-disable @typescript-eslint/no-unused-vars */
 
 import type { UserConfig } from 'vitepress'
+import llmstxt from 'vitepress-plugin-llms'
 import type { ThemeConfig } from '../config.js'
 
 /**
@@ -19,6 +20,7 @@ export const baseConfig: UserConfig<ThemeConfig> = {
     initialValue: 'dark'
   },
   vite: {
+    plugins: [llmstxt()],
     ssr: {
       noExternal: [...deps, /\.css$/, /\.vue$/, /^vitepress-carbon/]
     },

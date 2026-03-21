@@ -7,6 +7,7 @@ import { useSidebar } from '../composables/sidebar'
 import VPDocAside from './VPDocAside.vue'
 import VPDocFooter from './VPDocFooter.vue'
 import VPDocFooterLastUpdated from './VPDocFooterLastUpdated.vue'
+import VPLlmsPageActions from './VPLlmsPageActions.vue'
 import VPLink from './VPLink.vue'
 
 const { theme, page, frontmatter } = useData()
@@ -18,6 +19,9 @@ const hasEditLink = computed(() => {
 })
 const hasLastUpdated = computed(() => {
   return page.value.lastUpdated && frontmatter.value.lastUpdated !== false
+})
+const hasLlmsPageActions = computed(() => {
+  return theme.value.llms?.pageActions !== false
 })
 const route = useRoute()
 const { hasSidebar, hasAside, leftAside } = useSidebar()
@@ -89,7 +93,10 @@ const pageName = computed(() =>
                 <VPDocFooterLastUpdated />
               </div>
             </div>
-            <div v-if="hasEditLink" class="content-box-item">
+            <div v-if="hasLlmsPageActions" class="content-box-item no-hover">
+              <VPLlmsPageActions />
+            </div>
+            <div v-if="hasEditLink" class="content-box-item no-hover">
               <VPLink
                 class="edit-link-button"
                 :href="editLink.url"
@@ -108,6 +115,7 @@ const pageName = computed(() =>
                     d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"
                   ></path>
                 </svg>
+                <span class="edit-link-text">Edit</span>
               </VPLink>
             </div>
           </div>
@@ -136,19 +144,19 @@ const pageName = computed(() =>
 
 <style scoped>
 .VPDoc {
-  padding: 32px 24px 96px;
+  padding: 24px 16px 80px;
   width: 100%;
 }
 
 @media (min-width: 768px) {
   .VPDoc {
-    padding: 48px 32px 128px;
+    padding: 32px 24px 96px;
   }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .VPDoc {
-    padding: 48px 32px 0;
+    padding: 32px 24px 0;
   }
 
   .VPDoc:not(.has-sidebar) .container {
@@ -162,10 +170,12 @@ const pageName = computed(() =>
   }
 }
 
-@media (min-width: 1460px) {
+@media (min-width: 1280px) {
   .VPDoc .container {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
   }
 
   .VPDoc .aside {
@@ -192,16 +202,13 @@ const pageName = computed(() =>
   position: relative;
   display: none;
   order: 2;
-  flex-grow: 1;
-  padding-left: 32px;
-  width: 100%;
-  max-width: 256px;
+  flex: 0 0 var(--vp-doc-aside-width);
+  width: var(--vp-doc-aside-width);
+  max-width: var(--vp-doc-aside-width);
 }
 
 .left-aside {
   order: 1;
-  padding-left: unset;
-  padding-right: 32px;
 }
 
 .aside-container {
@@ -211,7 +218,7 @@ const pageName = computed(() =>
     var(--vp-nav-height) + var(--vp-layout-top-height, 0px) +
       var(--vp-doc-top-height, 0px) + 40px
   );
-  width: 224px;
+  width: var(--vp-doc-aside-width);
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
@@ -228,47 +235,48 @@ const pageName = computed(() =>
   min-height: calc(
     100vh - (var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 48px)
   );
+  border-left: 1px solid var(--vp-c-border);
+  padding-left: 24px;
   padding-bottom: 32px;
+}
+
+.left-aside .aside-content {
+  border-left: 0;
+  border-right: 1px solid var(--vp-c-border);
+  padding-right: 24px;
+  padding-left: 0;
 }
 
 .content {
   position: relative;
   margin: 0 auto;
   width: 100%;
-  border: 1px solid var(--vp-c-border);
-  border-radius: 4px;
-  background-color: var(--vp-c-bg);
-  max-width: 768px;
+  min-width: 0;
+  background-color: transparent;
+  max-width: none;
 }
 
 .main {
-  padding: 15px;
-  overflow: hidden;
+  padding: 24px 0 80px;
+  overflow: visible;
 }
 
 .content-top {
   display: flex;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: var(--vp-c-border);
   align-items: center;
-  padding-right: 8px;
-  position: sticky;
-  top: 0;
+  gap: 4px;
+  border-bottom: 1px solid var(--vp-c-border);
+  padding: 0 0 12px;
   background-color: var(--vp-c-bg);
-  z-index: 1;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
   justify-content: flex-end;
 }
 
 .content-file {
   display: none;
-  padding-left: 8px;
   padding-right: 8px;
   justify-content: flex-start;
   align-items: center;
-  min-height: 48px;
+  min-height: 36px;
   flex-grow: 1;
   max-width: 100%;
 }
@@ -305,7 +313,7 @@ const pageName = computed(() =>
   line-height: calc(1.42857);
   border-radius: 6px;
   font-size: 14px;
-  padding: calc(0.375rem) 8px;
+  padding: 6px 8px;
   align-items: flex-end;
 }
 
@@ -324,6 +332,7 @@ const pageName = computed(() =>
 }
 
 .no-hover {
+  padding: 0 !important;
   background-color: transparent !important;
   border-color: transparent !important;
 }
@@ -339,9 +348,47 @@ const pageName = computed(() =>
   margin: 0;
 }
 
-@media (min-width: 960px) {
+.edit-link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  min-height: 32px;
+  background-color: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  font-size: 13px;
+  font-weight: 500;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.edit-link-button .content-box-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--vp-c-text-2);
+}
+
+.edit-link-button:hover {
+  border-color: var(--vp-c-brand-1);
+  background-color: var(--color-action-list-item-default-hover-bg);
+  color: var(--vp-c-brand-1);
+}
+
+.edit-link-button:hover .content-box-icon {
+  color: var(--vp-c-brand-1);
+}
+
+.edit-link-text {
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
   .main {
-    padding: 32px 32px 128px;
+    padding: 32px 0 128px;
   }
 }
 
@@ -354,9 +401,10 @@ const pageName = computed(() =>
 
 .content-container {
   margin: 0 auto;
+  max-width: var(--vp-doc-content-max-width);
 }
 
 .VPDoc .content-container {
-  max-width: 98%;
+  max-width: var(--vp-doc-content-max-width);
 }
 </style>

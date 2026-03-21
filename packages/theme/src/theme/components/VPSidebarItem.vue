@@ -122,6 +122,10 @@ function onCaretClick() {
   position: relative;
   display: flex;
   width: 100%;
+  align-items: center;
+  border-radius: 6px;
+  padding: 2px 8px 2px 12px;
+  transition: background-color 0.25s;
 }
 
 .VPSidebarItem.collapsible > .item {
@@ -130,14 +134,15 @@ function onCaretClick() {
 
 .indicator {
   position: absolute;
-  top: 6px;
-  bottom: 6px;
-  left: -17px;
+  top: 7px;
+  bottom: 7px;
+  left: 0;
   width: 2px;
   border-radius: 2px;
   transition: background-color 0.25s;
 }
 
+.VPSidebarItem.level-1.is-active > .item > .indicator,
 .VPSidebarItem.level-2.is-active > .item > .indicator,
 .VPSidebarItem.level-3.is-active > .item > .indicator,
 .VPSidebarItem.level-4.is-active > .item > .indicator,
@@ -149,6 +154,7 @@ function onCaretClick() {
   display: flex;
   align-items: center;
   flex-grow: 1;
+  min-width: 0;
 }
 
 .text {
@@ -170,7 +176,11 @@ function onCaretClick() {
 .VPSidebarItem.level-4 .text,
 .VPSidebarItem.level-5 .text {
   font-weight: 450;
-  color: var(--vp-c-text-1);
+  color: var(--vp-c-text-2);
+}
+
+.item:hover {
+  background-color: var(--color-action-list-item-default-hover-bg);
 }
 
 .VPSidebarItem.level-0.is-link > .item > .link:hover .text,
@@ -204,7 +214,11 @@ function onCaretClick() {
 .VPSidebarItem.level-3.is-active > .item .link > .text,
 .VPSidebarItem.level-4.is-active > .item .link > .text,
 .VPSidebarItem.level-5.is-active > .item .link > .text {
-  color: var(--vp-c-brand-1);
+  color: var(--vp-c-text-1);
+}
+
+.VPSidebarItem.is-active > .item {
+  background-color: rgba(177, 186, 196, 0.12);
 }
 
 .caret {
