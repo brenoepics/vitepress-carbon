@@ -9,6 +9,9 @@ catalogs:
     vite-plus:
       specifier: latest
       version: 0.1.13
+    vitest:
+      specifier: npm:@voidzero-dev/vite-plus-test@latest
+      version: 0.1.13
 
 importers:
 
@@ -57,6 +60,9 @@ importers:
       vite-plus:
         specifier: 'catalog:'
         version: 0.1.13(@types/node@22.14.1)(jiti@2.6.1)(terser@5.34.1)(typescript@5.9.3)(vite@5.4.21(@types/node@22.14.1)(lightningcss@1.32.0)(terser@5.34.1))(yaml@2.8.3)
+      vitest:
+        specifier: 'catalog:'
+        version: '@voidzero-dev/vite-plus-test@0.1.13(@types/node@22.14.1)(jiti@2.6.1)(terser@5.34.1)(typescript@5.9.3)(vite@5.4.21(@types/node@22.14.1)(lightningcss@1.32.0)(terser@5.34.1))(yaml@2.8.3)'
 
   packages/cli:
     devDependencies:

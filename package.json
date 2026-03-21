@@ -16,6 +16,8 @@
     "lint": "pnpm eslint --fix && pnpm prettier",
     "lint:fail": "pnpm eslint && pnpm prettier:fail",
     "build": "pnpm --filter vitepress-carbon run build && pnpm --filter vpcar run build && pnpm --filter vitepress-carbon-demo build",
+    "test": "vp test run",
+    "test:integration": "vp test run __tests__/integration",
     "prepare": "vp config"
   },
   "author": "Breno A.",
@@ -33,7 +35,8 @@
     "globals": "^16.4.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.57.1",
-    "vite-plus": "catalog:"
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
   },
   "dependencies": {
     "@algolia/client-search": "^5.49.2",
