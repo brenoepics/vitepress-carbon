@@ -3,9 +3,16 @@
   "version": "1.4.6",
   "description": "Carbon embraces GitHub's monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.",
   "keywords": [
-    "vue",
-    "design-system"
+    "design-system",
+    "vue"
   ],
+  "homepage": "https://github.com/brenoepics/vitepress-carbon#readme",
+  "bugs": {
+    "url": "https://github.com/brenoepics/vitepress-carbon/issues"
+  },
+  "license": "MIT",
+  "author": "Breno A.",
+  "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "pnpm --filter vitepress-carbon run build && pnpm --filter vitepress-carbon-demo run dev",
@@ -20,12 +27,13 @@
     "test:integration": "vp test run __tests__/integration",
     "prepare": "vp config"
   },
-  "author": "Breno A.",
-  "license": "MIT",
-  "type": "module",
-  "homepage": "https://github.com/brenoepics/vitepress-carbon#readme",
-  "bugs": {
-    "url": "https://github.com/brenoepics/vitepress-carbon/issues"
+  "dependencies": {
+    "@algolia/client-search": "^5.49.2",
+    "@types/node": "^22.14.1",
+    "mark.js": "^8.11.1",
+    "search-insights": "^2.17.3",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.22"
   },
   "devDependencies": {
     "@changesets/cli": "^2.30.0",
@@ -38,19 +46,11 @@
     "vite-plus": "catalog:",
     "vitest": "catalog:"
   },
-  "dependencies": {
-    "@algolia/client-search": "^5.49.2",
-    "@types/node": "^22.14.1",
-    "mark.js": "^8.11.1",
-    "search-insights": "^2.17.3",
-    "vitepress": "^1.6.4",
-    "vue": "^3.5.22"
-  },
   "peerDependencies": {
     "vitepress": "^1.5.0"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": "^20.19.0 || >=22.12.0"
   },
   "packageManager": "pnpm@9.9.0"
 }

@@ -5,7 +5,7 @@ export async function checkEngines() {
       r.default || (r as any as typeof import('semver/functions/satisfies.js'))
   ) // npm/node-semver#381
   const currentNode = process.versions.node
-  const nodeRange = '>= 20.0.0'
+  const nodeRange = '^20.19.0 || >=22.12.0'
 
   if (!satisfies(currentNode, nodeRange)) {
     console.warn(
