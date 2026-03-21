@@ -39,6 +39,9 @@
   "bugs": {
     "url": "https://github.com/brenoepics/vitepress-carbon/issues"
   },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "packageManager": "pnpm@9.9.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",

@@ -2,6 +2,9 @@
   "name": "vitepress-carbon-demo",
   "version": "1.0.0",
   "description": "Demo for VitePress Carbon theme.",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "packageManager": "pnpm@9.9.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
