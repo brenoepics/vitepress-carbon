@@ -97,7 +97,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   markdown: {
     math: {
       output: 'svg'
-    },
+    }
   },
 
   head: [
