@@ -39,8 +39,12 @@ const target = computed(() =>
     >
       <slot name="nav-bar-title-before" />
       <VPImage v-if="theme.logo" class="logo" :image="theme.logo" />
-      <template v-if="theme.siteTitle"><span class="nav-bar-title-text">{{ theme.siteTitle }}</span></template>
-      <template v-else-if="theme.siteTitle === undefined"><span class="nav-bar-title-text">{{ site.title }}</span></template>
+      <template v-if="theme.siteTitle"
+        ><span class="nav-bar-title-text">{{ theme.siteTitle }}</span></template
+      >
+      <template v-else-if="theme.siteTitle === undefined"
+        ><span class="nav-bar-title-text">{{ site.title }}</span></template
+      >
       <slot name="nav-bar-title-after" />
     </a>
   </div>

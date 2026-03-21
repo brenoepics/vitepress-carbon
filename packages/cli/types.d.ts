@@ -1,4 +1,4 @@
-/* eslint-disable no-var */
+/* oxlint-disable no-var */
 
 declare global {
   var __vp_cli__:

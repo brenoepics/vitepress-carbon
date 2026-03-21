@@ -15,7 +15,9 @@ const datetime = ref('')
 onMounted(() => {
   watchEffect(() => {
     datetime.value = new Intl.DateTimeFormat(
-      theme.value.lastUpdated?.formatOptions?.forceLocale ? lang.value : undefined,
+      theme.value.lastUpdated?.formatOptions?.forceLocale
+        ? lang.value
+        : undefined,
       theme.value.lastUpdated?.formatOptions ?? {
         dateStyle: 'short',
         timeStyle: 'short'

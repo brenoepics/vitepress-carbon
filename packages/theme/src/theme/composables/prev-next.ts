@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any  */
+/* oxlint-disable @typescript-eslint/no-explicit-any  */
 import { computed, type Ref } from 'vue'
 import { useData } from './data.js'
 import { isActive } from '../../shared.js'

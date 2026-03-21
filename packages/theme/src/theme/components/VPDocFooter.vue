@@ -15,7 +15,12 @@ const hasLastUpdated = computed(() => {
   return page.value.lastUpdated && frontmatter.value.lastUpdated !== false
 })
 const showFooter = computed(() => {
-  return (hasEditLink.value ?? hasLastUpdated.value) ?? control.value.prev ?? control.value.next
+  return (
+    hasEditLink.value ??
+    hasLastUpdated.value ??
+    control.value.prev ??
+    control.value.next
+  )
 })
 </script>
 
@@ -24,14 +29,28 @@ const showFooter = computed(() => {
     <slot name="doc-footer-before" />
     <nav v-if="control.prev?.link || control.next?.link" class="prev-next">
       <div class="pager">
-        <VPLink v-if="control.prev?.link" class="pager-link prev" :href="control.prev.link">
-          <span class="desc" v-html="theme.docFooter?.prev || 'Previous page'"></span>
+        <VPLink
+          v-if="control.prev?.link"
+          class="pager-link prev"
+          :href="control.prev.link"
+        >
+          <span
+            class="desc"
+            v-html="theme.docFooter?.prev || 'Previous page'"
+          ></span>
           <span class="title" v-html="control.prev.text"></span>
         </VPLink>
       </div>
       <div class="pager">
-        <VPLink v-if="control.next?.link" class="pager-link next" :href="control.next.link">
-          <span class="desc" v-html="theme.docFooter?.next || 'Next page'"></span>
+        <VPLink
+          v-if="control.next?.link"
+          class="pager-link next"
+          :href="control.next.link"
+        >
+          <span
+            class="desc"
+            v-html="theme.docFooter?.next || 'Next page'"
+          ></span>
           <span class="title" v-html="control.next.text"></span>
         </VPLink>
       </div>

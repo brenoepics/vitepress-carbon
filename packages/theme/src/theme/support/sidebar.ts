@@ -48,11 +48,9 @@ export function getSidebarGroups(sidebar: SidebarItem[]): SidebarItem[] {
 
   let lastGroupIndex: number = 0
 
-  for (const index in sidebar) {
-    const item = sidebar[index]
-
+  for (const item of sidebar) {
     if (item.items) {
-      lastGroupIndex = groups.push(item)
+      lastGroupIndex = groups.push(item) - 1
       continue
     }
 
