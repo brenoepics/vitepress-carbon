@@ -33,12 +33,12 @@
     "release": "npm publish"
   },
   "devDependencies": {
-    "@types/node": "^22.14.1",
+    "@types/node": "^25.5.0",
     "@types/semver": "^7.7.1",
-    "citty": "^0.1.6",
+    "citty": "^0.2.1",
     "consola": "^3.4.2",
     "execa": "^9.6.1",
-    "giget": "^2.0.0",
+    "giget": "^3.1.2",
     "nypm": "^0.6.5",
     "pathe": "^2.0.3",
     "rollup": "^4.59.1",
