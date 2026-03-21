@@ -17,6 +17,7 @@ const componentGroupItems = [{ text: 'Home', link: '/guide/home-component' }]
 
 const examplesItems = [
   { text: 'Markdown Examples', link: '/examples/markdown-examples' },
+  { text: 'Math Equations', link: '/examples/math-equations' },
   { text: 'Runtime API Examples', link: '/examples/api-examples' }
 ]
 
