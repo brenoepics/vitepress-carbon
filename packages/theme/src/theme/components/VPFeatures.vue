@@ -39,13 +39,8 @@ const grid = computed(() => {
 <template>
   <div v-if="features" class="VPFeatures">
     <div class="container">
-      <div class="items">
-        <div
-          v-for="feature in features"
-          :key="feature.title"
-          class="item"
-          :class="[grid]"
-        >
+      <div class="items" :class="grid">
+        <div v-for="feature in features" :key="feature.title" class="item">
           <VPFeature
             :icon="feature.icon"
             :title="feature.title"
@@ -69,11 +64,11 @@ const grid = computed(() => {
 
 @media (min-width: 640px) {
   .VPFeatures {
-    padding: 0 48px;
+    padding: 0 32px;
   }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
   .VPFeatures {
     padding: 0 64px;
   }
@@ -85,39 +80,39 @@ const grid = computed(() => {
 }
 
 .items {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -8px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
 .item {
-  padding: 8px;
-  width: 100%;
-}
-
-@media (min-width: 640px) {
-  .item.grid-2,
-  .item.grid-4,
-  .item.grid-6 {
-    width: calc(100% / 2);
-  }
+  min-width: 0;
 }
 
 @media (min-width: 768px) {
-  .item.grid-2,
-  .item.grid-4 {
-    width: calc(100% / 2);
-  }
-
-  .item.grid-3,
-  .item.grid-6 {
-    width: calc(100% / 3);
+  .items.grid-2,
+  .items.grid-3,
+  .items.grid-4,
+  .items.grid-6 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
   }
 }
 
-@media (min-width: 960px) {
-  .item.grid-4 {
-    width: calc(100% / 4);
+@media (min-width: 768px) and (max-width: 1023px) {
+  .items.grid-3 .item:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .items.grid-3,
+  .items.grid-6 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .items.grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 </style>

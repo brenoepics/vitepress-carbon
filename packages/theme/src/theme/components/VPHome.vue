@@ -31,10 +31,13 @@ import VPHomeFeatures from './VPHomeFeatures.vue'
 
 <style scoped>
 .VPHome {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  min-height: 100%;
   padding-bottom: 96px;
-  font-family: var(--vp-font-family-custom);
+  font-family: var(--vp-font-family-base);
   background-color: var(--vp-c-bg);
-  height: 100%;
 }
 
 .VPHome :deep(.VPHomeSponsors) {
