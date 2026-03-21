@@ -11,7 +11,10 @@ const guideGroupItems = [
   { text: 'Configuration', link: '/guide/configuration' }
 ]
 
-const themeGroupItems = [{ text: 'Extending', link: '/guide/extending-theme' }]
+const themeGroupItems = [
+  { text: 'Extending', link: '/guide/extending-theme' },
+  { text: 'LLM Markdown Actions', link: '/guide/llm-markdown-actions' }
+]
 
 const componentGroupItems = [{ text: 'Home', link: '/guide/home-component' }]
 
@@ -97,7 +100,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   markdown: {
     math: {
       output: 'svg'
-    },
+    }
   },
 
   head: [

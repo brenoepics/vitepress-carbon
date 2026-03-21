@@ -7,6 +7,7 @@ import { useSidebar } from '../composables/sidebar'
 import VPDocAside from './VPDocAside.vue'
 import VPDocFooter from './VPDocFooter.vue'
 import VPDocFooterLastUpdated from './VPDocFooterLastUpdated.vue'
+import VPLlmsPageActions from './VPLlmsPageActions.vue'
 import VPLink from './VPLink.vue'
 
 const { theme, page, frontmatter } = useData()
@@ -18,6 +19,9 @@ const hasEditLink = computed(() => {
 })
 const hasLastUpdated = computed(() => {
   return page.value.lastUpdated && frontmatter.value.lastUpdated !== false
+})
+const hasLlmsPageActions = computed(() => {
+  return theme.value.llms?.pageActions !== false
 })
 const route = useRoute()
 const { hasSidebar, hasAside, leftAside } = useSidebar()
@@ -89,7 +93,10 @@ const pageName = computed(() =>
                 <VPDocFooterLastUpdated />
               </div>
             </div>
-            <div v-if="hasEditLink" class="content-box-item">
+            <div v-if="hasLlmsPageActions" class="content-box-item no-hover">
+              <VPLlmsPageActions />
+            </div>
+            <div v-if="hasEditLink" class="content-box-item no-hover">
               <VPLink
                 class="edit-link-button"
                 :href="editLink.url"
@@ -108,6 +115,7 @@ const pageName = computed(() =>
                     d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"
                   ></path>
                 </svg>
+                <span class="edit-link-text">Edit</span>
               </VPLink>
             </div>
           </div>
@@ -256,7 +264,7 @@ const pageName = computed(() =>
 .content-top {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   border-bottom: 1px solid var(--vp-c-border);
   padding: 0 0 12px;
   background-color: var(--vp-c-bg);
@@ -324,6 +332,7 @@ const pageName = computed(() =>
 }
 
 .no-hover {
+  padding: 0 !important;
   background-color: transparent !important;
   border-color: transparent !important;
 }
@@ -337,6 +346,44 @@ const pageName = computed(() =>
 
 .box-m-0 {
   margin: 0;
+}
+
+.edit-link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  min-height: 32px;
+  background-color: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  font-size: 13px;
+  font-weight: 500;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.edit-link-button .content-box-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--vp-c-text-2);
+}
+
+.edit-link-button:hover {
+  border-color: var(--vp-c-brand-1);
+  background-color: var(--color-action-list-item-default-hover-bg);
+  color: var(--vp-c-brand-1);
+}
+
+.edit-link-button:hover .content-box-icon {
+  color: var(--vp-c-brand-1);
+}
+
+.edit-link-text {
+  line-height: 1;
 }
 
 @media (min-width: 768px) {

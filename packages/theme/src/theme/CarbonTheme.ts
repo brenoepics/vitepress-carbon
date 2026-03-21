@@ -120,6 +120,11 @@ export namespace CarbonTheme {
     docFooter?: DocFooter
 
     /**
+     * Built-in page actions for LLM-friendly markdown output.
+     */
+    llms?: LlmsOptions
+
+    /**
      * The social links to be displayed at the end of the nav bar. Perfect for
      * placing links to social services such as GitHub, Twitter, Facebook, etc.
      */
@@ -359,6 +364,72 @@ export namespace CarbonTheme {
      * @default 'Next page'
      */
     next?: string | boolean
+  }
+
+  export interface LlmsOptions {
+    /**
+     * Enable built-in markdown page actions in docs pages.
+     *
+     * @default true
+     */
+    pageActions?: boolean
+
+    /**
+     * Show links to site-wide `llms.txt` and `llms-full.txt` files.
+     *
+     * @default true
+     */
+    siteWideLinks?: boolean
+
+    /**
+     * Path pattern for the generated markdown page.
+     * Use `:path` to reference the current route path.
+     *
+     * @default '/:path.md'
+     */
+    pagePattern?: string
+
+    /**
+     * Dropdown trigger label.
+     *
+     * @default 'Markdown'
+     */
+    actionLabel?: string
+
+    /**
+     * Copy action label.
+     *
+     * @default 'Copy as Markdown'
+     */
+    copyLabel?: string
+
+    /**
+     * Download action label.
+     *
+     * @default 'Download as Markdown'
+     */
+    downloadLabel?: string
+
+    /**
+     * Site-wide `llms.txt` link label.
+     *
+     * @default 'Open llms.txt'
+     */
+    llmsTxtLabel?: string
+
+    /**
+     * Site-wide `llms-full.txt` link label.
+     *
+     * @default 'Open llms-full.txt'
+     */
+    llmsFullTxtLabel?: string
+
+    /**
+     * Success message shown after copying.
+     *
+     * @default 'Copied'
+     */
+    copiedLabel?: string
   }
 
   // social link ---------------------------------------------------------------
