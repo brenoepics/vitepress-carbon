@@ -14,7 +14,13 @@ const { page } = useData()
 <template>
   <div class="VPMenuLink">
     <VPLink
-      :class="{ active: isActive(page.relativePath, item.activeMatch || item.link, !!item.activeMatch) }"
+      :class="{
+        active: isActive(
+          page.relativePath,
+          item.activeMatch || item.link,
+          !!item.activeMatch
+        )
+      }"
       :href="item.link"
       :target="item.target"
       :rel="item.rel"

@@ -33,6 +33,7 @@ To create a project with VitePress Carbon theme, you have three options:
    ```sh [bun]
     bun x vpcar init my-project
    ```
+
    :::
 
 3. Add VitePress Carbon to an existing VitePress project: Follow the [Getting Started guide](./getting-started).

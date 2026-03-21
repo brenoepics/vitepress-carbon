@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* oxlint-disable @typescript-eslint/no-explicit-any */
 import { computed, ref } from 'vue'
 import VPIconPlus from './icons/VPIconPlus.vue'
 import VPNavScreenMenuGroupLink from './VPNavScreenMenuGroupLink.vue'
@@ -12,8 +12,8 @@ const props = defineProps<{
 
 const isOpen = ref(false)
 
-const groupId = computed(() =>
-  `NavScreenGroup-${props.text.replace(' ', '-').toLowerCase()}`
+const groupId = computed(
+  () => `NavScreenGroup-${props.text.replace(' ', '-').toLowerCase()}`
 )
 
 function toggle() {
@@ -40,10 +40,7 @@ function toggle() {
         </div>
 
         <div v-else class="group">
-          <VPNavScreenMenuGroupSection
-            :text="item.text"
-            :items="item.items"
-          />
+          <VPNavScreenMenuGroupSection :text="item.text" :items="item.items" />
         </div>
       </template>
     </div>
@@ -102,7 +99,9 @@ function toggle() {
   width: 14px;
   height: 14px;
   fill: var(--vp-c-text-2);
-  transition: fill 0.5s, transform 0.25s;
+  transition:
+    fill 0.5s,
+    transform 0.25s;
 }
 
 .group:first-child {

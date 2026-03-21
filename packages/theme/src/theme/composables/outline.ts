@@ -28,9 +28,9 @@ export function getHeaders(range: CarbonTheme.Config['outline']) {
     link: string
     title: string
     element: HTMLHeadElement
-  }[] = [
-    ...Array.from(document.querySelectorAll('.VPDoc :where(h1,h2,h3,h4,h5,h6)'))
-  ]
+  }[] = Array.from(
+    document.querySelectorAll('.VPDoc :where(h1,h2,h3,h4,h5,h6)')
+  )
     .filter((el) => el.id && el.hasChildNodes())
     .map((el) => {
       const level = Number(el.tagName[1])

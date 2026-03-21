@@ -12,7 +12,7 @@ import Icon from './components/Icon.vue'
 
 export default {
   ...VPCarbon,
-  Layout:  () => {
+  Layout: () => {
     return h(VPCarbon.Layout, null, {
       'navbar-icon': () => h(Icon)
       // slots for theme layout

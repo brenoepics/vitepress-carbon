@@ -30,10 +30,7 @@ const textTag = computed(() => {
     return 'p'
   }
 
-  return !hasChildren.value
-    ? 'p'
-    : `h${props.depth + 2}`
-
+  return !hasChildren.value ? 'p' : `h${props.depth + 2}`
 })
 
 const itemRole = computed(() => (isLink.value ? undefined : 'button'))
@@ -51,11 +48,11 @@ function onItemInteraction(e: MouseEvent | Event) {
   if ('key' in e && e.key !== 'Enter') {
     return
   }
-  if(!props.item.link) toggle()
+  if (!props.item.link) toggle()
 }
 
 function onCaretClick() {
-  if(props.item.link) toggle()
+  if (props.item.link) toggle()
 }
 </script>
 

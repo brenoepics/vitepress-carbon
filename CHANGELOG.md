@@ -1,13 +1,12 @@
 # Changelog
 
-
 ## v2.0.0
 
 [compare changes](https://github.com/brenoepics/vitepress-carbon/compare/v1.4.0...v2.0.0)
 
 ### 🚀 Enhancements
 
-- ⚠️  Js support ([829c285](https://github.com/brenoepics/vitepress-carbon/commit/829c285))
+- ⚠️ Js support ([829c285](https://github.com/brenoepics/vitepress-carbon/commit/829c285))
 - Eslint ([aa53fe0](https://github.com/brenoepics/vitepress-carbon/commit/aa53fe0))
 - Eslint custom rules ([277683e](https://github.com/brenoepics/vitepress-carbon/commit/277683e))
 
@@ -17,7 +16,7 @@
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Js support ([829c285](https://github.com/brenoepics/vitepress-carbon/commit/829c285))
+- ⚠️ Js support ([829c285](https://github.com/brenoepics/vitepress-carbon/commit/829c285))
 
 ### ❤️ Contributors
 
@@ -67,4 +66,3 @@
 ### ❤️ Contributors
 
 - Breno A. ([@brenoepics](http://github.com/brenoepics))
-

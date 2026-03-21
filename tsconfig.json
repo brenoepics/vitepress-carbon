@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "dist",
+    "outDir": "./dist",
     "allowJs": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -10,23 +9,10 @@
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "downlevelIteration": true,
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
+    "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "declaration": true,
-    "paths": {
-      "@carbon": [
-        "packages/theme/src/"
-      ],
-      "@carbon/*": [
-        "packages/theme/src/*"
-      ]
-    }
+    "declaration": true
   },
-  "include": [
-    "packages/**/*"
-  ],
+  "include": ["./packages/**/*"]
 }

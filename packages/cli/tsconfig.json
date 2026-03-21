@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "target": "ESNext",
@@ -12,7 +11,7 @@
     "noEmit": true,
     "noUnusedLocals": true,
     "resolveJsonModule": true,
-    "types": ["node", "./types"],
+    "types": ["node", "./types"]
   },
-  "include": ["src"]
+  "include": ["./src"]
 }

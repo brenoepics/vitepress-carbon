@@ -10,15 +10,17 @@
     "preinstall": "npx only-allow pnpm",
     "dev": "pnpm --filter vitepress-carbon run build && pnpm --filter vitepress-carbon-demo run dev",
     "demo-build": "vitepress build ./packages/demo",
-    "eslint": "eslint ./packages/**/src/**/*.{ts,js,vue}",
-    "prettier": "prettier --check --write --parser typescript \"{__tests__,docs,packages,types}/**/*.ts\"",
-    "prettier:fail": "prettier --check --parser typescript \"{__tests__,docs,packages,types}/**/*.ts\"",
+    "eslint": "vp lint ./packages/**/src/**/*.{ts,js,vue}",
+    "prettier": "vp fmt --check \"{__tests__,docs,packages,types}/**/*.ts\"",
+    "prettier:fail": "vp fmt --check \"{__tests__,docs,packages,types}/**/*.ts\"",
     "lint": "pnpm eslint --fix && pnpm prettier",
     "lint:fail": "pnpm eslint && pnpm prettier:fail",
-    "build": "pnpm --filter vitepress-carbon run build && pnpm --filter vpcar run build && pnpm --filter vitepress-carbon-demo build"
+    "build": "pnpm --filter vitepress-carbon run build && pnpm --filter vpcar run build && pnpm --filter vitepress-carbon-demo build",
+    "prepare": "vp config"
   },
   "author": "Breno A.",
   "license": "MIT",
+  "type": "module",
   "homepage": "https://github.com/brenoepics/vitepress-carbon#readme",
   "bugs": {
     "url": "https://github.com/brenoepics/vitepress-carbon/issues"
@@ -27,12 +29,11 @@
     "@changesets/cli": "^2.28.1",
     "@eslint/js": "^9.24.0",
     "@types/mark.js": "^8.11.12",
-    "eslint": "^9.30.0",
     "eslint-plugin-vue": "^9.33.0",
     "globals": "^16.4.0",
-    "prettier": "^3.5.3",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.37.0"
+    "typescript-eslint": "^8.37.0",
+    "vite-plus": "catalog:"
   },
   "dependencies": {
     "@algolia/client-search": "^5.23.3",

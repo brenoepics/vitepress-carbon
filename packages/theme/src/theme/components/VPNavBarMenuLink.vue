@@ -31,7 +31,6 @@ const { page } = useData()
 </template>
 
 <style scoped>
-
 .VPNavBarMenuLink {
   display: flex;
   align-items: center;
@@ -47,7 +46,8 @@ const { page } = useData()
   height: 100%;
 }
 
-.VPNavBarMenuLink:hover, .active {
+.VPNavBarMenuLink:hover,
+.active {
   background-color: var(--color-action-list-item-default-hover-bg);
   border-color: var(--color-action-list-item-default-hover-border);
 }

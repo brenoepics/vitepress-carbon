@@ -12,7 +12,9 @@ const props = defineProps<{
 }>()
 
 const tag = computed(() => props.tag ?? (props.href ? 'a' : 'span'))
-const isExternal = computed(() => props.href && EXTERNAL_URL_RE.test(props.href))
+const isExternal = computed(
+  () => props.href && EXTERNAL_URL_RE.test(props.href)
+)
 </script>
 
 <template>

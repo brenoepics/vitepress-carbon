@@ -6,20 +6,20 @@ import VPIconCode from './icons/VPIconCode.vue'
 export type HighlightIcon =
   | string
   | {
-  src: string
-  alt?: string
-  width?: string
-  height?: string
-  wrap?: boolean
-}
+      src: string
+      alt?: string
+      width?: string
+      height?: string
+      wrap?: boolean
+    }
   | {
-  light: string
-  dark: string
-  alt?: string
-  width?: string
-  height?: string
-  wrap?: boolean
-}
+      light: string
+      dark: string
+      alt?: string
+      width?: string
+      height?: string
+      wrap?: boolean
+    }
 
 defineProps({
   glowingActive: {
@@ -47,8 +47,12 @@ const reverseColors = (colors: Array<string>) => {
 
 <template>
   <div class="side-highlight">
-    <div class="string-highlight"
-         :style="{background: `linear-gradient(${stringHighlightColors.join(', ')})`}" />
+    <div
+      class="string-highlight"
+      :style="{
+        background: `linear-gradient(${stringHighlightColors.join(', ')})`
+      }"
+    />
     <div class="icon" :class="{ 'glowing-active': glowingActive }">
       <div v-if="typeof icon === 'object' && icon.wrap" class="icon">
         <VPImage
@@ -66,19 +70,22 @@ const reverseColors = (colors: Array<string>) => {
         :width="icon.width || 24"
       />
       <div v-else-if="icon" class="icon" v-html="icon"></div>
-      
+
       <span
         class="glowing-icon-glow"
         :style="{ background: glowingIcon }"
       ></span>
     </div>
-    <div class="string-highlight"
-         :style="{background: `linear-gradient(${reverseColors(stringHighlightColors).join(', ')})`}" />
+    <div
+      class="string-highlight"
+      :style="{
+        background: `linear-gradient(${reverseColors(stringHighlightColors).join(', ')})`
+      }"
+    />
   </div>
 </template>
 
 <style scoped>
-
 .side-highlight {
   display: flex;
   width: 8.3%;
@@ -110,7 +117,8 @@ const reverseColors = (colors: Array<string>) => {
     filter: blur(200px);
   }
 
-  .glowing-icon-glow:hover, .glowing-active {
+  .glowing-icon-glow:hover,
+  .glowing-active {
     animation: glowing 2s infinite;
   }
 }
@@ -136,10 +144,18 @@ const reverseColors = (colors: Array<string>) => {
 }
 
 .string-highlight:first-child {
-  background: linear-gradient(transparent, var(--vp-c-brand-1), var(--vp-c-brand-3));
+  background: linear-gradient(
+    transparent,
+    var(--vp-c-brand-1),
+    var(--vp-c-brand-3)
+  );
 }
 
 .string-highlight:last-child {
-  background: linear-gradient(var(--vp-c-brand-3), var(--vp-c-brand-1), transparent);
+  background: linear-gradient(
+    var(--vp-c-brand-3),
+    var(--vp-c-brand-1),
+    transparent
+  );
 }
 </style>

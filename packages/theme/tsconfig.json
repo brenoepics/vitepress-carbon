@@ -1,7 +1,6 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "./../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "./dist",
     "declaration": true,
     "esModuleInterop": true,
@@ -18,6 +17,6 @@
     "declarationDir": "./dist",
     "types": ["@types/node"]
   },
-  "include": ["src/**/*", "vite-env.d.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["./src/**/*", "./vite-env.d.ts"],
+  "exclude": ["./node_modules", "./dist"]
 }
