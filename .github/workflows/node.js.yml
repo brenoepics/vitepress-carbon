@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: ['main', 'dev']
+    branches: ['main']
   pull_request:
-    branches: ['main', 'dev']
+    branches: ['main']
 
 permissions:
   contents: read
@@ -35,14 +35,20 @@ jobs:
         with:
           version: '9.9.0'
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ matrix.node_version }}
           cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Run checks
+        run: pnpm exec vp check --fix
+
+      - name: Run tests
+        run: pnpm test
 
       - name: Build
         run: pnpm run build
