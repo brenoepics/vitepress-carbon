@@ -1,4 +1,4 @@
-name: Publish Packages
+name: Publish
 
 on:
   release:
@@ -6,29 +6,21 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
   id-token: write
+  contents: read
 
 jobs:
-  publish:
-    name: Publish ${{ matrix.package.name }}
+  release:
+    if: github.event_name == 'release' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        package:
-          - name: vitepress-carbon
-            path: packages/theme
-          - name: vpcar
-            path: packages/cli
-
+    name: Release
     steps:
       - name: Harden the runner (Audit all outbound calls)
         uses: step-security/harden-runner@fa2e9d605c4eeb9fcad4c99c224cee0c6c7f3594 # v2.16.0
         with:
           egress-policy: audit
 
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Install pnpm
@@ -36,42 +28,24 @@ jobs:
         with:
           version: 9.9.0
 
-      - name: Setup Node.js
+      - name: Set node version to 24
         uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
-          node-version: 20.19.0
+          node-version: 24.14.0
           cache: pnpm
           registry-url: https://registry.npmjs.org
 
-      - name: Install dependencies
+      - name: Prepare
         run: pnpm install --frozen-lockfile
-        working-directory: ${{ github.workspace }}
 
-      - name: Read package version
-        id: package
+      - name: Publish vitepress-carbon
+        working-directory: packages/theme
         run: |
-          version="$(node -p 'require("./package.json").version')"
-          echo "version=${version}" >> "$GITHUB_OUTPUT"
-        working-directory: ${{ matrix.package.path }}
+          PACKAGE_DIST_TAG=$(node -e "console.log(/^\d+\.\d+\.\d+(-([0-9A-Za-z-]+)\.\d+)?$/.exec(require('./package.json').version)?.[2] || 'latest')")
+          pnpm publish --access public --tag "$PACKAGE_DIST_TAG" --provenance --no-git-checks
 
-      - name: Check npm registry for current version
-        id: npm
-        env:
-          PACKAGE_NAME: ${{ matrix.package.name }}
-          PACKAGE_VERSION: ${{ steps.package.outputs.version }}
+      - name: Publish vpcar
+        working-directory: packages/cli
         run: |
-          if npm view "${PACKAGE_NAME}@${PACKAGE_VERSION}" version >/dev/null 2>&1; then
-            echo "should_publish=false" >> "$GITHUB_OUTPUT"
-            echo "${PACKAGE_NAME}@${PACKAGE_VERSION} is already published."
-          else
-            echo "should_publish=true" >> "$GITHUB_OUTPUT"
-            echo "${PACKAGE_NAME}@${PACKAGE_VERSION} will be published."
-          fi
-        working-directory: ${{ matrix.package.path }}
-
-      - name: Publish package to npm
-        if: steps.npm.outputs.should_publish == 'true'
-        run: pnpm publish --access public --provenance
-        working-directory: ${{ matrix.package.path }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          PACKAGE_DIST_TAG=$(node -e "console.log(/^\d+\.\d+\.\d+(-([0-9A-Za-z-]+)\.\d+)?$/.exec(require('./package.json').version)?.[2] || 'latest')")
+          pnpm publish --access public --tag "$PACKAGE_DIST_TAG" --provenance --no-git-checks
