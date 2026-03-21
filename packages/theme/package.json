@@ -44,6 +44,7 @@
     "clean": "rimraf dist",
     "addAssets": "node scripts/copyTheme.js && node scripts/generateComponentExports.js",
     "build": "pnpm clean && vue-tsc --noEmit -p ./ && tsc -p ./ && pnpm addAssets",
+    "prepack": "pnpm build",
     "release": "pnpm build && npm publish"
   },
   "dependencies": {
@@ -77,6 +78,9 @@
   },
   "engines": {
     "node": "^20.19.0 || >=22.18.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "packageManager": "pnpm@9.9.0"
 }
