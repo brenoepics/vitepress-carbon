@@ -3,10 +3,7 @@
 vpcar is a CLI tool for initializing and managing VitePress Carbon projects. It simplifies the setup process and
 provides useful commands to streamline your development workflow.
 
-![NPM Version](https://img.shields.io/npm/v/vpcar)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/brenoepics/vitepress-carbon/node.js.yml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=brenoepics_vitepress-carbon&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=brenoepics_vitepress-carbon)
-![GitHub Repo stars](https://img.shields.io/github/stars/brenoepics/vitepress-carbon)
+[![NPM Version](https://img.shields.io/npm/v/vpcar)](https://npmx.dev/package/vpcar)
 
 ## Documentation
 
