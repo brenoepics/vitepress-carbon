@@ -1,0 +1,30 @@
+.vp-doc mjx-container[display='true'] {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1.2em 0;
+  margin: 1em 0;
+}
+
+.vp-doc mjx-container:not([display='true']) {
+  display: inline-block;
+  margin: auto 2px -2px;
+  padding: 0;
+  overflow: visible;
+}
+
+.vp-doc mjx-container svg {
+  min-width: min-content;
+  margin: 0 auto;
+}
+
+.vp-doc mjx-container[display='true']::-webkit-scrollbar {
+  height: 4px;
+}
+
+.vp-doc mjx-container::-webkit-scrollbar-thumb {
+  background: var(--vp-c-divider);
+  border-radius: 10px;
+}
+

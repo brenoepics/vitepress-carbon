@@ -17,6 +17,7 @@ const componentGroupItems = [{ text: 'Home', link: '/guide/home-component' }]
 
 const examplesItems = [
   { text: 'Markdown Examples', link: '/examples/markdown-examples' },
+  { text: 'Math Equations', link: '/examples/math-equations' },
   { text: 'Runtime API Examples', link: '/examples/api-examples' }
 ]
 
@@ -93,8 +94,14 @@ export default defineConfigWithTheme<ThemeConfig>({
     ]
   },
 
+  markdown: {
+    math: {
+      output: 'svg'
+    },
+  },
+
   head: [
-    ['link', { rel: 'icon', href: 'https://carbon.breno.tech/logo.svg' }],
+    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
     [
       'meta',
       {
