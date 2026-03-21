@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* oxlint-disable @typescript-eslint/no-explicit-any */
 import { ref } from 'vue'
 import { useFlyout } from '../composables/flyout'
 import VPIconChevronDown from './icons/VPIconChevronDown.vue'
@@ -71,7 +71,8 @@ function onBlur() {
   height: 100%;
 }
 
-.VPFlyout:hover, .active {
+.VPFlyout:hover,
+.active {
   background-color: var(--color-action-list-item-default-hover-bg);
 }
 
@@ -80,13 +81,13 @@ function onBlur() {
 }
 
 .VPFlyout:hover .menu,
-.button[aria-expanded="true"] + .menu {
+.button[aria-expanded='true'] + .menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
-.button[aria-expanded="false"] + .menu {
+.button[aria-expanded='false'] + .menu {
   opacity: 0;
   visibility: hidden;
   transform: translateY(0);
@@ -112,14 +113,14 @@ function onBlur() {
   margin-right: 0;
   width: 16px;
   height: 16px;
-  fill: var(--vp-c-text-dark)
+  fill: var(--vp-c-text-dark);
 }
 
 .text-icon {
   margin-left: 4px;
   width: 14px;
   height: 14px;
-  fill: var(--vp-c-text-dark)
+  fill: var(--vp-c-text-dark);
 }
 
 .icon {
@@ -135,6 +136,9 @@ function onBlur() {
   right: 0;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.25s, visibility 0.25s, transform 0.25s;
+  transition:
+    opacity 0.25s,
+    visibility 0.25s,
+    transform 0.25s;
 }
 </style>

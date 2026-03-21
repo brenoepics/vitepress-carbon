@@ -209,7 +209,9 @@ withDefaults(defineProps<Props>(), {
   font-weight: 500;
   color: var(--vp-c-sponsor);
   background-color: var(--vp-c-bg-soft);
-  transition: color 0.25s, background-color 0.25s;
+  transition:
+    color 0.25s,
+    background-color 0.25s;
 }
 
 .sp .sp-link.link:hover,

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import docsearch from '@docsearch/js'
-import { useRoute, useRouter,  } from 'vitepress'
+import { useRoute, useRouter } from 'vitepress'
 import type { CarbonTheme } from '../CarbonTheme.js'
 import { nextTick, onMounted, watch } from 'vue'
 import { useData } from '../composables/data'
@@ -18,7 +18,6 @@ type DocSearchProps = Parameters<typeof docsearch>[0]
 
 onMounted(update)
 watch(localeIndex, update)
-
 
 async function update() {
   await nextTick()
@@ -75,7 +74,7 @@ function initialize(userOptions: CarbonTheme.AlgoliaSearchOptions) {
       })
     },
 
-    hitComponent({ hit, children } : { hit: SitemapItem, children: string }) {
+    hitComponent({ hit, children }: { hit: SitemapItem; children: string }) {
       return {
         __v: null,
         type: 'a',

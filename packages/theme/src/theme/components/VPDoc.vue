@@ -356,7 +356,7 @@ const pageName = computed(() =>
   margin: 0 auto;
 }
 
-.VPDoc.has-aside .content-container {
+.VPDoc .content-container {
   max-width: 98%;
 }
 </style>

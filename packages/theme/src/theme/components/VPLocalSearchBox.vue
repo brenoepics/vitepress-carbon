@@ -44,7 +44,7 @@ const searchIndexData = shallowRef(localSearchIndex)
 
 // hmr
 if (import.meta.hot) {
-  import.meta.hot.accept('/@localSearchIndex', (m) => {
+  import.meta.hot.accept('@localSearchIndex', (m) => {
     if (m) {
       searchIndexData.value = m.default
     }
@@ -115,8 +115,8 @@ const buttonText = computed(() => {
   const options = theme.value.search?.options ?? theme.value.algolia
 
   return (
-    (options?.locales?.[localeIndex.value]?.translations?.button?.buttonText ??
-      options?.translations?.button?.buttonText) ??
+    options?.locales?.[localeIndex.value]?.translations?.button?.buttonText ??
+    options?.translations?.button?.buttonText ??
     'Search'
   )
 })
@@ -232,7 +232,8 @@ debouncedWatch(
       })
     })
     /* eslint-disable no-undef */
-    const excerpts: NodeListOf<HTMLElementTagNameMap['div']> = el.value!.querySelectorAll('.result .excerpt')! ?? []
+    const excerpts: NodeListOf<HTMLElementTagNameMap['div']> =
+      el.value!.querySelectorAll('.result .excerpt')! ?? []
     excerpts.forEach((excerpt) => {
       excerpt
         .querySelector('mark[data-markjs="true"]')
@@ -263,7 +264,7 @@ const disableReset = computed(() => {
 })
 function focusSearchInput(select = true) {
   searchInput.value?.focus()
-  if(select) searchInput.value?.select()
+  if (select) searchInput.value?.select()
 }
 
 onMounted(() => {
@@ -596,7 +597,9 @@ function formMarkRegex(terms: Set<string>) {
             v-if="filterText && !results.length && enableNoResults"
             class="no-results"
           >
-            {{ translate('modal.noResultsText') }} "<strong>{{ filterText }}</strong
+            {{ translate('modal.noResultsText') }} "<strong>{{
+              filterText
+            }}</strong
             >"
           </li>
         </ul>
@@ -615,7 +618,9 @@ function formMarkRegex(terms: Set<string>) {
                 />
               </svg>
             </kbd>
-            <kbd :aria-label="translate('modal.footer.navigateDownKeyAriaLabel')">
+            <kbd
+              :aria-label="translate('modal.footer.navigateDownKeyAriaLabel')"
+            >
               <svg width="14" height="14" viewBox="0 0 24 24">
                 <path
                   fill="none"
@@ -647,7 +652,9 @@ function formMarkRegex(terms: Set<string>) {
             {{ translate('modal.footer.selectText') }}
           </span>
           <span>
-            <kbd :aria-label="translate('modal.footer.closeKeyAriaLabel')">esc</kbd>
+            <kbd :aria-label="translate('modal.footer.closeKeyAriaLabel')"
+              >esc</kbd
+            >
             {{ translate('modal.footer.closeText') }}
           </span>
         </div>

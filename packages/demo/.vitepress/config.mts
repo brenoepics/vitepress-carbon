@@ -1,8 +1,8 @@
 import { defineConfigWithTheme } from 'vitepress'
 import path from 'path'
 import type { ThemeConfig } from 'vitepress-carbon'
-import { CarbonTheme } from 'vitepress-carbon/dist/theme/CarbonTheme'
-import baseConfig from 'vitepress-carbon/dist/theme/config/baseConfig'
+import type { CarbonTheme } from 'vitepress-carbon/dist/theme/CarbonTheme.js'
+import baseConfig from 'vitepress-carbon/dist/theme/config/baseConfig.js'
 import { searchForWorkspaceRoot } from './theme/utils/SearchRoot.js'
 
 const guideGroupItems = [

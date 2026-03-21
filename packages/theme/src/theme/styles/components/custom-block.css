@@ -31,22 +31,22 @@
   padding: 0.5rem 1rem;
   margin-bottom: 16px;
   color: inherit;
-  border-left: .25em solid #888;
+  border-left: 0.25em solid #888;
 }
 
-.custom-block>:first-child {
-  margin-top: 0
+.custom-block > :first-child {
+  margin-top: 0;
 }
 
-.custom-block>:last-child {
-  margin-bottom: 0
+.custom-block > :last-child {
+  margin-bottom: 0;
 }
 
 .custom-block .custom-block-title {
   display: flex;
   font-weight: 500;
   align-items: center;
-  line-height: 1
+  line-height: 1;
 }
 
 .custom-block .custom-block-title .octicon {

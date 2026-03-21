@@ -1,5 +1,5 @@
 <script setup lang="ts">
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* oxlint-disable @typescript-eslint/no-explicit-any */
 import type { CarbonTheme } from '../CarbonTheme.js'
 import { ref, watch, onMounted } from 'vue'
 import { useAside } from '../composables/aside'
@@ -28,11 +28,14 @@ function init() {
   }
 }
 
-watch(() => page.value.relativePath, () => {
-  if (isInitialized && isAsideEnabled.value) {
-    ;(window as any)._carbonads?.refresh()
+watch(
+  () => page.value.relativePath,
+  () => {
+    if (isInitialized && isAsideEnabled.value) {
+      ;(window as any)._carbonads?.refresh()
+    }
   }
-})
+)
 
 // no need to account for option changes during dev, we can just
 // refresh the page
@@ -53,7 +56,7 @@ if (carbonOptions) {
 <template>
   <div class="VPCarbonAdsContainer">
     <div class="outline-title">Carbon Ads</div>
-  <div class="VPCarbonAds" ref="container" />
+    <div class="VPCarbonAds" ref="container" />
   </div>
 </template>
 
@@ -62,7 +65,7 @@ if (carbonOptions) {
   line-height: 32px;
   font-size: 16px;
   font-weight: 600;
-  color: var(--vp-c-text-1)
+  color: var(--vp-c-text-1);
 }
 
 .VPCarbonAds {

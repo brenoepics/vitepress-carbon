@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* oxlint-disable @typescript-eslint/no-unused-vars */
 
 import type { UserConfig } from 'vitepress'
 import type { ThemeConfig } from '../config.js'

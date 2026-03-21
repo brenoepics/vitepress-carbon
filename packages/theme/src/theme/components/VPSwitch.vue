@@ -18,7 +18,9 @@
   flex-shrink: 0;
   border: 1px solid var(--vp-c-border);
   background-color: var(--color-action-list-item-default-hover-bg);
-  transition: border-color, background-color 0.25s !important;
+  transition:
+    border-color,
+    background-color 0.25s !important;
 }
 
 .VPSwitch:hover {

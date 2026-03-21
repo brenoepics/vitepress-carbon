@@ -7,33 +7,34 @@ This is where all VitePress-specific files will be placed. Your project structur
 
 ::: code-group
 
-``` [Javascript]
+```[Javascript]
 .vitepress
 ├─ theme
 │  └─ index.js
 └─ config.js
 ```
 
-``` [TypeScript]
+```[TypeScript]
 .vitepress
 ├─ theme
 │  └─ index.ts
 └─ config.ts
 ```
 
-``` [JS ES module]
+```[JS ES module]
 .vitepress
 ├─ theme
 │  └─ index.js
 └─ config.mjs
 ```
 
-``` [TS ES module]
+```[TS ES module]
 .vitepress
 ├─ theme
 │  └─ index.ts
 └─ config.mts
 ```
+
 :::
 
 ## Using Theme

@@ -2,12 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any, no-undef */
 import '@docsearch/css'
 import { onKeyStroke } from '@vueuse/core'
-import {
-  defineAsyncComponent,
-  onMounted,
-  onUnmounted,
-  ref
-} from 'vue'
+import { defineAsyncComponent, onMounted, onUnmounted, ref } from 'vue'
 import type { CarbonTheme } from '../CarbonTheme.js'
 import { useData } from '../composables/data'
 import VPNavBarSearchButton from './VPNavBarSearchButton.vue'
@@ -138,10 +133,7 @@ if (__VP_LOCAL_SEARCH__) {
 <template>
   <div class="VPNavBarSearch">
     <template v-if="provider === 'local'">
-      <VPLocalSearchBox
-        v-if="showSearch"
-        @close="showSearch = false"
-      />
+      <VPLocalSearchBox v-if="showSearch" @close="showSearch = false" />
 
       <div id="local-search">
         <VPNavBarSearchButton @click="showSearch = true" />
