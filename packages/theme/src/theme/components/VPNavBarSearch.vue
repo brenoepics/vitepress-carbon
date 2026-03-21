@@ -158,12 +158,28 @@ if (__VP_LOCAL_SEARCH__) {
 .VPNavBarSearch {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 @media (min-width: 960px) {
   .VPNavBarSearch {
     padding-left: 32px;
   }
+}
+
+#docsearch,
+#local-search {
+  display: flex;
+  max-width: 100%;
+}
+
+.VPNavBarSearch :deep(.DocSearch) {
+  --docsearch-search-button-background: transparent;
+  --docsearch-key-background: transparent;
+}
+
+.VPNavBarSearch :deep(.DocSearch-Button) {
+  background-color: transparent;
 }
 
 .dark .DocSearch-Footer {
