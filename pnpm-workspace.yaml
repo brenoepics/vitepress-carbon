@@ -6,6 +6,8 @@ catalog:
   vitest: npm:@voidzero-dev/vite-plus-test@latest
   vite-plus: latest
 overrides:
+  '@docsearch/js>preact': 10.29.0
+  lodash: 4.17.23
   vite: 'catalog:'
   vitest: 'catalog:'
 peerDependencyRules:
