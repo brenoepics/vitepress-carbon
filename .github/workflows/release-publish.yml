@@ -71,5 +71,7 @@ jobs:
 
       - name: Publish package to npm
         if: steps.npm.outputs.should_publish == 'true'
-        run: npm publish --access public --provenance
+        run: pnpm publish --access public --provenance
         working-directory: ${{ matrix.package.path }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
