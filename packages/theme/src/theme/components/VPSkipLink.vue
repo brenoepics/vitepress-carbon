@@ -5,7 +5,10 @@ import { ref, watch } from 'vue'
 const route = useRoute()
 const backToTop = ref()
 
-watch(() => route.path, () => backToTop.value.focus())
+watch(
+  () => route.path,
+  () => backToTop.value.focus()
+)
 
 function focusOnTargetAnchor({ target }: Event) {
   const el = document.getElementById(

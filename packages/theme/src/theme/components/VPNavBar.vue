@@ -30,7 +30,7 @@ watchPostEffect(() => {
   classes.value = {
     'has-sidebar': hasSidebar.value,
     'has-local-nav': hasLocalNav.value,
-    top: frontmatter.value.layout === 'home' && y.value === 0,
+    top: frontmatter.value.layout === 'home' && y.value === 0
   }
 })
 </script>
@@ -41,8 +41,12 @@ watchPostEffect(() => {
       <div class="container">
         <div class="title">
           <VPNavBarTitle>
-            <template #nav-bar-title-before><slot name="nav-bar-title-before" /></template>
-            <template #nav-bar-title-after><slot name="nav-bar-title-after" /></template>
+            <template #nav-bar-title-before
+              ><slot name="nav-bar-title-before"
+            /></template>
+            <template #nav-bar-title-after
+              ><slot name="nav-bar-title-after"
+            /></template>
           </VPNavBarTitle>
         </div>
 
@@ -57,7 +61,11 @@ watchPostEffect(() => {
             <VPNavBarSocialLinks class="social-links" />
             <VPNavBarExtra class="extra" />
             <slot name="nav-bar-content-after" />
-            <VPNavBarHamburger class="hamburger" :active="isScreenOpen" @click="$emit('toggle-screen')" />
+            <VPNavBarHamburger
+              class="hamburger"
+              :active="isScreenOpen"
+              @click="$emit('toggle-screen')"
+            />
           </div>
         </div>
       </div>
@@ -76,7 +84,7 @@ watchPostEffect(() => {
   pointer-events: none;
   white-space: nowrap;
   transition: background-color 0.5s;
-  box-shadow: inset 0 calc( max(1px, 0.0625rem) * -1) var(--vp-c-border);
+  box-shadow: inset 0 calc(max(1px, 0.0625rem) * -1) var(--vp-c-border);
   color: var(--vp-c-text-dark);
 }
 
@@ -146,7 +154,10 @@ watchPostEffect(() => {
 
 @media (min-width: 1440px) {
   .VPNavBar.has-sidebar .title {
-    width: calc((100% - (var(--vp-layout-max-width) - 64px)) / 2 + var(--vp-sidebar-width) - 32px);
+    width: calc(
+      (100% - (var(--vp-layout-max-width) - 64px)) / 2 +
+        var(--vp-sidebar-width) - 32px
+    );
   }
 }
 
@@ -197,7 +208,7 @@ watchPostEffect(() => {
   width: 1px;
   height: 24px;
   background-color: var(--vp-c-border);
-  content: "";
+  content: '';
 }
 
 .menu + .appearance::before,
@@ -226,7 +237,9 @@ watchPostEffect(() => {
 
 @media (min-width: 1440px) {
   .VPNavBar.has-sidebar .divider {
-    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
+    padding-left: calc(
+      (100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width)
+    );
   }
 }
 

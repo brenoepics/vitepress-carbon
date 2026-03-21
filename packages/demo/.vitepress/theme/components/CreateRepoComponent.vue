@@ -1,12 +1,10 @@
 <script setup lang="ts">
-
-const createUrl = 'https://github.com/new?template_name=carbon-starter&template_owner=brenoepics'
+const createUrl =
+  'https://github.com/new?template_name=carbon-starter&template_owner=brenoepics'
 </script>
 
 <template>
-  <a class="create-repo" :href="createUrl">
-    Create Repository
-  </a>
+  <a class="create-repo" :href="createUrl"> Create Repository </a>
 </template>
 
 <style scoped>
@@ -19,7 +17,7 @@ const createUrl = 'https://github.com/new?template_name=carbon-starter&template_
   text-align: center;
   border-radius: 5px;
   background-color: #00863f;
-  border: 1px solid #1A9B57;
+  border: 1px solid #1a9b57;
   transition: background-color 0.5s;
   margin: 0 10px 0 5px;
   grid-area: text;
@@ -34,7 +32,7 @@ const createUrl = 'https://github.com/new?template_name=carbon-starter&template_
 }
 
 .create-repo:active {
-  background-color: #29903B;
+  background-color: #29903b;
 }
 
 @media (min-width: 1060px) {

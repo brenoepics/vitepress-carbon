@@ -3,12 +3,9 @@
   "changelog": "@changesets/cli/changelog",
   "commit": true,
   "fixed": [],
-  "linked": [
-  ],
+  "linked": [],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": [
-    "vitepress-carbon-demo"
-  ]
+  "ignore": ["vitepress-carbon-demo"]
 }

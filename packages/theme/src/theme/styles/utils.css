@@ -3,16 +3,17 @@
 @import url('https://fonts.cdnfonts.com/css/hubot-sans');
 
 html body {
-    font-synthesis: style;
+  font-synthesis: style;
 }
 /* webfont-marker-end */
 
 /* Chinese quotes rendering fix. 中英文弯引号共享 Unicode 码位，确保引号使用中文字体渲染 */
 @font-face {
-    font-family: 'Chinese Quotes';
-    src: local('PingFang SC Regular'), local('PingFang SC'), local('SimHei'),
+  font-family: 'Chinese Quotes';
+  src:
+    local('PingFang SC Regular'), local('PingFang SC'), local('SimHei'),
     local('Source Han Sans SC');
-    unicode-range: U+2018, U+2019, U+201C, U+201D; /* 分别是 ‘’“” */
+  unicode-range: U+2018, U+2019, U+201C, U+201D; /* 分别是 ‘’“” */
 }
 
 @font-face {
@@ -23,7 +24,6 @@ html body {
   font-weight: 200 900;
   font-stretch: 75% 125%;
 }
-
 
 .visually-hidden {
   position: absolute;

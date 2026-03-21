@@ -24,11 +24,10 @@ useActiveAnchor(container)
 </script>
 
 <template>
-  <div
-    class="VPAsideContent"
-    :class="{ 'has-outline': headers.length > 0 }"
-  >
-    <div class="outline-title" role="heading" aria-level="2">{{ resolveTitle(theme) }}</div>
+  <div class="VPAsideContent" :class="{ 'has-outline': headers.length > 0 }">
+    <div class="outline-title" role="heading" aria-level="2">
+      {{ resolveTitle(theme) }}
+    </div>
     <div
       class="VPDocAsideOutline"
       :class="{ 'has-outline': headers.length > 0 }"
@@ -36,13 +35,10 @@ useActiveAnchor(container)
       role="navigation"
     >
       <div class="content">
-        <nav
-          aria-labelledby="doc-outline-aria-label"
-          class="outline-nav"
-        >
-        <span class="visually-hidden" id="doc-outline-aria-label">
-          Table of Contents for current page
-        </span>
+        <nav aria-labelledby="doc-outline-aria-label" class="outline-nav">
+          <span class="visually-hidden" id="doc-outline-aria-label">
+            Table of Contents for current page
+          </span>
           <VPDocOutlineItem :headers="headers" :root="true" />
         </nav>
       </div>
@@ -71,6 +67,6 @@ useActiveAnchor(container)
   line-height: 32px;
   font-size: 16px;
   font-weight: 600;
-  color: var(--vp-c-text-1)
+  color: var(--vp-c-text-1);
 }
 </style>

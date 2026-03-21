@@ -188,9 +188,11 @@ Danger zone, do not proceed
 :::
 
 ::: details Click me to view the code
+
 ```js
 console.log('Hello, VitePress!')
 ```
+
 :::
 ````
 
@@ -201,9 +203,11 @@ Danger zone, do not proceed
 :::
 
 ::: details Click me to view the code
+
 ```js
 console.log('Hello, VitePress!')
 ```
+
 :::
 
 Also, you may set custom titles globally by adding the following content in site config, helpful if not writing in English:
@@ -335,9 +339,7 @@ export default {
 
 ```html
 <ul>
-  <li v-for="todo in todos" :key="todo.id">
-    {{ todo.text }}
-  </li>
+  <li v-for="todo in todos" :key="todo.id">{{ todo.text }}</li>
 </ul>
 ```
 

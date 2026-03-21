@@ -14,17 +14,27 @@ const translate = createSearchTranslate(defaultTranslations)
 </script>
 
 <template>
-  <button type="button" class="DocSearch DocSearch-Button" :aria-label="translate('button.buttonAriaLabel')">
+  <button
+    type="button"
+    class="DocSearch DocSearch-Button"
+    :aria-label="translate('button.buttonAriaLabel')"
+  >
     <span class="DocSearch-Button-Container">
-      <svg class="DocSearch-Search-Icon"
+      <svg
+        class="DocSearch-Search-Icon"
         aria-label="search icon"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"
         width="16"
-        height="16">
-          <path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"></path>
+        height="16"
+      >
+        <path
+          d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"
+        ></path>
       </svg>
-      <span class="DocSearch-Button-Placeholder">{{ translate('button.buttonText') }}</span>
+      <span class="DocSearch-Button-Placeholder">{{
+        translate('button.buttonText')
+      }}</span>
     </span>
     <span class="DocSearch-Button-Keys">
       <kbd class="DocSearch-Button-Key"></kbd>
@@ -36,7 +46,9 @@ const translate = createSearchTranslate(defaultTranslations)
 <style>
 [class*='DocSearch'] {
   --docsearch-primary-color: var(--color-action-list-item-default-active-bg);
-  --docsearch-highlight-color: var(--color-action-list-item-default-active-border);
+  --docsearch-highlight-color: var(
+    --color-action-list-item-default-active-border
+  );
   --docsearch-text-color: var(--vp-c-text-2);
   --docsearch-muted-color: var(--vp-c-text-2);
   --docsearch-searchbox-shadow: none;
@@ -67,7 +79,7 @@ const translate = createSearchTranslate(defaultTranslations)
   height: 55px;
   background: transparent;
   transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
-  transition-property: color,background-color,box-shadow,border-color;
+  transition-property: color, background-color, box-shadow, border-color;
 }
 
 .DocSearch-Button:hover {
@@ -88,7 +100,7 @@ const translate = createSearchTranslate(defaultTranslations)
     border: 1px solid var(--vp-c-border);
     border-radius: 6px;
     line-height: 20px;
-    width:100%;
+    width: 100%;
     max-width: 305px;
     height: 32px;
     padding: 5px 12px;
@@ -113,7 +125,7 @@ const translate = createSearchTranslate(defaultTranslations)
   color: var(--vp-c-text-dark);
   fill: currentColor;
   transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
-  transition-property: color,background-color,box-shadow,border-color;
+  transition-property: color, background-color, box-shadow, border-color;
 }
 
 @media (min-width: 768px) {
@@ -134,7 +146,7 @@ const translate = createSearchTranslate(defaultTranslations)
   font-weight: 500;
   color: var(--vp-c-text-dark);
   transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
-  transition-property: color,background-color,box-shadow,border-color;
+  transition-property: color, background-color, box-shadow, border-color;
 }
 
 @media (min-width: 768px) {
@@ -175,9 +187,8 @@ const translate = createSearchTranslate(defaultTranslations)
   font-size: 12px;
   font-weight: 500;
   transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
-  transition-property: color,background-color,box-shadow,border-color;
+  transition-property: color, background-color, box-shadow, border-color;
 }
-
 
 .DocSearch-Button .DocSearch-Button-Key + .DocSearch-Button-Key {
   /*rtl:begin:ignore*/
@@ -198,7 +209,6 @@ const translate = createSearchTranslate(defaultTranslations)
   font-size: 12px;
   letter-spacing: normal;
 }
-
 
 .DocSearch-Button:hover .DocSearch-Button-Keys > * {
   border-color: var(--vp-c-border);

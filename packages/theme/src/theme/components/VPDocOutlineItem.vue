@@ -23,8 +23,6 @@ function handleClose(link: string, title: string) {
 
   closedLinks.set(link, title)
 }
-
-
 </script>
 
 <template>
@@ -33,12 +31,21 @@ function handleClose(link: string, title: string) {
       <a :href="link" @click="onClick" class="vp-outline-li">
         <div class="vp-outline-item">
           <div class="outline-link">{{ title }}</div>
-          <svg v-if="root && children?.length! > 0" @click="handleClose(link, title)"
-               aria-hidden="true"
-               focusable="false"
-               role="img" :class="['folder-icon', closedLinks.has(link) ? 'reversed' : '']" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+          <svg
+            v-if="root && children?.length! > 0"
+            @click="handleClose(link, title)"
+            aria-hidden="true"
+            focusable="false"
+            role="img"
+            :class="['folder-icon', closedLinks.has(link) ? 'reversed' : '']"
+            viewBox="0 0 16 16"
+            width="16"
+            height="16"
+            fill="currentColor"
+          >
             <path
-              d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path>
+              d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"
+            ></path>
           </svg>
         </div>
       </a>
@@ -117,7 +124,6 @@ function handleClose(link: string, title: string) {
   text-overflow: ellipsis;
 }
 
-
 .folder-icon {
   color: var(--vp-color-fg-muted);
 }
@@ -142,7 +148,7 @@ li {
 }
 
 .vp-outline-li.active .vp-outline-item::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   width: 0.25rem;
@@ -150,7 +156,6 @@ li {
   background-color: var(--vp-c-brand-1);
   border-radius: 6px;
 }
-
 
 .vp-outline-item.nested {
   padding-left: 13px;

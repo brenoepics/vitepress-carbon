@@ -11,19 +11,19 @@
 
 ::: code-group
 
-``` sh [npm]
+```sh [npm]
 npm install vitepress-carbon
 ```
 
-``` sh [pnpm]
+```sh [pnpm]
 pnpm add vitepress-carbon
 ```
 
-``` sh [yarn]
+```sh [yarn]
 yarn add vitepress-carbon
 ```
 
-``` sh [bun]
+```sh [bun]
 bun add vitepress-carbon
 ```
 

@@ -189,7 +189,7 @@
 .dark {
   --vp-c-text-1: rgb(230, 237, 243);
   --vp-c-text-2: rgb(110, 118, 130);
-  --vp-c-text-3: rgba(235,245,255,.5);
+  --vp-c-text-3: rgba(235, 245, 255, 0.5);
   --vp-c-text-4: rgb(132, 141, 151);
 }
 
@@ -269,11 +269,15 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --vp-font-family-mono: 'JetBrainsMono', 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco,
-  Consolas, 'Liberation Mono', 'Courier New', monospace;
-  --vp-font-family-custom: "Mona Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
+  --vp-font-family-base:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --vp-font-family-mono:
+    'JetBrainsMono', 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono',
+    Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --vp-font-family-custom:
+    'Mona Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 /**
@@ -285,7 +289,8 @@
   --vp-shadow-2: 0 3px 12px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.07);
   --vp-shadow-3: 0 12px 32px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
   --vp-shadow-4: 0 14px 44px rgba(0, 0, 0, 0.12), 0 3px 9px rgba(0, 0, 0, 0.12);
-  --vp-shadow-5: 0 18px 56px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.16);
+  --vp-shadow-5:
+    0 18px 56px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.16);
 }
 
 /**
@@ -334,7 +339,6 @@
   --vp-color-fg-muted: #848d97;
   --vp-color-fg-subtle: #6e7681;
   --vp-color-fg-on-emphasis: #ffffff;
-
 }
 
 .dark {
@@ -343,7 +347,6 @@
   --vp-color-fg-muted: #848d97;
   --vp-color-fg-subtle: #6e7681;
   --vp-color-fg-on-emphasis: #ffffff;
-
 }
 
 /**
@@ -499,11 +502,11 @@
   --vp-nav-bg-color: var(--vp-c-bg-alt);
   --vp-nav-screen-bg-color: var(--vp-c-bg-alt);
   --vp-nav-logo-height: 24px;
-  --color-action-list-item-default-hover-bg: rgba(177,186,196,0.12);
-  --color-action-list-item-default-hover-border: rgba(0,0,0,0);
-  --color-action-list-item-default-active-bg: rgba(177,186,196,0.2);
+  --color-action-list-item-default-hover-bg: rgba(177, 186, 196, 0.12);
+  --color-action-list-item-default-hover-border: rgba(0, 0, 0, 0);
+  --color-action-list-item-default-active-bg: rgba(177, 186, 196, 0.2);
   --color-action-list-item-default-active-border: rgba(111, 122, 131, 0.75);
-  --color-action-list-item-default-selected-bg: rgba(177,186,196,0.08);
+  --color-action-list-item-default-selected-bg: rgba(177, 186, 196, 0.08);
 }
 
 .hide-nav {
@@ -593,8 +596,14 @@
   --vp-local-search-bg: var(--vp-c-bg);
   --vp-local-search-result-bg: var(--vp-c-bg);
   --vp-local-search-result-border: var(--vp-c-border);
-  --vp-local-search-result-selected-bg: var(--color-action-list-item-default-selected-bg);
-  --vp-local-search-result-selected-border: var(--color-action-list-item-default-active-border);
-  --vp-local-search-highlight-bg: var(--color-action-list-item-default-active-bg);
+  --vp-local-search-result-selected-bg: var(
+    --color-action-list-item-default-selected-bg
+  );
+  --vp-local-search-result-selected-border: var(
+    --color-action-list-item-default-active-border
+  );
+  --vp-local-search-highlight-bg: var(
+    --color-action-list-item-default-active-bg
+  );
   --vp-local-search-highlight-text: var(--vp-c-brand-1);
 }

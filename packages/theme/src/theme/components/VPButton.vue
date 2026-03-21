@@ -9,8 +9,8 @@ interface Props {
   theme?: 'brand' | 'alt' | 'sponsor'
   text: string
   href?: string
-  target?: string;
-  rel?: string;
+  target?: string
+  rel?: string
 }
 const props = withDefaults(defineProps<Props>(), {
   size: 'medium',
@@ -46,11 +46,17 @@ const component = computed(() => {
   text-align: center;
   font-weight: 600;
   white-space: nowrap;
-  transition: color 0.25s, border-color 0.25s, background-color 0.25s;
+  transition:
+    color 0.25s,
+    border-color 0.25s,
+    background-color 0.25s;
 }
 
 .VPButton:active {
-  transition: color 0.1s, border-color 0.1s, background-color 0.1s;
+  transition:
+    color 0.1s,
+    border-color 0.1s,
+    background-color 0.1s;
 }
 
 .VPButton.medium {

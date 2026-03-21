@@ -5,7 +5,7 @@ import { runMain } from '../dist/index.mjs'
 
 global.__vp_cli__ = {
   startTime: Date.now(),
-  entry: fileURLToPath(import.meta.url),
+  entry: fileURLToPath(import.meta.url)
 }
 
-runMain()
+void runMain()

@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* oxlint-disable @typescript-eslint/no-explicit-any */
 import { fileURLToPath } from 'node:url'
 import { runCommand as _runCommand, runMain as _runMain } from 'citty'
 
