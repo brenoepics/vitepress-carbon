@@ -3,48 +3,51 @@
   "version": "1.4.6",
   "description": "Carbon embraces GitHub's monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.",
   "keywords": [
-    "vue",
-    "design-system"
+    "design-system",
+    "vue"
   ],
-  "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "dev": "pnpm --filter vitepress-carbon run build && pnpm --filter vitepress-carbon-demo run dev",
-    "demo-build": "vitepress build ./packages/demo",
-    "eslint": "vp lint ./packages/**/src/**/*.{ts,js,vue}",
-    "prettier": "vp fmt --check \"{__tests__,docs,packages,types}/**/*.ts\"",
-    "prettier:fail": "vp fmt --check \"{__tests__,docs,packages,types}/**/*.ts\"",
-    "lint": "pnpm eslint --fix && pnpm prettier",
-    "lint:fail": "pnpm eslint && pnpm prettier:fail",
-    "build": "pnpm --filter vitepress-carbon run build && pnpm --filter vpcar run build && pnpm --filter vitepress-carbon-demo build",
-    "prepare": "vp config"
-  },
-  "author": "Breno A.",
-  "license": "MIT",
-  "type": "module",
   "homepage": "https://github.com/brenoepics/vitepress-carbon#readme",
   "bugs": {
     "url": "https://github.com/brenoepics/vitepress-carbon/issues"
   },
-  "devDependencies": {
-    "@changesets/cli": "^2.30.0",
-    "@eslint/js": "^9.24.0",
-    "@types/mark.js": "^8.11.12",
-    "eslint-plugin-vue": "^9.33.0",
-    "globals": "^16.4.0",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.57.1",
-    "vite-plus": "catalog:"
+  "license": "MIT",
+  "author": "Breno A.",
+  "type": "module",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "pnpm --filter vitepress-carbon run build && pnpm --filter vitepress-carbon-demo run dev",
+    "demo-build": "vitepress build ./packages/demo",
+    "lint": "vp lint --fix ./packages/**/src/**/*.{ts,js,vue}",
+    "lint:check": "vp lint ./packages/**/src/**/*.{ts,js,vue}",
+    "format": "vp fmt \"{__tests__,docs,packages,types}/**/*.ts\"",
+    "format:check": "vp fmt --check \"{__tests__,docs,packages,types}/**/*.ts\"",
+    "check": "pnpm lint:check && pnpm format:check",
+    "build": "pnpm --filter vitepress-carbon run build && pnpm --filter vpcar run build && pnpm --filter vitepress-carbon-demo build",
+    "test": "vp test run",
+    "test:integration": "vp test run __tests__/integration",
+    "prepare": "vp config"
   },
   "dependencies": {
     "@algolia/client-search": "^5.49.2",
-    "@types/node": "^22.14.1",
+    "@types/node": "^25.5.0",
     "mark.js": "^8.11.1",
     "search-insights": "^2.17.3",
     "vitepress": "^1.6.4",
-    "vue": "^3.5.22"
+    "vue": "^3.5.30"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.30.0",
+    "@types/mark.js": "^8.11.12",
+    "globals": "^17.4.0",
+    "typescript": "^5.9.3",
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
   },
   "peerDependencies": {
     "vitepress": "^1.5.0"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.18.0"
   },
   "packageManager": "pnpm@9.9.0"
 }
