@@ -86,7 +86,7 @@ function scrollToTop() {
   padding: 12px 20px 11px;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .VPLocalNavOutlineDropdown {
     padding: 12px 36px 11px;
   }
@@ -111,7 +111,7 @@ function scrollToTop() {
   color: var(--vp-c-text-1);
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .VPLocalNavOutlineDropdown button {
     font-size: 14px;
   }
@@ -145,7 +145,7 @@ function scrollToTop() {
   box-shadow: var(--vp-shadow-3);
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .items {
     right: auto;
     left: calc(var(--vp-sidebar-width) + 32px);

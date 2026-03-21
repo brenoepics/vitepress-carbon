@@ -65,7 +65,7 @@ watchEffect(() => {
   transition: background-color 0.5s;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .VPNav {
     position: fixed;
   }

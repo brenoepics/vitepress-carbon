@@ -92,7 +92,7 @@ const { hasSidebar } = useSidebar()
   margin: 0;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .VPContent {
     padding-top: var(--vp-nav-height);
   }

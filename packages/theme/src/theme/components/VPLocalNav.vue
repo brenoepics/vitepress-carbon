@@ -95,7 +95,7 @@ const classes = computed(() => {
   position: fixed;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .VPLocalNav {
     top: var(--vp-nav-height);
   }
@@ -109,7 +109,7 @@ const classes = computed(() => {
   }
 }
 
-@media (min-width: 1460px) {
+@media (min-width: 1280px) {
   .VPLocalNav {
     display: none;
   }
@@ -151,7 +151,7 @@ const classes = computed(() => {
   }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .menu {
     display: none;
   }
