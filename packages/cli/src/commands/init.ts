@@ -203,12 +203,13 @@ export default defineCommand({
       consola.success('Installation completed.')
     }
 
-    if (ctx.args.gitInit === undefined) {
-      ctx.args.gitInit = await consola.prompt('Initialize git repository?', {
+    const shouldInitGit =
+      ctx.args.gitInit ??
+      (await consola.prompt('Initialize git repository?', {
         type: 'confirm'
-      })
-    }
-    if (ctx.args.gitInit) {
+      }))
+
+    if (shouldInitGit) {
       consola.info('Initializing git repository...\n')
       const { execa } = await import('execa')
       await execa('git', ['init', template.dir], {

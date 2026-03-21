@@ -17,11 +17,11 @@
     "preinstall": "npx only-allow pnpm",
     "dev": "pnpm --filter vitepress-carbon run build && pnpm --filter vitepress-carbon-demo run dev",
     "demo-build": "vitepress build ./packages/demo",
-    "eslint": "vp lint ./packages/**/src/**/*.{ts,js,vue}",
-    "prettier": "vp fmt --check \"{__tests__,docs,packages,types}/**/*.ts\"",
-    "prettier:fail": "vp fmt --check \"{__tests__,docs,packages,types}/**/*.ts\"",
-    "lint": "pnpm eslint --fix && pnpm prettier",
-    "lint:fail": "pnpm eslint && pnpm prettier:fail",
+    "lint": "vp lint --fix ./packages/**/src/**/*.{ts,js,vue}",
+    "lint:check": "vp lint ./packages/**/src/**/*.{ts,js,vue}",
+    "format": "vp fmt \"{__tests__,docs,packages,types}/**/*.ts\"",
+    "format:check": "vp fmt --check \"{__tests__,docs,packages,types}/**/*.ts\"",
+    "check": "pnpm lint:check && pnpm format:check",
     "build": "pnpm --filter vitepress-carbon run build && pnpm --filter vpcar run build && pnpm --filter vitepress-carbon-demo build",
     "test": "vp test run",
     "test:integration": "vp test run __tests__/integration",
@@ -33,19 +33,15 @@
     "mark.js": "^8.11.1",
     "search-insights": "^2.17.3",
     "vitepress": "^1.6.4",
-    "vue": "^3.5.22"
+    "vue": "^3.5.30"
   },
   "devDependencies": {
     "@changesets/cli": "^2.30.0",
-    "@eslint/js": "^9.24.0",
     "@types/mark.js": "^8.11.12",
-    "eslint-plugin-vue": "^10.8.0",
     "globals": "^17.4.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.57.1",
     "vite-plus": "catalog:",
-    "vitest": "catalog:",
-    "vue-eslint-parser": "10.4.0"
+    "vitest": "catalog:"
   },
   "peerDependencies": {
     "vitepress": "^1.5.0"
