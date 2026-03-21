@@ -2,8 +2,27 @@
   "name": "vitepress-carbon",
   "version": "1.4.6",
   "description": "Theme for VitePress documentation.",
-  "main": "dist/index.js",
+  "keywords": [
+    "design-system",
+    "vue"
+  ],
+  "homepage": "https://github.com/brenoepics/vitepress-carbon#readme",
+  "bugs": {
+    "url": "https://github.com/brenoepics/vitepress-carbon/issues"
+  },
+  "license": "MIT",
+  "author": "Breno A.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenoepics/vitepress-carbon.git",
+    "directory": "packages/theme"
+  },
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -20,29 +39,6 @@
       "default": "./dist/theme/components/index.js"
     }
   },
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brenoepics/vitepress-carbon.git",
-    "directory": "packages/theme"
-  },
-  "keywords": [
-    "vue",
-    "design-system"
-  ],
-  "author": "Breno A.",
-  "license": "MIT",
-  "homepage": "https://github.com/brenoepics/vitepress-carbon#readme",
-  "bugs": {
-    "url": "https://github.com/brenoepics/vitepress-carbon/issues"
-  },
-  "engines": {
-    "node": ">=20.0.0"
-  },
-  "packageManager": "pnpm@9.9.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "clean": "rimraf dist",
@@ -69,5 +65,9 @@
     "@mdit-vue/types": "^2.1.4",
     "@types/body-scroll-lock": "^3.1.2",
     "rimraf": "^6.1.3"
-  }
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "packageManager": "pnpm@9.9.0"
 }

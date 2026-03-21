@@ -2,26 +2,26 @@
   "name": "vpcar",
   "version": "1.4.1",
   "description": "VitePress Carbon CLI",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brenoepics/vitepress-carbon.git",
     "directory": "packages/cli"
   },
-  "license": "MIT",
-  "type": "module",
-  "exports": {
-    ".": "./dist/index.mjs",
-    "./cli": "./bin/vpcar.mjs"
-  },
-  "types": "./dist/index.d.ts",
   "bin": {
-    "vpcar": "./bin/vpcar.mjs",
-    "vp-car": "./bin/vpcar.mjs"
+    "vp-car": "./bin/vpcar.mjs",
+    "vpcar": "./bin/vpcar.mjs"
   },
   "files": [
     "bin",
     "dist"
   ],
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./cli": "./bin/vpcar.mjs"
+  },
   "scripts": {
     "dev:prepare": "unbuild --stub",
     "build": "unbuild",
@@ -47,8 +47,8 @@
     "unplugin-purge-polyfills": "^0.1.0",
     "yaml": "^2.8.3"
   },
-  "packageManager": "pnpm@9.12.0",
   "engines": {
-    "node": ">=20.0.0"
-  }
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "packageManager": "pnpm@9.12.0"
 }
