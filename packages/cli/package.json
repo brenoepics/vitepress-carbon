@@ -35,7 +35,7 @@
   "devDependencies": {
     "@types/node": "^22.14.1",
     "@types/semver": "^7.7.1",
-    "citty": "^0.1.6",
+    "citty": "^0.2.1",
     "consola": "^3.4.2",
     "execa": "^9.6.1",
     "giget": "^2.0.0",
