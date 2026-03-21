@@ -49,6 +49,9 @@ const translate = createSearchTranslate(defaultTranslations)
   --docsearch-highlight-color: var(
     --color-action-list-item-default-active-border
   );
+  --docsearch-search-button-background: transparent;
+  --docsearch-key-background: transparent;
+  --docsearch-key-color: var(--vp-c-text-1);
   --docsearch-text-color: var(--vp-c-text-2);
   --docsearch-muted-color: var(--vp-c-text-2);
   --docsearch-searchbox-shadow: none;
@@ -63,6 +66,9 @@ const translate = createSearchTranslate(defaultTranslations)
 .dark [class*='DocSearch'] {
   --docsearch-modal-shadow: none;
   --docsearch-footer-shadow: none;
+  --docsearch-search-button-background: transparent;
+  --docsearch-key-background: transparent;
+  --docsearch-key-color: var(--vp-c-text-1);
   --docsearch-logo-color: var(--vp-c-text-2);
   --docsearch-hit-background: var(--vp-c-default-soft);
   --docsearch-hit-color: var(--vp-c-text-2);
@@ -109,6 +115,16 @@ const translate = createSearchTranslate(defaultTranslations)
   .DocSearch-Button:hover {
     border-color: var(--vp-color-fg-subtle);
     background-color: var(--color-action-list-item-default-hover-bg);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .DocSearch-Button {
+    max-width: 180px;
+  }
+
+  .DocSearch-Button .DocSearch-Button-Keys {
+    display: none;
   }
 }
 
@@ -173,6 +189,7 @@ const translate = createSearchTranslate(defaultTranslations)
   display: block;
   margin: 2px 0 0 0;
   border: 1px solid var(--vp-c-border);
+  background-color: var(--docsearch-key-background);
   color: var(--vp-c-text-dark);
   /*rtl:begin:ignore*/
   border-right: none;
