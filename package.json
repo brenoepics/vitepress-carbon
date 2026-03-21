@@ -1,7 +1,7 @@
 {
   "name": "vitepress-carbon-monorepo",
   "private": true,
-  "version": "1.4.6",
+  "version": "1.6.0",
   "description": "Carbon embraces GitHub's monochromatic ethos, offering a theme for VitePress documentation that is sleek, modern, and effortlessly stylish.",
   "keywords": [
     "design-system",
@@ -18,6 +18,7 @@
     "preinstall": "npx only-allow pnpm",
     "dev": "pnpm --filter vitepress-carbon run build && pnpm --filter vitepress-carbon-demo run dev",
     "demo-build": "vitepress build ./packages/demo",
+    "bump:versions": "node ./scripts/bump-versions.mjs",
     "lint": "vp lint --fix ./packages/**/src/**/*.{ts,js,vue}",
     "lint:check": "vp lint ./packages/**/src/**/*.{ts,js,vue}",
     "format": "vp fmt \"{__tests__,docs,packages,types}/**/*.ts\"",
