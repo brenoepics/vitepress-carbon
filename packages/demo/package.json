@@ -15,7 +15,7 @@
     "vitepress-carbon": "link:../theme"
   },
   "devDependencies": {
-    "markdown-it-mathjax3": "^4.3.2"
+    "markdown-it-mathjax3": "^5.2.0"
   },
   "engines": {
     "node": "^20.19.0 || >=22.18.0"
