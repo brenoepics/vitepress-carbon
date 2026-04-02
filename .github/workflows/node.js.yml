@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Setup Vite+
-        uses: voidzero-dev/setup-vp@fd19e0626188613eec92a77e875180c6445b56ba # v1
+        uses: voidzero-dev/setup-vp@e34774bccb4e7d7f2e23514ca980177a71425e43 # v1
         with:
           node-version: ${{ matrix.node_version }}
           cache: true
