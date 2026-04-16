@@ -119,8 +119,8 @@ importers:
         specifier: ^4.6.0
         version: 4.6.0
       '@docsearch/js':
-        specifier: ^4.6.0
-        version: 4.6.0
+        specifier: ^4.6.2
+        version: 4.6.2
       '@vueuse/core':
         specifier: ^14.2.1
         version: 14.2.1(vue@3.5.30(typescript@5.9.3))
@@ -341,8 +341,8 @@ packages:
   '@docsearch/js@3.8.2':
     resolution: {integrity: sha512-Q5wY66qHn0SwA7Taa0aDbHiJvaFJLOJyHmooQ7y8hlwwQLQ/5WwCcoX0g7ii04Qi2DJlHsd0XXzJ8Ypw9+9YmQ==}
 
-  '@docsearch/js@4.6.0':
-    resolution: {integrity: sha512-9/rbgkm/BgTq46cwxIohvSAz3koOFjnPpg0mwkJItAfzKbQIj+310PvwtgUY1YITDuGCag6yOL50GW2DBkaaBw==}
+  '@docsearch/js@4.6.2':
+    resolution: {integrity: sha512-qj1yoxl3y4GKoK7+VM6fq/rQqPnvUmg3IKzJ9x0VzN14QVzdB/SG/J6VfV1BWT5RcPUFxIcVwoY1fwHM2fSRRw==}
 
   '@docsearch/react@3.8.2':
     resolution: {integrity: sha512-xCRrJQlTt8N9GU0DG4ptwHRkfnSnD/YpdeaXe02iKfqs97TkZJv60yE+1eq/tjPcVnTW8dP5qLP7itifFVV5eg==}
@@ -1709,10 +1709,9 @@ packages:
     peerDependencies:
       vue: ^3.5.0
 
-  '@xmldom/xmldom@0.9.8':
-    resolution: {integrity: sha512-p96FSY54r+WJ50FIOsCOjyj/wavs8921hG5+kVMmZgKcvIKxMXHTrjNJvRgWa/zuX3B6t2lijLNFaOyuxUH+2A==}
+  '@xmldom/xmldom@0.9.9':
+    resolution: {integrity: sha512-qycIHAucxy/LXAYIjmLmtQ8q9GPnMbnjG1KXhWm9o5sCr6pOYDATkMPiTNa6/v8eELyqOQ2FsEqeoFYmgv/gJg==}
     engines: {node: '>=14.6'}
-    deprecated: this version has critical issues, please update to the latest version
 
   acorn@8.15.0:
     resolution: {integrity: sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==}
@@ -3133,8 +3132,8 @@ packages:
     resolution: {integrity: sha512-1POYv7uv2gXoyGFpBCmpDVSNV74IfsWlDW216UPjbWufNf+bSU6GdbDsxdcxtfwb4xlI3yxzOTKClUosxARYrQ==}
     engines: {node: '>=0.10.0'}
 
-  speech-rule-engine@4.1.2:
-    resolution: {integrity: sha512-S6ji+flMEga+1QU79NDbwZ8Ivf0S/MpupQQiIC0rTpU/ZTKgcajijJJb1OcByBQDjrXCN1/DJtGz4ZJeBMPGJw==}
+  speech-rule-engine@4.1.3:
+    resolution: {integrity: sha512-SBMgkuJYvP4F62daRfBNwYC2nXTEhNXAfsBZ/BB7Ly85/KnbnjmKM7/45ZrFbH6jIMiAliDUDPSZFUuXDvcg6A==}
     hasBin: true
 
   sprintf-js@1.0.3:
@@ -3761,7 +3760,7 @@ snapshots:
       - react-dom
       - search-insights
 
-  '@docsearch/js@4.6.0': {}
+  '@docsearch/js@4.6.2': {}
 
   '@docsearch/react@3.8.2(@algolia/client-search@5.49.2)(search-insights@2.17.3)':
     dependencies:
@@ -4689,7 +4688,7 @@ snapshots:
     dependencies:
       vue: 3.5.30(typescript@5.9.3)
 
-  '@xmldom/xmldom@0.9.8': {}
+  '@xmldom/xmldom@0.9.9': {}
 
   acorn@8.15.0: {}
 
@@ -5470,7 +5469,7 @@ snapshots:
       esm: 3.2.25
       mhchemparser: 4.2.1
       mj-context-menu: 0.6.1
-      speech-rule-engine: 4.1.2
+      speech-rule-engine: 4.1.3
 
   mathxyjax3@0.8.3: {}
 
@@ -6288,9 +6287,9 @@ snapshots:
 
   speakingurl@14.0.1: {}
 
-  speech-rule-engine@4.1.2:
+  speech-rule-engine@4.1.3:
     dependencies:
-      '@xmldom/xmldom': 0.9.8
+      '@xmldom/xmldom': 0.9.9
       commander: 13.1.0
       wicked-good-xpath: 1.3.0
 
