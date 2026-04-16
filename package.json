@@ -35,7 +35,7 @@
     "mark.js": "^8.11.1",
     "search-insights": "^2.17.3",
     "vitepress": "^1.6.4",
-    "vue": "^3.5.30"
+    "vue": "^3.5.32"
   },
   "devDependencies": {
     "@changesets/cli": "^2.30.0",
