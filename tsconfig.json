@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
+    "rootDir": "./packages",
     "allowJs": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "strict": true,
     "jsx": "preserve",
     "esModuleInterop": true,
     "noUnusedLocals": true,
-    "downlevelIteration": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "resolveJsonModule": true,
