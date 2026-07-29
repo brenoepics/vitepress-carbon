@@ -208,7 +208,9 @@ async function main() {
   console.log(`\n${contributors.length} people written to ${OUT}`)
 }
 
-main().catch((error) => {
+try {
+  await main()
+} catch (error) {
   console.error(`\n${error.message}`)
   process.exitCode = 1
-})
+}

@@ -27,7 +27,7 @@ const hasAnything = computed(
 
 <template>
   <div v-if="hasAnything" class="VPDocAsideMeta">
-    <div class="meta-title" role="heading" aria-level="2">About this page</div>
+    <h2 class="meta-title">About this page</h2>
 
     <div class="meta-box">
       <div v-if="hasLlmsPageActions" class="meta-row">
@@ -82,7 +82,7 @@ const hasAnything = computed(
 }
 
 .meta-title {
-  margin-bottom: 8px;
+  margin: 0 0 8px;
   padding-left: 10px;
   line-height: 18px;
   font-size: 12px;

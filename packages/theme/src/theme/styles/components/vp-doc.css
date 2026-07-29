@@ -2,17 +2,6 @@
  * Headings
  * -------------------------------------------------------------------------- */
 
-.vp-doc h1,
-.vp-doc h2,
-.vp-doc h3,
-.vp-doc h4,
-.vp-doc h5,
-.vp-doc h6 {
-  position: relative;
-  font-weight: 600;
-  outline: none;
-}
-
 /* Heading rhythm follows GitHub's markdown-body: a shared 24px lead-in, 16px
    trailing gap, and a hairline under the two top levels. */
 .vp-doc h1,
@@ -21,8 +10,11 @@
 .vp-doc h4,
 .vp-doc h5,
 .vp-doc h6 {
+  position: relative;
   margin: 24px 0 16px;
   line-height: 1.25;
+  font-weight: 600;
+  outline: none;
 }
 
 .vp-doc h1 {
@@ -215,16 +207,12 @@
   border: 1px solid var(--vp-c-border);
   padding: 6px 13px;
   line-height: 1.5;
+  font-size: 14px;
 }
 
 .vp-doc th {
   text-align: left;
   font-weight: 600;
-}
-
-.vp-doc th,
-.vp-doc td {
-  font-size: 14px;
 }
 
 /**
