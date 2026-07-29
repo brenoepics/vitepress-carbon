@@ -70,7 +70,7 @@ const target = computed(() =>
   line-height: 1.4285714286;
   font-size: 14px;
   font-weight: 600;
-  color: var(--vp-c-text-dark);
+  color: var(--vp-c-nav-title);
   transition: opacity 0.25s;
 }
 
