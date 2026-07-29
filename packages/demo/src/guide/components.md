@@ -330,6 +330,67 @@ const links = [
 | ------- | -------------- | --------------------------------------------------------------------- |
 | `links` | `SocialLink[]` | `icon` is a built-in name (`github`, `discord`, `x`, …) or `{ svg }`. |
 
+### VPFooter
+
+The site footer: an optional call to action, a message and a copyright line,
+with contribution-graph tiles bleeding off either edge. It renders only on
+pages without a sidebar, and is driven entirely by `themeConfig.footer` — you
+normally configure it rather than importing it.
+
+```ts
+// .vitepress/config.mts
+themeConfig: {
+  footer: {
+    action: {
+      text: 'Create Repository',
+      link: 'https://github.com/new',
+      theme: 'brand' // 'brand' | 'alt' | 'sponsor', defaults to 'brand'
+    },
+    message: 'Released under the <a href="/LICENSE">MIT License</a>.',
+    copyright: `Copyright © 2024–${new Date().getFullYear()} You`
+  }
+}
+```
+
+| Key         | Type     | Description                                      |
+| ----------- | -------- | ------------------------------------------------ |
+| `action`    | `object` | Optional CTA above the message. Omit to hide it. |
+| `message`   | `string` | Supports inline HTML.                            |
+| `copyright` | `string` | Supports inline HTML.                            |
+
+Set `footer: false` in a page's frontmatter to hide it on that page.
+
+### VPContributionTiles
+
+The decorative grid behind the footer — a GitHub contribution graph rendered
+from a deterministic hash, so the server and client always produce the same
+pattern. Useful on its own for any band that wants the same texture.
+
+`mask="frame"` punches an ellipse out of the middle, leaving the grid
+continuous around all four edges — this is what the footer uses, so the
+tiles close around the content instead of stopping at a hard edge. The hollow
+is sized with `--vp-tiles-hollow-w` / `--vp-tiles-hollow-h` (defaults `40%`
+and `62%`), which is how the footer widens it on narrow screens.
+
+```vue
+<script setup>
+import { VPContributionTiles } from 'vitepress-carbon/components'
+</script>
+
+<VPContributionTiles mask="frame" :columns="120" :rows="18" />
+<VPContributionTiles mask="fade" side="left" :columns="20" :rows="7" />
+```
+
+| Prop      | Type                          | Default  | Description                                               |
+| --------- | ----------------------------- | -------- | --------------------------------------------------------- |
+| `mask`    | `'fade' \| 'frame' \| 'none'` | `'fade'` | `frame` hollows out the centre; `fade` thins to one edge. |
+| `side`    | `'left' \| 'right'`           | `'left'` | Edge to fade towards. Only used when `mask` is `fade`.    |
+| `columns` | `number`                      | `16`     | Grid width in cells.                                      |
+| `rows`    | `number`                      | `7`      | Grid height. Seven matches a real weekday graph.          |
+
+The five activity levels are themable via `--vp-c-tile-0` … `--vp-c-tile-4`.
+Level 0 is transparent by default so the grid tints nothing behind it.
+
 ## Composables
 
 The theme entry also exports two composables:
