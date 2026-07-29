@@ -31,7 +31,18 @@ To use this project, follow these docs:
 - [VitePress](https://vitepress.dev/)
 - [Markdown](https://www.markdownguide.org/)
 
+## Design system
+
+Carbon has a documented design language — color roles, typography, spacing, shape,
+and elevation, with light and dark values for every token. Read
+[design.md](design.md) before changing any UI, and build with the `--vp-*` tokens
+in [`packages/theme/src/theme/styles/vars.css`](packages/theme/src/theme/styles/vars.css)
+rather than hardcoded values.
+
 ## Contribution Guide
+
+Before contributing, read [AGENTS.md](AGENTS.md) — the setup, commands,
+conventions, and workflow that apply to human and automated contributors alike.
 
 We use `pnpm` as our package manager. To get started, run:
 
