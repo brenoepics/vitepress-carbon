@@ -14,7 +14,13 @@ const { hasSidebar } = useSidebar()
     class="VPFooter"
     :class="{ 'has-sidebar': hasSidebar }"
   >
-    <VPContributionTiles class="tiles" mask="frame" :columns="120" :rows="18" />
+    <VPContributionTiles
+      class="tiles"
+      mask="frame"
+      fit
+      :columns="120"
+      :rows="18"
+    />
 
     <div class="container">
       <div v-if="theme.footer.action" class="action">
@@ -61,15 +67,17 @@ const { hasSidebar } = useSidebar()
   }
 }
 
-/* Tiles sit behind the content and are clipped by the footer's overflow, so
-   they read as texture bleeding off both edges. */
-/* Deliberately larger than the footer in both axes so the grid bleeds off
-   every edge and never ends on a sliced cell; overflow: hidden trims it. */
+/* Tiles sit behind the content and span the whole footer.
+
+   They used to be a fixed 120x18 grid centred with a transform, which is
+   1677x249px against a footer that is neither. Wider than that and the grid
+   stopped short of both edges; narrower and `overflow: hidden` sliced it
+   mid-cell — across 320-2560px, 46% of widths cut a column in half. Filling
+   the footer and letting the component size itself (`fit`) keeps whole cells
+   at every edge, on every screen. */
 .tiles {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
 }
 
 /* Narrower viewports leave less room between the frame and the text, so pull
