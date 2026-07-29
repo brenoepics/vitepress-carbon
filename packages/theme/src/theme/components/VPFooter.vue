@@ -80,7 +80,6 @@ const { hasSidebar } = useSidebar()
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  opacity: 0.65;
 }
 
 .tiles-left {
@@ -98,7 +97,7 @@ const { hasSidebar } = useSidebar()
   }
 
   .tiles-left {
-    opacity: 0.16;
+    opacity: 0.4;
   }
 }
 

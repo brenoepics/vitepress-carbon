@@ -78,19 +78,33 @@ const cells = computed(() => {
   user-select: none;
 }
 
-/* Fade the grid out towards the middle of the footer so it reads as texture
-   behind the content rather than a chart. */
 .VPContributionTiles.left {
-  --vp-tiles-mask: linear-gradient(to right, #000 0%, transparent 92%);
+  --vp-tiles-fade: linear-gradient(to right, #000 0%, transparent 88%);
 }
 
 .VPContributionTiles.right {
-  --vp-tiles-mask: linear-gradient(to left, #000 0%, transparent 92%);
+  --vp-tiles-fade: linear-gradient(to left, #000 0%, transparent 88%);
 }
 
+/* Two masks intersected: one fades towards the page centre, the other hollows
+   out the vertical middle. Together the grid reads as a chevron pointing at
+   the content — dense top and bottom, empty where the text sits — rather than
+   a solid wall of squares. */
 .VPContributionTiles {
-  -webkit-mask-image: var(--vp-tiles-mask);
-  mask-image: var(--vp-tiles-mask);
+  --vp-tiles-hollow: linear-gradient(
+    to bottom,
+    #000 0%,
+    rgba(0, 0, 0, 0.35) 26%,
+    transparent 42%,
+    transparent 58%,
+    rgba(0, 0, 0, 0.35) 74%,
+    #000 100%
+  );
+
+  -webkit-mask-image: var(--vp-tiles-fade), var(--vp-tiles-hollow);
+  mask-image: var(--vp-tiles-fade), var(--vp-tiles-hollow);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
 .tile {

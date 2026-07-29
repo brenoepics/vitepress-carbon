@@ -366,6 +366,10 @@ The decorative grid behind the footer — a GitHub contribution graph rendered
 from a deterministic hash, so the server and client always produce the same
 pattern. Useful on its own for any band that wants the same texture.
 
+Two masks are intersected so the grid reads as a chevron pointing inwards:
+one fades it towards the page centre (which edge depends on `side`), the other
+hollows out the vertical middle so text placed over it stays legible.
+
 ```vue
 <script setup>
 import { VPContributionTiles } from 'vitepress-carbon/components'
