@@ -3,7 +3,13 @@ import { computed } from 'vue'
 
 const props = withDefaults(
   defineProps<{
-    /** Which edge the grid fades away from. */
+    /**
+     * `fade` thins the grid out towards one edge; `frame` keeps the perimeter
+     * and hollows out the centre so content can sit inside it; `none` leaves
+     * the grid whole.
+     */
+    mask?: 'fade' | 'frame' | 'none'
+    /** Edge the grid fades away from. Only meaningful when mask is `fade`. */
     side?: 'left' | 'right'
     columns?: number
     /**
@@ -12,7 +18,7 @@ const props = withDefaults(
      */
     rows?: number
   }>(),
-  { side: 'left', columns: 16, rows: 7 }
+  { mask: 'fade', side: 'left', columns: 16, rows: 7 }
 )
 
 /**
@@ -54,7 +60,7 @@ const cells = computed(() => {
 <template>
   <div
     class="VPContributionTiles"
-    :class="side"
+    :class="[`mask-${mask}`, side]"
     :style="{ '--columns': columns, '--rows': rows }"
     aria-hidden="true"
   >
@@ -78,33 +84,31 @@ const cells = computed(() => {
   user-select: none;
 }
 
-.VPContributionTiles.left {
-  --vp-tiles-fade: linear-gradient(to right, #000 0%, transparent 88%);
+.VPContributionTiles.mask-fade.left {
+  -webkit-mask-image: linear-gradient(to right, #000 0%, transparent 88%);
+  mask-image: linear-gradient(to right, #000 0%, transparent 88%);
 }
 
-.VPContributionTiles.right {
-  --vp-tiles-fade: linear-gradient(to left, #000 0%, transparent 88%);
+.VPContributionTiles.mask-fade.right {
+  -webkit-mask-image: linear-gradient(to left, #000 0%, transparent 88%);
+  mask-image: linear-gradient(to left, #000 0%, transparent 88%);
 }
 
-/* Two masks intersected: one fades towards the page centre, the other hollows
-   out the vertical middle. Together the grid reads as a chevron pointing at
-   the content — dense top and bottom, empty where the text sits — rather than
-   a solid wall of squares. */
-.VPContributionTiles {
-  --vp-tiles-hollow: linear-gradient(
-    to bottom,
-    #000 0%,
-    rgba(0, 0, 0, 0.35) 26%,
-    transparent 42%,
-    transparent 58%,
-    rgba(0, 0, 0, 0.35) 74%,
+/* One ellipse punched out of the middle. The grid stays continuous around
+   every edge — top, bottom and both sides — so it reads as a closed frame
+   rather than two blocks with the centre sliced out. */
+.VPContributionTiles.mask-frame {
+  --vp-tiles-ring: radial-gradient(
+    ellipse var(--vp-tiles-hollow-w, 40%) var(--vp-tiles-hollow-h, 62%) at 50%
+      50%,
+    transparent 0%,
+    transparent 52%,
+    rgba(0, 0, 0, 0.55) 78%,
     #000 100%
   );
 
-  -webkit-mask-image: var(--vp-tiles-fade), var(--vp-tiles-hollow);
-  mask-image: var(--vp-tiles-fade), var(--vp-tiles-hollow);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
+  -webkit-mask-image: var(--vp-tiles-ring);
+  mask-image: var(--vp-tiles-ring);
 }
 
 .tile {

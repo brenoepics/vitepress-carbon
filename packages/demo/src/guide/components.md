@@ -366,23 +366,27 @@ The decorative grid behind the footer — a GitHub contribution graph rendered
 from a deterministic hash, so the server and client always produce the same
 pattern. Useful on its own for any band that wants the same texture.
 
-Two masks are intersected so the grid reads as a chevron pointing inwards:
-one fades it towards the page centre (which edge depends on `side`), the other
-hollows out the vertical middle so text placed over it stays legible.
+`mask="frame"` punches an ellipse out of the middle, leaving the grid
+continuous around all four edges — this is what the footer uses, so the
+tiles close around the content instead of stopping at a hard edge. The hollow
+is sized with `--vp-tiles-hollow-w` / `--vp-tiles-hollow-h` (defaults `40%`
+and `62%`), which is how the footer widens it on narrow screens.
 
 ```vue
 <script setup>
 import { VPContributionTiles } from 'vitepress-carbon/components'
 </script>
 
-<VPContributionTiles side="left" :columns="20" :rows="22" />
+<VPContributionTiles mask="frame" :columns="120" :rows="18" />
+<VPContributionTiles mask="fade" side="left" :columns="20" :rows="7" />
 ```
 
-| Prop      | Type                | Default  | Description                                      |
-| --------- | ------------------- | -------- | ------------------------------------------------ |
-| `side`    | `'left' \| 'right'` | `'left'` | Edge the grid fades away from.                   |
-| `columns` | `number`            | `16`     | Grid width in cells.                             |
-| `rows`    | `number`            | `7`      | Grid height. Seven matches a real weekday graph. |
+| Prop      | Type                          | Default  | Description                                               |
+| --------- | ----------------------------- | -------- | --------------------------------------------------------- |
+| `mask`    | `'fade' \| 'frame' \| 'none'` | `'fade'` | `frame` hollows out the centre; `fade` thins to one edge. |
+| `side`    | `'left' \| 'right'`           | `'left'` | Edge to fade towards. Only used when `mask` is `fade`.    |
+| `columns` | `number`                      | `16`     | Grid width in cells.                                      |
+| `rows`    | `number`                      | `7`      | Grid height. Seven matches a real weekday graph.          |
 
 The five activity levels are themable via `--vp-c-tile-0` … `--vp-c-tile-4`.
 Level 0 is transparent by default so the grid tints nothing behind it.

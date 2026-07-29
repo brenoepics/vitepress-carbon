@@ -14,18 +14,7 @@ const { hasSidebar } = useSidebar()
     class="VPFooter"
     :class="{ 'has-sidebar': hasSidebar }"
   >
-    <VPContributionTiles
-      class="tiles tiles-left"
-      side="left"
-      :columns="20"
-      :rows="22"
-    />
-    <VPContributionTiles
-      class="tiles tiles-right"
-      side="right"
-      :columns="20"
-      :rows="22"
-    />
+    <VPContributionTiles class="tiles" mask="frame" :columns="120" :rows="18" />
 
     <div class="container">
       <div v-if="theme.footer.action" class="action">
@@ -74,36 +63,28 @@ const { hasSidebar } = useSidebar()
 
 /* Tiles sit behind the content and are clipped by the footer's overflow, so
    they read as texture bleeding off both edges. */
-/* Deliberately taller than the footer so the grid bleeds off top and bottom
-   instead of floating in the middle; overflow: hidden does the trimming. */
+/* Deliberately larger than the footer in both axes so the grid bleeds off
+   every edge and never ends on a sliced cell; overflow: hidden trims it. */
 .tiles {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.tiles-left {
-  left: -16px;
-}
-
-.tiles-right {
-  right: -16px;
-}
-
-/* Below the point where the grids would crowd the text, thin them out. */
+/* Narrower viewports leave less room between the frame and the text, so pull
+   the hollow wider and soften the grid. */
 @media (max-width: 1099px) {
-  .tiles-right {
-    display: none;
-  }
-
-  .tiles-left {
-    opacity: 0.4;
+  .tiles {
+    --vp-tiles-hollow-w: 58%;
+    opacity: 0.55;
   }
 }
 
 @media (max-width: 767px) {
   .tiles {
-    display: none;
+    --vp-tiles-hollow-w: 76%;
+    opacity: 0.35;
   }
 }
 
