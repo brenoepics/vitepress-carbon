@@ -10,13 +10,15 @@ repository. Read this before making changes. For anything visual, also read
 [VitePress](https://vitepress.dev) documentation sites. It is a **pnpm workspace
 monorepo**:
 
-| Path                 | Package                     | Purpose                                                                         |
-| -------------------- | --------------------------- | ------------------------------------------------------------------------------- |
-| `packages/theme`     | `vitepress-carbon`          | The published theme. **The main package.** Builds to `dist/`.                   |
-| `packages/cli`       | `vpcar`                     | Published CLI (`vpcar init`) that scaffolds Carbon sites. Built with `unbuild`. |
-| `packages/demo`      | `vitepress-carbon-demo`     | Demo docs site that consumes the theme via `link:../theme`. Not published.      |
-| `packages/templates` | —                           | JSON starter descriptors used by the CLI's init flow.                           |
-| `/` (root)           | `vitepress-carbon-monorepo` | Private root: shared scripts, tooling config, integration tests.                |
+| Path                 | Package                      | Purpose                                                                                     |
+| -------------------- | ---------------------------- | ------------------------------------------------------------------------------------------- |
+| `packages/theme`     | `vitepress-carbon`           | The published theme. **The main package.** Builds to `dist/`.                               |
+| `packages/cli`       | `vpcar`                      | Published CLI (`vpcar init`) that scaffolds Carbon sites. Built with `unbuild`.             |
+| `packages/demo`      | `vitepress-carbon-demo`      | Demo docs site that consumes the theme via `link:../theme`. Not published.                  |
+| `packages/storybook` | `vitepress-carbon-storybook` | Storybook workbench for the theme's components. Not published; deployed to `/storybook/`.   |
+| `packages/templates` | —                            | JSON starter descriptors used by the CLI's init flow.                                       |
+| `shared/`            | —                            | Code shared by tooling, not shipped: the VitePress harness used by the tests and Storybook. |
+| `/` (root)           | `vitepress-carbon-monorepo`  | Private root: shared scripts, tooling config, tests.                                        |
 
 ## Environment
 
@@ -28,21 +30,28 @@ monorepo**:
 
 Run these from the repo root.
 
-| Task                | Command                                    | Notes                                                  |
-| ------------------- | ------------------------------------------ | ------------------------------------------------------ |
-| Install             | `pnpm install`                             |                                                        |
-| Dev                 | `pnpm dev`                                 | Builds the theme, then serves the demo.                |
-| Build all           | `pnpm build`                               | Order: **theme → cli → demo**.                         |
-| Build theme only    | `pnpm --filter vitepress-carbon run build` | `vue-tsc --noEmit` → `tsc` → copy assets.              |
-| Test                | `pnpm test`                                | `vp test run` (Vitest).                                |
-| Integration tests   | `pnpm test:integration`                    | `vp test run __tests__/integration`.                   |
-| Lint (autofix)      | `pnpm lint`                                |                                                        |
-| Lint (check only)   | `pnpm lint:check`                          |                                                        |
-| Format (write)      | `pnpm format`                              |                                                        |
-| Format (check only) | `pnpm format:check`                        |                                                        |
-| Full check          | `pnpm check`                               | `lint:check && format:check`. Run before every commit. |
+| Task                | Command                                    | Notes                                                     |
+| ------------------- | ------------------------------------------ | --------------------------------------------------------- |
+| Install             | `pnpm install`                             |                                                           |
+| Dev                 | `pnpm dev`                                 | Builds the theme, then serves the demo.                   |
+| Storybook           | `pnpm storybook`                           | Component workbench on `:6006`.                           |
+| Build all           | `pnpm build`                               | Order: **theme → cli → demo → storybook**.                |
+| Build theme only    | `pnpm --filter vitepress-carbon run build` | `vue-tsc --noEmit` → `tsc` → copy assets.                 |
+| Test                | `pnpm test`                                | `vp test run` (Vitest).                                   |
+| Component tests     | `pnpm test:components`                     | `vp test run __tests__/components`.                       |
+| Integration tests   | `pnpm test:integration`                    | `vp test run __tests__/integration`.                      |
+| Lint (autofix)      | `pnpm lint`                                |                                                           |
+| Lint (check only)   | `pnpm lint:check`                          |                                                           |
+| Format (write)      | `pnpm format`                              |                                                           |
+| Format (check only) | `pnpm format:check`                        |                                                           |
+| Full check          | `pnpm check`                               | `vp check` — the same thing CI runs. Before every commit. |
 
 **Before opening a PR, `pnpm check`, `pnpm test`, and `pnpm build` must all pass.**
+
+These scripts delegate to `vp` with no path arguments so they cover the whole
+repo, exactly like CI's `vp check --fix`. Don't narrow them to a glob — a glob
+that skips a directory (`__tests__/`, say) lets type errors through locally and
+fails in CI instead.
 
 ## Toolchain notes (important)
 
@@ -72,15 +81,35 @@ Run these from the repo root.
   and follow [design.md](design.md). Any new token needs **both** a `:root` (light)
   and a `.dark` (dark) value.
 
+## Tests
+
+- `__tests__/components/` — component suites. They mount the theme's SFCs with
+  `@vue/test-utils` under happy-dom (opted in per file with a
+  `// @vitest-environment happy-dom` docblock).
+- `__tests__/integration/` — builds the theme and the demo for real and asserts
+  against the emitted HTML. Slow.
+- `__tests__/support/` — mount helpers, the CSS reader, snapshot normalisation,
+  and the specimen table.
+- `shared/vitepress-harness/` — stand-in for the `vitepress` client module,
+  aliased in by both `vite.config.ts` and Storybook. Long-text fixtures live in
+  `long-text.ts`; use those rather than inventing new ones.
+
+**happy-dom does not do layout.** An overflow regression cannot be caught by
+measuring a box, so the overflow suites assert the CSS contract (the
+`min-width: 0` shrink chain, `text-overflow`) by parsing the component's own
+`<style>` block. Anything that needs real layout belongs in a Storybook story
+under **Overflow**, where it can be seen.
+
 ## Making changes
 
 1. Branch off `main`.
 2. Make the change; keep it scoped. Update the README if you change a public interface.
 3. **Add a changeset** for anything user‑facing: `pnpm changeset` (this repo uses
    [Changesets](https://github.com/changesets/changesets); `baseBranch: main`,
-   `access: public`, and `vitepress-carbon-demo` is ignored). Version bumps go
-   through `pnpm bump:versions` (`--theme` / `--cli` / `--root`); the root version
-   syncs to the theme by default.
+   `access: public`; `vitepress-carbon-demo` and `vitepress-carbon-storybook`
+   are ignored). Version bumps go through `pnpm bump:versions`
+   (`--theme` / `--cli` / `--root`); the root version syncs to the theme by
+   default.
 4. Run `pnpm check && pnpm test && pnpm build`.
 5. Open a PR.
 
@@ -88,7 +117,8 @@ Run these from the repo root.
 
 - **CI matrix:** Node `20.19.0`, `22.18.0`, `24`. CI runs `vp install --frozen-lockfile`,
   `vp check --fix` (skipped on `20.19.0`), `vp run test`, `vp run build`. Additional
-  jobs: CodeQL, dependency‑review, OpenSSF Scorecard, Pages deploy.
+  jobs: CodeQL, dependency‑review, OpenSSF Scorecard, Pages deploy (which
+  publishes the demo at `/` and Storybook at `/storybook/`).
 - **Reviews:** per `CONTRIBUTING.md`, a PR needs sign‑off from **two** other
   developers and follows SemVer. Be conventional and descriptive in commit
   messages and PR descriptions.

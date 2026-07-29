@@ -11,3 +11,5 @@ package-lock.json
 !pnpm-lock.yaml
 /packages/**/node_modules
 /packages/cli/docs/
+/packages/storybook/dist/
+storybook-static/

@@ -1,0 +1,71 @@
+/*
+ * Chrome for the Storybook canvas only — never shipped with the theme.
+ *
+ * `.sb-carbon-frame` stands in for the doc column so a component's overflow
+ * behaviour is visible: it is a hard-edged box, and anything escaping it is
+ * immediately obvious against the dashed outline.
+ */
+
+body {
+  background-color: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  margin: 0;
+  padding: 24px;
+}
+
+.sb-carbon-frame {
+  position: relative;
+  width: 100%;
+  outline: 1px dashed var(--vp-c-border);
+  outline-offset: 8px;
+  /* Deliberately not `overflow: hidden` — the frame must reveal overflow,
+     not conceal it. */
+}
+
+.sb-carbon-note {
+  margin: 0 0 16px;
+  border-left: 2px solid var(--vp-c-brand-1);
+  padding: 4px 0 4px 12px;
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.sb-carbon-grid {
+  display: grid;
+  gap: 32px;
+}
+
+.sb-carbon-case {
+  min-width: 0;
+}
+
+/* In the catalog grid, `contain` makes each card a containing block for its
+   `position: fixed` descendants — otherwise VPNav, VPSidebar and friends each
+   cover the whole page and the inventory is unreadable. */
+.sb-carbon-grid > .sb-carbon-case {
+  contain: layout paint;
+  min-height: 96px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.sb-carbon-case > h3 {
+  margin: 0 0 8px;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sb-carbon-error {
+  border: 1px solid var(--vp-c-danger-1, #f85149);
+  border-radius: 6px;
+  padding: 12px;
+  color: var(--vp-c-text-2);
+  font-family: var(--vp-font-family-mono);
+  font-size: 12px;
+  white-space: pre-wrap;
+}

@@ -1,6 +1,27 @@
+import { fileURLToPath } from 'node:url'
+import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite-plus'
 
+const harnessModule = fileURLToPath(
+  new URL('./shared/vitepress-harness/module.ts', import.meta.url)
+)
+
 export default defineConfig({
+  plugins: [vue()],
+  resolve: {
+    alias: [
+      // Component tests mount SFCs outside a running VitePress site, so the
+      // client runtime is served by the shared harness instead.
+      { find: /^vitepress$/, replacement: harnessModule }
+    ]
+  },
+  test: {
+    include: ['__tests__/**/*.test.ts'],
+    exclude: ['**/node_modules/**', '**/dist/**'],
+    // Node by default (the integration suite shells out to real builds);
+    // component suites opt into a DOM with a `@vitest-environment` docblock.
+    environment: 'node'
+  },
   staged: {
     '*': 'vp check --fix'
   },
