@@ -16,6 +16,23 @@ const localSearchIndex = fileURLToPath(
   new URL('shared/vitepress-harness/local-search-index.ts', repoRoot)
 )
 
+/** Vite's `resolve.alias`: `readonly Alias[] | { [find: string]: string }`. */
+type ViteAlias = NonNullable<
+  Parameters<NonNullable<StorybookConfig['viteFinal']>>[0]['resolve']
+>['alias']
+
+type AliasEntry = Extract<ViteAlias, readonly unknown[]>[number]
+
+/** Normalises both of Vite's `resolve.alias` shapes to the array form. */
+function toAliasEntries(alias: ViteAlias): AliasEntry[] {
+  if (!alias) return []
+  if (Array.isArray(alias)) return [...alias]
+
+  return Object.entries(alias as Record<string, string>).map(
+    ([find, replacement]) => ({ find, replacement })
+  )
+}
+
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(ts|js)'],
   addons: ['@storybook/addon-docs', '@storybook/addon-a11y'],
@@ -45,10 +62,11 @@ const config: StorybookConfig = {
     plugins: [...(viteConfig.plugins ?? []), vue()],
     resolve: {
       ...viteConfig.resolve,
+      // Vite accepts `alias` as either an array of entries or a plain object.
+      // Storybook hands over `undefined` today, but normalise both shapes so a
+      // future object-form alias is carried through rather than dropped.
       alias: [
-        ...(Array.isArray(viteConfig.resolve?.alias)
-          ? viteConfig.resolve.alias
-          : []),
+        ...toAliasEntries(viteConfig.resolve?.alias),
         { find: /^vitepress$/, replacement: vitepressHarness },
         { find: /^@localSearchIndex$/, replacement: localSearchIndex }
       ]
