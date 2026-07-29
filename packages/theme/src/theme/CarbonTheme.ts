@@ -459,6 +459,12 @@ export namespace CarbonTheme {
   export interface Footer {
     message?: string
     copyright?: string
+    /** Optional call to action rendered above the message. */
+    action?: {
+      text: string
+      link: string
+      theme?: 'brand' | 'alt' | 'sponsor'
+    }
   }
 
   // team ----------------------------------------------------------------------
