@@ -15,8 +15,9 @@ import '../../theme/src/theme/styles/index.css'
 import './storybook.css'
 
 setup((app) => {
-  // VitePress registers `Content` globally; VPDoc renders it.
-  app.component('Content', Content)
+  // VitePress registers `Content` globally; VPDoc renders it. Guarded because
+  // HMR re-runs this against an app that already has it, which Vue warns about.
+  if (!app.component('Content')) app.component('Content', Content)
 })
 
 declare module '@storybook/vue3-vite' {

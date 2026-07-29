@@ -79,12 +79,10 @@ export function onContentUpdated(fn: () => void): void {
   onMounted(fn)
 }
 
-export function defineClientComponent(loader: () => Promise<unknown>) {
+/** The harness never resolves the loader; stories mount components directly. */
+export function defineClientComponent(_loader: () => Promise<unknown>) {
   return defineComponent({
-    setup: () => {
-      void loader
-      return () => null
-    }
+    setup: () => () => null
   })
 }
 

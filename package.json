@@ -48,6 +48,7 @@
     "@vue/test-utils": "^2.4.11",
     "globals": "^17.8.0",
     "happy-dom": "^20.11.1",
+    "minisearch": "^7.2.0",
     "typescript": "^5.9.3",
     "vite-plus": "catalog:",
     "vitest": "catalog:"

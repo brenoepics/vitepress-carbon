@@ -71,6 +71,9 @@ importers:
       happy-dom:
         specifier: ^20.11.1
         version: 20.11.1
+      minisearch:
+        specifier: ^7.2.0
+        version: 7.2.0
       typescript:
         specifier: ^5.9.3
         version: 5.9.3

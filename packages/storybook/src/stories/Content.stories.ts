@@ -7,7 +7,7 @@ import VPSocialLink from '../../../theme/src/theme/components/VPSocialLink.vue'
 import VPSocialLinks from '../../../theme/src/theme/components/VPSocialLinks.vue'
 import VPSponsors from '../../../theme/src/theme/components/VPSponsors.vue'
 import VPSwitch from '../../../theme/src/theme/components/VPSwitch.vue'
-import { socialLinks, UNBREAKABLE_TITLE, URL_TITLE } from '../fixtures.js'
+import { socialLinks } from '../fixtures.js'
 
 const meta = {
   title: 'Content/Inline'
@@ -29,15 +29,6 @@ export const Badges: StoryObj = {
   })
 }
 
-export const BadgeWithOversizedText: StoryObj = {
-  render: () => ({
-    components: { VPBadge },
-    setup: () => ({ text: UNBREAKABLE_TITLE }),
-    template: '<p>Release <VPBadge type="warning" :text="text" /></p>'
-  }),
-  parameters: { frameWidth: '360px' }
-}
-
 export const Buttons: StoryObj = {
   render: () => ({
     components: { VPButton },
@@ -51,30 +42,17 @@ export const Buttons: StoryObj = {
   })
 }
 
-export const ButtonWithOversizedLabel: StoryObj = {
-  render: () => ({
-    components: { VPButton },
-    setup: () => ({ text: UNBREAKABLE_TITLE }),
-    template:
-      '<VPButton theme="brand" size="medium" :text="text" href="/guide/introduction" />'
-  }),
-  parameters: { frameWidth: '420px' }
-}
-
 export const Links: StoryObj = {
   render: () => ({
     components: { VPLink },
-    setup: () => ({ url: URL_TITLE }),
     template: `
       <p>
         <VPLink href="/guide/introduction">Internal link</VPLink> ·
         <VPLink href="https://vitepress.dev">External link</VPLink> ·
         <VPLink href="/guide/introduction" :no-icon="true">No icon</VPLink>
       </p>
-      <p><VPLink :href="url">{{ url }}</VPLink></p>
     `
-  }),
-  parameters: { frameWidth: '520px' }
+  })
 }
 
 export const Image: StoryObj = {

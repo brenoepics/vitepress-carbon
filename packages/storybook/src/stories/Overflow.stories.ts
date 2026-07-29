@@ -6,10 +6,13 @@
  * frame is the container boundary: nothing should cross it.
  */
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
+import VPBadge from '../../../theme/src/theme/components/VPBadge.vue'
+import VPButton from '../../../theme/src/theme/components/VPButton.vue'
 import VPDoc from '../../../theme/src/theme/components/VPDoc.vue'
 import VPDocFooter from '../../../theme/src/theme/components/VPDocFooter.vue'
 import VPDocOutlineItem from '../../../theme/src/theme/components/VPDocOutlineItem.vue'
 import VPFeatures from '../../../theme/src/theme/components/VPFeatures.vue'
+import VPLink from '../../../theme/src/theme/components/VPLink.vue'
 import VPSidebarItem from '../../../theme/src/theme/components/VPSidebarItem.vue'
 import {
   CJK_TITLE,
@@ -149,4 +152,35 @@ export const FeatureCards: StoryObj = {
     template: '<VPFeatures :features="features" />'
   }),
   parameters: { frameWidth: '900px' }
+}
+
+export const InlineBadge: StoryObj = {
+  name: 'Badge — oversized label',
+  render: () => ({
+    components: { VPBadge },
+    setup: () => ({ text: UNBREAKABLE_TITLE }),
+    template: '<p>Release <VPBadge type="warning" :text="text" /></p>'
+  }),
+  parameters: { frameWidth: '360px' }
+}
+
+export const InlineButton: StoryObj = {
+  name: 'Button — oversized label',
+  render: () => ({
+    components: { VPButton },
+    setup: () => ({ text: UNBREAKABLE_TITLE }),
+    template:
+      '<VPButton theme="brand" size="medium" :text="text" href="/guide/introduction" />'
+  }),
+  parameters: { frameWidth: '420px' }
+}
+
+export const InlineLink: StoryObj = {
+  name: 'Link — URL-shaped label',
+  render: () => ({
+    components: { VPLink },
+    setup: () => ({ url: URL_TITLE }),
+    template: '<p><VPLink :href="url">{{ url }}</VPLink></p>'
+  }),
+  parameters: { frameWidth: '520px' }
 }
