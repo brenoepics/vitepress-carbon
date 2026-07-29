@@ -50,6 +50,16 @@ const isLocked = useScrollLock(inBrowser ? document.body : null)
   overflow-y: auto;
   transition: background-color 0.5s;
   pointer-events: auto;
+
+  /* The `--vp-c-nav-*` tokens describe foreground on the nav *bar*, which is a
+     dark surface in both colour schemes. This screen sits on `--vp-c-bg-alt`
+     instead — near-white in light mode — so inheriting them rendered the social
+     icons at 1.07:1 against their own background. Re-point them at the ordinary
+     text roles, which are defined for both modes. */
+  --vp-c-nav-text: var(--vp-c-text-2);
+  --vp-c-nav-text-hover: var(--vp-c-text-1);
+  --vp-c-nav-hover-bg: var(--vp-c-default-soft);
+  --vp-c-nav-hover-border: var(--vp-c-border);
 }
 
 .VPNavScreen.fade-enter-active,

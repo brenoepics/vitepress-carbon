@@ -513,8 +513,11 @@
   --color-action-list-item-default-active-border: rgba(111, 122, 131, 0.75);
   --color-action-list-item-default-selected-bg: rgba(177, 186, 196, 0.08);
 
-  /* Nav bar sits on a dark surface in both colour schemes, so these hold
-     regardless of `.dark`. Items rest borderless and gain definition on hover. */
+  /* Foreground on the nav *bar*, which is `--vp-c-bg-dark` — dark in both
+     colour schemes — so these hold regardless of `.dark`. Items rest borderless
+     and gain definition on hover.
+     They are not general-purpose: any surface that is not the dark bar must
+     re-point them at the ordinary text roles, as `.VPNavScreen` does. */
   --vp-c-nav-text: rgba(230, 237, 243, 0.75);
   --vp-c-nav-text-hover: rgb(230, 237, 243);
   --vp-c-nav-hover-bg: rgba(177, 186, 196, 0.12);
