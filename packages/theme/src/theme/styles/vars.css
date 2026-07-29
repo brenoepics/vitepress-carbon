@@ -513,21 +513,33 @@
   --color-action-list-item-default-active-border: rgba(111, 122, 131, 0.75);
   --color-action-list-item-default-selected-bg: rgba(177, 186, 196, 0.08);
 
-  /* Foreground on the nav *bar*, which is `--vp-c-bg-dark` — dark in both
-     colour schemes — so these hold regardless of `.dark`. Items rest borderless
-     and gain definition on hover.
-     They are not general-purpose: any surface that is not the dark bar must
-     re-point them at the ordinary text roles, as `.VPNavScreen` does. */
-  --vp-c-nav-text: rgba(230, 237, 243, 0.75);
-  --vp-c-nav-text-hover: rgb(230, 237, 243);
-  --vp-c-nav-hover-bg: rgba(177, 186, 196, 0.12);
-  --vp-c-nav-hover-border: rgba(240, 246, 252, 0.12);
-  --vp-c-nav-active-bg: rgba(177, 186, 196, 0.2);
+  /* Foreground on the nav surface (`--vp-nav-bg-color`, shared by the bar and
+     the mobile screen). That surface follows the colour scheme, so these need a
+     value in each mode — see the `.dark` block. Items rest borderless and gain
+     definition on hover. */
+  --vp-c-nav-title: var(--vp-c-text-1);
+  --vp-c-nav-text: var(--vp-c-text-2);
+  --vp-c-nav-text-hover: var(--vp-c-text-1);
+  --vp-c-nav-hover-bg: var(--vp-c-default-soft);
+  --vp-c-nav-hover-border: var(--vp-c-border);
+  --vp-c-nav-active-bg: var(--vp-c-gray-soft);
 
   /* Every interactive control in the nav bar — search, menu items, buttons,
      icon buttons — shares this box so the row reads as one strip. */
   --vp-nav-control-height: 32px;
   --vp-nav-control-radius: 6px;
+}
+
+.dark {
+  /* On the dark nav surface the foreground runs brighter than the body text
+     roles so the strip keeps its contrast against `--vp-c-bg-alt` (#010409).
+     `--vp-c-text-dark` stays the override point it has always been. */
+  --vp-c-nav-title: var(--vp-c-text-dark);
+  --vp-c-nav-text: rgba(230, 237, 243, 0.75);
+  --vp-c-nav-text-hover: rgb(230, 237, 243);
+  --vp-c-nav-hover-bg: rgba(177, 186, 196, 0.12);
+  --vp-c-nav-hover-border: rgba(240, 246, 252, 0.12);
+  --vp-c-nav-active-bg: rgba(177, 186, 196, 0.2);
 }
 
 .hide-nav {

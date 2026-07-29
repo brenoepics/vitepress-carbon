@@ -143,7 +143,7 @@ const translate = createSearchTranslate(defaultTranslations)
   position: relative;
   width: 16px;
   height: 16px;
-  color: var(--vp-c-text-dark);
+  color: var(--vp-c-nav-title);
   fill: currentColor;
   transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
   transition-property: color, background-color, box-shadow, border-color;
