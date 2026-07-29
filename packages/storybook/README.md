@@ -39,13 +39,13 @@ module, and the `__VP_LOCAL_SEARCH__` / `__ALGOLIA__` / `__CARBON__` flags.
 
 ## Layout
 
-| Path                        | What it holds                                                     |
-| --------------------------- | ----------------------------------------------------------------- |
-| `src/stories/Overflow.*`    | The regression showcase for issue #28.                            |
-| `src/stories/*.stories.ts`  | Curated stories, grouped the way the theme is.                    |
-| `src/stories/Catalog.*`     | Every component, discovered by glob.                              |
-| `src/component-catalog.ts`  | The glob and the default props behind the catalog.                |
-| `src/fixtures.ts`           | Sample nav, sidebar, team and feature data; re-exports long text.  |
+| Path                       | What it holds                                                     |
+| -------------------------- | ----------------------------------------------------------------- |
+| `src/stories/Overflow.*`   | The regression showcase for issue #28.                            |
+| `src/stories/*.stories.ts` | Curated stories, grouped the way the theme is.                    |
+| `src/stories/Catalog.*`    | Every component, discovered by glob.                              |
+| `src/component-catalog.ts` | The glob and the default props behind the catalog.                |
+| `src/fixtures.ts`          | Sample nav, sidebar, team and feature data; re-exports long text. |
 
 ## Adding a component
 

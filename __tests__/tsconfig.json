@@ -1,8 +1,10 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "rootDir": ".",
+    // The suites import theme SFCs and the shared VitePress harness, so the
+    // repo root — not `__tests__` — is the root of this program.
+    "rootDir": "..",
     "types": ["node"]
   },
-  "include": ["./**/*"]
+  "include": ["./**/*", "../shared/**/*"]
 }
