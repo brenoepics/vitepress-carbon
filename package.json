@@ -30,17 +30,17 @@
     "prepare": "vp config"
   },
   "dependencies": {
-    "@algolia/client-search": "^5.49.2",
+    "@algolia/client-search": "^5.56.0",
     "@types/node": "^25.5.0",
     "mark.js": "^8.11.1",
     "search-insights": "^2.17.3",
     "vitepress": "^1.6.4",
-    "vue": "^3.5.30"
+    "vue": "^3.5.40"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.30.0",
+    "@changesets/cli": "^2.31.1",
     "@types/mark.js": "^8.11.12",
-    "globals": "^17.4.0",
+    "globals": "^17.8.0",
     "typescript": "^5.9.3",
     "vite-plus": "catalog:",
     "vitest": "catalog:"
@@ -52,7 +52,7 @@
     "node": "^20.19.0 || >=22.18.0"
   },
   "pnpm": {
-    "comment": "Security overrides for transitive dependencies (pnpm@9 reads pnpm.overrides from package.json, not from pnpm-workspace.yaml). Caret-bounded to the compatible major so parents keep resolving.",
+    "comment": "Overrides for transitive dependencies (pnpm@9 reads pnpm.overrides from package.json, not from pnpm-workspace.yaml). Security patches are caret-bounded to the compatible major so parents keep resolving; the typescript pin keeps the toolchain on the declared 5.x line so autoInstallPeers can't pull the TS 7 compiler and break vue-tsc/unbuild.",
     "overrides": {
       "@xmldom/xmldom": "^0.9.10",
       "brace-expansion": "^5.0.8",
@@ -67,6 +67,7 @@
       "picomatch@4": "^4.0.4",
       "postcss": "^8.5.18",
       "svgo": "^4.0.2",
+      "typescript": "$typescript",
       "ws": "^8.21.0"
     }
   },
