@@ -25,7 +25,9 @@ import VPHomeFeatures from './VPHomeFeatures.vue'
     <VPHomeFeatures />
     <slot name="home-features-after" />
 
-    <Content />
+    <div class="VPHomeContent">
+      <Content class="vp-doc" />
+    </div>
   </div>
 </template>
 
@@ -38,6 +40,33 @@ import VPHomeFeatures from './VPHomeFeatures.vue'
   padding-bottom: 96px;
   font-family: var(--vp-font-family-base);
   background-color: var(--vp-c-bg);
+}
+
+/* Markdown written below the frontmatter on a home layout used to render
+   unstyled and full-bleed; give it the same measure as the feature grid. */
+.VPHomeContent {
+  padding: 0 24px;
+}
+
+@media (min-width: 640px) {
+  .VPHomeContent {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .VPHomeContent {
+    padding: 0 64px;
+  }
+}
+
+.VPHomeContent :deep(.vp-doc) {
+  margin: 0 auto;
+  max-width: 1152px;
+}
+
+.VPHomeContent :deep(.vp-doc:empty) {
+  display: none;
 }
 
 .VPHome :deep(.VPHomeSponsors) {

@@ -13,10 +13,15 @@ const guideGroupItems = [
 
 const themeGroupItems = [
   { text: 'Extending', link: '/guide/extending-theme' },
+  { text: 'Custom Layouts', link: '/guide/custom-layouts' },
   { text: 'LLM Markdown Actions', link: '/guide/llm-markdown-actions' }
 ]
 
-const componentGroupItems = [{ text: 'Home', link: '/guide/home-component' }]
+const componentGroupItems = [
+  { text: 'Built-in Components', link: '/guide/components' },
+  { text: 'Creating Components', link: '/guide/custom-components' },
+  { text: 'Home', link: '/guide/home-component' }
+]
 
 const examplesItems = [
   { text: 'Markdown Examples', link: '/examples/markdown-examples' },

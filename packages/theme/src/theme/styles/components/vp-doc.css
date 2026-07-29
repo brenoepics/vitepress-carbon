@@ -2,6 +2,8 @@
  * Headings
  * -------------------------------------------------------------------------- */
 
+/* Heading rhythm follows GitHub's markdown-body: a shared 24px lead-in, 16px
+   trailing gap, and a hairline under the two top levels. */
 .vp-doc h1,
 .vp-doc h2,
 .vp-doc h3,
@@ -9,30 +11,43 @@
 .vp-doc h5,
 .vp-doc h6 {
   position: relative;
+  margin: 24px 0 16px;
+  line-height: 1.25;
   font-weight: 600;
   outline: none;
 }
 
 .vp-doc h1 {
+  margin-top: 0;
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding-bottom: 0.3em;
   letter-spacing: -0.02em;
-  line-height: 40px;
-  font-size: 28px;
+  font-size: 32px;
 }
 
 .vp-doc h2 {
-  margin: 48px 0 16px;
-  border-top: 1px solid var(--vp-c-divider);
-  padding-top: 24px;
-  letter-spacing: -0.02em;
-  line-height: 32px;
+  margin-top: 32px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding-bottom: 0.3em;
+  letter-spacing: -0.01em;
   font-size: 24px;
 }
 
 .vp-doc h3 {
-  margin: 32px 0 0;
-  letter-spacing: -0.01em;
-  line-height: 28px;
   font-size: 20px;
+}
+
+.vp-doc h4 {
+  font-size: 16px;
+}
+
+.vp-doc h5 {
+  font-size: 14px;
+}
+
+.vp-doc h6 {
+  font-size: 13px;
+  color: var(--vp-c-text-2);
 }
 
 .vp-doc .header-anchor {
@@ -68,16 +83,10 @@
   opacity: 1;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 767px) {
   .vp-doc h1 {
-    letter-spacing: -0.02em;
-    line-height: 40px;
-    font-size: 32px;
+    font-size: 28px;
   }
-}
-
-.vp-doc h2 .header-anchor {
-  top: 24px;
 }
 
 /**
@@ -86,25 +95,30 @@
 
 .vp-doc p,
 .vp-doc summary {
-  margin: 16px 0;
+  margin: 0 0 16px;
 }
 
 .vp-doc p {
-  line-height: 28px;
+  line-height: 1.6;
 }
 
 .vp-doc blockquote {
-  margin: 16px 0;
-  border-left: 2px solid var(--vp-c-divider);
-  padding-left: 16px;
+  margin: 0 0 16px;
+  border-left: 0.25em solid var(--vp-c-border);
+  padding: 0 1em;
+  color: var(--vp-c-text-2);
   transition: border-color 0.5s;
 }
 
 .vp-doc blockquote > p {
   margin: 0;
   font-size: 16px;
-  color: var(--vp-c-text-2);
+  color: inherit;
   transition: color 0.5s;
+}
+
+.vp-doc blockquote > p + p {
+  margin-top: 16px;
 }
 
 .vp-doc a {
@@ -131,8 +145,8 @@
 
 .vp-doc ul,
 .vp-doc ol {
-  padding-left: 1.25rem;
-  margin: 16px 0;
+  padding-left: 2em;
+  margin: 0 0 16px;
 }
 
 .vp-doc ul {
@@ -143,13 +157,25 @@
   list-style: decimal;
 }
 
+.vp-doc li {
+  line-height: 1.6;
+}
+
 .vp-doc li + li {
-  margin-top: 8px;
+  margin-top: 0.25em;
+}
+
+.vp-doc li > p {
+  margin-bottom: 0;
+}
+
+.vp-doc li > p + p {
+  margin-top: 16px;
 }
 
 .vp-doc li > ol,
 .vp-doc li > ul {
-  margin: 8px 0 0;
+  margin: 0.25em 0 0;
 }
 
 /**
@@ -158,9 +184,12 @@
 
 .vp-doc table {
   display: block;
+  width: max-content;
+  max-width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
-  overflow-x: auto;
+  border-spacing: 0;
+  margin: 0 0 16px;
+  overflow: auto;
 }
 
 .vp-doc tr {
@@ -176,19 +205,14 @@
 .vp-doc th,
 .vp-doc td {
   border: 1px solid var(--vp-c-border);
-  padding: 8px 16px;
+  padding: 6px 13px;
+  line-height: 1.5;
+  font-size: 14px;
 }
 
 .vp-doc th {
   text-align: left;
-  font-size: 14px;
   font-weight: 600;
-  color: var(--vp-c-text-2);
-  background-color: var(--vp-c-bg-soft);
-}
-
-.vp-doc td {
-  font-size: 14px;
 }
 
 /**
@@ -196,9 +220,11 @@
  * -------------------------------------------------------------------------- */
 
 .vp-doc hr {
-  margin: 16px 0;
-  border: none;
-  border-top: 1px solid var(--vp-c-border);
+  height: 0.25em;
+  margin: 24px 0;
+  padding: 0;
+  border: 0;
+  background-color: var(--vp-c-divider);
 }
 
 /**
@@ -206,7 +232,7 @@
  * -------------------------------------------------------------------------- */
 
 .vp-doc .custom-block {
-  margin: 16px 0;
+  margin: 0 0 16px;
 }
 
 .vp-doc .custom-block p {
@@ -244,8 +270,8 @@
 }
 
 .vp-doc :not(pre) > code {
-  border-radius: 4px;
-  padding: 3px 6px;
+  border-radius: 6px;
+  padding: 0.2em 0.4em;
   background-color: var(--vp-code-bg);
   transition:
     color 0.25s,
@@ -277,8 +303,9 @@
 @media (min-width: 640px) {
   .vp-doc div[class*='language-'],
   .vp-block {
-    border-radius: 8px;
-    margin: 16px 0;
+    border-radius: 6px;
+    border: 1px solid var(--vp-c-border);
+    margin: 0 0 16px;
   }
 }
 

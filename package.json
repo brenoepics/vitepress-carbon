@@ -27,7 +27,8 @@
     "build": "pnpm --filter vitepress-carbon run build && pnpm --filter vpcar run build && pnpm --filter vitepress-carbon-demo build",
     "test": "vp test run",
     "test:integration": "vp test run __tests__/integration",
-    "prepare": "vp config"
+    "prepare": "vp config",
+    "contributors": "node ./scripts/fetch-contributors.mjs"
   },
   "dependencies": {
     "@algolia/client-search": "^5.56.0",

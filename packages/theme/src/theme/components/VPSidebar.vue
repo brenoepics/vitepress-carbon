@@ -64,7 +64,7 @@ watch(
   left: 0;
   z-index: var(--vp-z-index-sidebar);
   width: calc(100vw - 64px);
-  max-width: 230px;
+  max-width: 320px;
   background-color: transparent;
   opacity: 0;
   box-shadow: var(--vp-c-shadow-3);
@@ -94,6 +94,7 @@ watch(
   .VPSidebar {
     padding-top: var(--vp-nav-height);
     width: var(--vp-sidebar-width);
+    max-width: var(--vp-sidebar-width);
     background-color: transparent;
     opacity: 1;
     visibility: visible;
@@ -105,20 +106,35 @@ watch(
 .nav {
   outline: 0;
   background: var(--vp-c-bg);
-  padding: 2px;
+  padding: 16px 12px 32px;
   min-height: 100%;
   border-right: 1px solid var(--vp-c-border);
 }
 
-.group + .group {
-  border-top: 1px solid var(--vp-c-divider);
-  padding-top: 10px;
+@media (min-width: 768px) {
+  .nav {
+    padding: 24px 16px 48px;
+  }
 }
 
-@media (min-width: 768px) {
-  .group {
-    padding-top: 10px;
-    width: calc(var(--vp-sidebar-width) - 48px);
+/* Past the layout max-width the content column centres, so the sidebar has to
+   grow by the same gutter to keep its right border flush against it. The extra
+   width is padding, so the nav body keeps its own measure. */
+@media (min-width: 1440px) {
+  .VPSidebar {
+    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2);
+    width: calc(
+      (100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width)
+    );
+    max-width: calc(
+      (100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width)
+    );
   }
+}
+
+.group + .group {
+  margin-top: 16px;
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 16px;
 }
 </style>

@@ -1,5 +1,12 @@
 # Extending Theme
 
+::: tip Looking for more?
+
+- [Custom Layouts](./custom-layouts) — build entirely new page layouts (blog, changelog, landing pages) and see the full layout-slot reference.
+- [Built-in Components](./components) — every component you can import from `vitepress-carbon/components`.
+- [Creating Components](./custom-components) — author your own components on top of the theme.
+  :::
+
 ## Layout Slots
 
 The theme's `<Layout/>` component has a few slots that can be used to inject content at certain locations of the page. Here's an example of injecting a component to replace the nav bar icon:

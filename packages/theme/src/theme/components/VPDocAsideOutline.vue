@@ -64,12 +64,13 @@ useActiveAnchor(container)
 }
 
 .outline-title {
-  margin-bottom: 12px;
-  line-height: 20px;
-  font-size: 13px;
+  margin-bottom: 8px;
+  padding-left: 10px;
+  line-height: 18px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--vp-c-text-2);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
 }
 </style>

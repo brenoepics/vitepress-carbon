@@ -23,10 +23,11 @@ defineProps<{
 
 <style scoped>
 .VPMenu {
-  border-radius: 12px;
-  padding: 8px;
+  border-radius: 8px;
+  padding: 6px;
   border: 1px solid var(--vp-c-border);
   background-color: var(--vp-c-bg-elv);
+  box-shadow: var(--vp-shadow-3);
   max-height: calc(100vh - 2rem);
   max-width: calc(100vw - 2rem);
   min-width: 192px;

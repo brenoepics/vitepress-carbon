@@ -29,8 +29,26 @@ defineEmits<(e: 'click') => void>()
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 48px;
-  height: var(--vp-nav-height);
+  flex: 0 0 auto;
+  width: var(--vp-nav-control-height);
+  height: var(--vp-nav-control-height);
+  border: 1px solid transparent;
+  border-radius: var(--vp-nav-control-radius);
+  color: var(--vp-c-nav-text);
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.VPNavBarHamburger:hover {
+  background-color: var(--vp-c-nav-hover-bg);
+  border-color: var(--vp-c-nav-hover-border);
+  color: var(--vp-c-nav-text-hover);
+}
+
+.VPNavBarHamburger:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 1px;
 }
 
 @media (min-width: 768px) {
@@ -75,23 +93,15 @@ defineEmits<(e: 'click') => void>()
   transform: translateX(0) rotate(135deg);
 }
 
-.VPNavBarHamburger.active:hover .top,
-.VPNavBarHamburger.active:hover .middle,
-.VPNavBarHamburger.active:hover .bottom {
-  background-color: var(--vp-c-text-2);
-  transition:
-    top 0.25s,
-    background-color 0.25s,
-    transform 0.25s;
-}
-
 .top,
 .middle,
 .bottom {
   position: absolute;
   width: 16px;
   height: 2px;
-  background-color: var(--vp-c-text-1);
+  /* Inherit the nav's foreground — --vp-c-text-1 is near-black in light mode
+     and the nav bar is dark in both schemes. */
+  background-color: currentColor;
   transition:
     top 0.25s,
     background-color 0.5s,

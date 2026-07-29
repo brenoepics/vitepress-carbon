@@ -111,11 +111,17 @@ function onCaretClick() {
 
 <style scoped>
 .VPSidebarItem.level-0 {
-  padding-bottom: 24px;
+  padding-bottom: 0;
 }
 
 .VPSidebarItem.collapsed.level-0 {
-  padding-bottom: 10px;
+  padding-bottom: 0;
+}
+
+/* Section headings are labels, not rows — no hover affordance, tighter lead-in. */
+.VPSidebarItem.level-0 > .item {
+  padding: 0 8px 4px;
+  margin-bottom: 2px;
 }
 
 .item {
@@ -124,7 +130,7 @@ function onCaretClick() {
   width: 100%;
   align-items: center;
   border-radius: 6px;
-  padding: 2px 8px 2px 12px;
+  padding: 1px 8px;
   transition: background-color 0.25s;
 }
 
@@ -134,11 +140,11 @@ function onCaretClick() {
 
 .indicator {
   position: absolute;
-  top: 7px;
-  bottom: 7px;
+  top: 6px;
+  bottom: 6px;
   left: 0;
   width: 2px;
-  border-radius: 2px;
+  border-radius: 999px;
   transition: background-color 0.25s;
 }
 
@@ -159,15 +165,25 @@ function onCaretClick() {
 
 .text {
   flex-grow: 1;
-  padding: 4px 0;
-  line-height: 21px;
+  min-width: 0;
+  padding: 5px 0;
+  line-height: 20px;
   font-size: 14px;
+  /* Labels longer than the rail wrap instead of overflowing the border. */
+  overflow-wrap: anywhere;
   transition: color 0.25s;
 }
 
-.VPSidebarItem.level-0 .text {
-  font-weight: 700;
-  color: var(--vp-c-text-1);
+/* Direct children only — nested rows must not inherit the section-label look. */
+.VPSidebarItem.level-0 > .item > .text,
+.VPSidebarItem.level-0 > .item > .link > .text {
+  padding: 0;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-2);
 }
 
 .VPSidebarItem.level-1 .text,
@@ -181,6 +197,10 @@ function onCaretClick() {
 
 .item:hover {
   background-color: var(--color-action-list-item-default-hover-bg);
+}
+
+.VPSidebarItem.level-0 > .item:hover {
+  background-color: transparent;
 }
 
 .VPSidebarItem.level-0.is-link > .item > .link:hover .text,
@@ -218,7 +238,15 @@ function onCaretClick() {
 }
 
 .VPSidebarItem.is-active > .item {
-  background-color: rgba(177, 186, 196, 0.12);
+  background-color: var(--color-action-list-item-default-hover-bg);
+}
+
+.VPSidebarItem.level-1.is-active > .item .text,
+.VPSidebarItem.level-2.is-active > .item .text,
+.VPSidebarItem.level-3.is-active > .item .text,
+.VPSidebarItem.level-4.is-active > .item .text,
+.VPSidebarItem.level-5.is-active > .item .text {
+  font-weight: 600;
 }
 
 .caret {
@@ -259,8 +287,9 @@ function onCaretClick() {
 .VPSidebarItem.level-3 .items,
 .VPSidebarItem.level-4 .items,
 .VPSidebarItem.level-5 .items {
+  margin-left: 16px;
   border-left: 1px solid var(--vp-c-divider);
-  padding-left: 16px;
+  padding-left: 8px;
 }
 
 .VPSidebarItem.collapsed .items {

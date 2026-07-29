@@ -34,26 +34,40 @@ const { page } = useData()
 .VPNavBarMenuLink {
   display: flex;
   align-items: center;
-  border: 1px solid var(--vp-c-border);
-  border-radius: 6px;
-  padding-inline: 8px;
-  padding-block: 6px;
+  /* Transparent border keeps the box metrics stable between rest and hover. */
+  border: 1px solid transparent;
+  border-radius: var(--vp-nav-control-radius);
+  padding-inline: 10px;
   line-height: 1.4285714286;
   font-size: 14px;
   font-weight: 500;
-  color: var(--vp-c-text-dark);
-  transition: opacity 0.25s;
-  height: 100%;
+  color: var(--vp-c-nav-text);
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+  height: var(--vp-nav-control-height);
 }
 
 .VPNavBarMenuLink:hover,
-.active {
-  background-color: var(--color-action-list-item-default-hover-bg);
-  border-color: var(--color-action-list-item-default-hover-border);
+.VPNavBarMenuLink.active {
+  background-color: var(--vp-c-nav-hover-bg);
+  border-color: var(--vp-c-nav-hover-border);
+  color: var(--vp-c-nav-text-hover);
 }
 
 .VPNavBarMenuLink:active {
-  background-color: var(--color-action-list-item-default-active-bg);
-  border-color: var(--color-action-list-item-default-active-border);
+  background-color: var(--vp-c-nav-active-bg);
+}
+
+.VPNavBarMenuLink:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .VPNavBarMenuLink {
+    transition: none;
+  }
 }
 </style>

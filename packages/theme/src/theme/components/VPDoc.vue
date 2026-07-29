@@ -88,7 +88,10 @@ const pageName = computed(() =>
                 </li>
               </ul>
             </nav>
-            <div v-if="hasLastUpdated" class="content-box-item no-hover">
+            <div
+              v-if="hasLastUpdated"
+              class="content-box-item no-hover last-updated-item"
+            >
               <div class="last-updated">
                 <VPDocFooterLastUpdated />
               </div>
@@ -156,26 +159,26 @@ const pageName = computed(() =>
 
 @media (min-width: 768px) {
   .VPDoc {
-    padding: 32px 24px 0;
+    padding: 32px 32px 0;
   }
 
   .VPDoc:not(.has-sidebar) .container {
     display: flex;
     justify-content: center;
-    max-width: 992px;
+    max-width: 1012px;
   }
 
   .VPDoc:not(.has-sidebar) .content {
-    max-width: 752px;
+    max-width: var(--vp-doc-content-max-width);
   }
 }
 
 @media (min-width: 1280px) {
   .VPDoc .container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    gap: 32px;
+    gap: var(--vp-doc-aside-gap);
   }
 
   .VPDoc .aside {
@@ -184,10 +187,6 @@ const pageName = computed(() =>
 }
 
 @media (min-width: 1440px) {
-  .VPDoc:not(.has-sidebar) .content {
-    max-width: 784px;
-  }
-
   .VPDoc:not(.has-sidebar) .container {
     max-width: 1104px;
   }
@@ -195,7 +194,7 @@ const pageName = computed(() =>
 
 .container {
   width: 100%;
-  margin: 0 auto 50px;
+  margin: 0 auto;
 }
 
 .aside {
@@ -216,7 +215,7 @@ const pageName = computed(() =>
   top: 0;
   padding-top: calc(
     var(--vp-nav-height) + var(--vp-layout-top-height, 0px) +
-      var(--vp-doc-top-height, 0px) + 40px
+      var(--vp-doc-top-height, 0px) + 64px
   );
   width: var(--vp-doc-aside-width);
   height: 100vh;
@@ -229,22 +228,15 @@ const pageName = computed(() =>
   display: none;
 }
 
+/* GitHub's "In this article" rail is separated by whitespace alone — the
+   container gap does that work, so no divider here. */
 .aside-content {
   display: flex;
   flex-direction: column;
   min-height: calc(
     100vh - (var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 48px)
   );
-  border-left: 1px solid var(--vp-c-border);
-  padding-left: 24px;
   padding-bottom: 32px;
-}
-
-.left-aside .aside-content {
-  border-left: 0;
-  border-right: 1px solid var(--vp-c-border);
-  padding-right: 24px;
-  padding-left: 0;
 }
 
 .content {
@@ -261,24 +253,57 @@ const pageName = computed(() =>
   overflow: visible;
 }
 
+/* Once the aside is on screen it owns these actions (see VPDocAsideMeta).
+   Below that breakpoint the aside is hidden, so this strip is the only place
+   the page actions can live. */
+@media (min-width: 1280px) {
+  .VPDoc.has-aside .content-top {
+    display: none;
+  }
+}
+
 .content-top {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
+  flex-wrap: wrap;
   border-bottom: 1px solid var(--vp-c-border);
-  padding: 0 0 12px;
+  padding: 0 0 16px;
   background-color: var(--vp-c-bg);
   justify-content: flex-end;
 }
 
 .content-file {
   display: none;
-  padding-right: 8px;
   justify-content: flex-start;
   align-items: center;
-  min-height: 36px;
+  min-height: 32px;
   flex-grow: 1;
+  min-width: 0;
   max-width: 100%;
+}
+
+.last-updated {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--vp-c-text-2);
+  white-space: nowrap;
+}
+
+.last-updated :deep(p) {
+  margin: 0;
+}
+
+/* Below the breadcrumb breakpoint the strip has no left-hand content, so give
+   the timestamp its own row and keep the two actions together on the next. */
+@media (max-width: 639px) {
+  .last-updated-item {
+    flex: 1 1 100%;
+  }
+
+  .last-updated {
+    white-space: normal;
+  }
 }
 
 @media (min-width: 640px) {
@@ -307,18 +332,27 @@ const pageName = computed(() =>
 .content-box-item {
   position: relative;
   display: inline-flex;
-  color: var(--vp-color-fg-default);
-  text-align: center;
+  color: var(--vp-c-text-1);
   text-decoration: none;
-  line-height: calc(1.42857);
+  line-height: 1.4285;
   border-radius: 6px;
   font-size: 14px;
-  padding: 6px 8px;
-  align-items: flex-end;
+  padding: 5px 8px;
+  align-items: center;
+  min-width: 0;
+}
+
+/* Pull the breadcrumb's hover padding back so its label optically aligns
+   with the prose column below. */
+.content-file .content-box-item {
+  margin-left: -8px;
 }
 
 .content-box-text {
   font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .content-box-item:hover {
