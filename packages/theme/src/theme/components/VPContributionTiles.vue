@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
 const props = withDefaults(
   defineProps<{
@@ -17,9 +17,60 @@ const props = withDefaults(
      * is decorative and needs to fill a taller band.
      */
     rows?: number
+    /**
+     * Size the grid to its own box instead of using `columns`/`rows`, so it
+     * covers the container in whole cells at any viewport. `columns`/`rows`
+     * still seed the server-rendered markup, before a measurement exists.
+     */
+    fit?: boolean
   }>(),
-  { mask: 'fade', side: 'left', columns: 16, rows: 7 }
+  { mask: 'fade', side: 'left', columns: 16, rows: 7, fit: false }
 )
+
+/** Track geometry, mirrored by the grid rules in the style block below. */
+const CELL = 11
+const GAP = 3
+const PITCH = CELL + GAP
+
+/**
+ * How many whole cells fit across `size`. `n` cells span `n * CELL + (n - 1) *
+ * GAP`, so this is the largest `n` whose span still fits — the remainder is
+ * always under one pitch and gets split by the centring in the style block.
+ * Flooring is the whole point: a grid sized to *cover* its box would be clipped
+ * mid-cell, which is what left sliced tiles along every footer edge.
+ */
+function fitCount(size: number) {
+  return Math.max(1, Math.floor((size + GAP) / PITCH))
+}
+
+const root = ref<HTMLElement>()
+const measured = ref<{ columns: number; rows: number } | null>(null)
+
+let observer: ResizeObserver | undefined
+
+onMounted(() => {
+  // `onMounted` never runs during SSR, and the observer is only reached when a
+  // caller opts into `fit`; the capability check covers test environments that
+  // render with `fit` but stub out layout.
+  if (!props.fit || !root.value || typeof ResizeObserver === 'undefined') return
+
+  observer = new ResizeObserver((entries) => {
+    const box = entries[0]?.contentRect
+    if (!box) return
+
+    measured.value = {
+      columns: fitCount(box.width),
+      rows: fitCount(box.height)
+    }
+  })
+
+  observer.observe(root.value)
+})
+
+onBeforeUnmount(() => observer?.disconnect())
+
+const columns = computed(() => measured.value?.columns ?? props.columns)
+const rows = computed(() => measured.value?.rows ?? props.rows)
 
 /**
  * Deterministic value in [0, 1) for a cell. Math.random() would produce a
@@ -47,8 +98,8 @@ const cells = computed(() => {
   const seed = props.side === 'left' ? 1 : 2
   const out: { key: string; level: number }[] = []
 
-  for (let col = 0; col < props.columns; col++) {
-    for (let row = 0; row < props.rows; row++) {
+  for (let col = 0; col < columns.value; col++) {
+    for (let row = 0; row < rows.value; row++) {
       out.push({ key: `${col}-${row}`, level: level(noise(col, row, seed)) })
     }
   }
@@ -59,8 +110,9 @@ const cells = computed(() => {
 
 <template>
   <div
+    ref="root"
     class="VPContributionTiles"
-    :class="[`mask-${mask}`, side]"
+    :class="[`mask-${mask}`, side, { fit }]"
     :style="{ '--columns': columns, '--rows': rows }"
     aria-hidden="true"
   >
@@ -82,6 +134,13 @@ const cells = computed(() => {
   gap: 3px;
   pointer-events: none;
   user-select: none;
+}
+
+/* Centres the tracks in the box so the sub-pitch remainder is split between
+   the two edges rather than pooling at one of them. */
+.VPContributionTiles.fit {
+  justify-content: center;
+  align-content: center;
 }
 
 .VPContributionTiles.mask-fade.left {
