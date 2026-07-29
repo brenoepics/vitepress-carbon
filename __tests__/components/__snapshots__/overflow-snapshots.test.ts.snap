@@ -1,0 +1,359 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`overflow snapshots > VPBadge markup with oversized text > VPBadge 1`] = `"<span class="VPBadge tip">«unbreakable:340»</span>"`;
+
+exports[`overflow snapshots > VPButton markup with oversized text > VPButton 1`] = `"<a class="VPButton medium brand" href="/guide/introduction.html">«unbreakable:340»</a>"`;
+
+exports[`overflow snapshots > VPDoc markup with oversized text > VPDoc 1`] = `
+"<div class="content-top">
+<nav aria-label="Repository files" class="content-file">
+<ul role="list" class="content-ul">
+<li class="content-box">
+<a href="#" class="content-box-item" title="«unbreakable:340»">
+<svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" class="content-box-icon" aria-hidden="true">
+<path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z">
+</path>
+</svg>
+<span class="content-box-text">«unbreakable:340»</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class="content-box-item no-hover last-updated-item">
+<div class="last-updated">
+<p class="VPLastUpdated">Last updated: <time datetime="2023-11-14T22:13:20.000Z">
+</time>
+</p>
+</div>
+</div>
+<div class="content-box-item no-hover">
+<div class="VPLlmsPageActions">
+<button class="trigger" type="button" aria-haspopup="menu" aria-expanded="false">
+<svg aria-hidden="true" class="trigger-icon" viewBox="0 0 16 16" fill="currentColor">
+<path d="M2.75 1h6.19c.2 0 .39.08.53.22l3.31 3.31c.14.14.22.33.22.53v8.19a1.75 1.75 0 0 1-1.75 1.75h-8.5A1.75 1.75 0 0 1 1 13.25v-10.5C1 1.78 1.78 1 2.75 1Zm0 1.5a.25.25 0 0 0-.25.25v10.5c0 .14.11.25.25.25h8.5c.14 0 .25-.11.25-.25V5.56L8.44 2.5H2.75Zm3 3.75a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1-.75-.75Zm0 3a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H6.5a.75.75 0 0 1-.75-.75Zm0 3a.75.75 0 0 1 .75-.75h2.25a.75.75 0 0 1 0 1.5H6.5a.75.75 0 0 1-.75-.75Z">
+</path>
+</svg>
+<span class="trigger-label">Markdown</span>
+<svg aria-hidden="true" class="trigger-caret" viewBox="0 0 16 16" fill="currentColor">
+<path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+</path>
+</svg>
+</button>
+<transition-stub name="menu" appear="false" persisted="false" css="true">
+<!--v-if-->
+</transition-stub>
+</div>
+</div>
+<div class="content-box-item no-hover">
+<a class="VPLink link vp-external-link-icon no-icon edit-link-button" href="https://example.com/edit/guide/introduction.md" target="_blank" rel="noreferrer">
+<svg role="img" class="content-box-icon box-m-0" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+<path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z">
+</path>
+</svg>
+<span class="edit-link-text">Edit</span>
+</a>
+</div>
+</div>"
+`;
+
+exports[`overflow snapshots > VPDoc overflow stylesheet > VPDoc 1`] = `
+[
+  "@media (min-width: 768px) .VPDoc:not(.has-sidebar) .container { max-width: 1012px }",
+  "@media (min-width: 768px) .VPDoc:not(.has-sidebar) .content { max-width: var(--vp-doc-content-max-width) }",
+  "@media (min-width: 1440px) .VPDoc:not(.has-sidebar) .container { max-width: 1104px }",
+  ".aside { flex: 0 0 var(--vp-doc-aside-width); max-width: var(--vp-doc-aside-width) }",
+  ".aside-container { overflow-x: hidden }",
+  ".content { max-width: none; min-width: 0 }",
+  ".main { overflow: visible }",
+  ".content-file { max-width: 100%; min-width: 0; overflow: hidden }",
+  ".last-updated { white-space: nowrap }",
+  "@media (max-width: 639px) .last-updated-item { flex: 1 1 100% }",
+  "@media (max-width: 639px) .last-updated { white-space: normal }",
+  ".content-ul { max-width: 100%; min-width: 0; overflow: hidden; white-space: nowrap }",
+  ".content-box { max-width: 100%; min-width: 0 }",
+  ".content-box-item { min-width: 0 }",
+  ".content-file .content-box-item { max-width: 100%; overflow: hidden }",
+  ".content-box-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }",
+  ".content-box-icon { flex: 0 0 auto }",
+  ".content-container { max-width: var(--vp-doc-content-max-width) }",
+  ".VPDoc .content-container { max-width: var(--vp-doc-content-max-width) }",
+]
+`;
+
+exports[`overflow snapshots > VPDocFooter markup with oversized text > VPDocFooter 1`] = `
+"<footer class="VPDocFooter">
+<nav class="prev-next has-prev has-next">
+<div class="pager">
+<a class="VPLink link pager-link prev" href="/guide/introduction.html">
+<span class="desc-row">
+<span class="desc">Previous page</span>
+</span>
+<span class="title-row">
+<svg aria-hidden="true" class="pager-icon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+<path d="M7.78 12.78a.75.75 0 0 1-1.06 0L2.47 8.53a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 1 1 1.06 1.06L4.81 7.25H13.5a.75.75 0 0 1 0 1.5H4.81l2.97 2.97a.75.75 0 0 1 0 1.06Z">
+</path>
+</svg>
+<span class="title">«unbreakable:340»</span>
+</span>
+</a>
+</div>
+<div class="pager">
+<a class="VPLink link pager-link next" href="/guide/configuration.html">
+<span class="desc-row">
+<span class="desc">Next page</span>
+</span>
+<span class="title-row">
+<span class="title">Configuration</span>
+<svg aria-hidden="true" class="pager-icon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+<path d="M8.22 12.78a.75.75 0 0 0 1.06 0l4.25-4.25a.75.75 0 0 0 0-1.06L9.28 3.22a.75.75 0 1 0-1.06 1.06l2.97 2.97H2.5a.75.75 0 0 0 0 1.5h8.69l-2.97 2.97a.75.75 0 0 0 0 1.06Z">
+</path>
+</svg>
+</span>
+</a>
+</div>
+</nav>
+</footer>"
+`;
+
+exports[`overflow snapshots > VPDocFooter overflow stylesheet > VPDocFooter 1`] = `
+[
+  ".pager { flex: 1 1 0 }",
+  ".pager-link { flex: 1 1 auto; min-width: 0 }",
+  "@media (min-width: 768px) .prev-next.has-next:not(.has-prev) .pager { max-width: calc(50% - 12px) }",
+  ".desc-row, .title-row { min-width: 0 }",
+  ".pager-icon { flex: 0 0 auto }",
+  ".title { min-width: 0; overflow-wrap: break-word }",
+]
+`;
+
+exports[`overflow snapshots > VPDocOutlineItem markup with oversized text > VPDocOutlineItem 1`] = `
+"<ul class="VPDocOutlineItem root">
+<li>
+<a href="#one" class="vp-outline-li">
+<div class="vp-outline-item">
+<div class="outline-link">«unbreakable:340»</div>
+<!--v-if-->
+</div>
+</a>
+<!--v-if-->
+</li>
+<li>
+<a href="#two" class="vp-outline-li">
+<div class="vp-outline-item">
+<div class="outline-link">«longSentence:1990»</div>
+<!--v-if-->
+</div>
+</a>
+<!--v-if-->
+</li>
+</ul>"
+`;
+
+exports[`overflow snapshots > VPFeature markup with oversized text > VPFeature 1`] = `
+"<div class="VPFeature">
+<div class="pointer-events-none VPFeaturePN" data-y="[random]">
+<div class="pattern-gradient">
+</div>
+<div class="pattern-gradient-1">
+</div>
+</div>
+<div class="VPLink link no-icon vp-link" href="/guide/introduction.html">
+<div class="header-box">
+<!--v-if-->
+<h2 class="title">«unbreakable:340»</h2>
+</div>
+<article class="box">
+<p class="details">«paragraph:1655»</p>
+</article>
+<a class="VPLink link no-icon link-text" href="/guide/introduction.html">«url:570» <svg xmlns="http://www.w3.org/2000/svg" class="link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+<path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z">
+</path>
+<path class="link-arrow-icon" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round">
+</path>
+</svg>
+</a>
+</div>
+</div>"
+`;
+
+exports[`overflow snapshots > VPFeatures markup with oversized text > VPFeatures 1`] = `
+"<div class="VPFeatures">
+<div class="container">
+<div class="items grid-3">
+<div class="item">
+<div class="VPFeature">
+<div class="pointer-events-none VPFeaturePN" data-y="[random]">
+<div class="pattern-gradient">
+</div>
+<div class="pattern-gradient-1">
+</div>
+</div>
+<div class="VPLink no-icon vp-link">
+<div class="header-box">
+<!--v-if-->
+<h2 class="title">«unbreakable:340»</h2>
+</div>
+<article class="box">
+<p class="details">«paragraph:1655»</p>
+</article>
+<!--v-if-->
+</div>
+</div>
+</div>
+<div class="item">
+<div class="VPFeature">
+<div class="pointer-events-none VPFeaturePN" data-y="[random]">
+<div class="pattern-gradient">
+</div>
+<div class="pattern-gradient-1">
+</div>
+</div>
+<div class="VPLink no-icon vp-link">
+<div class="header-box">
+<!--v-if-->
+<h2 class="title">«longSentence:1990»</h2>
+</div>
+<article class="box">
+<p class="details">«paragraph:1655»</p>
+</article>
+<!--v-if-->
+</div>
+</div>
+</div>
+<div class="item">
+<div class="VPFeature">
+<div class="pointer-events-none VPFeaturePN" data-y="[random]">
+<div class="pattern-gradient">
+</div>
+<div class="pattern-gradient-1">
+</div>
+</div>
+<div class="VPLink no-icon vp-link">
+<div class="header-box">
+<!--v-if-->
+<h2 class="title">«url:570»</h2>
+</div>
+<article class="box">
+<p class="details">«paragraph:1655»</p>
+</article>
+<!--v-if-->
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>"
+`;
+
+exports[`overflow snapshots > VPHero markup with oversized text > VPHero 1`] = `
+"<div class="VPHero">
+<div class="container">
+<div class="main">
+<!--v-if-->
+<div class="home-hero">
+<h1 class="name">
+<span class="clip">«unbreakable:340»</span>
+</h1>
+<p class="text">«longSentence:1990»</p>
+<p class="tagline">«paragraph:1655»</p>
+<div class="actions">
+<div class="action">
+<a class="VPButton medium brand" href="/guide/introduction.html">«url:570»</a>
+</div>
+</div>
+</div>
+</div>
+<!--v-if-->
+</div>
+</div>"
+`;
+
+exports[`overflow snapshots > VPLink markup with oversized text > VPLink 1`] = `
+"<a class="VPLink link vp-external-link-icon" href="«url:570»" target="_blank" rel="noreferrer">
+</a>"
+`;
+
+exports[`overflow snapshots > VPMenuGroup markup with oversized text > VPMenuGroup 1`] = `
+"<div class="VPMenuGroup">
+<p class="title">«longSentence:1990»</p>
+<div class="VPMenuLink">
+<a class="VPLink link active" href="/guide/introduction.html">«unbreakable:340»</a>
+</div>
+<div class="VPMenuLink">
+<a class="VPLink link" href="/guide/configuration.html">«url:570»</a>
+</div>
+</div>"
+`;
+
+exports[`overflow snapshots > VPSidebarItem markup with oversized text > VPSidebarItem 1`] = `
+"<section class="VPSidebarItem level-0 has-active">
+<div class="item" role="button" tabindex="0">
+<div class="indicator">
+</div>
+<h2 class="text">«longSentence:1990»</h2>
+<!--v-if-->
+</div>
+<div class="items">
+<div class="VPSidebarItem level-1 is-link">
+<div class="item">
+<div class="indicator">
+</div>
+<a class="VPLink link link" href="/guide/introduction.html">
+<p class="text">«unbreakable:340»</p>
+</a>
+<!--v-if-->
+</div>
+<!--v-if-->
+</div>
+<div class="VPSidebarItem level-1 is-link">
+<div class="item">
+<div class="indicator">
+</div>
+<a class="VPLink link link" href="/guide/getting-started.html">
+<p class="text">«url:570»</p>
+</a>
+<!--v-if-->
+</div>
+<!--v-if-->
+</div>
+<div class="VPSidebarItem level-1 is-link">
+<div class="item">
+<div class="indicator">
+</div>
+<a class="VPLink link link" href="/guide/configuration.html">
+<p class="text">Configuration</p>
+</a>
+<!--v-if-->
+</div>
+<!--v-if-->
+</div>
+</div>
+</section>"
+`;
+
+exports[`overflow snapshots > VPTeamMembers markup with oversized text > VPTeamMembers 1`] = `
+"<div class="VPTeamMembers medium count-1">
+<div class="container">
+<div class="item">
+<article class="VPTeamMembersItem medium">
+<div class="profile">
+<figure class="avatar">
+<img class="avatar-img" src="https://www.github.com/brenoepics.png" alt="«unbreakable:340»">
+</figure>
+<div class="data">
+<h1 class="name">«unbreakable:340»</h1>
+<p class="affiliation">
+<span class="title">«longSentence:1990»</span>
+<span class="at"> @ </span>
+<a class="VPLink link vp-external-link-icon no-icon org link" href="https://example.com" target="_blank" rel="noreferrer">«url:570»</a>
+</p>
+<p class="desc">«paragraph:1655»</p>
+<!--v-if-->
+</div>
+</div>
+<!--v-if-->
+</article>
+</div>
+</div>
+</div>"
+`;

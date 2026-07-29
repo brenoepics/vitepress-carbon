@@ -125,6 +125,7 @@ const showFooter = computed(() => {
   padding: 16px;
   width: 100%;
   height: 100%;
+  min-width: 0;
   transition:
     border-color 0.2s,
     background-color 0.2s;
@@ -155,6 +156,7 @@ const showFooter = computed(() => {
   display: flex;
   align-items: center;
   width: 100%;
+  min-width: 0;
 }
 
 .title-row {
@@ -186,6 +188,10 @@ const showFooter = computed(() => {
   font-weight: 600;
   color: var(--vp-c-text-1);
   transition: color 0.25s;
+  /* Long neighbour-page titles wrap inside the pager instead of pushing it
+     past the content column (#28). */
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .pager-link:hover .title,

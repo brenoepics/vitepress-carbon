@@ -1,0 +1,51 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Introduction" />
+
+# VitePress Carbon — component workbench
+
+Every component in [`packages/theme/src/theme/components`](https://github.com/brenoepics/vitepress-carbon/tree/main/packages/theme/src/theme/components)
+rendered outside a running VitePress site.
+
+## How this works
+
+The theme's components read their data through VitePress's `useData()` and
+`useRoute()`, which only exist inside a live site. Storybook aliases the
+`vitepress` module to a small harness (`shared/vitepress-harness/`) that serves
+the same shape from a mutable store. A story sets the page, site, and theme
+config it wants through the `vitepress` parameter:
+
+```ts
+export const MyStory = {
+  render: () => ({ components: { VPDoc }, template: '<VPDoc />' }),
+  parameters: {
+    vitepress: {
+      page: { title: 'Getting Started' },
+      theme: { editLink: { pattern: '...' } }
+    }
+  }
+}
+```
+
+The unit tests use that same harness, so a story and its test always show the
+same thing.
+
+## Where to look
+
+- **Overflow** — the regression showcase for
+  [issue #28](https://github.com/brenoepics/vitepress-carbon/issues/28): long
+  post titles escaping `.content-container`. Each story renders inside a narrow
+  frame; the dashed outline is the container boundary and nothing should cross
+  it.
+- **Doc / Home / Navigation / Content / Team** — curated stories, grouped the
+  way the theme is.
+- **Catalog** — every component, discovered by glob, so a newly added one shows
+  up here without anyone registering it.
+
+Use the **Theme** toolbar control to switch between the light and dark palettes.
+
+## Running it
+
+```bash
+pnpm --filter vitepress-carbon-storybook dev
+```

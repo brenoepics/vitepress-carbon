@@ -11,6 +11,13 @@ elegant documentation experience, ideal for projects seeking simplicity.
 
 Check out the demo on [GitHub Pages](https://carbon.breno.tech) to see VitePress Carbon in action.
 
+## Storybook
+
+Every theme component, rendered in isolation, lives at
+[carbon.breno.tech/storybook](https://carbon.breno.tech/storybook/) — including
+an **Overflow** section that stress-tests components with oversized text. Run it
+locally with `pnpm storybook`.
+
 ## Installation
 
 To create a GitHub project with VitePress Carbon
@@ -68,6 +75,7 @@ This monorepo contains the following packages:
 - `theme`: The theme package for VitePress.
 - `cli`: CLI tool for initializing and managing VitePress Carbon projects.
 - `demo`: Demo project showcasing the VitePress Carbon theme.
+- `storybook`: Component workbench, deployed alongside the demo at `/storybook/`.
 
 ## License
 

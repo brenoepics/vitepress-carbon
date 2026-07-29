@@ -45,6 +45,14 @@ const nav: CarbonTheme.NavItem[] = [
     items: examplesItems
   },
   {
+    // Built by `pnpm storybook-build` and deployed alongside this site by the
+    // Pages workflow. `target` is set so VitePress's router does not try to
+    // resolve it as one of its own pages — it hands the click to the browser.
+    text: 'Storybook',
+    link: `/storybook/`,
+    target: '_self'
+  },
+  {
     text: 'VitePress',
     link: `https://vitepress.dev`
   }
