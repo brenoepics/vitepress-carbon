@@ -99,7 +99,17 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/brenoepics/vitepress-carbon' }
-    ]
+    ],
+
+    footer: {
+      action: {
+        text: 'Create Repository',
+        link: 'https://github.com/new?template_name=carbon-starter&template_owner=brenoepics'
+      },
+      message:
+        'Released under the <a href="https://github.com/brenoepics/vitepress-carbon/blob/main/LICENSE">MIT License</a>.',
+      copyright: `Copyright © 2024–${new Date().getFullYear()} <a href="https://github.com/brenoepics">Breno A.</a>`
+    }
   },
 
   markdown: {

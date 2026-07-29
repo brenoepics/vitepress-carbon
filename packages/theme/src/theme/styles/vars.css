@@ -403,13 +403,16 @@
 :root {
   --vp-button-brand-border: rgba(240, 246, 252, 0.1);
   --vp-button-brand-text: var(--vp-c-white);
-  --vp-button-brand-bg: var(--vp-c-green-1);
+  /* GitHub's primary-button greens. --vp-c-green-1 (#3fb950) is tuned for
+     icons and accents; behind white label text it only reaches 2.5:1, short
+     of WCAG AA. These clear it. */
+  --vp-button-brand-bg: #1f883d;
   --vp-button-brand-hover-border: rgba(240, 246, 252, 0.1);
   --vp-button-brand-hover-text: var(--vp-c-white);
-  --vp-button-brand-hover-bg: #41ad4f;
+  --vp-button-brand-hover-bg: #1a7f37;
   --vp-button-brand-active-border: rgba(240, 246, 252, 0.1);
   --vp-button-brand-active-text: var(--vp-c-white);
-  --vp-button-brand-active-bg: #42c754;
+  --vp-button-brand-active-bg: #197935;
 
   --vp-button-alt-border: var(--vp-c-border);
   --vp-button-alt-text: var(--vp-c-text-1);
@@ -588,6 +591,15 @@
     radial-gradient(circle at 78% 18%, rgba(63, 185, 80, 0.08), transparent 26%);
   --vp-home-hero-glow: rgba(63, 185, 80, 0.1);
 
+  /* Contribution-graph tiles behind the footer, mirroring GitHub's five
+     activity levels. Level 0 stays transparent — a filled "empty day" tints
+     the whole band and reads as the footer having a different background. */
+  --vp-c-tile-0: transparent;
+  --vp-c-tile-1: #9be9a8;
+  --vp-c-tile-2: #40c463;
+  --vp-c-tile-3: #30a14e;
+  --vp-c-tile-4: #216e39;
+
   --vp-home-hero-image-background-image: none;
   --vp-home-hero-image-filter: none;
 }
@@ -609,6 +621,12 @@
     ),
     radial-gradient(circle at 78% 18%, rgba(63, 185, 80, 0.1), transparent 24%);
   --vp-home-hero-glow: rgba(63, 185, 80, 0.16);
+
+  --vp-c-tile-0: transparent;
+  --vp-c-tile-1: #0e4429;
+  --vp-c-tile-2: #006d32;
+  --vp-c-tile-3: #26a641;
+  --vp-c-tile-4: #39d353;
 }
 
 /**

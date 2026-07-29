@@ -330,6 +330,59 @@ const links = [
 | ------- | -------------- | --------------------------------------------------------------------- |
 | `links` | `SocialLink[]` | `icon` is a built-in name (`github`, `discord`, `x`, …) or `{ svg }`. |
 
+### VPFooter
+
+The site footer: an optional call to action, a message and a copyright line,
+with contribution-graph tiles bleeding off either edge. It renders only on
+pages without a sidebar, and is driven entirely by `themeConfig.footer` — you
+normally configure it rather than importing it.
+
+```ts
+// .vitepress/config.mts
+themeConfig: {
+  footer: {
+    action: {
+      text: 'Create Repository',
+      link: 'https://github.com/new',
+      theme: 'brand' // 'brand' | 'alt' | 'sponsor', defaults to 'brand'
+    },
+    message: 'Released under the <a href="/LICENSE">MIT License</a>.',
+    copyright: `Copyright © 2024–${new Date().getFullYear()} You`
+  }
+}
+```
+
+| Key         | Type     | Description                                      |
+| ----------- | -------- | ------------------------------------------------ |
+| `action`    | `object` | Optional CTA above the message. Omit to hide it. |
+| `message`   | `string` | Supports inline HTML.                            |
+| `copyright` | `string` | Supports inline HTML.                            |
+
+Set `footer: false` in a page's frontmatter to hide it on that page.
+
+### VPContributionTiles
+
+The decorative grid behind the footer — a GitHub contribution graph rendered
+from a deterministic hash, so the server and client always produce the same
+pattern. Useful on its own for any band that wants the same texture.
+
+```vue
+<script setup>
+import { VPContributionTiles } from 'vitepress-carbon/components'
+</script>
+
+<VPContributionTiles side="left" :columns="20" :rows="22" />
+```
+
+| Prop      | Type                | Default  | Description                                      |
+| --------- | ------------------- | -------- | ------------------------------------------------ |
+| `side`    | `'left' \| 'right'` | `'left'` | Edge the grid fades away from.                   |
+| `columns` | `number`            | `16`     | Grid width in cells.                             |
+| `rows`    | `number`            | `7`      | Grid height. Seven matches a real weekday graph. |
+
+The five activity levels are themable via `--vp-c-tile-0` … `--vp-c-tile-4`.
+Level 0 is transparent by default so the grid tints nothing behind it.
+
 ## Composables
 
 The theme entry also exports two composables:
