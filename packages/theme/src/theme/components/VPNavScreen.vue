@@ -50,6 +50,8 @@ const isLocked = useScrollLock(inBrowser ? document.body : null)
   overflow-y: auto;
   transition: background-color 0.5s;
   pointer-events: auto;
+  /* Shares `--vp-c-bg-alt` with the nav bar, so the `--vp-c-nav-*` foreground
+     tokens are already correct here — no local override needed. */
 }
 
 .VPNavScreen.fade-enter-active,
