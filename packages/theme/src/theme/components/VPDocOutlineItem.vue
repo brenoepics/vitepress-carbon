@@ -62,8 +62,7 @@ function handleClose(link: string, title: string) {
   z-index: 1;
   max-height: 36vh;
   overflow: auto;
-  border-left: 1px solid var(--vp-c-border);
-  padding-left: 12px;
+  padding-left: 0;
 }
 
 @media (min-height: 900px) {
@@ -149,9 +148,10 @@ li {
 .vp-outline-li.active .vp-outline-item::after {
   content: '';
   position: absolute;
-  left: -13px;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
   width: 2px;
-  height: 20px;
   background-color: var(--vp-c-brand-1);
   border-radius: 999px;
 }

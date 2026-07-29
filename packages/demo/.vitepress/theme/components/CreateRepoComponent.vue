@@ -75,22 +75,27 @@ onMounted(async () => {
 .header-actions {
   display: none;
   align-items: center;
-  gap: 10px;
-  margin: 0 10px 0 5px;
+  gap: 8px;
+  margin: 0 8px;
 }
 
+/* Matches the nav's shared control box so this row lines up with search,
+   the menu items and the icon buttons. */
 .create-repo {
+  display: inline-flex;
+  align-items: center;
+  height: var(--vp-nav-control-height);
+  padding: 0 12px;
   text-decoration: none;
-  padding: 4px 12px;
   color: #fff;
   font-size: 14px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: var(--vp-nav-control-radius);
   background-color: #00863f;
   border: 1px solid #1a9b57;
-  transition: background-color 0.5s;
+  transition: background-color 0.15s ease;
   grid-area: text;
-  line-height: 1.42857;
+  line-height: 1;
   white-space: nowrap;
   font-family: inherit;
   font-weight: 500;
@@ -107,8 +112,9 @@ onMounted(async () => {
 .github-star {
   display: flex;
   align-items: stretch;
+  height: var(--vp-nav-control-height);
   border: 1px solid #30363d;
-  border-radius: 6px;
+  border-radius: var(--vp-nav-control-radius);
   background-color: #161b22;
   overflow: hidden;
   transition:
@@ -120,7 +126,6 @@ onMounted(async () => {
 .star-count {
   display: inline-flex;
   align-items: center;
-  min-height: 30px;
   border: 0;
   background-color: transparent;
   color: #c9d1d9;

@@ -42,18 +42,42 @@ const { page } = useData()
 }
 
 .link {
+  position: relative;
   display: block;
   border-radius: 6px;
-  padding: 6px 8px;
+  padding: 6px 8px 6px 12px;
   line-height: 20px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--vp-c-text-1);
+  color: var(--vp-c-text-2);
   white-space: nowrap;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+/* Accent rail grows in from the left edge on hover. */
+.link::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  width: 2px;
+  height: 0;
+  border-radius: 999px;
+  background-color: var(--vp-c-brand-1);
+  transform: translateY(-50%);
+  transition: height 0.15s ease;
 }
 
 .link:hover {
   background-color: var(--color-action-list-item-default-hover-bg);
+  color: var(--vp-c-text-1);
+}
+
+.link:hover::before,
+.link.active::before {
+  height: 16px;
 }
 
 .link:active {
@@ -62,5 +86,14 @@ const { page } = useData()
 
 .link.active {
   background-color: var(--color-action-list-item-default-selected-bg);
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link,
+  .link::before {
+    transition: none;
+  }
 }
 </style>

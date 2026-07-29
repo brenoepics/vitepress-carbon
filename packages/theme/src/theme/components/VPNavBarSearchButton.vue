@@ -75,25 +75,39 @@ const translate = createSearchTranslate(defaultTranslations)
   --docsearch-hit-shadow: none;
 }
 
+/* Below the menu breakpoint this is an icon button on the same 32px box as
+   the hamburger beside it — not a 48x55 slab. */
 .DocSearch-Button {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 0 0 auto;
+  /* @docsearch/css resets this to content-box, which made the border add 2px
+     on top of the shared control height. */
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  width: 48px;
-  height: 55px;
+  width: var(--vp-nav-control-height);
+  height: var(--vp-nav-control-height);
+  border: 1px solid transparent;
+  border-radius: var(--vp-nav-control-radius);
   background: transparent;
+  /* Otherwise this inherits docsearch's own 16px / purple defaults. */
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--vp-c-nav-text);
   transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
   transition-property: color, background-color, box-shadow, border-color;
 }
 
 .DocSearch-Button:hover {
-  background: transparent;
+  background-color: var(--vp-c-nav-hover-bg);
+  border-color: var(--vp-c-nav-hover-border);
 }
 
-.DocSearch-Button:focus {
-  outline: 5px auto -webkit-focus-ring-color;
+.DocSearch-Button:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 1px;
 }
 
 .DocSearch-Button:focus:not(:focus-visible) {
@@ -103,26 +117,17 @@ const translate = createSearchTranslate(defaultTranslations)
 @media (min-width: 768px) {
   .DocSearch-Button {
     justify-content: flex-start;
-    border: 1px solid var(--vp-c-border);
-    border-radius: 6px;
+    border-color: var(--vp-c-border);
     line-height: 20px;
+    /* The wrapper owns the width cap — see VPNavBarSearch. */
     width: 100%;
-    max-width: 305px;
-    height: 32px;
-    padding: 5px 12px;
-  }
-
-  .DocSearch-Button:hover {
-    border-color: var(--vp-color-fg-subtle);
-    background-color: var(--color-action-list-item-default-hover-bg);
+    max-width: 100%;
+    height: var(--vp-nav-control-height);
+    padding: 0 8px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
-  .DocSearch-Button {
-    max-width: 180px;
-  }
-
   .DocSearch-Button .DocSearch-Button-Keys {
     display: none;
   }
@@ -146,21 +151,20 @@ const translate = createSearchTranslate(defaultTranslations)
 
 @media (min-width: 768px) {
   .DocSearch-Button .DocSearch-Search-Icon {
-    top: 1px;
+    top: 0;
     margin-right: 8px;
-    width: 14px;
-    height: 14px;
-    color: var(--vp-c-text-dark);
+    width: 16px;
+    height: 16px;
+    color: var(--vp-c-nav-text);
   }
 }
 
 .DocSearch-Button .DocSearch-Button-Placeholder {
   display: none;
-  margin-top: 2px;
   padding: 0 16px 0 0;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--vp-c-text-dark);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--vp-c-nav-text);
   transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
   transition-property: color, background-color, box-shadow, border-color;
 }
@@ -187,10 +191,10 @@ const translate = createSearchTranslate(defaultTranslations)
 
 .DocSearch-Button .DocSearch-Button-Key {
   display: block;
-  margin: 2px 0 0 0;
+  margin: 0;
   border: 1px solid var(--vp-c-border);
   background-color: var(--docsearch-key-background);
-  color: var(--vp-c-text-dark);
+  color: var(--vp-c-nav-text);
   /*rtl:begin:ignore*/
   border-right: none;
   border-radius: 4px 0 0 4px;
@@ -198,8 +202,8 @@ const translate = createSearchTranslate(defaultTranslations)
   /*rtl:end:ignore*/
   min-width: 0;
   width: auto;
-  height: 22px;
-  line-height: 22px;
+  height: 20px;
+  line-height: 18px;
   font-family: var(--vp-font-family-base);
   font-size: 12px;
   font-weight: 500;

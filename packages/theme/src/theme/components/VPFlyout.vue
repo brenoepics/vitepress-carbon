@@ -58,45 +58,48 @@ function onBlur() {
 <style scoped>
 .VPFlyout {
   position: relative;
+  display: flex;
   align-items: center;
-  border: 1px solid var(--vp-c-border);
-  border-radius: 6px;
-  padding-inline: 8px;
-  padding-block: 6px;
+  border: 1px solid transparent;
+  border-radius: var(--vp-nav-control-radius);
+  padding-inline: 10px;
   line-height: 1.4285714286;
   font-size: 14px;
   font-weight: 500;
-  color: var(--vp-c-text-dark);
-  transition: opacity 0.25s;
-  height: 100%;
+  color: var(--vp-c-nav-text);
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+  height: var(--vp-nav-control-height);
 }
 
 .VPFlyout:hover,
-.active {
-  background-color: var(--color-action-list-item-default-hover-bg);
+.VPFlyout.active,
+.VPFlyout:has(.button[aria-expanded='true']) {
+  background-color: var(--vp-c-nav-hover-bg);
+  border-color: var(--vp-c-nav-hover-border);
+  color: var(--vp-c-nav-text-hover);
 }
 
 .VPFlyout:active {
-  background-color: var(--color-action-list-item-default-active-bg);
+  background-color: var(--vp-c-nav-active-bg);
 }
 
-.VPFlyout:hover .menu,
-.button[aria-expanded='true'] + .menu {
+/* `open` is owned by the component (mouseenter/mouseleave/click) and surfaced
+   as aria-expanded; :focus-within adds the keyboard path. The closed state is
+   the .menu base rule below. */
+.button[aria-expanded='true'] + .menu,
+.VPFlyout:focus-within .menu {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
-}
-
-.button[aria-expanded='false'] + .menu {
-  opacity: 0;
-  visibility: hidden;
   transform: translateY(0);
 }
 
 .button {
   display: flex;
   align-items: center;
-  color: var(--vp-c-text-dark);
+  color: inherit;
   height: 100%;
 }
 
@@ -105,29 +108,48 @@ function onBlur() {
   align-items: center;
   font-size: 14px;
   font-weight: 500;
-  color: var(--vp-c-text-dark);
-  transition: color 0.25s;
+  color: inherit;
+  transition: color 0.15s ease;
 }
 
 .option-icon {
   margin-right: 0;
   width: 16px;
   height: 16px;
-  fill: var(--vp-c-text-dark);
+  fill: currentColor;
 }
 
 .text-icon {
   margin-left: 4px;
   width: 14px;
   height: 14px;
-  fill: var(--vp-c-text-dark);
+  fill: currentColor;
+  transition: transform 0.2s ease;
+}
+
+/* Caret points up while the flyout is open. */
+.VPFlyout:has(.button[aria-expanded='true']) .text-icon,
+.VPFlyout:hover .text-icon {
+  transform: rotate(180deg);
 }
 
 .icon {
   width: 20px;
   height: 20px;
-  fill: var(--vp-c-text-dark);
-  transition: fill 0.25s;
+  fill: currentColor;
+  transition: fill 0.15s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .VPFlyout,
+  .text-icon {
+    transition: none;
+  }
+
+  .VPFlyout:has(.button[aria-expanded='true']) .text-icon,
+  .VPFlyout:hover .text-icon {
+    transform: none;
+  }
 }
 
 .menu {
@@ -136,9 +158,10 @@ function onBlur() {
   right: 0;
   opacity: 0;
   visibility: hidden;
+  transform: translateY(-4px);
   transition:
-    opacity 0.25s,
-    visibility 0.25s,
-    transform 0.25s;
+    opacity 0.15s ease,
+    visibility 0.15s ease,
+    transform 0.15s ease;
 }
 </style>

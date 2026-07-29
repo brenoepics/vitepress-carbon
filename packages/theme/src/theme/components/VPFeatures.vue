@@ -95,7 +95,7 @@ const grid = computed(() => {
   .items.grid-4,
   .items.grid-6 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    gap: 16px;
   }
 }
 

@@ -157,9 +157,9 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-c-border: #576069;
-  --vp-c-divider: #e2e2e3;
-  --vp-c-gutter: #e2e2e3;
+  --vp-c-border: #d1d9e0;
+  --vp-c-divider: #d1d9e0;
+  --vp-c-gutter: #d1d9e0;
 }
 
 .dark {
@@ -179,9 +179,9 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-c-text-1: rgba(60, 60, 67);
-  --vp-c-text-2: rgba(60, 60, 67, 0.78);
-  --vp-c-text-3: #1f2328;
+  --vp-c-text-1: #1f2328;
+  --vp-c-text-2: #59636e;
+  --vp-c-text-3: #818b98;
   --vp-c-text-4: rgb(132, 141, 151);
   --vp-c-text-dark: rgb(230, 237, 243);
 }
@@ -509,6 +509,19 @@
   --color-action-list-item-default-active-bg: rgba(177, 186, 196, 0.2);
   --color-action-list-item-default-active-border: rgba(111, 122, 131, 0.75);
   --color-action-list-item-default-selected-bg: rgba(177, 186, 196, 0.08);
+
+  /* Nav bar sits on a dark surface in both colour schemes, so these hold
+     regardless of `.dark`. Items rest borderless and gain definition on hover. */
+  --vp-c-nav-text: rgba(230, 237, 243, 0.75);
+  --vp-c-nav-text-hover: rgb(230, 237, 243);
+  --vp-c-nav-hover-bg: rgba(177, 186, 196, 0.12);
+  --vp-c-nav-hover-border: rgba(240, 246, 252, 0.12);
+  --vp-c-nav-active-bg: rgba(177, 186, 196, 0.2);
+
+  /* Every interactive control in the nav bar — search, menu items, buttons,
+     icon buttons — shares this box so the row reads as one strip. */
+  --vp-nav-control-height: 32px;
+  --vp-nav-control-radius: 6px;
 }
 
 .hide-nav {
@@ -532,15 +545,19 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-sidebar-width: 272px;
+  /* Sized to the longest realistic nav label rather than a round number —
+     240px leaves ~192px of text after padding. Long labels wrap. */
+  --vp-sidebar-width: 240px;
   --vp-sidebar-bg-color: var(--vp-c-bg);
-  --vp-doc-content-max-width: 800px;
-  --vp-doc-aside-width: 240px;
+  --vp-doc-content-max-width: 768px;
+  --vp-doc-aside-width: 256px;
+  /* Gap between the prose column and the "On this page" rail. */
+  --vp-doc-aside-gap: 48px;
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
   :root {
-    --vp-sidebar-width: 250px;
+    --vp-sidebar-width: 224px;
   }
 }
 
@@ -569,6 +586,7 @@
   --vp-home-hero-overlay:
     linear-gradient(180deg, rgba(36, 41, 47, 0.08) 0%, rgba(36, 41, 47, 0) 34%),
     radial-gradient(circle at 78% 18%, rgba(63, 185, 80, 0.08), transparent 26%);
+  --vp-home-hero-glow: rgba(63, 185, 80, 0.1);
 
   --vp-home-hero-image-background-image: none;
   --vp-home-hero-image-filter: none;
@@ -590,6 +608,7 @@
       rgba(13, 17, 23, 0) 52%
     ),
     radial-gradient(circle at 78% 18%, rgba(63, 185, 80, 0.1), transparent 24%);
+  --vp-home-hero-glow: rgba(63, 185, 80, 0.16);
 }
 
 /**

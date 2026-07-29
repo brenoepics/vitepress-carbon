@@ -15,57 +15,27 @@ defineProps<{
   target?: string
 }>()
 
-const mouseX = ref(0)
-const mouseY = ref(0)
-const x = ref(0)
-const y = ref(0)
-const verticalX = ref(0)
-const verticalY = ref(0)
+// Cursor position within the card, driving the radial spotlight mask in
+// VPFeaturePattern. Parked off-card until the pointer actually enters.
+const mouseX = ref(-9999)
+const mouseY = ref(-9999)
 
 function onMouseMove(event: MouseEvent) {
-  const { clientX, clientY } = event
   const { left, top } = (
     event.currentTarget as HTMLDivElement
   ).getBoundingClientRect()
-  mouseX.value = clientX - left
-  mouseY.value = clientY - top
-
-  const middleX = window.innerWidth / 2
-  const middleY = window.innerHeight / 2
-
-  const offsetX = (clientX - middleX) / middleX
-  const offsetY = (clientY - middleY) / middleY
-
-  y.value = mouseX.value > mouseY.value ? -1 * offsetY : offsetY
-  x.value = mouseY.value > mouseX.value ? -1 * offsetX : offsetX
-
-  // Calculate vertical movement
-  const verticalOffsetX = (clientX - middleX) / middleX
-  const verticalOffsetY = (clientY - middleY) / middleY
-
-  verticalY.value =
-    mouseX.value > mouseY.value ? -1 * verticalOffsetX * 4 : verticalOffsetX * 4
-  verticalX.value =
-    mouseY.value > mouseX.value ? -1 * verticalOffsetY * 4 : verticalOffsetY * 4
+  mouseX.value = event.clientX - left
+  mouseY.value = event.clientY - top
 }
 
 function onMouseLeave() {
-  y.value = 0
-  x.value = 0
-  verticalY.value = 0
-  verticalX.value = 0
+  mouseX.value = -9999
+  mouseY.value = -9999
 }
 </script>
 
 <template>
-  <div
-    class="VPFeature"
-    @mousemove="onMouseMove"
-    @mouseout="onMouseLeave"
-    :style="{
-      transform: `perspective(700px) rotateX(${verticalX}deg) rotateY(${verticalY}deg)`
-    }"
-  >
+  <div class="VPFeature" @mousemove="onMouseMove" @mouseleave="onMouseLeave">
     <VPFeaturePattern :mouse-x="mouseX" :mouse-y="mouseY" class="VPFeaturePN" />
     <VPLink
       :href="link"
@@ -138,31 +108,31 @@ function onMouseLeave() {
   display: block;
   overflow: hidden;
   border: 1px solid var(--vp-home-card-border-color);
-  border-radius: 16px;
+  border-radius: 12px;
   height: 100%;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent 38%),
     var(--vp-home-card-bg);
-  padding: 24px;
+  padding: 20px;
   box-shadow: inset 0 1px 0 rgba(240, 246, 252, 0.03);
   transition:
-    border-color 0.25s,
-    background-color 0.25s,
-    box-shadow 0.25s,
-    transform 50ms;
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .vp-link {
   display: flex;
   flex-direction: column;
   height: 100%;
-  gap: 18px;
+  gap: 12px;
 }
 
 .header-box {
   display: flex;
   flex-direction: row;
-  gap: 14px;
+  gap: 12px;
   align-items: center;
 }
 
@@ -183,18 +153,24 @@ function onMouseLeave() {
   flex: 0 0 auto;
   border: 1px solid rgba(240, 246, 252, 0.08);
   background-color: var(--vp-home-card-icon-bg);
-  border-radius: 12px;
-  width: 44px;
-  height: 44px;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
   color: var(--vp-home-card-icon-color);
   transition:
-    background-color 0.25s,
-    border-color 0.25s;
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .icon :deep(svg) {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
+}
+
+.VPFeature:hover .icon {
+  border-color: var(--vp-home-card-border-hover-color);
+  transform: scale(1.06);
 }
 
 .vp-link:not(.icon) .box {
@@ -202,16 +178,21 @@ function onMouseLeave() {
 }
 
 .title {
-  line-height: 1.4;
-  font-size: 17px;
+  line-height: 1.35;
+  font-size: 16px;
   font-weight: 600;
   color: var(--vp-c-text-1);
+  transition: color 0.2s ease;
+}
+
+.VPFeature:hover .title {
+  color: var(--vp-c-brand-1);
 }
 
 .details {
   font-weight: 400;
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.55;
   flex-grow: 1;
   color: var(--vp-home-card-text-color);
 }
@@ -263,12 +244,35 @@ function onMouseLeave() {
 
 .VPFeature:hover {
   border-color: var(--vp-home-card-border-hover-color);
-  box-shadow: 0 16px 40px rgba(1, 4, 9, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(1, 4, 9, 0.24);
+}
+
+.VPFeature:has(.vp-link:focus-visible) {
+  border-color: var(--vp-home-card-border-hover-color);
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
 }
 
 @media (max-width: 767px) {
   .VPFeature {
-    padding: 20px;
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .VPFeature,
+  .icon,
+  .link-arrow {
+    transition: none;
+  }
+
+  .VPFeature:hover {
+    transform: none;
+  }
+
+  .VPFeature:hover .icon {
+    transform: none;
   }
 }
 </style>

@@ -90,21 +90,59 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
   pointer-events: none;
 }
 
+/* Slow accent drift behind the hero — the only ambient motion on the page. */
+.VPHero::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -30%;
+  right: -10%;
+  width: 60vw;
+  max-width: 720px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--vp-home-hero-glow) 0%,
+    transparent 65%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+  animation: vp-hero-drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes vp-hero-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.75;
+  }
+  to {
+    transform: translate3d(-6%, 5%, 0) scale(1.12);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .VPHero::after {
+    animation: none;
+  }
+}
+
 @media (min-width: 640px) {
   .VPHero {
     padding: calc(
-        var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 80px
+        var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 64px
       )
-      48px 64px;
+      48px 48px;
   }
 }
 
 @media (min-width: 1024px) {
   .VPHero {
     padding: calc(
-        var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 80px
+        var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 72px
       )
-      64px 64px;
+      64px 56px;
   }
 }
 
@@ -249,7 +287,7 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
 .tagline {
   padding-top: 14px;
   max-width: 392px;
-  line-height: 1.7;
+  line-height: 1.55;
   font-size: 18px;
   font-weight: 400;
   white-space: pre-wrap;
@@ -264,15 +302,15 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
   .tagline {
     padding-top: 16px;
     max-width: 576px;
-    line-height: 1.7;
+    line-height: 1.55;
     font-size: 20px;
   }
 }
 
 @media (min-width: 1024px) {
   .tagline {
-    max-width: 620px;
-    font-size: 22px;
+    max-width: 560px;
+    font-size: 19px;
   }
 
   .VPHero.has-image .tagline {

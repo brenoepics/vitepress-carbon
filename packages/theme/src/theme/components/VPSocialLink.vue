@@ -32,20 +32,38 @@ const svg = computed(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 36px;
-  height: 36px;
-  color: var(--vp-c-text-dark);
-  transition: color 0.5s;
+  flex: 0 0 auto;
+  width: var(--vp-nav-control-height);
+  height: var(--vp-nav-control-height);
+  border: 1px solid transparent;
+  border-radius: var(--vp-nav-control-radius);
+  color: var(--vp-c-nav-text);
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
 }
 
 .VPSocialLink:hover {
-  color: var(--vp-c-text-1);
-  transition: color 0.25s;
+  background-color: var(--vp-c-nav-hover-bg);
+  border-color: var(--vp-c-nav-hover-border);
+  color: var(--vp-c-nav-text-hover);
+}
+
+.VPSocialLink:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 1px;
 }
 
 .VPSocialLink > :deep(svg) {
   width: 20px;
   height: 20px;
   fill: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .VPSocialLink {
+    transition: none;
+  }
 }
 </style>

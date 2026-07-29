@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useData } from '../composables/data'
 import VPDocAsideOutline from './VPDocAsideOutline.vue'
+import VPDocAsideMeta from './VPDocAsideMeta.vue'
 import VPDocAsideCarbonAds from './VPDocAsideCarbonAds.vue'
 
 const { theme } = useData()
@@ -9,6 +10,8 @@ const { theme } = useData()
 <template>
   <div class="VPDocAside">
     <slot name="aside-top" />
+
+    <VPDocAsideMeta />
 
     <slot name="aside-outline-before" />
     <VPDocAsideOutline />

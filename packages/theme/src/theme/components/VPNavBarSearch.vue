@@ -163,6 +163,11 @@ if (__VP_LOCAL_SEARCH__) {
 
 @media (min-width: 768px) {
   .VPNavBarSearch {
+    /* Take the slack in the nav row so the button reads as an input field
+       rather than collapsing to its label width. */
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    min-width: 0;
     padding-left: 32px;
   }
 }
@@ -171,6 +176,16 @@ if (__VP_LOCAL_SEARCH__) {
 #local-search {
   display: flex;
   max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  #docsearch,
+  #local-search {
+    width: 100%;
+    /* Wide enough to read as an input, narrow enough that it doesn't become
+       the visual anchor of the row on large screens. */
+    max-width: 224px;
+  }
 }
 
 .VPNavBarSearch :deep(.DocSearch) {
