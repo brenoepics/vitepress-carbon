@@ -449,6 +449,7 @@ export namespace CarbonTheme {
     | 'mastodon'
     | 'npm'
     | 'slack'
+    | 'storybook'
     | 'twitter'
     | 'x'
     | 'youtube'

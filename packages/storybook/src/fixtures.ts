@@ -49,6 +49,7 @@ export const sidebar = [
 
 export const socialLinks = [
   { icon: 'github', link: 'https://github.com/brenoepics/vitepress-carbon' },
+  { icon: 'storybook', link: '/storybook/' },
   { icon: 'x', link: 'https://x.com' },
   { icon: 'discord', link: 'https://discord.com' }
 ]

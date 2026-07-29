@@ -43,18 +43,6 @@ const nav: CarbonTheme.NavItem[] = [
     text: 'Examples',
     activeMatch: `^/examples/`,
     items: examplesItems
-  },
-  {
-    // Built by `pnpm storybook-build` and deployed alongside this site by the
-    // Pages workflow. `target` is set so VitePress's router does not try to
-    // resolve it as one of its own pages — it hands the click to the browser.
-    text: 'Storybook',
-    link: `/storybook/`,
-    target: '_self'
-  },
-  {
-    text: 'VitePress',
-    link: `https://vitepress.dev`
   }
 ]
 
@@ -106,6 +94,13 @@ export default defineConfigWithTheme<ThemeConfig>({
     },
 
     socialLinks: [
+      {
+        // The component workbench, built by `pnpm storybook-build` and deployed
+        // alongside this site by the Pages workflow.
+        icon: 'storybook',
+        link: '/storybook/',
+        ariaLabel: 'Storybook — every Carbon component in isolation'
+      },
       { icon: 'github', link: 'https://github.com/brenoepics/vitepress-carbon' }
     ],
 
