@@ -4,7 +4,7 @@
 
 Fix invisible social icons in the mobile nav screen in light mode.
 
-The `--vp-c-nav-*` tokens describe foreground on the nav *bar*, which sits on
+The `--vp-c-nav-*` tokens describe foreground on the nav _bar_, which sits on
 `--vp-c-bg-dark` in both colour schemes. `VPNavScreen` sits on `--vp-c-bg-alt`
 instead — near-white in light mode — but inherited those near-white values, so
 its social links rendered at 1.07:1 against their own background. The screen now
