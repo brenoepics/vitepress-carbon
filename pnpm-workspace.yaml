@@ -6,7 +6,7 @@ catalog:
   # Vitest Browser Mode and CVE-2026-53571/53632 in the bundled vite).
   vite: npm:@voidzero-dev/vite-plus-core@0.1.24
   vitest: npm:@voidzero-dev/vite-plus-test@0.1.24
-  vite-plus: 0.1.24
+  vite-plus: 0.2.6
 overrides:
   '@docsearch/js>preact': 10.29.0
   lodash: 4.17.23
