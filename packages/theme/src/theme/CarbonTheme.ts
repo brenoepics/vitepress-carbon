@@ -3,7 +3,7 @@ import type { Options as MiniSearchOptions } from 'minisearch'
 import type { ComputedRef, Ref, ShallowRef } from 'vue'
 
 import type { Awaitable, MarkdownEnv, PageData } from 'vitepress'
-import MarkdownIt from 'markdown-it'
+import type MarkdownIt from 'markdown-it'
 
 export interface PageSplitSection {
   anchor?: string
