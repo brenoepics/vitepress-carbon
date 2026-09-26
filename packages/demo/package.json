@@ -10,7 +10,7 @@
     "serve": "pnpm run demo-build && vitepress serve"
   },
   "dependencies": {
-    "@types/node": "^25.5.0",
+    "@types/node": "^26.6.2",
     "vitepress-carbon": "link:../theme"
   },
   "devDependencies": {
