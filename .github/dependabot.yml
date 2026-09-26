@@ -28,3 +28,8 @@ updates:
     directory: /packages/theme
     schedule:
       interval: daily
+
+  - package-ecosystem: npm
+    directory: /packages/storybook
+    schedule:
+    interval: daily

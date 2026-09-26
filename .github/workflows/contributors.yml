@@ -36,7 +36,6 @@ jobs:
         uses: voidzero-dev/setup-vp@250f29ce396baf5e8f24498e17c0dfdebabc26eb # v1
         with:
           node-version: '22.18.0'
-          cache: false
           run-install: false
 
       # No dependencies needed — the script is plain Node using global fetch.
