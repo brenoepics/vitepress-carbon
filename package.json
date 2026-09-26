@@ -62,7 +62,7 @@
   "pnpm": {
     "comment": "Overrides for transitive dependencies (pnpm@9 reads pnpm.overrides from package.json, not from pnpm-workspace.yaml). Security patches are caret-bounded to the compatible major so parents keep resolving; the typescript pin keeps the toolchain on the declared 5.x line so autoInstallPeers can't pull the TS 7 compiler and break vue-tsc/unbuild.",
     "overrides": {
-      "@xmldom/xmldom": "^0.9.10",
+      "@xmldom/xmldom": "^0.9.12",
       "brace-expansion": "^5.0.8",
       "defu": "^6.1.5",
       "esbuild": "^0.25.0",
