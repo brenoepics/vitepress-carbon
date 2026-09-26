@@ -5,7 +5,6 @@
   "description": "Storybook workbench for the Carbon theme components.",
   "type": "module",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "dev": "storybook dev -p 6006",
     "storybook-build": "storybook build --output-dir dist",
     "build": "pnpm run storybook-build"

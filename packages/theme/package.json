@@ -40,7 +40,6 @@
     }
   },
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "clean": "rimraf dist",
     "addAssets": "node scripts/copyTheme.js && node scripts/generateComponentExports.js",
     "build": "pnpm clean && vue-tsc --noEmit -p ./ && tsc -p ./ && pnpm addAssets",
