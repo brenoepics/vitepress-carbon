@@ -22,7 +22,7 @@ monorepo**:
 
 ## Environment
 
-- **Package manager: pnpm `9.9.0` only.** Every package has `preinstall: only-allow pnpm` — npm/yarn will fail. Do not add a `package-lock.json` or `yarn.lock`.
+- **Package manager: pnpm `9.9.0` only.** The root `preinstall` runs `only-allow pnpm` — npm/yarn will fail. Do not add a `package-lock.json` or `yarn.lock`.
 - **Node: `22.18.0`** (`.node-version`). Engines allow `^20.19.0 || >=22.18.0`.
 - Install with `pnpm install` (use `--frozen-lockfile` in CI‑like runs).
 
