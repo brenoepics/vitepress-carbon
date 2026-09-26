@@ -38,14 +38,14 @@
   },
   "dependencies": {
     "@algolia/client-search": "^5.59.0",
-    "@types/node": "^25.9.8",
+    "@types/node": "^26.6.2",
     "mark.js": "^8.11.1",
     "search-insights": "^2.17.3",
     "vitepress": "^1.6.4",
     "vue": "^3.5.43"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.31.1",
+    "@changesets/cli": "^3.0.3",
     "@playwright/test": "^1.63.0",
     "@types/mark.js": "^8.11.12",
     "@vitejs/plugin-vue": "^6.0.9",
@@ -53,7 +53,7 @@
     "globals": "^17.12.0",
     "happy-dom": "^20.14.5",
     "minisearch": "^7.2.0",
-    "typescript": "^5.9.3",
+    "typescript": "^7.0.2",
     "vite-plus": "catalog:",
     "vitest": "catalog:"
   },
