@@ -32,9 +32,9 @@ jobs:
       - name: Setup Vite+
         uses: voidzero-dev/setup-vp@250f29ce396baf5e8f24498e17c0dfdebabc26eb # v1
         with:
-        node-version: 22.18.0
-        cache: true
-        run-install: false
+          node-version: 22.18.0
+          cache: true
+          run-install: false
 
       - name: Setup Pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
