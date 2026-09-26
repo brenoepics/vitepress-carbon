@@ -44,7 +44,7 @@ jobs:
 
       - name: Build with VitePress
         run: |
-          pnpm run build
+          vp run build
           mkdir staging
           cp ./packages/demo/.vitepress/dist/* staging -r
           mkdir staging/storybook
