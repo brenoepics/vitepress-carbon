@@ -49,7 +49,7 @@ export default defineConfig({
     }
   ],
   webServer: {
-    command: `pnpm --filter vitepress-carbon-demo exec vitepress preview --port ${port} --strictPort`,
+    command: `vitepress preview packages/demo --port ${port} --strictPort`,
     cwd: '..',
     url: `http://localhost:${port}`,
     reuseExistingServer: !process.env.CI,

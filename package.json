@@ -30,6 +30,7 @@
     "test": "vp test run",
     "test:components": "vp test run __tests__/components",
     "test:integration": "vp test run __tests__/integration",
+    "e2e:install": "playwright install --with-deps chromium",
     "test:e2e": "playwright test -c e2e/playwright.config.ts",
     "e2e:build": "pnpm --filter vitepress-carbon run build && pnpm --filter vitepress-carbon-demo run demo-build",
     "prepare": "vp config",

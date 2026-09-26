@@ -80,13 +80,13 @@ jobs:
         run: vp install --frozen-lockfile
 
       - name: Install Playwright Chromium
-        run: pnpm exec playwright install --with-deps chromium
+        run: vp run e2e:install
 
       - name: Build theme and demo
-        run: pnpm e2e:build
+        run: vp run e2e:build
 
       - name: Run e2e tests
-        run: pnpm test:e2e
+        run: vp run test:e2e
 
       - name: Upload Playwright report
         if: failure()
