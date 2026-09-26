@@ -30,6 +30,8 @@
     "test": "vp test run",
     "test:components": "vp test run __tests__/components",
     "test:integration": "vp test run __tests__/integration",
+    "test:e2e": "playwright test -c e2e/playwright.config.ts",
+    "e2e:build": "pnpm --filter vitepress-carbon run build && pnpm --filter vitepress-carbon-demo run demo-build",
     "prepare": "vp config",
     "contributors": "node ./scripts/fetch-contributors.mjs"
   },
@@ -43,6 +45,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.1",
+    "@playwright/test": "^1.63.0",
     "@types/mark.js": "^8.11.12",
     "@vitejs/plugin-vue": "^6.0.9",
     "@vue/test-utils": "^2.5.1",

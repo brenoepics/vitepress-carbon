@@ -40,6 +40,7 @@ Run these from the repo root.
 | Test                | `pnpm test`                                | `vp test run` (Vitest).                                   |
 | Component tests     | `pnpm test:components`                     | `vp test run __tests__/components`.                       |
 | Integration tests   | `pnpm test:integration`                    | `vp test run __tests__/integration`.                      |
+| E2E tests           | `pnpm e2e:build && pnpm test:e2e`          | Playwright against the built demo (`e2e/`).               |
 | Lint (autofix)      | `pnpm lint`                                |                                                           |
 | Lint (check only)   | `pnpm lint:check`                          |                                                           |
 | Format (write)      | `pnpm format`                              |                                                           |
@@ -88,6 +89,12 @@ fails in CI instead.
   `// @vitest-environment happy-dom` docblock).
 - `__tests__/integration/` — builds the theme and the demo for real and asserts
   against the emitted HTML. Slow.
+- `e2e/` — Playwright suite that serves the _built_ demo with
+  `vitepress preview` and drives it in Chromium (desktop + mobile): hydration,
+  navigation, local search, appearance, math, copy buttons, 404, `llms.txt`.
+  Any page error, console error, or failed same-origin asset fails the test.
+  It is the gate for dependency bumps that only break at runtime. Run
+  `pnpm exec playwright install chromium` once locally.
 - `__tests__/support/` — mount helpers, the CSS reader, snapshot normalisation,
   and the specimen table.
 - `shared/vitepress-harness/` — stand-in for the `vitepress` client module,
