@@ -1,11 +1,11 @@
-import { expect, test } from './fixtures'
+import { expect, gotoHydrated, test } from './fixtures'
 
 // Runs under the `mobile` project only (see playwright.config.ts).
 
 test('hamburger opens the nav screen and locks body scroll', async ({
   page
 }) => {
-  await page.goto('/')
+  await gotoHydrated(page, '/')
 
   const hamburger = page.locator('.VPNavBarHamburger')
   await expect(hamburger).toBeVisible()
@@ -21,7 +21,7 @@ test('hamburger opens the nav screen and locks body scroll', async ({
 })
 
 test('doc sidebar opens from the local nav', async ({ page }) => {
-  await page.goto('/guide/introduction')
+  await gotoHydrated(page, '/guide/introduction')
 
   const sidebar = page.locator('.VPSidebar')
   await expect(sidebar).not.toHaveClass(/\bopen\b/)

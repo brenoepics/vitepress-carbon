@@ -1,4 +1,4 @@
-import { test as base, expect } from '@playwright/test'
+import { test as base, expect, type Page } from '@playwright/test'
 
 // Every page is checked for runtime errors: an uncaught exception or a
 // console error from our own origin fails the test. Third-party requests
@@ -48,3 +48,26 @@ export const test = base.extend<{ pageErrors: string[] }>({
 })
 
 export { expect }
+
+/**
+ * `page.goto` resolves on `load`, but VitePress hydrates only after the
+ * page's async chunk arrives. Clicking before that triggers a full browser
+ * navigation instead of the client router, so interactive tests go through
+ * this helper and wait for Vue to mount first.
+ */
+export async function gotoHydrated(page: Page, url: string) {
+  const response = await page.goto(url)
+  await expect
+    .poll(() =>
+      page.evaluate(
+        () =>
+          !!(
+            document.querySelector('#app') as
+              | (Element & { __vue_app__?: unknown })
+              | null
+          )?.__vue_app__
+      )
+    )
+    .toBe(true)
+  return response
+}

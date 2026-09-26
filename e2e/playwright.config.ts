@@ -14,7 +14,14 @@ export default defineConfig({
   // Resolved relative to this file, so artifacts stay in e2e/ (gitignored).
   outputDir: 'test-results',
   fullyParallel: true,
+  // The demo is built unminified and the local search box and its index are
+  // lazy chunks, so first paint of those can exceed the 5s default on a busy
+  // CI runner.
+  expect: { timeout: 10_000 },
   forbidOnly: !!process.env.CI,
+  // One `vitepress preview` process serves every worker; more than two
+  // browsers on a 4-vCPU runner starves it and turns load into flakes.
+  workers: process.env.CI ? 2 : undefined,
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI
     ? [
