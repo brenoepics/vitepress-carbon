@@ -1,35 +1,40 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
+# Dependabot version updates.
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+#
+# Updates are grouped so each ecosystem opens one PR per run instead of one PR
+# per package. Majors get their own group so a breaking bump never blocks the
+# safe minor/patch batch.
 
 version: 2
 updates:
-  - package-ecosystem: 'npm' # See documentation for possible values
-    directory: '/' # Location of package manifests
-    schedule:
-      interval: 'weekly'
-  - package-ecosystem: 'github-actions' # See documentation for possible values
-    directory: '/' # Location of package manifests
-    schedule:
-      interval: 'weekly'
-
   - package-ecosystem: npm
-    directory: /packages/cli
+    directories:
+      - /
+      - /packages/cli
+      - /packages/demo
+      - /packages/theme
+      - /packages/storybook
     schedule:
-      interval: daily
+      interval: weekly
+    groups:
+      npm-minor-patch:
+        update-types:
+          - minor
+          - patch
+      npm-major:
+        update-types:
+          - major
+    ignore:
+      # execa 10 requires Node >= 22 but is bundled into vpcar, which still
+      # supports Node ^20.19.0. Revisit when the Node 20 floor is dropped.
+      - dependency-name: execa
+        update-types: ['version-update:semver-major']
 
-  - package-ecosystem: npm
-    directory: /packages/demo
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
-      interval: daily
-
-  - package-ecosystem: npm
-    directory: /packages/theme
-    schedule:
-      interval: daily
-
-  - package-ecosystem: npm
-    directory: /packages/storybook
-    schedule:
-    interval: daily
+      interval: weekly
+    groups:
+      github-actions:
+        patterns:
+          - '*'
