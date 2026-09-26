@@ -152,9 +152,9 @@ exports[`overflow snapshots > VPDocOutlineItem markup with oversized text > VPDo
 exports[`overflow snapshots > VPFeature markup with oversized text > VPFeature 1`] = `
 "<div class="VPFeature">
 <div class="pointer-events-none VPFeaturePN" data-y="[random]">
-<div class="pattern-gradient">
+<div class="pattern-gradient" style="mask-image: radial-gradient(180px at -9999px -9999px, white, transparent);">
 </div>
-<div class="pattern-gradient-1">
+<div class="pattern-gradient-1" style="mask-image: radial-gradient(180px at -9999px -9999px, white, transparent);">
 </div>
 </div>
 <div class="VPLink link no-icon vp-link" href="/guide/introduction.html">
@@ -183,9 +183,9 @@ exports[`overflow snapshots > VPFeatures markup with oversized text > VPFeatures
 <div class="item">
 <div class="VPFeature">
 <div class="pointer-events-none VPFeaturePN" data-y="[random]">
-<div class="pattern-gradient">
+<div class="pattern-gradient" style="mask-image: radial-gradient(180px at -9999px -9999px, white, transparent);">
 </div>
-<div class="pattern-gradient-1">
+<div class="pattern-gradient-1" style="mask-image: radial-gradient(180px at -9999px -9999px, white, transparent);">
 </div>
 </div>
 <div class="VPLink no-icon vp-link">
@@ -203,9 +203,9 @@ exports[`overflow snapshots > VPFeatures markup with oversized text > VPFeatures
 <div class="item">
 <div class="VPFeature">
 <div class="pointer-events-none VPFeaturePN" data-y="[random]">
-<div class="pattern-gradient">
+<div class="pattern-gradient" style="mask-image: radial-gradient(180px at -9999px -9999px, white, transparent);">
 </div>
-<div class="pattern-gradient-1">
+<div class="pattern-gradient-1" style="mask-image: radial-gradient(180px at -9999px -9999px, white, transparent);">
 </div>
 </div>
 <div class="VPLink no-icon vp-link">
@@ -223,9 +223,9 @@ exports[`overflow snapshots > VPFeatures markup with oversized text > VPFeatures
 <div class="item">
 <div class="VPFeature">
 <div class="pointer-events-none VPFeaturePN" data-y="[random]">
-<div class="pattern-gradient">
+<div class="pattern-gradient" style="mask-image: radial-gradient(180px at -9999px -9999px, white, transparent);">
 </div>
-<div class="pattern-gradient-1">
+<div class="pattern-gradient-1" style="mask-image: radial-gradient(180px at -9999px -9999px, white, transparent);">
 </div>
 </div>
 <div class="VPLink no-icon vp-link">

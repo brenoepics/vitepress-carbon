@@ -13,3 +13,7 @@ package-lock.json
 /packages/cli/docs/
 /packages/storybook/dist/
 storybook-static/
+
+# Playwright
+e2e/playwright-report/
+e2e/test-results/

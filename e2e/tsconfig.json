@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    // Playwright specs and config run in Node; page callbacks use DOM types
+    // from the root `lib`.
+    "rootDir": ".",
+    "types": ["node"],
+    "noEmit": true
+  },
+  "include": ["./**/*"]
+}
