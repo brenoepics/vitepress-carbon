@@ -1,13 +1,13 @@
 {
   "repo": "brenoepics/vitepress-carbon",
-  "generatedAt": "2026-09-27T17:57:38.860Z",
+  "generatedAt": "2026-09-28T13:55:02.128Z",
   "contributors": [
     {
       "login": "brenoepics",
       "avatar": "https://avatars.githubusercontent.com/u/59066707?s=96",
       "url": "https://github.com/brenoepics",
-      "total": 414,
-      "commits": 302,
+      "total": 416,
+      "commits": 304,
       "pullRequests": 39,
       "issues": 0,
       "reviews": 28,
@@ -50,12 +50,12 @@
       "login": "amandeavor",
       "avatar": "https://avatars.githubusercontent.com/u/225383051?s=96",
       "url": "https://github.com/amandeavor",
-      "total": 3,
+      "total": 5,
       "commits": 1,
       "pullRequests": 2,
       "issues": 0,
       "reviews": 0,
-      "comments": 0
+      "comments": 2
     },
     {
       "login": "chenzeyan54-commits",
