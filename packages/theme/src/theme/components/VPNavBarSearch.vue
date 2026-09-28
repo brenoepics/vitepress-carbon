@@ -188,12 +188,12 @@ if (__VP_LOCAL_SEARCH__) {
   }
 }
 
-.VPNavBarSearch :deep(.DocSearch) {
+.VPNavBarSearch .DocSearch {
   --docsearch-search-button-background: transparent;
   --docsearch-key-background: transparent;
 }
 
-.VPNavBarSearch :deep(.DocSearch-Button) {
+.VPNavBarSearch .DocSearch-Button {
   background-color: transparent;
 }
 

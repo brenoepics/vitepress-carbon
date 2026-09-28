@@ -33,19 +33,19 @@
     "release": "npm publish"
   },
   "devDependencies": {
-    "@types/node": "^25.5.0",
-    "@types/semver": "^7.7.1",
+    "@types/node": "^25.9.8",
+    "@types/semver": "^7.8.0",
     "citty": "^0.2.2",
     "consola": "^3.4.2",
     "execa": "^9.6.1",
     "giget": "^3.3.1",
-    "nypm": "^0.6.9",
+    "nypm": "^0.6.10",
     "pathe": "^2.0.3",
-    "rollup": "^4.62.3",
+    "rollup": "^4.63.5",
     "semver": "^7.8.5",
     "unbuild": "^3.6.1",
     "unplugin-purge-polyfills": "^0.1.0",
-    "yaml": "^2.9.0"
+    "yaml": "^2.9.1"
   },
   "engines": {
     "node": "^20.19.0 || >=22.18.0"
