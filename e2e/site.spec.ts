@@ -50,6 +50,15 @@ test.describe('doc page', () => {
     ).toBe(true)
   })
 
+  test('components imported from vitepress-carbon/components render', async ({
+    page
+  }) => {
+    await gotoHydrated(page, '/guide/components')
+    const example = page.locator('.live-example')
+    await expect(example.locator('a.VPButton')).toHaveText('Get Started')
+    await expect(example.locator('.VPBadge')).toHaveText('new')
+  })
+
   test('code blocks have a working copy button', async ({ page, context }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write'])
     await gotoHydrated(page, '/examples/markdown-examples')

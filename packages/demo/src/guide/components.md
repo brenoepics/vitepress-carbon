@@ -1,3 +1,7 @@
+<script setup>
+import { VPBadge, VPButton } from 'vitepress-carbon/components'
+</script>
+
 # Built-in Components
 
 VitePress Carbon ships every component it uses internally, and all of them can
@@ -19,6 +23,11 @@ block, or register it yourself in `enhanceApp` (see
 
 Every Markdown page is compiled to a Vue component, so you can add a
 `<script setup>` block and use any component directly:
+
+<div class="live-example">
+  <VPButton text="Get Started" href="/guide/getting-started" theme="brand" />
+  <VPBadge type="tip" text="new" />
+</div>
 
 ```md
 ---
