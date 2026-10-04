@@ -77,7 +77,9 @@ const translate = createSearchTranslate(defaultTranslations)
 
 /* Below the menu breakpoint this is an icon button on the same 32px box as
    the hamburger beside it — not a 48x55 slab. */
-.DocSearch-Button {
+/* Keep the navbar controls above DocSearch's `all: unset` and default border,
+   including when the provider stylesheet loads after the theme. */
+.VPNavBarSearch .DocSearch-Button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,22 +102,22 @@ const translate = createSearchTranslate(defaultTranslations)
   transition-property: color, background-color, box-shadow, border-color;
 }
 
-.DocSearch-Button:hover {
+.VPNavBarSearch .DocSearch-Button:hover {
   background-color: var(--vp-c-nav-hover-bg);
   border-color: var(--vp-c-nav-hover-border);
 }
 
-.DocSearch-Button:focus-visible {
+.VPNavBarSearch .DocSearch-Button:focus-visible {
   outline: 2px solid var(--vp-c-brand-1);
   outline-offset: 1px;
 }
 
-.DocSearch-Button:focus:not(:focus-visible) {
+.VPNavBarSearch .DocSearch-Button:focus:not(:focus-visible) {
   outline: none !important;
 }
 
 @media (min-width: 768px) {
-  .DocSearch-Button {
+  .VPNavBarSearch .DocSearch-Button {
     justify-content: flex-start;
     border-color: var(--vp-c-border);
     line-height: 20px;
