@@ -9,7 +9,7 @@
 
 ## Layout Slots
 
-The theme's `<Layout/>` component has a few slots that can be used to inject content at certain locations of the page. Here's an example of injecting a component to replace the nav bar icon:
+The theme's `<Layout/>` component has a few slots that can be used to inject content at certain locations of the page (see the [full slot reference](./custom-layouts#layout-slot-reference)). Here's an example of injecting a component before the site title in the nav bar:
 
 ```js
 // .vitepress/theme/index.js
@@ -21,12 +21,47 @@ export default {
   ...VPCarbon,
   Layout: () => {
     return h(VPCarbon.Layout, null, {
-      'navbar-icon': () => h(Icon)
+      'nav-bar-title-before': () => h(Icon)
       // slots for theme layout
     })
   }
 }
 ```
+
+### Per-page slot content
+
+Slots are filled once, in the theme entry, so a Markdown page can't fill one directly. To show something in a slot on specific pages only, have the slot component read the page's frontmatter:
+
+```vue
+<!-- .vitepress/theme/components/AsideNotice.vue -->
+<script setup>
+import { useData } from 'vitepress'
+
+const { frontmatter } = useData()
+</script>
+
+<template>
+  <div v-if="frontmatter.asideNotice" class="aside-notice">
+    {{ frontmatter.asideNotice }}
+  </div>
+</template>
+```
+
+```js
+// .vitepress/theme/index.js
+Layout: () =>
+  h(VPCarbon.Layout, null, {
+    'aside-top': () => h(AsideNotice)
+  })
+```
+
+```md
+---
+asideNotice: This page is a draft.
+---
+```
+
+To render arbitrary markup from the page itself, give the slot an empty target (`'aside-top': () => h('div', { id: 'aside-top' })`) and move the page's content into it with `<ClientOnly><Teleport to="#aside-top" defer>...</Teleport></ClientOnly>` (Vue 3.5+).
 
 ## Registering Global Components
 

@@ -190,6 +190,9 @@ importers:
       fs-extra:
         specifier: ^11.4.1
         version: 11.4.1
+      mark.js:
+        specifier: ^8.11.1
+        version: 8.11.1
       markdown-it-mathjax3:
         specifier: ^4.0.0
         version: 4.3.2

@@ -22,10 +22,14 @@ export const baseConfig: UserConfig<ThemeConfig> = {
   vite: {
     plugins: [llmstxt()],
     ssr: {
-      noExternal: [...deps, /\.css$/, /\.vue$/, /^vitepress-carbon/]
+      // mark.js's ESM source uses extensionless imports Node can't load
+      noExternal: [...deps, 'mark.js', /\.css$/, /\.vue$/, /^vitepress-carbon/]
     },
     optimizeDeps: {
-      exclude: deps
+      exclude: deps,
+      // mark.js's `main` is UMD; pre-bundle its ESM entry so importing from
+      // `vitepress-carbon/components` (excluded above) works in dev
+      include: ['vitepress-carbon > mark.js/src/vanilla.js']
     }
   },
 
