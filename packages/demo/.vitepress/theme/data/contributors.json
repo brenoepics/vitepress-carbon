@@ -1,28 +1,39 @@
 {
   "repo": "brenoepics/vitepress-carbon",
-  "generatedAt": "2026-09-27T17:57:38.860Z",
+  "generatedAt": "2026-10-05T14:37:58.390Z",
   "contributors": [
     {
       "login": "brenoepics",
       "avatar": "https://avatars.githubusercontent.com/u/59066707?s=96",
       "url": "https://github.com/brenoepics",
-      "total": 414,
-      "commits": 302,
-      "pullRequests": 39,
+      "total": 423,
+      "commits": 308,
+      "pullRequests": 41,
       "issues": 0,
-      "reviews": 28,
+      "reviews": 29,
       "comments": 45
     },
     {
       "login": "marlonwq",
       "avatar": "https://avatars.githubusercontent.com/u/89613770?s=96",
       "url": "https://github.com/marlonwq",
-      "total": 28,
-      "commits": 15,
-      "pullRequests": 5,
+      "total": 30,
+      "commits": 16,
+      "pullRequests": 6,
       "issues": 0,
       "reviews": 2,
       "comments": 6
+    },
+    {
+      "login": "amandeavor",
+      "avatar": "https://avatars.githubusercontent.com/u/225383051?s=96",
+      "url": "https://github.com/amandeavor",
+      "total": 8,
+      "commits": 4,
+      "pullRequests": 2,
+      "issues": 0,
+      "reviews": 0,
+      "comments": 2
     },
     {
       "login": "RomainMazB",
@@ -47,17 +58,6 @@
       "comments": 3
     },
     {
-      "login": "amandeavor",
-      "avatar": "https://avatars.githubusercontent.com/u/225383051?s=96",
-      "url": "https://github.com/amandeavor",
-      "total": 3,
-      "commits": 1,
-      "pullRequests": 2,
-      "issues": 0,
-      "reviews": 0,
-      "comments": 0
-    },
-    {
       "login": "chenzeyan54-commits",
       "avatar": "https://avatars.githubusercontent.com/u/263139938?s=96",
       "url": "https://github.com/chenzeyan54-commits",
@@ -77,6 +77,17 @@
       "pullRequests": 0,
       "issues": 0,
       "reviews": 3,
+      "comments": 0
+    },
+    {
+      "login": "claude",
+      "avatar": "https://avatars.githubusercontent.com/u/81847?s=96",
+      "url": "https://github.com/claude",
+      "total": 2,
+      "commits": 2,
+      "pullRequests": 0,
+      "issues": 0,
+      "reviews": 0,
       "comments": 0
     },
     {
