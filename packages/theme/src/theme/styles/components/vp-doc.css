@@ -178,6 +178,17 @@
   margin: 0.25em 0 0;
 }
 
+.vp-doc li.task-list-item {
+  list-style-type: none;
+}
+
+.vp-doc .task-list-item-checkbox {
+  margin-right: 0.5em;
+  margin-left: -1.6em;
+  vertical-align: middle;
+  accent-color: var(--vp-c-brand-1);
+}
+
 /**
  * Table
  * -------------------------------------------------------------------------- */
@@ -534,6 +545,53 @@
 .vp-doc [class*='language-']:hover > button.copy + span.lang,
 .vp-doc [class*='language-'] > button.copy:focus + span.lang {
   opacity: 0;
+}
+
+/**
+ * Footnotes
+ * -------------------------------------------------------------------------- */
+
+.vp-doc .footnotes {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--vp-c-divider);
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+}
+
+.vp-doc .footnotes ol {
+  padding-left: 1.5em;
+}
+
+.vp-doc .footnotes li {
+  line-height: 1.5;
+}
+
+.vp-doc .footnote-ref {
+  font-size: 0.85em;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 2px;
+}
+
+.vp-doc .footnote-ref a {
+  text-decoration: none;
+}
+
+.vp-doc .footnote-ref a:hover,
+.vp-doc .footnote-ref:hover {
+  text-decoration: underline;
+}
+
+.vp-doc .footnote-backref {
+  text-decoration: none;
+  margin-left: 4px;
+  color: var(--vp-c-brand-1);
+  font-family: var(--vp-font-family-base);
+}
+
+.vp-doc .footnote-backref:hover {
+  color: var(--vp-c-brand-2);
 }
 
 /**
