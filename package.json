@@ -37,10 +37,8 @@
     "contributors": "node ./scripts/fetch-contributors.mjs"
   },
   "dependencies": {
-    "@algolia/client-search": "^5.59.0",
     "@types/node": "^25.9.8",
     "mark.js": "^8.11.1",
-    "search-insights": "^2.17.3",
     "vitepress": "^1.6.4",
     "vue": "^3.5.43"
   },
@@ -50,7 +48,6 @@
     "@types/mark.js": "^8.11.12",
     "@vitejs/plugin-vue": "^6.0.9",
     "@vue/test-utils": "^2.5.1",
-    "globals": "^17.12.0",
     "happy-dom": "^20.14.5",
     "minisearch": "^7.2.0",
     "typescript": "^5.9.3",
