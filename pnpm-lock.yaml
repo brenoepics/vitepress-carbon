@@ -35,18 +35,12 @@ importers:
 
   .:
     dependencies:
-      '@algolia/client-search':
-        specifier: ^5.59.0
-        version: 5.59.0
       '@types/node':
         specifier: ^25.9.8
         version: 25.9.8
       mark.js:
         specifier: ^8.11.1
         version: 8.11.1
-      search-insights:
-        specifier: ^2.17.3
-        version: 2.17.3
       vitepress:
         specifier: ^1.6.4
         version: 1.6.4(@algolia/client-search@5.59.0)(@types/node@25.9.8)(jiti@2.7.0)(lightningcss@1.33.0)(markdown-it-mathjax3@4.3.2)(postcss@8.5.28)(search-insights@2.17.3)(typescript@5.9.3)(yaml@2.9.1)
@@ -69,9 +63,6 @@ importers:
       '@vue/test-utils':
         specifier: ^2.5.1
         version: 2.5.1(@vue/compiler-dom@3.5.43)(@vue/server-renderer@3.5.43)(vue@3.5.43(typescript@5.9.3))
-      globals:
-        specifier: ^17.12.0
-        version: 17.12.0
       happy-dom:
         specifier: ^20.14.5
         version: 20.14.5
@@ -169,9 +160,6 @@ importers:
 
   packages/theme:
     dependencies:
-      '@clack/prompts':
-        specifier: ^1.8.1
-        version: 1.8.1
       '@docsearch/css':
         specifier: ^4.7.0
         version: 4.7.0
@@ -184,49 +172,40 @@ importers:
       '@vueuse/integrations':
         specifier: ^14.4.0
         version: 14.4.0(focus-trap@7.8.0)(vue@3.5.43(typescript@5.9.3))
-      body-scroll-lock:
-        specifier: ^3.1.5
-        version: 3.1.5
-      fs-extra:
-        specifier: ^11.4.1
-        version: 11.4.1
+      focus-trap:
+        specifier: ^7.8.0
+        version: 7.8.0
       mark.js:
         specifier: ^8.11.1
         version: 8.11.1
       markdown-it-mathjax3:
-        specifier: ^4.0.0
-        version: 4.3.2
+        specifier: ^4.0.0 || ^5.0.0
+        version: 5.2.0
       minisearch:
         specifier: ^7.2.0
         version: 7.2.0
-      normalize.css:
-        specifier: ^8.0.1
-        version: 8.0.1
-      tinyglobby:
-        specifier: ^0.2.17
-        version: 0.2.17
       vitepress-plugin-llms:
         specifier: ^1.14.0
         version: 1.14.0
       vue:
         specifier: ^3.5.43
         version: 3.5.43(typescript@5.9.3)
-      vue-tsc:
-        specifier: ^3.3.11
-        version: 3.3.11(typescript@5.9.3)
     devDependencies:
-      '@mdit-vue/types':
-        specifier: ^3.0.2
-        version: 3.0.2
-      '@types/body-scroll-lock':
-        specifier: ^3.1.2
-        version: 3.1.2
+      fs-extra:
+        specifier: ^11.4.1
+        version: 11.4.1
       markdown-it:
         specifier: ^14.2.0
         version: 14.3.2
       rimraf:
         specifier: ^6.1.3
         version: 6.1.3
+      tinyglobby:
+        specifier: ^0.2.17
+        version: 0.2.17
+      vue-tsc:
+        specifier: ^3.3.11
+        version: 3.3.11(typescript@5.9.3)
 
 packages:
 
@@ -400,14 +379,6 @@ packages:
 
   '@changesets/write@0.4.0':
     resolution: {integrity: sha512-CdTLvIOPiCNuH71pyDu3rA+Q0n65cmAbXnwWH84rKGiFumFzkmHNT8KHTMEchcxN+Kl8I54xGUhJ7l3E7X396Q==}
-
-  '@clack/core@1.5.1':
-    resolution: {integrity: sha512-iHTrHA8MtVuLl2TfZySmcKv1qO2PoyC9Z7pfSDozEuV5vtY3/wcOPKJXlqJ5Oq2Cx5DDGQGAMVx6HZfRRoVEbQ==}
-    engines: {node: '>= 20.12.0'}
-
-  '@clack/prompts@1.8.1':
-    resolution: {integrity: sha512-dlT1m5e/0yUL0kRNcQn7yGLVThkgbB0Ga/1AmfDDC/8ik6AIiSf2QLQO2zPYvefsHP0aFgxO93cVLCCfDp7kzQ==}
-    engines: {node: '>= 20.12.0'}
 
   '@colordx/core@5.8.0':
     resolution: {integrity: sha512-cG0QJAO6VkaRUlIb0zOzX9gfJgs1pjoOL9gZ/PK1kfvBs0GCkADu5oQh6gPxXgQnZ3gV575h+lQRC0NlMDTclA==}
@@ -651,10 +622,6 @@ packages:
 
   '@manypkg/get-packages@1.1.3':
     resolution: {integrity: sha512-fo+QhuU3qE/2TQMQmbVMqaQ6EWbMhi4ABWP+O4AM1NqPBuy0OrApV5LO6BrrgnhtAHS2NH6RrVk9OL181tTi8A==}
-
-  '@mdit-vue/types@3.0.2':
-    resolution: {integrity: sha512-00aAZ0F0NLik6I6Yba2emGbHLxv+QYrPH00qQ5dFKXlAo1Ll2RHDXwY7nN2WAfrx2pP+WrvSRFTGFCNGdzBDHw==}
-    engines: {node: '>=20.0.0'}
 
   '@mdx-js/react@3.1.1':
     resolution: {integrity: sha512-f++rKLQgUVYDAtECQ6fn/is15GkEH9+nZPM3MS0RcxVqoTfawHvDlSCH7JbMhAM6uJ32v3eXLvLmLvjGu7PTQw==}
@@ -1534,9 +1501,6 @@ packages:
   '@types/aria-query@5.0.4':
     resolution: {integrity: sha512-rfT93uj5s0PRL7EzccGMs3brplhcrghnDoV26NqKhCAS1hVo+WdNsPvE/yb6ilfr5hi2MEk6d5EWJTKdxg8jVw==}
 
-  '@types/body-scroll-lock@3.1.2':
-    resolution: {integrity: sha512-ELhtuphE/YbhEcpBf/rIV9Tl3/O0A0gpCVD+oYFSS8bWstHFJUgA4nNw1ZakVlRC38XaQEIsBogUZKWIPBvpfQ==}
-
   '@types/chai@5.2.3':
     resolution: {integrity: sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA==}
 
@@ -2046,9 +2010,6 @@ packages:
   birpc@2.9.0:
     resolution: {integrity: sha512-KrayHS5pBi69Xi9JmvoqrIgYGDkD6mcSe/i6YKi3w5kekCLzrX4+nawcXqrj2tIp50Kw/mT/s3p+GVK0A0sKxw==}
 
-  body-scroll-lock@3.1.5:
-    resolution: {integrity: sha512-Yi1Xaml0EvNA0OYWxXiYNqY24AfWkbA6w5vxE7GWxtKfzIbZM+Qw+aSmkgsbWzbHiy/RCSkUZBplVxTA+E4jJg==}
-
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
 
@@ -2438,15 +2399,6 @@ packages:
     resolution: {integrity: sha512-7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg==}
     engines: {node: '>=8.6.0'}
 
-  fast-string-truncated-width@3.0.3:
-    resolution: {integrity: sha512-0jjjIEL6+0jag3l2XWWizO64/aZVtpiGE3t0Zgqxv0DPuxiMjvB3M24fCyhZUO4KomJQPj3LTSUnDP3GpdwC0g==}
-
-  fast-string-width@3.0.2:
-    resolution: {integrity: sha512-gX8LrtNEI5hq8DVUfRQMbr5lpaS4nMIWV+7XEbXk2b8kiQIizgnlr12B4dA3ZEx3308ze0O4Q1R+cHts8kyUJg==}
-
-  fast-wrap-ansi@0.2.2:
-    resolution: {integrity: sha512-7F2Fl+TjRSenLqlU3UjSH0iyqopqoZIu7eZVpEirP2g1GtWa2G/ecEmBdgz31+Mxr+ELclgg6sokpSFIQiZ02Q==}
-
   fastq@1.20.3:
     resolution: {integrity: sha512-XKv5nnLs6nLF71NgiKJLIZFLkPyIEuOselLG7ujZnGrRfQK8HpvY+WqKhAJUAdLomwVHErVS4LfxFlPq0/FTAw==}
 
@@ -2534,10 +2486,6 @@ packages:
   glob@13.0.6:
     resolution: {integrity: sha512-Wjlyrolmm8uDpm/ogGyXZXb1Z+Ca2B8NbJwqBVg0axK9GbBeoS7yGV6vjXnYdGm6X53iehEuxxbyiKp8QmN4Vw==}
     engines: {node: 18 || 20 || >=22}
-
-  globals@17.12.0:
-    resolution: {integrity: sha512-cezEd/DTyyht9cvSSURyygXPfy04GtWO/5e6ZPvH7fCtjKz9PYOmuawphw1Ctd1f6C+5JypXfGD7ahNMXvevBA==}
-    engines: {node: '>=18'}
 
   globby@11.1.0:
     resolution: {integrity: sha512-jhIXaOzy1sb8IyocaruWSn1TjmnBVs8Ayhcy83rmxNJ8q2uWKCAj3CnJY+KpGSXCueAPc0i05kVvVKtP1t9S3g==}
@@ -3083,9 +3031,6 @@ packages:
     resolution: {integrity: sha512-df3sBr/6ax9hSGuC3CspvLlbnX8cP5L5nZwXF8cGN8l0zSWR6BvzmQ6jPUKjvo6+/xdpkNvEcucBNUdBeeV13g==}
     engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
     hasBin: true
-
-  normalize.css@8.0.1:
-    resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
 
   npm-run-path@6.0.0:
     resolution: {integrity: sha512-9qny7Z9DsQU8Ou39ERsPU4OZQlSTP47ShQzuKZ6PRXpYLtIFgl/DEBYEXKlvcEa+9tHVcK8CF81Y2V72qaZhWA==}
@@ -3663,9 +3608,6 @@ packages:
   sirv@3.0.2:
     resolution: {integrity: sha512-2wcC/oGxHis/BoHkkPwldgiPSYcpZK3JU28WoMVv55yHJgcZ8rlXvuG9iZggz+sU1d4bRgIGASwyWqjxu3FM0g==}
     engines: {node: '>=18'}
-
-  sisteransi@1.0.5:
-    resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
 
   slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
@@ -4398,18 +4340,6 @@ snapshots:
       human-id: 4.2.1
       prettier: 2.8.8
 
-  '@clack/core@1.5.1':
-    dependencies:
-      fast-wrap-ansi: 0.2.2
-      sisteransi: 1.0.5
-
-  '@clack/prompts@1.8.1':
-    dependencies:
-      '@clack/core': 1.5.1
-      fast-string-width: 3.0.2
-      fast-wrap-ansi: 0.2.2
-      sisteransi: 1.0.5
-
   '@colordx/core@5.8.0': {}
 
   '@docsearch/css@3.8.2': {}
@@ -4598,8 +4528,6 @@ snapshots:
       fs-extra: 8.1.0
       globby: 11.1.0
       read-yaml-file: 1.1.0
-
-  '@mdit-vue/types@3.0.2': {}
 
   '@mdx-js/react@3.1.1(@types/react@19.2.17)(react@19.3.0)':
     dependencies:
@@ -5214,8 +5142,6 @@ snapshots:
 
   '@types/aria-query@5.0.4': {}
 
-  '@types/body-scroll-lock@3.1.2': {}
-
   '@types/chai@5.2.3':
     dependencies:
       '@types/deep-eql': 4.0.2
@@ -5547,7 +5473,8 @@ snapshots:
 
   '@webcontainer/env@1.1.1': {}
 
-  '@xmldom/xmldom@0.9.12': {}
+  '@xmldom/xmldom@0.9.12':
+    optional: true
 
   abbrev@5.0.0: {}
 
@@ -5635,8 +5562,6 @@ snapshots:
 
   birpc@2.9.0: {}
 
-  body-scroll-lock@3.1.5: {}
-
   boolbase@1.0.0: {}
 
   brace-expansion@5.0.12:
@@ -5713,6 +5638,7 @@ snapshots:
       domelementtype: 2.3.0
       domhandler: 4.3.1
       domutils: 2.8.0
+    optional: true
 
   cheerio@1.0.0-rc.10:
     dependencies:
@@ -5723,6 +5649,7 @@ snapshots:
       parse5: 6.0.1
       parse5-htmlparser2-tree-adapter: 6.0.1
       tslib: 2.8.1
+    optional: true
 
   citty@0.1.6:
     dependencies:
@@ -5746,11 +5673,13 @@ snapshots:
 
   commander@11.1.0: {}
 
-  commander@13.1.0: {}
+  commander@13.1.0:
+    optional: true
 
   commander@14.0.3: {}
 
-  commander@6.2.1: {}
+  commander@6.2.1:
+    optional: true
 
   commondir@1.0.1: {}
 
@@ -5791,6 +5720,7 @@ snapshots:
       domhandler: 4.3.1
       domutils: 2.8.0
       nth-check: 2.1.1
+    optional: true
 
   css-select@6.0.0:
     dependencies:
@@ -5810,7 +5740,8 @@ snapshots:
       mdn-data: 2.27.1
       source-map-js: 1.2.1
 
-  css-what@6.2.2: {}
+  css-what@6.2.2:
+    optional: true
 
   css-what@7.0.0: {}
 
@@ -5916,6 +5847,7 @@ snapshots:
       domelementtype: 2.3.0
       domhandler: 4.3.1
       entities: 2.2.0
+    optional: true
 
   dom-serializer@2.0.0:
     dependencies:
@@ -5928,10 +5860,12 @@ snapshots:
   domhandler@3.3.0:
     dependencies:
       domelementtype: 2.3.0
+    optional: true
 
   domhandler@4.3.1:
     dependencies:
       domelementtype: 2.3.0
+    optional: true
 
   domhandler@5.0.3:
     dependencies:
@@ -5942,6 +5876,7 @@ snapshots:
       dom-serializer: 1.4.1
       domelementtype: 2.3.0
       domhandler: 4.3.1
+    optional: true
 
   domutils@3.2.2:
     dependencies:
@@ -5973,7 +5908,8 @@ snapshots:
       ansi-colors: 4.1.3
       strip-ansi: 6.0.1
 
-  entities@2.2.0: {}
+  entities@2.2.0:
+    optional: true
 
   entities@4.5.0: {}
 
@@ -6020,13 +5956,15 @@ snapshots:
 
   escalade@3.2.0: {}
 
-  escape-goat@3.0.0: {}
+  escape-goat@3.0.0:
+    optional: true
 
   escape-string-regexp@5.0.0: {}
 
   esm-resolve@1.0.11: {}
 
-  esm@3.2.25: {}
+  esm@3.2.25:
+    optional: true
 
   esprima@4.0.1: {}
 
@@ -6064,16 +6002,6 @@ snapshots:
       glob-parent: 5.1.2
       merge2: 1.4.1
       micromatch: 4.0.8
-
-  fast-string-truncated-width@3.0.3: {}
-
-  fast-string-width@3.0.2:
-    dependencies:
-      fast-string-truncated-width: 3.0.3
-
-  fast-wrap-ansi@0.2.2:
-    dependencies:
-      fast-string-width: 3.0.2
 
   fastq@1.20.3:
     dependencies:
@@ -6174,8 +6102,6 @@ snapshots:
       minipass: 7.1.3
       path-scurry: 2.0.2
 
-  globals@17.12.0: {}
-
   globby@11.1.0:
     dependencies:
       array-union: 2.1.0
@@ -6242,6 +6168,7 @@ snapshots:
       domhandler: 3.3.0
       domutils: 2.8.0
       entities: 2.2.0
+    optional: true
 
   htmlparser2@6.1.0:
     dependencies:
@@ -6249,6 +6176,7 @@ snapshots:
       domhandler: 4.3.1
       domutils: 2.8.0
       entities: 2.2.0
+    optional: true
 
   human-id@4.2.1: {}
 
@@ -6380,6 +6308,7 @@ snapshots:
       web-resource-inliner: 6.0.1
     transitivePeerDependencies:
       - encoding
+    optional: true
 
   kind-of@6.0.3: {}
 
@@ -6476,6 +6405,7 @@ snapshots:
       mathjax-full: 3.2.2
     transitivePeerDependencies:
       - encoding
+    optional: true
 
   markdown-it-mathjax3@5.2.0:
     dependencies:
@@ -6501,6 +6431,7 @@ snapshots:
       mhchemparser: 4.2.1
       mj-context-menu: 0.6.1
       speech-rule-engine: 4.1.4
+    optional: true
 
   mathxyjax3@0.8.3: {}
 
@@ -6571,11 +6502,13 @@ snapshots:
 
   mdurl@2.1.0: {}
 
-  mensch@0.3.4: {}
+  mensch@0.3.4:
+    optional: true
 
   merge2@1.4.1: {}
 
-  mhchemparser@4.2.1: {}
+  mhchemparser@4.2.1:
+    optional: true
 
   micromark-core-commonmark@2.0.3:
     dependencies:
@@ -6726,7 +6659,8 @@ snapshots:
     dependencies:
       yargs: 17.7.3
 
-  mime@2.6.0: {}
+  mime@2.6.0:
+    optional: true
 
   min-indent@1.0.1: {}
 
@@ -6740,7 +6674,8 @@ snapshots:
 
   mitt@3.0.1: {}
 
-  mj-context-menu@0.6.1: {}
+  mj-context-menu@0.6.1:
+    optional: true
 
   mkdist@2.4.1(typescript@5.9.3)(vue-tsc@3.3.11(typescript@5.9.3))(vue@3.5.43(typescript@5.9.3)):
     dependencies:
@@ -6782,14 +6717,13 @@ snapshots:
   node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
+    optional: true
 
   node-releases@2.0.57: {}
 
   nopt@10.0.1:
     dependencies:
       abbrev: 5.0.0
-
-  normalize.css@8.0.1: {}
 
   npm-run-path@6.0.0:
     dependencies:
@@ -6957,8 +6891,10 @@ snapshots:
   parse5-htmlparser2-tree-adapter@6.0.1:
     dependencies:
       parse5: 6.0.1
+    optional: true
 
-  parse5@6.0.1: {}
+  parse5@6.0.1:
+    optional: true
 
   path-browserify@1.0.1: {}
 
@@ -7466,11 +7402,10 @@ snapshots:
       mrmime: 2.0.1
       totalist: 3.0.1
 
-  sisteransi@1.0.5: {}
-
   slash@3.0.0: {}
 
-  slick@1.12.2: {}
+  slick@1.12.2:
+    optional: true
 
   source-map-js@1.2.1: {}
 
@@ -7490,6 +7425,7 @@ snapshots:
       '@xmldom/xmldom': 0.9.12
       commander: 13.1.0
       wicked-good-xpath: 1.3.0
+    optional: true
 
   sprintf-js@1.0.3: {}
 
@@ -7601,7 +7537,8 @@ snapshots:
 
   totalist@3.0.1: {}
 
-  tr46@0.0.3: {}
+  tr46@0.0.3:
+    optional: true
 
   trim-lines@3.0.1: {}
 
@@ -7741,7 +7678,8 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  valid-data-url@3.0.1: {}
+  valid-data-url@3.0.1:
+    optional: true
 
   vfile-message@4.0.3:
     dependencies:
@@ -7951,8 +7889,10 @@ snapshots:
       valid-data-url: 3.0.1
     transitivePeerDependencies:
       - encoding
+    optional: true
 
-  webidl-conversions@3.0.1: {}
+  webidl-conversions@3.0.1:
+    optional: true
 
   webpack-virtual-modules@0.6.2: {}
 
@@ -7962,12 +7902,14 @@ snapshots:
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
+    optional: true
 
   which@2.0.2:
     dependencies:
       isexe: 2.0.0
 
-  wicked-good-xpath@1.3.0: {}
+  wicked-good-xpath@1.3.0:
+    optional: true
 
   with@7.0.2:
     dependencies:
