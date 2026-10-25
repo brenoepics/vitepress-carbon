@@ -1,40 +1,38 @@
 /* oxlint-disable @typescript-eslint/no-explicit-any  */
-import { computed, type Ref } from 'vue'
+import { computed } from 'vue'
 import { useData } from './data.js'
 import { isActive } from '../../shared.js'
 import { getSidebar, getFlatSideBarLinks } from '../support/sidebar.js'
-import { type PageData } from 'vitepress'
-import type { CarbonTheme } from '../CarbonTheme.js'
 
 export function usePrevNext() {
   const { page, theme, frontmatter } = useData()
-  return computed(() => handlePrevNext(page, theme, frontmatter))
+  return computed(() => handlePrevNext(page.value, theme.value, frontmatter.value))
 }
 
 function handlePrevNext(
-  page: Ref<PageData>,
-  theme: Ref<CarbonTheme.Config>,
-  frontmatter: Ref<Record<string, any>>
+  page: any,
+  theme: any,
+  frontmatter: any
 ) {
-  const sidebar = getSidebar(theme.value.sidebar, page.value.relativePath)
+  const sidebar = getSidebar(theme.sidebar, page.relativePath)
   const candidates = getFlatSideBarLinks(sidebar)
-  const index = findPageIndex(page.value.relativePath, candidates)
+  const index = findPageIndex(page.relativePath, candidates)
 
   const hidePrev = shouldHidePrev(
-    theme.value.docFooter?.prev,
-    frontmatter.value.prev
+    theme.docFooter?.prev,
+    frontmatter.prev
   )
   const hideNext = shouldHideNext(
-    theme.value.docFooter?.next,
-    frontmatter.value.next
+    theme.docFooter?.next,
+    frontmatter.next
   )
 
   const prevLink = constructLinkObject(
-    frontmatter.value.prev,
+    frontmatter.prev,
     candidates[index - 1]
   )
   const nextLink = constructLinkObject(
-    frontmatter.value.next,
+    frontmatter.next,
     candidates[index + 1]
   )
 
