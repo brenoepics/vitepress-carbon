@@ -63,7 +63,6 @@ export default defineConfigWithTheme<ThemeConfig>({
   srcDir: 'src',
   lastUpdated: true,
   cleanUrls: true,
-  metaChunk: true,
   sitemap: {
     hostname: 'https://carbon.breno.tech',
     transformItems(items) {
@@ -183,7 +182,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       fs: {
         allow: [
           searchForWorkspaceRoot(process.cwd()),
-          path.join(__dirname, '../../theme/src/theme/fonts/')
+          path.join(import.meta.dirname, '../../theme/src/theme/fonts/')
         ]
       }
     }
